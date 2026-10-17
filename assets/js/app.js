@@ -19,6 +19,63 @@
   let storeChannel = "mannings";
   let stockListExpanded = false;
   let stockListMode = "snapshot"; // "snapshot" | "directory"
+  let storeRegion = ""; // "" | "hk" | "kln" | "nt"
+
+  const REGION_LABEL = { "": "全部", hk: "香港", kln: "九龍", nt: "新界" };
+
+  /** 18 區（去「區」字後）→ 香港／九龍／新界 */
+  const DISTRICT_REGION = {
+    中西: "hk",
+    灣仔: "hk",
+    東: "hk",
+    南: "hk",
+    油尖旺: "kln",
+    深水埗: "kln",
+    九龍城: "kln",
+    黃大仙: "kln",
+    觀塘: "kln",
+    葵青: "nt",
+    荃灣: "nt",
+    屯門: "nt",
+    元朗: "nt",
+    北: "nt",
+    大埔: "nt",
+    沙田: "nt",
+    西貢: "nt",
+    離島: "nt"
+  };
+
+  function normalizeDistrict(d) {
+    return String(d || "")
+      .trim()
+      .replace(/區$/u, "")
+      .replace(/\s+/g, "");
+  }
+
+  function regionOfStore(s) {
+    if (!s) return "";
+    const r = String(s.region || "").trim();
+    if (r === "hk" || r === "kln" || r === "nt") return r;
+    if (r === "香港" || r === "香港島") return "hk";
+    if (r === "九龍") return "kln";
+    if (r === "新界" || r === "離島") return "nt";
+
+    const d = normalizeDistrict(s.district);
+    if (d && DISTRICT_REGION[d]) return DISTRICT_REGION[d];
+
+    const addr = String(s.address || "").trim();
+    if (/^離島/.test(addr) || addr.includes("離島")) return "nt";
+    if (/^新界/.test(addr)) return "nt";
+    if (/^九龍/.test(addr)) return "kln";
+    if (/^香港/.test(addr)) return "hk";
+    // 後備關鍵字（地址中段）
+    if (/九龍/.test(addr)) return "kln";
+    if (/新界|屯門|元朗|沙田|大埔|荃灣|葵涌|青衣|將軍澳|天水圍|上水|粉嶺|東涌|馬鞍山/.test(addr))
+      return "nt";
+    if (/中環|灣仔|銅鑼灣|北角|太古|香港仔|金鐘|上環|西環|柴灣|筲箕灣|薄扶林|赤柱/.test(addr))
+      return "hk";
+    return "";
+  }
 
   function fmtTel(tel) {
     const d = String(tel || "").replace(/\D/g, "");
@@ -351,21 +408,22 @@
       </div>`;
   }
 
+  function applyStoreFilters(list) {
+    const q = ($("#storeSearch")?.value || "").trim().toLowerCase();
+    const district = $("#districtSelect")?.value || "";
+    return (list || []).filter((s) => {
+      if (storeRegion && regionOfStore(s) !== storeRegion) return false;
+      if (district && (s.district || "") !== district) return false;
+      if (!q) return true;
+      const blob = `${s.name || ""} ${s.address || ""} ${s.district || ""} ${s.tel || ""} ${s.stockStatus || ""} ${REGION_LABEL[regionOfStore(s)] || ""}`.toLowerCase();
+      return blob.includes(q);
+    });
+  }
+
   function renderExpandedStockList(list) {
     const box = $("#stockStoreList");
     if (!box) return;
-    const q = ($("#storeSearch")?.value || "").trim().toLowerCase();
-    const district = $("#districtSelect")?.value || "";
-    let filtered = list.slice();
-    if (district) {
-      filtered = filtered.filter((s) => (s.district || "") === district);
-    }
-    if (q) {
-      filtered = filtered.filter((s) => {
-        const blob = `${s.name || ""} ${s.address || ""} ${s.district || ""} ${s.tel || ""} ${s.stockStatus || ""}`.toLowerCase();
-        return blob.includes(q);
-      });
-    }
+    let filtered = applyStoreFilters(list);
     if (!filtered.length) {
       box.innerHTML = `<div class="other-box">快照名單中搵唔到符合篩選嘅舖。可清空搜尋，或直接去萬寧產品頁查庫存。</div>`;
       return;
@@ -390,7 +448,10 @@
   /* ---- Stores ---- */
 
   function districtsFor(list) {
-    const set = new Set(list.map((s) => s.district).filter(Boolean));
+    const scoped = storeRegion
+      ? list.filter((s) => regionOfStore(s) === storeRegion)
+      : list;
+    const set = new Set(scoped.map((s) => s.district).filter(Boolean));
     return Array.from(set).sort((a, b) => a.localeCompare(b, "zh-Hant"));
   }
 
@@ -481,22 +542,16 @@
       renderExpandedStockList(entry.stores || []);
     }
 
-    const q = ($("#storeSearch")?.value || "").trim().toLowerCase();
-    const district = $("#districtSelect")?.value || "";
-    let list = currentStoreList().filter((s) => {
-      if (district && s.district !== district) return false;
-      if (!q) return true;
-      const blob = `${s.name || ""} ${s.address || ""} ${s.district || ""} ${s.tel || ""} ${s.stockStatus || ""}`.toLowerCase();
-      return blob.includes(q);
-    });
+    let list = applyStoreFilters(currentStoreList());
+    const regionName = REGION_LABEL[storeRegion] || "全部";
 
     if (countEl) {
       if (storeChannel === "watsons") {
-        countEl.textContent = `顯示 ${list.length} 間屈臣氏分店（靜態名單，非即時庫存）`;
+        countEl.textContent = `${regionName}：約 ${list.length} 間屈臣氏分店（靜態名單，非即時庫存）`;
       } else if (usingSnapshot) {
-        countEl.textContent = `顯示 ${list.length} 間快照「可能有貨」舖（截至 ${fmtAsOf(manningsStock.asOf)}；請致電確認）`;
+        countEl.textContent = `${regionName}：約 ${list.length} 間快照「可能有貨」舖（截至 ${fmtAsOf(manningsStock.asOf)}；請致電確認）`;
       } else {
-        countEl.textContent = `顯示 ${list.length} 間萬寧分店（電話簿；非該產品有貨舖數）`;
+        countEl.textContent = `${regionName}：約 ${list.length} 間萬寧分店（電話簿；非該產品有貨舖數）`;
       }
     }
 
@@ -540,6 +595,24 @@
     );
     refreshDistrictOptions();
     renderManningsStockPanel();
+    renderStores();
+  }
+
+  function setRegion(region) {
+    storeRegion = region || "";
+    $$("#regionChips .region-chip").forEach((b) => {
+      const on = (b.dataset.region || "") === storeRegion;
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    // 換分區時重置細分地區，避免選咗唔屬於呢區嘅值
+    const dist = $("#districtSelect");
+    if (dist) dist.value = "";
+    refreshDistrictOptions();
+    if (stockListExpanded && stockListMode === "snapshot") {
+      const entry = getSnapshotEntry(getProductId());
+      if (hasUsableSnapshot(entry)) renderExpandedStockList(entry.stores || []);
+    }
     renderStores();
   }
 
@@ -608,6 +681,9 @@
 
     $$(".seg button").forEach((btn) => {
       btn.addEventListener("click", () => setChannel(btn.dataset.channel));
+    });
+    $$("#regionChips .region-chip").forEach((btn) => {
+      btn.addEventListener("click", () => setRegion(btn.dataset.region || ""));
     });
     $("#districtSelect")?.addEventListener("change", () => {
       if (stockListExpanded && stockListMode === "snapshot") {

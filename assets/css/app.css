@@ -189,6 +189,40 @@ select:focus, input:focus {
 }
 .seg button.active { background: var(--teal); color: #fff; border-color: var(--teal); }
 
+
+.region-block { margin: 8px 0 12px; }
+.region-label { margin-bottom: 8px !important; font-weight: 700; color: var(--ink); font-size: 0.9rem !important; }
+.region-chips {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.region-chip {
+  min-height: 48px;
+  border-radius: 12px;
+  border: 2px solid var(--teal);
+  background: #fff;
+  color: var(--teal-dark);
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 10px 6px;
+  letter-spacing: 0.04em;
+}
+.region-chip:hover, .region-chip:focus {
+  background: var(--teal-soft);
+  outline: 2px solid var(--teal);
+  outline-offset: 1px;
+}
+.region-chip.active {
+  background: var(--teal);
+  color: #fff;
+  border-color: var(--teal-dark);
+  box-shadow: 0 2px 0 var(--teal-dark);
+}
+@media (max-width: 420px) {
+  .region-chips { grid-template-columns: repeat(2, 1fr); }
+}
 .filters {
   display: grid;
   grid-template-columns: 1fr 1.2fr;

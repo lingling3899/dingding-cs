@@ -90,9 +90,18 @@
 
         <div id="storeFilters">
           <div id="directoryNote" class="directory-note"></div>
+          <div class="region-block" role="group" aria-label="分區">
+            <p class="field region-label">分區（香港／九龍／新界）</p>
+            <div class="region-chips" id="regionChips">
+              <button type="button" class="region-chip active" data-region="" aria-pressed="true">全部</button>
+              <button type="button" class="region-chip" data-region="hk" aria-pressed="false">香港</button>
+              <button type="button" class="region-chip" data-region="kln" aria-pressed="false">九龍</button>
+              <button type="button" class="region-chip" data-region="nt" aria-pressed="false">新界</button>
+            </div>
+          </div>
           <div class="filters">
             <div>
-              <label class="field" for="districtSelect">地區</label>
+              <label class="field" for="districtSelect">分區內地區</label>
               <select id="districtSelect"></select>
             </div>
             <div>
