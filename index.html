@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="日本叮叮客服參考：產品問答（成份／用法／蠶豆症）與萬寧屈臣氏分店電話查詢。非醫療建議，庫存以門店為準。" />
+  <title>日本叮叮 · 客服速查</title>
+  <link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">叮</div>
+        <div>
+          <h1>日本叮叮 · 客服速查</h1>
+          <p>產品問答　｜　門店致電查貨</p>
+        </div>
+      </div>
+      <nav class="nav-tabs" aria-label="主要分頁">
+        <button type="button" class="active" data-view="qa">產品問答</button>
+        <button type="button" data-view="stores">門店查貨</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="view-qa">
+      <div class="hero">
+        <h2>即答功效・成份・蠶豆症</h2>
+        <p>揀產品 → 撳問題掣。答案只跟官網／已標明來源；唔會扮即時庫存，亦唔當醫療建議。</p>
+      </div>
+
+      <section class="panel">
+        <h3>① 揀產品 <span class="badge">必選</span></h3>
+        <label class="field" for="productSelect">產品</label>
+        <select id="productSelect" aria-label="選擇產品"></select>
+        <div id="productMeta" class="product-card" aria-live="polite"></div>
+      </section>
+
+      <section class="panel">
+        <h3>② 常見問題</h3>
+        <div class="chips" role="group" aria-label="常見問題">
+          <button type="button" class="chip" data-q="g6pd">蠶豆症可用嗎？</button>
+          <button type="button" class="chip" data-q="deet">有冇 DEET？</button>
+          <button type="button" class="chip" data-q="age">幾歲用得？</button>
+          <button type="button" class="chip" data-q="usage">點用？</button>
+          <button type="button" class="chip" data-q="where">邊度買？</button>
+          <button type="button" class="chip" data-q="ingredients">成份係咩？</button>
+        </div>
+        <div id="answerPanel" class="answer empty" aria-live="polite">
+          揀咗產品後，撳上面問題掣即睇答案。
+        </div>
+      </section>
+
+      <section class="panel">
+        <h3>③ 想查有冇貨？</h3>
+        <p style="margin:0 0 10px;color:var(--muted);font-size:0.9rem;">
+          本頁<strong>冇</strong>即時庫存。萬寧／屈臣氏請用「門店查貨」搵電話致電確認；其他渠道多數係部分店有售。
+        </p>
+        <button type="button" class="chip" onclick="location.hash='#stores';document.querySelector('[data-view=stores]').click()">去門店查貨 →</button>
+      </section>
+    </section>
+
+    <section id="view-stores" class="hidden">
+      <div class="hero" id="stores">
+        <h2>門店查貨（致電確認）</h2>
+        <p>靜態分店名單＋電話。顯示「請致電確認有冇貨」——唔顯示假 live stock。</p>
+      </div>
+
+      <section class="panel">
+        <div class="seg" role="tablist" aria-label="渠道">
+          <button type="button" class="active" data-channel="mannings">萬寧</button>
+          <button type="button" data-channel="watsons">屈臣氏</button>
+          <button type="button" data-channel="other">其他渠道</button>
+        </div>
+
+        <div id="storeFilters">
+          <div class="filters">
+            <div>
+              <label class="field" for="districtSelect">地區</label>
+              <select id="districtSelect"></select>
+            </div>
+            <div>
+              <label class="field" for="storeSearch">搜尋店名／地址</label>
+              <input id="storeSearch" type="search" placeholder="例如：沙田、旺角、德福…" autocomplete="off" />
+            </div>
+          </div>
+          <p id="storeCount" class="count"></p>
+          <div id="storeList" class="store-list"></div>
+          <p class="count" style="margin-top:12px;">
+            名單唔齊？官方搜尋：
+            <a href="https://www.mannings.com.hk/store-finder" target="_blank" rel="noopener">萬寧分店位置</a>
+            ·
+            <a href="https://www.watsons.com.hk/zh-hk/store-finder" target="_blank" rel="noopener">屈臣氏分店位置</a>
+          </p>
+        </div>
+
+        <div id="otherChannels" class="other-box hidden">
+          <p><strong>華潤堂／莎莎／卓悅／藥行等</strong>多數為<strong>部分店有售、非全線</strong>，本系統唔會扮有即時庫存。</p>
+          <p>建議：致電該店查詢，或查看官網零售點說明。</p>
+          <p>
+            <a class="btn-link" href="https://www.japandingding.com/" target="_blank" rel="noopener">japandingding.com 官網</a>
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <footer class="footer">
+      <strong>免責聲明</strong><br />
+      本頁僅供客服／消費者<strong>參考</strong>，<strong>非醫療建議</strong>。蠶豆症（G6PD）相關說明以「官網有否標明不含樟腦／non-DEET」＋公開教育（應避免樟腦等誘發物）陳述，並請<strong>以包裝標籤為準，諮詢醫生／藥劑師</strong>。<br />
+      庫存以門店即時狀況為準；分店地址／電話來自公開目錄整理，資料可能滯後。<br />
+      「防蚊敵」成份來自第三方藥房頁，建議以官方標籤核實。<br />
+      官方網站：<a href="https://www.japandingding.com/" target="_blank" rel="noopener">japandingding.com</a>
+    </footer>
+  </main>
+
+  <script src="data/products.js"></script>
+  <script src="data/stores.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
