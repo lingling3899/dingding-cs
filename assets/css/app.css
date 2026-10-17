@@ -1,17 +1,17 @@
 :root {
-  --teal: #0d9488;
-  --teal-dark: #0f766e;
-  --teal-soft: #ccfbf1;
-  --green: #16a34a;
+  --teal: #1e4fd6;          /* 深藍主色 */
+  --teal-dark: #123a9e;     /* 更深藍 */
+  --teal-soft: #dbe7ff;     /* 淺藍底 */
+  --green: #2563eb;         /* 成功態改用藍 */
   --warn: #b45309;
   --danger: #b91c1c;
-  --ink: #134e4a;
-  --muted: #5b716e;
-  --bg: #f0fdfa;
+  --ink: #0f274f;           /* 深藍字 */
+  --muted: #5b6b8c;
+  --bg: #f4f8ff;            /* 近白淺藍底 */
   --card: #ffffff;
-  --border: #99f6e4;
+  --border: #c5d6f5;
   --radius: 14px;
-  --shadow: 0 4px 18px rgba(13, 148, 136, 0.12);
+  --shadow: 0 4px 18px rgba(18, 58, 158, 0.12);
   font-family: "Noto Sans TC", "PingFang HK", "Microsoft JhengHei", system-ui, sans-serif;
 }
 
@@ -19,7 +19,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: linear-gradient(180deg, #ecfeff 0%, var(--bg) 40%, #f8fafc 100%);
+  background: linear-gradient(180deg, #e8f0ff 0%, var(--bg) 40%, #ffffff 100%);
   color: var(--ink);
   line-height: 1.55;
   min-height: 100vh;
@@ -30,7 +30,7 @@ a { color: var(--teal-dark); }
 
 .topbar {
   position: sticky; top: 0; z-index: 20;
-  background: rgba(240, 253, 250, 0.92);
+  background: rgba(244, 248, 255, 0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
   padding: 12px 14px;
@@ -42,7 +42,7 @@ a { color: var(--teal-dark); }
 .brand { display: flex; align-items: center; gap: 10px; }
 .logo {
   width: 42px; height: 42px; border-radius: 12px;
-  background: linear-gradient(135deg, var(--teal), #34d399);
+  background: linear-gradient(135deg, var(--teal-dark), #5b8def);
   display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 18px;
   box-shadow: var(--shadow);
 }
