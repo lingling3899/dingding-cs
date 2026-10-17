@@ -8,6 +8,8 @@
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
+  const GROUP_ORDER = ["噴霧", "貼／卡", "空間", "其他"];
+
   function fmtTel(tel) {
     const d = String(tel).replace(/\D/g, "");
     if (d.length === 8) return d.slice(0, 4) + " " + d.slice(4);
@@ -42,7 +44,9 @@
   function answerBoxClass(p, key) {
     if (key === "g6pd" && p.containsCamphor) return "answer danger-box";
     if (key === "g6pd") return "answer warn-box";
-    if (p.riskFlag && (key === "ingredients" || key === "usage")) return "answer warn-box";
+    if (key === "pregnant" && p.id === "usb-liquid") return "answer danger-box";
+    if (key === "pet" && (p.id === "usb-liquid" || p.id === "usb-refill")) return "answer danger-box";
+    if (p.riskFlag && (key === "ingredients" || key === "usage" || key === "skin")) return "answer warn-box";
     return "answer";
   }
 
@@ -115,6 +119,44 @@
       if (p.officialUrl) {
         links = `<a class="btn-link" href="${p.officialUrl}" target="_blank" rel="noopener">查看官網產品頁</a>`;
       }
+    } else if (key === "skin") {
+      body =
+        `【${p.name}】可噴／搽皮膚嗎？\n\n` +
+        (p.skinOk === true
+          ? `可以（按官網用法）：${p.skinNote || "請依標籤用於皮膚。"}\n`
+          : p.skinOk === false
+            ? `唔建議／唔可以（按官網）：${p.skinNote || "本產品非皮膚噴劑／忌塗皮膚。"}\n`
+            : `請核標籤。${p.skinNote || ""}〔待核標籤〕\n`) +
+        `\n劑型：${p.form}`;
+    } else if (key === "combine") {
+      body =
+        `【${p.name}】可同其他產品一齊用？\n\n` +
+        (p.combineNote || "官網未列併用細節。請以標籤為準。〔待核標籤〕");
+    } else if (key === "reg") {
+      body =
+        `【${p.name}】有冇註冊編號？\n\n` +
+        (p.registration
+          ? `香港除害劑註冊編號：${p.registration}（官網）\n`
+          : `官網此頁未列出香港除害劑註冊編號（或部分外用舒緩產品可能唔屬除害劑註冊範圍）。請以包裝標籤為準。〔待核標籤〕\n`) +
+        `\n主要成份：${p.actives}`;
+      if (p.officialUrl) {
+        links = `<a class="btn-link" href="${p.officialUrl}" target="_blank" rel="noopener">查看官網產品頁</a>`;
+      }
+    } else if (key === "pregnant") {
+      body =
+        `【${p.name}】孕婦／餵奶可用嗎？\n\n` +
+        (p.pregnantNote || "官網若無寫則請以標籤為準並諮詢醫生。") +
+        `\n\n—\n${globalFaq.pregnantIntro || "請以標籤為準並諮詢醫生。"}`;
+    } else if (key === "freq") {
+      body =
+        `【${p.name}】幾耐一次？\n\n` +
+        (p.freqNote || p.usage || "請以標籤為準。") +
+        `\n\n完整用法：\n${p.usage}`;
+    } else if (key === "pet") {
+      body =
+        `【${p.name}】寵物安全嗎？\n\n` +
+        (p.petNote || "官網未寫寵物專用指引。請以標籤為準。") +
+        `\n\n—\n${globalFaq.petIntro || ""}`;
     } else {
       body = "請選擇問題。";
     }
@@ -142,12 +184,45 @@
   function fillProductSelect() {
     const sel = $("#productSelect");
     if (!sel) return;
-    sel.innerHTML = products
-      .map((p) => {
-        const flag = p.containsCamphor ? " ⚠" : "";
-        return `<option value="${p.id}">${p.name}${flag}</option>`;
-      })
-      .join("");
+
+    const byGroup = {};
+    products.forEach((p) => {
+      const g = p.group || "其他";
+      if (!byGroup[g]) byGroup[g] = [];
+      byGroup[g].push(p);
+    });
+
+    const parts = [];
+    GROUP_ORDER.forEach((g) => {
+      const list = byGroup[g];
+      if (!list || !list.length) return;
+      parts.push(
+        `<optgroup label="${g}">` +
+          list
+            .map((p) => {
+              const flag = p.containsCamphor ? " ⚠" : "";
+              return `<option value="${p.id}">${p.name}${flag}</option>`;
+            })
+            .join("") +
+          `</optgroup>`
+      );
+    });
+    // any unexpected groups
+    Object.keys(byGroup).forEach((g) => {
+      if (GROUP_ORDER.includes(g)) return;
+      parts.push(
+        `<optgroup label="${g}">` +
+          byGroup[g]
+            .map((p) => {
+              const flag = p.containsCamphor ? " ⚠" : "";
+              return `<option value="${p.id}">${p.name}${flag}</option>`;
+            })
+            .join("") +
+          `</optgroup>`
+      );
+    });
+
+    sel.innerHTML = parts.join("");
     renderProductMeta(getProduct());
   }
 
@@ -278,7 +353,6 @@
       btn.addEventListener("click", () => showView(btn.dataset.view));
     });
 
-    // deep link #stores
     if (location.hash === "#stores") showView("stores");
     window.addEventListener("hashchange", () => {
       if (location.hash === "#stores") showView("stores");
