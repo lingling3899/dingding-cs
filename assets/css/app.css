@@ -1,15 +1,15 @@
 :root {
-  --teal: #1e4fd6;          /* 深藍主色 */
-  --teal-dark: #123a9e;     /* 更深藍 */
-  --teal-soft: #dbe7ff;     /* 淺藍底 */
-  --green: #2563eb;         /* 成功態改用藍 */
+  --teal: #1e2a91;          /* 深藍主色 */
+  --teal-dark: #16237a;     /* 更深藍 */
+  --teal-soft: #e8ecf8;     /* 淺藍底 */
+  --green: #1e2a91;         /* 成功態改用藍 */
   --warn: #b45309;
   --danger: #b91c1c;
-  --ink: #0f274f;           /* 深藍字 */
-  --muted: #5b6b8c;
-  --bg: #f4f8ff;            /* 近白淺藍底 */
+  --ink: #1a2458;           /* 深藍字 */
+  --muted: #5c6690;
+  --bg: #f7f8fc;            /* 近白淺藍底 */
   --card: #ffffff;
-  --border: #c5d6f5;
+  --border: #cfd5ea;
   --radius: 14px;
   --shadow: 0 4px 18px rgba(18, 58, 158, 0.12);
   font-family: "Noto Sans TC", "PingFang HK", "Microsoft JhengHei", system-ui, sans-serif;
@@ -19,7 +19,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: linear-gradient(180deg, #e8f0ff 0%, var(--bg) 40%, #ffffff 100%);
+  background: linear-gradient(180deg, #eef1f9 0%, var(--bg) 40%, #ffffff 100%);
   color: var(--ink);
   line-height: 1.55;
   min-height: 100vh;
@@ -40,12 +40,14 @@ a { color: var(--teal-dark); }
   display: flex; align-items: center; justify-content: space-between; gap: 10px;
 }
 .brand { display: flex; align-items: center; gap: 10px; }
-.logo {
-  width: 42px; height: 42px; border-radius: 12px;
-  background: linear-gradient(135deg, var(--teal-dark), #5b8def);
-  display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 18px;
-  box-shadow: var(--shadow);
+.brand-logo {
+  height: 44px; width: auto; max-width: min(52vw, 220px);
+  object-fit: contain; display: block;
+  background: #fff; border-radius: 8px; padding: 4px 6px;
+  border: 1px solid var(--border);
 }
+.brand-text h1 { margin: 0; font-size: 1.05rem; color: var(--teal-dark); }
+.brand-text p { margin: 0; font-size: 0.75rem; color: var(--muted); }
 .brand h1 { margin: 0; font-size: 1.05rem; }
 .brand p { margin: 0; font-size: 0.75rem; color: var(--muted); }
 .nav-tabs { display: flex; gap: 6px; }
