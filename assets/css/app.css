@@ -247,3 +247,99 @@ select:focus, input:focus {
 .footer strong { color: var(--ink); }
 .hidden { display: none !important; }
 .count { font-size: 0.8rem; color: var(--muted); margin: 0 0 8px; }
+
+/* ---- Mannings per-product stock snapshot ---- */
+.stock-panel { margin-top: 12px; }
+.stock-summary {
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--teal-soft);
+  border: 1px solid var(--border);
+}
+.stock-summary.fallback {
+  background: #fffbeb;
+  border-color: #fcd34d;
+}
+.stock-headline {
+  margin: 0 0 6px;
+  font-size: 1.02rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.stock-asof {
+  display: inline;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.stock-disclaimer {
+  margin: 0 0 10px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.stock-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.expand-chip {
+  min-height: 48px;
+  font-size: 0.92rem;
+}
+.stock-expand {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+.directory-note {
+  margin: 0 0 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  background: #f8fafc;
+  border: 1px dashed var(--border);
+  color: var(--ink);
+}
+.directory-note.warn-note {
+  background: #fffbeb;
+  border-color: #fcd34d;
+  color: #92400e;
+}
+.directory-note.ok-note {
+  background: #eef2ff;
+  border-color: var(--border);
+  color: var(--teal-dark);
+}
+.directory-warn {
+  margin: 8px 0 0;
+  font-size: 0.82rem;
+  color: var(--warn);
+  font-weight: 650;
+}
+.store-card.stock-hit {
+  border-color: #7c8fd4;
+  box-shadow: 0 2px 10px rgba(30, 42, 145, 0.08);
+}
+.muted-inline {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.tel-btn {
+  min-height: 48px;
+  padding: 10px 16px;
+  font-size: 1rem;
+}
+.btn-link {
+  display: inline-block;
+  padding: 10px 14px;
+  min-height: 44px;
+  background: var(--teal-soft);
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 650;
+  font-size: 0.88rem;
+  color: var(--teal-dark);
+  line-height: 1.35;
+}

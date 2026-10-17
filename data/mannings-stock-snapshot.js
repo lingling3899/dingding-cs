@@ -1,0 +1,8287 @@
+/**
+ * 萬寧門店庫存快照（靜態）。
+ * 來源：mannings.com.hk 公開「查詢門店庫存」／2026-10-18 HKT。
+ * 鍵為 products.js 的 product id。asOf 有值＝已載入；請勿當 live stock。
+ * 只含有現貨 + 庫存緊張門店（與萬寧列表一致）；無庫存門店不會出現。
+ */
+window.DD_MANNINGS_STOCK = {
+  "asOf": "2026-10-18",
+  "source": "https://www.mannings.com.hk public product store stock checker",
+  "disclaimer": "快照非即時庫存（截至 2026-10-18）；到舖前請致電確認。Snapshot only — stock changes; always confirm by phone.",
+  "products": {
+    "space-35g": {
+      "manningsCode": "669374",
+      "manningsUrl": "https://www.mannings.com.hk/zh-hant/ding-ding-mosquito-complete-mosquito-insect-repellent-35g/p/669374",
+      "storeCount": 204,
+      "stores": [
+        {
+          "name": "新鴻基中心",
+          "address": "香港灣仔新鴻基中心地下G14-G18號舖",
+          "tel": "852-25112927",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "山東街",
+          "address": "九龍旺角山東街47-51號中橋商業大廈星際城市地下10-13號舖",
+          "tel": "852-27707920",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上水新豐路",
+          "address": "新界上水石湖墟新豐路122-130號龍霞樓地下A & B舖",
+          "tel": "852-26720954",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門市廣場",
+          "address": "新界屯門屯順街1號屯門市廣場1期2樓2199B-2199F號舖",
+          "tel": "852-24041372",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "安達商場",
+          "address": "九龍觀塘安達邨安達商場地下低層LG02號舖",
+          "tel": "852-28871055",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "元朗壽富街",
+          "address": "新界元朗壽富街51-59元朗中心地下4A及4B號舖",
+          "tel": "852-24793219",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "置地廣場",
+          "address": "香港中環皇后大道中15號置地廣場中庭3樓312號舖",
+          "tel": "852-34602024",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "長亨商場",
+          "address": "新界青衣長亨邨長亨商場3樓313-315號舖",
+          "tel": "852-23453578",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新海防道",
+          "address": "九龍尖沙咀海防道38-40號中達大廈地下及天井",
+          "tel": "852-23619645",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "元朗大馬路",
+          "address": "新界元朗青山公路元朗段118號地下2A及2B號舖",
+          "tel": "852-26205143",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "麗城薈",
+          "address": "新界荃灣青山公路625號麗城薈3期地下23,24及26號舖",
+          "tel": "852-23579476",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海富",
+          "address": "九龍旺角西海泓道海富苑海富商場101舖",
+          "tel": "852-29940743",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "孔雀樓",
+          "address": "九龍牛頭角道281號觀塘花園大廈孔雀樓地下281號舖",
+          "tel": "852-27934773",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "麗港城",
+          "address": "九龍觀塘茶果嶺道88號麗港城商場地下34及36號舖",
+          "tel": "852-23799072",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "寶琳邨",
+          "address": "新界將軍澳寶琳北路18號寶琳邨寶勤樓地下116及117號舖",
+          "tel": "852-24748002",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "利港中心",
+          "address": "香港香港仔利港中心1樓 106-107號舖",
+          "tel": "852-25806607",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "麗晶花園",
+          "address": "九龍九龍灣宏光道80號麗晶花園商場2樓2182, 2183, 2186號舖",
+          "tel": "852-27154984",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "盛芳街",
+          "address": "新界葵涌盛芳街38-44號寬德大廈地下8-10號舖",
+          "tel": "852-26234561",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "卓爾居",
+          "address": "屯門石排頭徑1號卓爾居地下G2A號舖",
+          "tel": "852-27939303",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "置樂花園",
+          "address": "新界屯門置樂花園地下66A號舖",
+          "tel": "852-24049790",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富健花園",
+          "address": "新界屯門龍門道45號富健花園55, 56 & 58號舖",
+          "tel": "852-24539074",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "綠楊",
+          "address": "新界荃灣綠楊坊平台 P11A & P11B",
+          "tel": "852-24923224",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "安泰商場",
+          "address": "九龍觀塘安泰邨安泰商場地下高層105號舖",
+          "tel": "852-23857018",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天水圍港鐵站",
+          "address": "新界天水圍天水圍港鐵站TIS 30-33號舖",
+          "tel": "852-24450618",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "運頭塘",
+          "address": "新界大埔運頭塘邨商場29舖",
+          "tel": "852-26513448",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "元朗廣場",
+          "address": "新界元朗廣場1樓130及181-183號鋪",
+          "tel": "852-23206205",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "碧湖花園",
+          "address": "新界粉嶺一鳴道15號碧湖花園商場地下高層19-21號舖",
+          "tel": "852-27607424",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "金御門",
+          "address": "九龍九龍城衙前圍道39號金．御門地下1號舖",
+          "tel": "852-23501433",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "雲景道",
+          "address": "香港北角雲景道33號",
+          "tel": "852-28071853",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "洪福商場",
+          "address": "新界元朗洪水橋洪福商場地下9-10號舖",
+          "tel": "852-28902387",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "滿樂坊",
+          "address": "香港大嶼山東涌松滿路7號滿東邨滿樂坊地下2號餔",
+          "tel": "852-27299920",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "葵盛東邨",
+          "address": "新界葵涌葵盛東邨葵盛東商場1樓131號舖",
+          "tel": "852-24971029",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "沙田萬怡酒店",
+          "address": "新界沙田安平街一號地下2A號舖",
+          "tel": "852-25950408",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "萬事達廣場",
+          "address": "九龍美孚新邨荔灣道萬事達廣場N72號地下",
+          "tel": "852-27850295",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海翠坊",
+          "address": "新界屯門湖翠路168-236號海翠坊1號及85-86號舖",
+          "tel": "852-24416769",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新康街",
+          "address": "新界上水新康街96號地下",
+          "tel": "852-26721376",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "山景商場",
+          "address": "新界屯門山景村山景商場低層地下106C及106D號",
+          "tel": "852-2471 2530",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "兆康苑",
+          "address": "新界屯門兆康苑兆康商場226號舖",
+          "tel": "852-27933270",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大埔超級城Baby",
+          "address": "新界大埔大埔超級城B區2樓269-270號舖",
+          "tel": "852-26334906",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天晴商場",
+          "address": "新界天水圍天晴邨天晴商場8號舖",
+          "tel": "852-23504422",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "翠林新城",
+          "address": "新界將軍澳翠林邨翠林新城5樓101號舖",
+          "tel": "852-27019793",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門HANDS",
+          "address": "新界屯門友愛路友愛邨H.A.N.D.S. S區2樓S-229及S-230號舖",
+          "tel": "852-26598220",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "馬鞍山",
+          "address": "新界馬鞍山保泰街16號地下G10",
+          "tel": "852-26432059",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "禾輋",
+          "address": "新界沙田禾輋邨商場2樓261號舖",
+          "tel": "852-26924850",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "偉景花園",
+          "address": "新界青衣青綠街1號偉景花園商場地下8-11號",
+          "tel": "852-24345651",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "窩打老道",
+          "address": "九龍窩打老道86D 萬基大廈地下 A&B1A號",
+          "tel": "852-27607742",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "晴朗商場",
+          "address": "九龍九龍城沐翠街晴朗商場地下A004號舖位",
+          "tel": "852-28664493",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "頌安",
+          "address": "新界馬鞍山頌安商場1樓110&111號",
+          "tel": "852-26335401",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富亨",
+          "address": "新界大埔富亨邨富亨購物中心28號",
+          "tel": "852-26614324",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富蝶商場",
+          "address": "新界大埔富蝶邨二期富蝶商場地下15號舖",
+          "tel": "852-24539128",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "恆福商場",
+          "address": "新界屯門青山公路333號青山灣段恆福商場2樓213-214號舖",
+          "tel": "852-29775110",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "嘉福商場",
+          "address": "新界粉嶺嘉褔邨嘉褔商場1樓111號舖",
+          "tel": "852-29473272",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "啟鑽商場",
+          "address": "九龍黃大仙鑽石山啟鑽苑二期啟鑽商場B1樓B14號舖",
+          "tel": "852-27870931",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "廣褔商場",
+          "address": "新界大埔廣福邨廣福商場1樓206-209號舖",
+          "tel": "852-26577970",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "廣源",
+          "address": "新界沙田廣源邨商場第四座1-3號",
+          "tel": "852-26356995",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "瀝源",
+          "address": "新界沙田瀝源邨瀝源商場二樓214號舖",
+          "tel": "852-26964932",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "美孚",
+          "address": "九龍美孚新邨百老匯街69-119號地下99B",
+          "tel": "852-27429664",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "南昌街",
+          "address": "九龍南昌街223-237號名都廣場地下",
+          "tel": "852-27794924",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新寶怡花園",
+          "address": "新界屯門良德街11號寶怡花園地下17-18號",
+          "tel": "852-24885211",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新北江",
+          "address": "新界元朗天水圍新北江廣場1樓C61及62舖",
+          "tel": "852-21499358",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "石硤尾",
+          "address": "九龍石硤尾窩仔街1-13號仁寶大廈地下A舖",
+          "tel": "852-27786375",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "石硤尾邨二期",
+          "address": "九龍石硤尾邨二期美亮樓地下9號舖",
+          "tel": "852-27153573",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "順利商場",
+          "address": "九龍觀塘利安道15號順利邨順利商場2樓201B號舖",
+          "tel": "852-27949528",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "蘇屋商場",
+          "address": "深水埗蘇屋邨蘇屋商場地下G12號舖",
+          "tel": "852-27156052",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大埔超級城",
+          "address": "新界大埔大埔超級城A區2樓055-056號",
+          "tel": "852-29979431",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門仁政街",
+          "address": "新界屯門仁政街26A富華大廈地下C-E號",
+          "tel": "852-24505219",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "灣仔道",
+          "address": "香港灣仔道 212-214號怡康大廈地下B舖",
+          "tel": "852-22956783",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "油麗商場",
+          "address": "九龍油塘油麗商場地下9 號舖",
+          "tel": "852-26703400",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "宇宙商場",
+          "address": "九龍深水埗青山道164-170號宇宙商場地下G18A-B",
+          "tel": "852-27297840",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "碧堤坊",
+          "address": "新界深井青山公路33號碧堤坊3樓8號舖",
+          "tel": "852-31041054",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "蝴蝶邨",
+          "address": "新界屯門蝴蝶廣場地下R123號舖",
+          "tel": "852-24639344",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "竹園",
+          "address": "九龍竹園南村竹園商場1樓S101號",
+          "tel": "852-27261645",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西九龍中心",
+          "address": "九龍深水埗欽洲街37K西九龍中心5樓501B",
+          "tel": "852-23878262",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "福昌樓",
+          "address": "香港鰂魚涌英皇道1032-1044號福昌樓低層地下102號舖",
+          "tel": "852-25661406",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富昌商場",
+          "address": "九龍深水埗富昌邨富昌商場1樓F110號舖",
+          "tel": "852-27581090",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "翠華花園",
+          "address": "新界沙田沙角街7-11號翠華花園地下12-13號舖",
+          "tel": "852-26461483",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "跑馬地",
+          "address": "香港跑馬地成和道25-27號地下",
+          "tel": "852-25756904",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "鯉魚門廣場",
+          "address": "九龍油塘鯉魚門廣場1樓140號舖",
+          "tel": "852-27583770",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "樂華商場",
+          "address": "九龍牛頭角樂華南及北邨樂華商場3樓314號舖",
+          "tel": "852-23436975",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "牛頭角下邨",
+          "address": "九龍牛頭角下邨廣場地下2及3號舖",
+          "tel": "852-21471022",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "美林商場",
+          "address": "新界大圍美林邨美林商場地下20-22號舖",
+          "tel": "852-34223254",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新香港仔",
+          "address": "香港香港仔香港仔大道170至172號海滙大厦地下",
+          "tel": "852-25751455",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "北角",
+          "address": "香港北角英皇道386-388號北港商業大廈地下B",
+          "tel": "852-25712621",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門Novo Walk",
+          "address": "新界屯門欣寶路8號NOVO WALK 地下22及23號舖",
+          "tel": "852-24735468",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "帝庭軒",
+          "address": "新界粉嶺聯和墟和滿街8號帝庭軒一期商場一樓1&2號舖",
+          "tel": "852-29475793",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "水泉澳廣場",
+          "address": "新界沙田水泉澳邨水泉澳廣場2樓204號舖",
+          "tel": "852-28138602",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大興",
+          "address": "新界屯門大興街1號大興邨商場地下L107號舖",
+          "tel": "852-23856177",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門時代廣場",
+          "address": "新界屯門時代廣場南翼3樓8,9及39號舖",
+          "tel": "852-24417153",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門V City Baby",
+          "address": "新界屯門屯門鄉事會路83號V City MTR層M-72號舖",
+          "tel": "852-24159590",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "欣田商場",
+          "address": "新界屯門欣田邨欣田商場地下G06號舖",
+          "tel": "852-24705490",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "囍逸",
+          "address": "新界粉嶺和豐街28號囍逸地下5號舖",
+          "tel": "852-26901020",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富山邨",
+          "address": "九龍富山邨富仁樓 LG2層L203-204號舖",
+          "tel": "852-27152904",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富泰",
+          "address": "新界屯門屯貴路9號富泰商場2樓211號舖",
+          "tel": "852-24537242",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西鐵兆康站",
+          "address": "新界兆康港鐵站 6-9 號舖",
+          "tel": "852-24629309",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "銀湖天峰",
+          "address": "新界馬鞍山西沙路599號銀湖天峰G10號舖",
+          "tel": "852-23149078",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新西灣河",
+          "address": "香港筲箕灣道326至332號康泰大樓地下4號舖",
+          "tel": "852-25413908",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "繽紛購物城",
+          "address": "九龍紅磡德民街1-15號繽紛購物城1字樓E",
+          "tel": "852-23346429",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "博康",
+          "address": "新界沙田博康邨博康商場107-109號舖",
+          "tel": "852-26356390",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "總統戲院",
+          "address": "香港銅鑼灣謝菲道517號地下B舖",
+          "tel": "852-25745483",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "羅便臣道",
+          "address": "香港西摩道1號輝煌臺地下8 號舖",
+          "tel": "852-25404307",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "石籬商場",
+          "address": "石籬商場",
+          "tel": "852-26531092",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "黃大仙中心北館",
+          "address": "九龍黃大仙龍翔道136號黃大仙中心北館2樓N210A號舖",
+          "tel": "852-23503200",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "荃灣千色匯",
+          "address": "新界荃灣眾安街68號荃灣千色匯I期地下G016-G017舖",
+          "tel": "852-26609030",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新達廣場",
+          "address": "新界大埔南運路9號新達廣場1樓A048-A050號舖",
+          "tel": "852-26743028",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "耀東商場",
+          "address": "香港筲箕灣耀東邨耀東商場2樓201號舖",
+          "tel": "852-25607135",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "置富",
+          "address": "香港薄扶林置富南區廣場3樓303號室",
+          "tel": "852-28750400",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天璽天",
+          "address": "九龍啟德協調道10號天璽．天低層地下LG28, LG30 及 LG32號舖",
+          "tel": "852-2782-5518",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "翔龍灣",
+          "address": "九龍馬頭角新碼頭街38號翔龍灣廣場地下2號舖",
+          "tel": "852-22622764",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "何文田廣場",
+          "address": "九龍何文田何文田村何文田廣場三樓320及321號舖",
+          "tel": "852-27152449",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "鯉景灣",
+          "address": "香港鯉景灣太安街25號D段地下GD20至21A舖",
+          "tel": "852-29678970",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "良景",
+          "address": "新界屯門良景邨良景廣場2樓L217號舖",
+          "tel": "852-24550949",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "美田商場",
+          "address": "新界大圍美田邨美田商場1樓103及104號舖",
+          "tel": "852-26345340",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新康怡廣場",
+          "address": "香港康山道1-2號康怡廣場2樓S30號及東上橋S8至S10號舖",
+          "tel": "852-26500412",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新形點Baby",
+          "address": "新界元朗朗日路9號形點I 2樓2008號舖",
+          "tel": "852-24709371",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大埔道",
+          "address": "九龍大埔道168-178號南都大廈地下4-5號舖",
+          "tel": "852-23195295",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新蒲崗",
+          "address": "九龍康強街35-49號地下2號舖",
+          "tel": "852-27570821",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "沙角商場",
+          "address": "新界沙田沙角街5號沙角商場2樓235號舖",
+          "tel": "852-27601161",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上水Baby",
+          "address": "新界上水龍運街8號新都廣場106a號舖",
+          "tel": "852-23253728",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "尚德商場",
+          "address": "新界將軍澳唐明街2號尚德邨尚德商場1樓109號舖",
+          "tel": "852-24505818",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上環",
+          "address": "香港皇后大道中368號偉利大廈1樓 6 號舖",
+          "tel": "852-25434464",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天盛商場",
+          "address": "新界元朗天水圍天靖街3號天盛苑天盛商場1樓L102號舖",
+          "tel": "852-25093298",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "將軍澳Baby",
+          "address": "新界將軍澳唐俊街9號pop Corn1樓F68號舖",
+          "tel": "852-27521167",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "元朗同樂街",
+          "address": "新界元朗同樂街21號地下",
+          "tel": "852-24090275",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "雍盛商埸",
+          "address": "新界粉嶺雍盛苑雍盛商場地下3號舖",
+          "tel": "852-26985208",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "電氣道",
+          "address": "香港北角電氣道183號友邦廣場地下5-6號",
+          "tel": "852-25667561",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "又一城",
+          "address": "九龍九龍塘達之路80號又一城MTR-09號舖",
+          "tel": "852-22657325",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西沙GO PARK 2",
+          "address": "新界西沙海映路8號西沙GO PARK 2 地下低層LG30號舖",
+          "tel": "852-23762408",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "俊宏軒",
+          "address": "新界天水圍天瑞路88號俊宏軒1樓104號舖",
+          "tel": "852-34011583",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "顯徑",
+          "address": "新界沙田顯徑邨顯徑購物中心地下113號",
+          "tel": "852-26810489",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海麗商場",
+          "address": "九龍深水埗海麗邨海麗商場地下12及13號舖",
+          "tel": "852-35146236",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "光華中心",
+          "address": "新界元朗阜材街34-36號光華中心地下4號舖",
+          "tel": "852-24431343",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新彩園廣場",
+          "address": "新界上水彩園邨彩園廣場3樓R8號舖",
+          "tel": "852-23620348",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新水渠道",
+          "address": "九龍太子水渠道38-42號寶石大樓地下B舖及天井",
+          "tel": "852-23451635",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "愛民商場",
+          "address": "九龍何文田愛民邨愛民廣場G17號舖",
+          "tel": "852-27123470",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "寶達",
+          "address": "九龍秀茂坪寶琳路寶達商場地下7號舖",
+          "tel": "852-21904256",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新沙田Baby",
+          "address": "新界沙田新城市廣場第三期二樓A213號舖",
+          "tel": "852-23425131",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上水中心",
+          "address": "新界上水智昌路3號上水中心2樓2077D-H號舖",
+          "tel": "852-27877202",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "小西灣廣場",
+          "address": "香港柴灣小西灣道小西灣廣場1樓110A號舖",
+          "tel": "852-28401114",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大河道",
+          "address": "新界荃灣大河道19號地下",
+          "tel": "852-24394712",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "翠屏道",
+          "address": "九龍觀塘翠屏(北)邨翠屏商場4A號舖",
+          "tel": "852-23480054",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "禾塘咀街",
+          "address": "新界葵興禾塘咀街85號地下",
+          "tel": "852-24246507",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "創紀之城",
+          "address": "九龍觀塘創紀之城5期apm1樓L1-28及L1-29號舖",
+          "tel": "852-31489369",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "長沙灣",
+          "address": "九龍長沙灣道833 號長沙灣廣場1 樓121-123 號舖",
+          "tel": "852-21484640",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "清河商場",
+          "address": "新界上水清河邨清河商場9號舖",
+          "tel": "852-26723267",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "菁田邨",
+          "address": "新界屯門菁田邨菁田商場地下G12號舖",
+          "tel": "852-24120310",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "荃新天地",
+          "address": "新界荃灣荃新天地地下G39及G41舖",
+          "tel": "852-26446573",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "八號花園",
+          "address": "新界大埔八號花園地下15-16號舖",
+          "tel": "852-26451044",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "恆安",
+          "address": "新界沙田馬鞍山恆安商場2樓221-222號舖",
+          "tel": "852-26400592",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "尖沙咀K11 MUSEA",
+          "address": "香港九龍尖沙咀梳士巴利道18號K11 MUSEA B2層B201號01B舖",
+          "tel": "852-27931047",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "葵涌商場",
+          "address": "新界葵涌上角街葵涌邨3期葵涌商場104號舗",
+          "tel": "852-22794093",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "葵興港鐵站",
+          "address": "新界葵興葵興港鐵站KWH5號舖",
+          "tel": "852-27870921",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "觀塘",
+          "address": "九龍觀塘通明街7號地下",
+          "tel": "852-23434003",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "荔枝角",
+          "address": "九龍深水埗荔枝角道316-318號地下",
+          "tel": "852-27257960",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "朗屏邨",
+          "address": "新界元朗朗屏邨5座鏡屏樓M樓M006,M007號舖",
+          "tel": "852-29445292",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西環聯康",
+          "address": "香港卑路乍街116-122及122A號聯康新樓地下C舖",
+          "tel": "852-28167776",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海怡西商場",
+          "address": "香港鴨俐洲海怡半島海怡廣場西座1樓 122 號舖",
+          "tel": "852-2537 5180",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "青衣城",
+          "address": "新界青衣青敬路33號青衣城二樓216-217號舖",
+          "tel": "852-24953783",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新蒲崗Mikiki",
+          "address": "九龍新蒲崗太子道東638號Mikiki地下G56號鋪",
+          "tel": "852-27635308",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "愛東",
+          "address": "香港筲箕灣愛東村愛東商場111號舖",
+          "tel": "852-25137343",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "百得",
+          "address": "新界沙田第一城商場G30-32號",
+          "tel": "852-26460884",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "珀麗灣",
+          "address": "新界馬灣珀麗灣珀麗路8 號地下S10 號舖",
+          "tel": "852-29863010",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "石蔭",
+          "address": "新界葵涌石蔭路96號天安樓地下1號舖",
+          "tel": "852-24017239",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "雙鳳街",
+          "address": "九龍黃大仙雙鳳街18號地下",
+          "tel": "852-23286364",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大圍火車站",
+          "address": "新界大圍港鐵站已繳費區12及13號舖",
+          "tel": "",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大榮里",
+          "address": "新界大埔大榮里34-38號及42-48號美發大廈地下E號舖",
+          "tel": "852-26380079",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "連理街商場",
+          "address": "新界將軍澳坑口連理街商場1樓119-121號舖",
+          "tel": "852-21410027",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "時代廣場",
+          "address": "香港銅鑼灣時代廣場9樓917號舖",
+          "tel": "852-25657455",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天耀",
+          "address": "新界天水圍天耀廣場地下L029號舖",
+          "tel": "852-24479395",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "慈雲山中心",
+          "address": "九龍慈雲山毓華街23號慈雲山中心5樓537-538號舖",
+          "tel": "852-28082493",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "東堤灣畔",
+          "address": "香港大嶼山東涌東堤灣畔地下3-4號舖",
+          "tel": "852-31474376",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "華富",
+          "address": "香港華富(一)邨華珍樓714-715號舖",
+          "tel": "852-25507553",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "灣仔光華",
+          "address": "香港灣仔軒尼詩道269至273號地下A及B號舖",
+          "tel": "852-25117036",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "寶翠園",
+          "address": "香港西環卑路乍街8號寶翠園西寶城2樓237舖",
+          "tel": "852-25427425",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "皇室堡",
+          "address": "香港銅鑼灣告士打道311 號皇室堡3樓311至312號舖",
+          "tel": "852-25633343",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "逸東商場",
+          "address": "香港新界東涌逸東街8號逸東商場1樓115及116號舖",
+          "tel": "852-24069408",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "油麻地",
+          "address": "九龍彌敦道494-496號晉利商業大廈地下",
+          "tel": "852-27706504",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "淘大商場",
+          "address": "九龍牛頭角道 77 號淘大商場二期地下183-185號",
+          "tel": "852-23313357",
+          "district": "觀塘區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "安泰大廈",
+          "address": "香港上環德輔道中144-148 號安泰大廈地下",
+          "tel": "852-25419813",
+          "district": "中西區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "般咸道",
+          "address": "香港般咸道57號地下",
+          "tel": "852-29640734",
+          "district": "中西區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "弼街",
+          "address": "香港九龍西洋菜南街218-220號及弼街41號生發大廈地下A及B號舖",
+          "tel": "852-23479628",
+          "district": "油尖旺區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "彩雲商場",
+          "address": "九龍牛池灣彩雲(一)邨彩雲商場2期高層地下A111號舖",
+          "tel": "852-28562456",
+          "district": "黃大仙區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "東薈城",
+          "address": "新界東涌東薈城名店倉5樓501號舖",
+          "tel": "852-27538179",
+          "district": "離島區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "大本型",
+          "address": "九龍油塘高超道38號大本型2樓233號舖",
+          "tel": "852-28703578",
+          "district": "觀塘區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "興東商場",
+          "address": "香港筲箕灣興東邨商場地下10號舖",
+          "tel": "852-29679736",
+          "district": "東區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "香港港鐵站",
+          "address": "香港香港港鐵站HOK48號舖",
+          "tel": "852-25580117",
+          "district": "中西區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "洪水橋",
+          "address": "新界元朗洪水橋洪堤路3號麗珊閣地下3號舖",
+          "tel": "852-24461571",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "藍灣廣場",
+          "address": "香港小西灣道28號藍灣廣場高層地下UG51 及UG52A號舖",
+          "tel": "852-34074481",
+          "district": "東區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "埃華街",
+          "address": "九龍大角咀51-65號埃華街大方樓地下3-4號舖",
+          "tel": "852-23812176",
+          "district": "油尖旺區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "李鄭屋",
+          "address": "九龍順寧道273號日輝大廈地下G11號",
+          "tel": "852-27256594",
+          "district": "深水埗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "都會豪庭",
+          "address": "新界將軍澳MCP Discovery 二樓205及208號舖",
+          "tel": "852-31946258",
+          "district": "西貢區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "Moko",
+          "address": "九龍旺角太子道西193號新世紀廣場一樓162號舖",
+          "tel": "852-23360377",
+          "district": "油尖旺區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "新翠商場",
+          "address": "香港柴灣新翠商場4樓1-11號",
+          "tel": "852-28979231",
+          "district": "東區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "新教育路",
+          "address": "新界元朗教育路9-13號興發大樓地下7號舖",
+          "tel": "852-24168156",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "新九龍廣場",
+          "address": "九龍大角咀道38號新九龍廣場地下56-59號",
+          "tel": "852-27874454",
+          "district": "油尖旺區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "皇后大道西",
+          "address": "香港皇后大道西230-236 號好時大廈地下C 舖",
+          "tel": "852-29754469",
+          "district": "中西區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "沙田廣場",
+          "address": "新界沙田沙田廣場3樓48號舖",
+          "tel": "852-24130004",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "碩門商場",
+          "address": "沙田碩門邨2期碩門商場P1層P12號舖",
+          "tel": "852-24209138",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "春園街",
+          "address": "香港灣仔春園街47至65號新春園大廈地下E及F舖",
+          "tel": "852-27930642",
+          "district": "灣仔區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "穗禾",
+          "address": "新界沙田穗禾購物中心地下G11,G12號",
+          "tel": "852-26053070",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "大圍",
+          "address": "新界沙田大圍道55-56號金禧花園10號地下",
+          "tel": "852-26983157",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "大元村",
+          "address": "新界大埔大元商場新翼地下1號舖",
+          "tel": "852-26678645",
+          "district": "大埔區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "天澤",
+          "address": "新界天水圍天瑞路71, 73, 75及77號天澤邨天澤商場2樓210A舖",
+          "tel": "852-28683007",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "天瑞商場",
+          "address": "新界天水圍天瑞邨天瑞商場地下G21號舖",
+          "tel": "852-26599912",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "愉翠商場",
+          "address": "新界沙田愉翠苑愉翠苑商場1樓119-120號舖",
+          "tel": "852-26474719",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        }
+      ]
+    },
+    "spray-pmd": {
+      "manningsCode": "678201",
+      "manningsUrl": "https://www.mannings.com.hk/zh-hant/ding-ding-mosquito-and-insect-repellent-spray-70ml/p/678201",
+      "storeCount": 284,
+      "stores": [
+        {
+          "name": "中港城",
+          "address": "九龍尖沙咀廣東道33號中港城地下11及11A號舖",
+          "tel": "852-27527938",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海港城",
+          "address": "九龍海港城港威商場三階3304號舖",
+          "tel": "852-26799313",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "置地廣場",
+          "address": "香港中環皇后大道中15號置地廣場中庭3樓312號舖",
+          "tel": "852-34602024",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "四海大廈",
+          "address": "九龍尖沙咀彌敦道208-212號四海大廈地下A舖",
+          "tel": "852-27206044",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "機利臣街",
+          "address": "香港灣仔莊士敦道18號嘉寧大厦地下C,E,F,G 及 J 舖",
+          "tel": "852-21119641",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新軒尼詩道",
+          "address": "香港灣仔軒尼詩道388號Mall Plus地下G08舖",
+          "tel": "852-25742675",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "逸東商場",
+          "address": "香港新界東涌逸東街8號逸東商場1樓115及116號舖",
+          "tel": "852-24069408",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新海防道",
+          "address": "九龍尖沙咀海防道38-40號中達大廈地下及天井",
+          "tel": "852-23619645",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "元朗廣場",
+          "address": "新界元朗廣場1樓130及181-183號鋪",
+          "tel": "852-23206205",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "山東街",
+          "address": "九龍旺角山東街47-51號中橋商業大廈星際城市地下10-13號舖",
+          "tel": "852-27707920",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上水Baby",
+          "address": "新界上水龍運街8號新都廣場106a號舖",
+          "tel": "852-23253728",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天璽天",
+          "address": "九龍啟德協調道10號天璽．天低層地下LG28, LG30 及 LG32號舖",
+          "tel": "852-2782-5518",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新沙田Baby",
+          "address": "新界沙田新城市廣場第三期二樓A213號舖",
+          "tel": "852-23425131",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新香港仔",
+          "address": "香港香港仔香港仔大道170至172號海滙大厦地下",
+          "tel": "852-25751455",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "坪石邨",
+          "address": "九龍坪石邨玉石樓地下117 - 120號舖",
+          "tel": "852-25651300",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門仁政街",
+          "address": "新界屯門仁政街26A富華大廈地下C-E號",
+          "tel": "852-24505219",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "雅蘭中心",
+          "address": "九龍彌敦道625及639號雅蘭中心地下G20-22號舖",
+          "tel": "852-27926021",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新彩明商場",
+          "address": "新界將軍澳彩明商場310號舖",
+          "tel": "852-27830728",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "竹園",
+          "address": "九龍竹園南村竹園商場1樓S101號",
+          "tel": "852-27261645",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西沙GO PARK 2",
+          "address": "新界西沙海映路8號西沙GO PARK 2 地下低層LG30號舖",
+          "tel": "852-23762408",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "跑馬地",
+          "address": "香港跑馬地成和道25-27號地下",
+          "tel": "852-25756904",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "孔雀樓",
+          "address": "九龍牛頭角道281號觀塘花園大廈孔雀樓地下281號舖",
+          "tel": "852-27934773",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新北江",
+          "address": "新界元朗天水圍新北江廣場1樓C61及62舖",
+          "tel": "852-21499358",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "灣仔Tower 188",
+          "address": "香港灣仔軒尼詩道188-190號Tower 188 地下",
+          "tel": "852-26338701",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "禾輋",
+          "address": "新界沙田禾輋邨商場2樓261號舖",
+          "tel": "852-26924850",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "元朗大馬路",
+          "address": "新界元朗青山公路元朗段118號地下2A及2B號舖",
+          "tel": "852-26205143",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "圓方",
+          "address": "九龍柯士甸道西一號圓方1樓1092號舖",
+          "tel": "852-21968125",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "國際金融中心",
+          "address": "香港中環港景街1號國際金融中心商場第二層2004號",
+          "tel": "852-25239672",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新康怡廣場",
+          "address": "香港康山道1-2號康怡廣場2樓S30號及東上橋S8至S10號舖",
+          "tel": "852-26500412",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "山景商場",
+          "address": "新界屯門山景村山景商場低層地下106C及106D號",
+          "tel": "852-2471 2530",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "雍盛商埸",
+          "address": "新界粉嶺雍盛苑雍盛商場地下3號舖",
+          "tel": "852-26985208",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "福昌樓",
+          "address": "香港鰂魚涌英皇道1032-1044號福昌樓低層地下102號舖",
+          "tel": "852-25661406",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "恆福商場",
+          "address": "新界屯門青山公路333號青山灣段恆福商場2樓213-214號舖",
+          "tel": "852-29775110",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "國際廣場",
+          "address": "九龍尖沙咀彌敦道63號國際廣場MTR樓層17, 20-23號舖",
+          "tel": "852-27049273",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "啟田商場",
+          "address": "九龍觀塘藍田啟田商場2樓228號舖",
+          "tel": "852-25131112",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大埔超級城",
+          "address": "新界大埔大埔超級城A區2樓055-056號",
+          "tel": "852-29979431",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "華光勵精中心",
+          "address": "香港中環皇后大道中88號勵精中心地下2號",
+          "tel": "852-25371241",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西九龍站",
+          "address": "九龍尖沙咀柯士甸道西3號香港西九龍站售票大堂B1-2號舖",
+          "tel": "852-27912077",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "彩雲商場",
+          "address": "九龍牛池灣彩雲(一)邨彩雲商場2期高層地下A111號舖",
+          "tel": "852-28562456",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "花都廣場",
+          "address": "新界粉嶺百和路88號花都廣場地下A56-A59號",
+          "tel": "852-26826217",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富泰",
+          "address": "新界屯門屯貴路9號富泰商場2樓211號舖",
+          "tel": "852-24537242",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富蝶商場",
+          "address": "新界大埔富蝶邨二期富蝶商場地下15號舖",
+          "tel": "852-24539128",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "河內道 K11",
+          "address": "九龍尖沙咀河內道18號K11地庫1層B109-B110號舖",
+          "tel": "852-31224037",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "美林商場",
+          "address": "新界大圍美林邨美林商場地下20-22號舖",
+          "tel": "852-34223254",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "美田商場",
+          "address": "新界大圍美田邨美田商場1樓103及104號舖",
+          "tel": "852-26345340",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "都會豪庭",
+          "address": "新界將軍澳MCP Discovery 二樓205及208號舖",
+          "tel": "852-31946258",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新翠商場",
+          "address": "香港柴灣新翠商場4樓1-11號",
+          "tel": "852-28979231",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "愛東",
+          "address": "香港筲箕灣愛東村愛東商場111號舖",
+          "tel": "852-25137343",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "利港中心",
+          "address": "香港香港仔利港中心1樓 106-107號舖",
+          "tel": "852-25806607",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新蒲崗",
+          "address": "九龍康強街35-49號地下2號舖",
+          "tel": "852-27570821",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "尚德商場",
+          "address": "新界將軍澳唐明街2號尚德邨尚德商場1樓109號舖",
+          "tel": "852-24505818",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "翠林新城",
+          "address": "新界將軍澳翠林邨翠林新城5樓101號舖",
+          "tel": "852-27019793",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "灣仔光華",
+          "address": "香港灣仔軒尼詩道269至273號地下A及B號舖",
+          "tel": "852-25117036",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "油麗商場",
+          "address": "九龍油塘油麗商場地下9 號舖",
+          "tel": "852-26703400",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "般咸道",
+          "address": "香港般咸道57號地下",
+          "tel": "852-29640734",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "菁田邨",
+          "address": "新界屯門菁田邨菁田商場地下G12號舖",
+          "tel": "852-24120310",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "嘉福商場",
+          "address": "新界粉嶺嘉褔邨嘉褔商場1樓111號舖",
+          "tel": "852-29473272",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上水廣場",
+          "address": "新界上水石湖墟龍琛路39號上水廣場4樓419-423舖",
+          "tel": "852-24800034",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "牛頭角下邨",
+          "address": "九龍牛頭角下邨廣場地下2及3號舖",
+          "tel": "852-21471022",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新蒲崗Mikiki",
+          "address": "九龍新蒲崗太子道東638號Mikiki地下G56號鋪",
+          "tel": "852-27635308",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新城市廣場",
+          "address": "新界沙田新城市廣場一期3樓307及307A號舖",
+          "tel": "852-26034318",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西貢",
+          "address": "新界西貢福民路22-40號西貢苑地下26-27號舖",
+          "tel": "852-27914432",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "小西灣廣場",
+          "address": "香港柴灣小西灣道小西灣廣場1樓110A號舖",
+          "tel": "852-28401114",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "耀東商場",
+          "address": "香港筲箕灣耀東邨耀東商場2樓201號舖",
+          "tel": "852-25607135",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "長康商場",
+          "address": "新界青衣長康邨長康商場2期3樓301號舖",
+          "tel": "852-24979068",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "長沙灣",
+          "address": "九龍長沙灣道833 號長沙灣廣場1 樓121-123 號舖",
+          "tel": "852-21484640",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "置樂花園",
+          "address": "新界屯門置樂花園地下66A號舖",
+          "tel": "852-24049790",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "又一城",
+          "address": "九龍九龍塘達之路80號又一城MTR-09號舖",
+          "tel": "852-22657325",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富山邨",
+          "address": "九龍富山邨富仁樓 LG2層L203-204號舖",
+          "tel": "852-27152904",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "杏花",
+          "address": "香港柴灣杏花村杏花新城157-159號舖",
+          "tel": "852-29765694",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "興東商場",
+          "address": "香港筲箕灣興東邨商場地下10號舖",
+          "tel": "852-29679736",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海富",
+          "address": "九龍旺角西海泓道海富苑海富商場101舖",
+          "tel": "852-29940743",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "滿樂坊",
+          "address": "香港大嶼山東涌松滿路7號滿東邨滿樂坊地下2號餔",
+          "tel": "852-27299920",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "觀塘",
+          "address": "九龍觀塘通明街7號地下",
+          "tel": "852-23434003",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "麗港城",
+          "address": "九龍觀塘茶果嶺道88號麗港城商場地下34及36號舖",
+          "tel": "852-23799072",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "樂富廣場",
+          "address": "九龍黃大仙聯合道198號樂富廣場3樓3183A號舖",
+          "tel": "852-23091114",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新寶怡花園",
+          "address": "新界屯門良德街11號寶怡花園地下17-18號",
+          "tel": "852-24885211",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新荔枝角",
+          "address": "九龍荔枝角道50-52號大華大廈地下B及C舖",
+          "tel": "852-27257208",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "繽紛購物城",
+          "address": "九龍紅磡德民街1-15號繽紛購物城1字樓E",
+          "tel": "852-23346429",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "博康",
+          "address": "新界沙田博康邨博康商場107-109號舖",
+          "tel": "852-26356390",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大圍",
+          "address": "新界沙田大圍道55-56號金禧花園10號地下",
+          "tel": "852-26983157",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大圍新翠",
+          "address": "新界沙田大圍新翠邨新翠商場地下7號舖",
+          "tel": "852-23256623",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "德田商場",
+          "address": "九龍藍田碧雲道223號德田商場1樓103號舖",
+          "tel": "852-27178173",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "淘大商場",
+          "address": "九龍牛頭角道 77 號淘大商場二期地下183-185號",
+          "tel": "852-23313357",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "長亨商場",
+          "address": "新界青衣長亨邨長亨商場3樓313-315號舖",
+          "tel": "852-23453578",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富昌商場",
+          "address": "九龍深水埗富昌邨富昌商場1樓F110號舖",
+          "tel": "852-27581090",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "埃華街",
+          "address": "九龍大角咀51-65號埃華街大方樓地下3-4號舖",
+          "tel": "852-23812176",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "荔枝角",
+          "address": "九龍深水埗荔枝角道316-318號地下",
+          "tel": "852-27257960",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "Moko",
+          "address": "九龍旺角太子道西193號新世紀廣場一樓162號舖",
+          "tel": "852-23360377",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新元州街",
+          "address": "九龍深水埗元州街388號肇如大廈地下B舖",
+          "tel": "852-27715707",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新形點Baby",
+          "address": "新界元朗朗日路9號形點I 2樓2008號舖",
+          "tel": "852-24709371",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海翠坊",
+          "address": "新界屯門湖翠路168-236號海翠坊1號及85-86號舖",
+          "tel": "852-24416769",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "安泰商場",
+          "address": "九龍觀塘安泰邨安泰商場地下高層105號舖",
+          "tel": "852-23857018",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "悅來坊",
+          "address": "新界荃灣荃華街3號悅來酒店悅來坊商場地庫1B118室",
+          "tel": "852-25410938",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新康街",
+          "address": "新界上水新康街96號地下",
+          "tel": "852-26721376",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "秀茂坪",
+          "address": "九龍秀茂坪邨秀茂坪商場1 樓108 號舖",
+          "tel": "852-23548572",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "盛芳街",
+          "address": "新界葵涌盛芳街38-44號寬德大廈地下8-10號舖",
+          "tel": "852-26234561",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新寶廣場",
+          "address": "九龍佐敦道23號新寶廣場地下1號舖",
+          "tel": "852-27826327",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "兆康苑",
+          "address": "新界屯門兆康苑兆康商場226號舖",
+          "tel": "852-27933270",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大元村",
+          "address": "新界大埔大元商場新翼地下1號舖",
+          "tel": "852-26678645",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "翠屏道",
+          "address": "九龍觀塘翠屏(北)邨翠屏商場4A號舖",
+          "tel": "852-23480054",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "皇室堡",
+          "address": "香港銅鑼灣告士打道311 號皇室堡3樓311至312號舖",
+          "tel": "852-25633343",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "欣田商場",
+          "address": "新界屯門欣田邨欣田商場地下G06號舖",
+          "tel": "852-24705490",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "創紀之城",
+          "address": "九龍觀塘創紀之城5期apm1樓L1-28及L1-29號舖",
+          "tel": "852-31489369",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "宇宙商場",
+          "address": "九龍深水埗青山道164-170號宇宙商場地下G18A-B",
+          "tel": "852-27297840",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "康橋大廈",
+          "address": "香港鰂魚涌太古坊康橋大廈地下A舖",
+          "tel": "852-22844811",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "雲景道",
+          "address": "香港北角雲景道33號",
+          "tel": "852-28071853",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "囍逸",
+          "address": "新界粉嶺和豐街28號囍逸地下5號舖",
+          "tel": "852-26901020",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "翔龍灣",
+          "address": "九龍馬頭角新碼頭街38號翔龍灣廣場地下2號舖",
+          "tel": "852-22622764",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "香港港鐵站",
+          "address": "香港香港港鐵站HOK48號舖",
+          "tel": "852-25580117",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新土瓜灣",
+          "address": "九龍土瓜灣土瓜灣道70-80W號定安大廈地下31號舖",
+          "tel": "852-23560720",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "藍灣廣場",
+          "address": "香港小西灣道28號藍灣廣場高層地下UG51 及UG52A號舖",
+          "tel": "852-34074481",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "葵興港鐵站",
+          "address": "新界葵興葵興港鐵站KWH5號舖",
+          "tel": "852-27870921",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "李鄭屋",
+          "address": "九龍順寧道273號日輝大廈地下G11號",
+          "tel": "852-27256594",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新港城",
+          "address": "新界馬鞍山新港城中心二樓2108舖",
+          "tel": "852-26336674",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新水渠道",
+          "address": "九龍太子水渠道38-42號寶石大樓地下B舖及天井",
+          "tel": "852-23451635",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門Novo Walk",
+          "address": "新界屯門欣寶路8號NOVO WALK 地下22及23號舖",
+          "tel": "852-24735468",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "皇后大道西",
+          "address": "香港皇后大道西230-236 號好時大廈地下C 舖",
+          "tel": "852-29754469",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "帝庭軒",
+          "address": "新界粉嶺聯和墟和滿街8號帝庭軒一期商場一樓1&2號舖",
+          "tel": "852-29475793",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大埔道",
+          "address": "九龍大埔道168-178號南都大廈地下4-5號舖",
+          "tel": "852-23195295",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上水中心",
+          "address": "新界上水智昌路3號上水中心2樓2077D-H號舖",
+          "tel": "852-27877202",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上環",
+          "address": "香港皇后大道中368號偉利大廈1樓 6 號舖",
+          "tel": "852-25434464",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "水泉澳廣場",
+          "address": "新界沙田水泉澳邨水泉澳廣場2樓204號舖",
+          "tel": "852-28138602",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "順天",
+          "address": "九龍順天邨天權樓地下9-10號舖",
+          "tel": "852-27636705",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "土瓜灣(美景大廈)",
+          "address": "九龍土瓜灣道美景大廈地下243A",
+          "tel": "852-29544976",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "將軍澳Baby",
+          "address": "新界將軍澳唐俊街9號pop Corn1樓F68號舖",
+          "tel": "852-27521167",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門市廣場",
+          "address": "新界屯門屯順街1號屯門市廣場1期2樓2199B-2199F號舖",
+          "tel": "852-24041372",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "東堤灣畔",
+          "address": "香港大嶼山東涌東堤灣畔地下3-4號舖",
+          "tel": "852-31474376",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "運頭塘",
+          "address": "新界大埔運頭塘邨商場29舖",
+          "tel": "852-26513448",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "寶翠園",
+          "address": "香港西環卑路乍街8號寶翠園西寶城2樓237舖",
+          "tel": "852-25427425",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "油麻地",
+          "address": "九龍彌敦道494-496號晉利商業大廈地下",
+          "tel": "852-27706504",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "愉翠商場",
+          "address": "新界沙田愉翠苑愉翠苑商場1樓119-120號舖",
+          "tel": "852-26474719",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "漁灣邨",
+          "address": "香港柴灣漁灣邨漁豐樓地下2號舖",
+          "tel": "852-29760646",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "啟德Airside",
+          "address": "九龍啟德協調道2號AIRSIDE地庫1層B119-B120號舖",
+          "tel": "852-27746011",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "麗城薈",
+          "address": "新界荃灣青山公路625號麗城薈3期地下23,24及26號舖",
+          "tel": "852-23579476",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "卓爾居",
+          "address": "屯門石排頭徑1號卓爾居地下G2A號舖",
+          "tel": "852-27939303",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "八號花園",
+          "address": "新界大埔八號花園地下15-16號舖",
+          "tel": "852-26451044",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "錦繡花園",
+          "address": "新界元朗錦繡花園D座地下2號舖",
+          "tel": "852-24710279",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富運",
+          "address": "九龍彌敦道573號富運中心地下A舖",
+          "tel": "852-27830044",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "尖沙咀K11 MUSEA",
+          "address": "香港九龍尖沙咀梳士巴利道18號K11 MUSEA B2層B201號01B舖",
+          "tel": "852-27931047",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西鐵兆康站",
+          "address": "新界兆康港鐵站 6-9 號舖",
+          "tel": "852-24629309",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "葵芳",
+          "address": "新界葵芳新都會廣場 4 樓 417-419 號舖",
+          "tel": "852-29736118",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "賴恩樓",
+          "address": "香港上環皇后大道西42-56號賴恩樓地下A號舖",
+          "tel": "852-28052710",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "瀝源",
+          "address": "新界沙田瀝源邨瀝源商場二樓214號舖",
+          "tel": "852-26964932",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "落馬洲離境",
+          "address": "新界落馬洲港鐵站 LMC 119-120舖",
+          "tel": "852-34046533",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "落馬洲港鐵站",
+          "address": "新界落馬洲港鐵站LMC117號舖",
+          "tel": "852-24225501",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "樂華商場",
+          "address": "九龍牛頭角樂華南及北邨樂華商場3樓314號舖",
+          "tel": "852-23436975",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "港灣豪庭廣場",
+          "address": "九龍大角咀福利街 8 號港灣豪庭廣場1樓109-110號舖",
+          "tel": "852-31443490",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新青山道",
+          "address": "九龍長沙灣青山道476號百佳商業中心地下",
+          "tel": "852-21484912",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "寶琳邨",
+          "address": "新界將軍澳寶琳北路18號寶琳邨寶勤樓地下116及117號舖",
+          "tel": "852-24748002",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "石硤尾",
+          "address": "九龍石硤尾窩仔街1-13號仁寶大廈地下A舖",
+          "tel": "852-27786375",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "雙鳳街",
+          "address": "九龍黃大仙雙鳳街18號地下",
+          "tel": "852-23286364",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "蘇屋商場",
+          "address": "深水埗蘇屋邨蘇屋商場地下G12號舖",
+          "tel": "852-27156052",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "春園街",
+          "address": "香港灣仔春園街47至65號新春園大廈地下E及F舖",
+          "tel": "852-27930642",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大河道",
+          "address": "新界荃灣大河道19號地下",
+          "tel": "852-24394712",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天澤",
+          "address": "新界天水圍天瑞路71, 73, 75及77號天澤邨天澤商場2樓210A舖",
+          "tel": "852-28683007",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天晴商場",
+          "address": "新界天水圍天晴邨天晴商場8號舖",
+          "tel": "852-23504422",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天盛商場",
+          "address": "新界元朗天水圍天靖街3號天盛苑天盛商場1樓L102號舖",
+          "tel": "852-25093298",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門V City Baby",
+          "address": "新界屯門屯門鄉事會路83號V City MTR層M-72號舖",
+          "tel": "852-24159590",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "碧湖花園",
+          "address": "新界粉嶺一鳴道15號碧湖花園商場地下高層19-21號舖",
+          "tel": "852-27607424",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "碧堤坊",
+          "address": "新界深井青山公路33號碧堤坊3樓8號舖",
+          "tel": "852-31041054",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "弼街",
+          "address": "香港九龍西洋菜南街218-220號及弼街41號生發大廈地下A及B號舖",
+          "tel": "852-23479628",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "窩打老道",
+          "address": "九龍窩打老道86D 萬基大廈地下 A&B1A號",
+          "tel": "852-27607742",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "晴朗商場",
+          "address": "九龍九龍城沐翠街晴朗商場地下A004號舖位",
+          "tel": "852-28664493",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "駿洋商場",
+          "address": "新界沙田火炭駿洋邨駿洋商場G層G13號舖",
+          "tel": "852-24672342",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "東薈城",
+          "address": "新界東涌東薈城名店倉5樓501號舖",
+          "tel": "852-27538179",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西九龍中心",
+          "address": "九龍深水埗欽洲街37K西九龍中心5樓501B",
+          "tel": "852-23878262",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富健花園",
+          "address": "新界屯門龍門道45號富健花園55, 56 & 58號舖",
+          "tel": "852-24539074",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "顯徑",
+          "address": "新界沙田顯徑邨顯徑購物中心地下113號",
+          "tel": "852-26810489",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "麗閣商場",
+          "address": "九龍深水埗麗閣邨麗閣商場地下G01及G02號舖",
+          "tel": "852-27551089",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "朗屏邨",
+          "address": "新界元朗朗屏邨5座鏡屏樓M樓M006,M007號舖",
+          "tel": "852-29445292",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "綠楊",
+          "address": "新界荃灣綠楊坊平台 P11A & P11B",
+          "tel": "852-24923224",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新都城二期",
+          "address": "新界將軍澳新都城中心二期1樓 1116至1118號舖",
+          "tel": "852-26249599",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新教育路",
+          "address": "新界元朗教育路9-13號興發大樓地下7號舖",
+          "tel": "852-24168156",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新荃灣廣場",
+          "address": "新界荃灣荃灣廣場3樓308-313號舖",
+          "tel": "852-26434628",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "如心廣場",
+          "address": "新界荃灣楊屋道8號如心廣場一期2樓202B及203號舖",
+          "tel": "852-24132708",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "將軍澳中心",
+          "address": "新界西貢將軍澳唐德街9號將軍澳中心1樓117號舖",
+          "tel": "852-27154156",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "總統戲院",
+          "address": "香港銅鑼灣謝菲道517號地下B舖",
+          "tel": "852-25745483",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "太子",
+          "address": "九龍大埔道10A地下",
+          "tel": "852-27846580",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "羅便臣道",
+          "address": "香港西摩道1號輝煌臺地下8 號舖",
+          "tel": "852-25404307",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上水新豐路",
+          "address": "新界上水石湖墟新豐路122-130號龍霞樓地下A & B舖",
+          "tel": "852-26720954",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "石籬商場",
+          "address": "石籬商場",
+          "tel": "852-26531092",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "石蔭",
+          "address": "新界葵涌石蔭路96號天安樓地下1號舖",
+          "tel": "852-24017239",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "穗禾",
+          "address": "新界沙田穗禾購物中心地下G11,G12號",
+          "tel": "852-26053070",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新鴻基中心",
+          "address": "香港灣仔新鴻基中心地下G14-G18號舖",
+          "tel": "852-25112927",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "T Town South",
+          "address": "新界元朗天水圍天華路30號T Town South地下SG25號舖",
+          "tel": "852-24501167",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大興",
+          "address": "新界屯門大興街1號大興邨商場地下L107號舖",
+          "tel": "852-23856177",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "圍方",
+          "address": "新界沙田圍方3樓302-303號舖",
+          "tel": "852-26772532",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "爵祿街",
+          "address": "九龍新蒲崗爵祿街74-76號地下",
+          "tel": "852-23212619",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "青衣",
+          "address": "新界青衣長發廣場2樓217號舖",
+          "tel": "852-24331433",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "荃錦中心",
+          "address": "新界荃灣荃錦中心110-125號",
+          "tel": "852-24987843",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門HANDS",
+          "address": "新界屯門友愛路友愛邨H.A.N.D.S. S區2樓S-229及S-230號舖",
+          "tel": "852-26598220",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "華富",
+          "address": "香港華富(一)邨華珍樓714-715號舖",
+          "tel": "852-25507553",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "置富",
+          "address": "香港薄扶林置富南區廣場3樓303號室",
+          "tel": "852-28750400",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "元朗鳳琴街",
+          "address": "新界元朗鳳琴街15-21號鴻運中心地下73號",
+          "tel": "852-24781165",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "翠華花園",
+          "address": "新界沙田沙角街7-11號翠華花園地下12-13號舖",
+          "tel": "852-26461483",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "恆安",
+          "address": "新界沙田馬鞍山恆安商場2樓221-222號舖",
+          "tel": "852-26400592",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海麗商場",
+          "address": "九龍深水埗海麗邨海麗商場地下12及13號舖",
+          "tel": "852-35146236",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "洪福商場",
+          "address": "新界元朗洪水橋洪福商場地下9-10號舖",
+          "tel": "852-28902387",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "啟鑽商場",
+          "address": "九龍黃大仙鑽石山啟鑽苑二期啟鑽商場B1樓B14號舖",
+          "tel": "852-27870931",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "廣褔商場",
+          "address": "新界大埔廣福邨廣福商場1樓206-209號舖",
+          "tel": "852-26577970",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "銀湖天峰",
+          "address": "新界馬鞍山西沙路599號銀湖天峰G10號舖",
+          "tel": "852-23149078",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "梨木樹商場",
+          "address": "新界荃灣梨木樹商場125號舖",
+          "tel": "852-24215192",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "鯉魚門廣場",
+          "address": "九龍油塘鯉魚門廣場1樓140號舖",
+          "tel": "852-27583770",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "良景",
+          "address": "新界屯門良景邨良景廣場2樓L217號舖",
+          "tel": "852-24550949",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "馬頭角道",
+          "address": "九龍九龍城馬頭角道金都豪苑地下3-4號舖",
+          "tel": "852-27144547",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "青衣城",
+          "address": "新界青衣青敬路33號青衣城二樓216-217號舖",
+          "tel": "852-24953783",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "萬事達廣場",
+          "address": "九龍美孚新邨荔灣道萬事達廣場N72號地下",
+          "tel": "852-27850295",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新西灣河",
+          "address": "香港筲箕灣道326至332號康泰大樓地下4號舖",
+          "tel": "852-25413908",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "珀麗灣",
+          "address": "新界馬灣珀麗灣珀麗路8 號地下S10 號舖",
+          "tel": "852-29863010",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "駿景廣場",
+          "address": "新界火炭駿景廣場G63-65號舖",
+          "tel": "852-25927482",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "寶來街",
+          "address": "九龍紅磡湖光街1-7號地下17 G1A 號舖",
+          "tel": "852-23341039",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "元朗壽富街",
+          "address": "新界元朗壽富街51-59元朗中心地下4A及4B號舖",
+          "tel": "852-24793219",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "沙田廣場",
+          "address": "新界沙田沙田廣場3樓48號舖",
+          "tel": "852-24130004",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "T1 6W532 禁區西大堂",
+          "address": "香港大嶼山香港國際機場一號客運大樓6 樓離港層(禁區) 6W532號舖",
+          "tel": "852-28901287",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "太古城",
+          "address": "香港太古城道18號太古城中心第一期420舖",
+          "tel": "852-29070621",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "德褔中心",
+          "address": "九龍九龍灣德褔廣場第一期F16A & F17-F17A號舖",
+          "tel": "852-27986458",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "黃大仙中心北館",
+          "address": "九龍黃大仙龍翔道136號黃大仙中心北館2樓N210A號舖",
+          "tel": "852-23503200",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "連理街商場",
+          "address": "新界將軍澳坑口連理街商場1樓119-121號舖",
+          "tel": "852-21410027",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天瑞商場",
+          "address": "新界天水圍天瑞邨天瑞商場地下G21號舖",
+          "tel": "852-26599912",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門時代廣場",
+          "address": "新界屯門時代廣場南翼3樓8,9及39號舖",
+          "tel": "852-24417153",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "荃灣千色匯",
+          "address": "新界荃灣眾安街68號荃灣千色匯I期地下G016-G017舖",
+          "tel": "852-26609030",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "元朗同樂街",
+          "address": "新界元朗同樂街21號地下",
+          "tel": "852-24090275",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門V City",
+          "address": "新界屯門屯門鄉事會路83號V City MTR層28、29、30及31號舖",
+          "tel": "852-23423428",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "形點",
+          "address": "新界元朗朗日路8-9號及元龍街9號形點2樓A212a號舖",
+          "tel": "852-24489700",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "長沙灣道",
+          "address": "九龍長沙灣道226-242號金華大廈地下B6 & B7號舖",
+          "tel": "852-23922036",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "荃新天地",
+          "address": "新界荃灣荃新天地地下G39及G41舖",
+          "tel": "852-26446573",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大本型",
+          "address": "九龍油塘高超道38號大本型2樓233號舖",
+          "tel": "852-28703578",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "東港城",
+          "address": "新界將軍澳重華路8號東港城2樓238B號舖",
+          "tel": "852-26284027",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "電氣道",
+          "address": "香港北角電氣道183號友邦廣場地下5-6號",
+          "tel": "852-25667561",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "俊宏軒",
+          "address": "新界天水圍天瑞路88號俊宏軒1樓104號舖",
+          "tel": "852-34011583",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "恒隆中心",
+          "address": "香港銅鑼灣百德新街2-20號恒隆中心地下G02號舖",
+          "tel": "852-25681407",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "興華商場",
+          "address": "香港柴灣興華商場地下G05及G06號舖",
+          "tel": "852-25055219",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "紅磡廣場",
+          "address": "九龍紅磡馬頭圍道37-41號紅磡廣場一樓54-60號舖",
+          "tel": "852-23343848",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "葵盛東邨",
+          "address": "新界葵涌葵盛東邨葵盛東商場1樓131號舖",
+          "tel": "852-24971029",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "光華中心",
+          "address": "新界元朗阜材街34-36號光華中心地下4號舖",
+          "tel": "852-24431343",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "鯉景灣",
+          "address": "香港鯉景灣太安街25號D段地下GD20至21A舖",
+          "tel": "852-29678970",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "羅湖港鐵站",
+          "address": "新界羅湖港鐵站LOW 108 號舖",
+          "tel": "852-31424790",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西環聯康",
+          "address": "香港卑路乍街116-122及122A號聯康新樓地下C舖",
+          "tel": "852-28167776",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海怡西商場",
+          "address": "香港鴨俐洲海怡半島海怡廣場西座1樓 122 號舖",
+          "tel": "852-2537 5180",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "北角",
+          "address": "香港北角英皇道386-388號北港商業大廈地下B",
+          "tel": "852-25712621",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "愛民商場",
+          "address": "九龍何文田愛民邨愛民廣場G17號舖",
+          "tel": "852-27123470",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "奧海城2期",
+          "address": "九龍大角咀奧海城商場2期1樓142-143號舖",
+          "tel": "852-22724972",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "安達商場",
+          "address": "九龍觀塘安達邨安達商場地下低層LG02號舖",
+          "tel": "852-28871055",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "百得",
+          "address": "新界沙田第一城商場G30-32號",
+          "tel": "852-26460884",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "寶達",
+          "address": "九龍秀茂坪寶琳路寶達商場地下7號舖",
+          "tel": "852-21904256",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "沙角商場",
+          "address": "新界沙田沙角街5號沙角商場2樓235號舖",
+          "tel": "852-27601161",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "碩門商場",
+          "address": "沙田碩門邨2期碩門商場P1層P12號舖",
+          "tel": "852-24209138",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "T2 7TL075 離境大堂",
+          "address": "香港大嶼山香港國際機場二號客運大樓七樓離境大堂7TL075號舖",
+          "tel": "852-25605908",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大埔超級城Baby",
+          "address": "新界大埔大埔超級城B區2樓269-270號舖",
+          "tel": "852-26334906",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大窩口",
+          "address": "新界葵涌大窩口邨大窩口第一商場1樓B01及B02號舖",
+          "tel": "852-26339341",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "時代廣場",
+          "address": "香港銅鑼灣時代廣場9樓917號舖",
+          "tel": "852-25657455",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天水圍港鐵站",
+          "address": "新界天水圍天水圍港鐵站TIS 30-33號舖",
+          "tel": "852-24450618",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "慈雲山中心",
+          "address": "九龍慈雲山毓華街23號慈雲山中心5樓537-538號舖",
+          "tel": "852-28082493",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "馬鞍山",
+          "address": "新界馬鞍山保泰街16號地下G10",
+          "tel": "852-26432059",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西環",
+          "address": "香港皇后大道西572-574號高良大廈地下",
+          "tel": "852-29864386",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "禾塘咀街",
+          "address": "新界葵興禾塘咀街85號地下",
+          "tel": "852-24246507",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "安泰大廈",
+          "address": "香港上環德輔道中144-148 號安泰大廈地下",
+          "tel": "852-25419813",
+          "district": "中西區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "偉景花園",
+          "address": "新界青衣青綠街1號偉景花園商場地下8-11號",
+          "tel": "852-24345651",
+          "district": "葵青區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "北角城",
+          "address": "香港英皇道250號 北角城中心地下02號舖",
+          "tel": "852-21740812",
+          "district": "東區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "富亨",
+          "address": "新界大埔富亨邨富亨購物中心28號",
+          "tel": "852-26614324",
+          "district": "大埔區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "鳳德商場",
+          "address": "九龍黃大仙鳳德商場2樓213及214號舖",
+          "tel": "852-23200446",
+          "district": "黃大仙區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "洪水橋",
+          "address": "新界元朗洪水橋洪堤路3號麗珊閣地下3號舖",
+          "tel": "852-24461571",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "啟德體育園",
+          "address": "香港九龍九龍城啟德體育園啟德零售館1, 2樓 M1-204號舖",
+          "tel": "852-23342278",
+          "district": "九龍城區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "葵涌商場",
+          "address": "新界葵涌上角街葵涌邨3期葵涌商場104號舗",
+          "tel": "852-22794093",
+          "district": "葵青區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "廣源",
+          "address": "新界沙田廣源邨商場第四座1-3號",
+          "tel": "852-26356995",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "沙田萬怡酒店",
+          "address": "新界沙田安平街一號地下2A號舖",
+          "tel": "852-25950408",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "美孚",
+          "address": "九龍美孚新邨百老匯街69-119號地下99B",
+          "tel": "852-27429664",
+          "district": "深水埗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "新卑路乍街",
+          "address": "香港卑路乍街57-61號利達樓地下1號",
+          "tel": "852-28198361",
+          "district": "中西區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "新彩園廣場",
+          "address": "新界上水彩園邨彩園廣場3樓R8號舖",
+          "tel": "852-23620348",
+          "district": "北區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "新九龍廣場",
+          "address": "九龍大角咀道38號新九龍廣場地下56-59號",
+          "tel": "852-27874454",
+          "district": "油尖旺區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "荷里活廣場",
+          "address": "九龍鑽石山荷里活廣場377-378號舖",
+          "tel": "852-29559506",
+          "district": "黃大仙區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "將軍澳POPCORN",
+          "address": "新界將軍澳唐賢街9號PopCorn 一樓F66及67號舖",
+          "tel": "852-27157018",
+          "district": "西貢區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "羅素街",
+          "address": "香港銅鑼灣羅素街8號英皇鐘錶珠寶中心 地下1及2號舖",
+          "tel": "852-25790568",
+          "district": "",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "沙咀道",
+          "address": "新界荃灣沙咀道236號地下,天井及平台",
+          "tel": "852-24720408",
+          "district": "荃灣區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "石硤尾邨二期",
+          "address": "九龍石硤尾邨二期美亮樓地下9號舖",
+          "tel": "852-27153573",
+          "district": "深水埗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "太安樓",
+          "address": "香港筲箕灣筲箕灣道57-87號太安樓地下G7及A6號舖",
+          "tel": "852-29675776",
+          "district": "東區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "大圍火車站",
+          "address": "新界大圍港鐵站已繳費區12及13號舖",
+          "tel": "",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "太和廣場",
+          "address": "新界大埔太和路12號太和廣場2樓201號舖",
+          "tel": "852-22622005",
+          "district": "大埔區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "天耀",
+          "address": "新界天水圍天耀廣場地下L029號舖",
+          "tel": "852-24479395",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "深水埗 V Walk",
+          "address": "九龍深水埗深旺道28號V Walk 2樓L2-97及L2-98號舖",
+          "tel": "852-27991050",
+          "district": "深水埗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "深水埗V Walk Baby",
+          "address": "九龍深水埗深旺道28號V Walk 2樓L2-1及L2-2號舖",
+          "tel": "852-27993316",
+          "district": "深水埗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "灣仔道",
+          "address": "香港灣仔道 212-214號怡康大廈地下B舖",
+          "tel": "852-22956783",
+          "district": "灣仔區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "黃埔花園",
+          "address": "九龍紅磡黃埔花園第十一期商場地下G4A及G4B號舖",
+          "tel": "852-23851148",
+          "district": "",
+          "stockStatus": "庫存緊張"
+        }
+      ]
+    },
+    "spray-sensitive": {
+      "manningsCode": "802793",
+      "manningsUrl": "https://www.mannings.com.hk/zh-hant/ding-ding-mosquito-repellent-spray-70ml/p/802793",
+      "storeCount": 164,
+      "stores": [
+        {
+          "name": "光華中心",
+          "address": "新界元朗阜材街34-36號光華中心地下4號舖",
+          "tel": "852-24431343",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "總統戲院",
+          "address": "香港銅鑼灣謝菲道517號地下B舖",
+          "tel": "852-25745483",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "雅蘭中心",
+          "address": "九龍彌敦道625及639號雅蘭中心地下G20-22號舖",
+          "tel": "852-27926021",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "葵芳",
+          "address": "新界葵芳新都會廣場 4 樓 417-419 號舖",
+          "tel": "852-29736118",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上水Baby",
+          "address": "新界上水龍運街8號新都廣場106a號舖",
+          "tel": "852-23253728",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門V City",
+          "address": "新界屯門屯門鄉事會路83號V City MTR層28、29、30及31號舖",
+          "tel": "852-23423428",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上水新豐路",
+          "address": "新界上水石湖墟新豐路122-130號龍霞樓地下A & B舖",
+          "tel": "852-26720954",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門時代廣場",
+          "address": "新界屯門時代廣場南翼3樓8,9及39號舖",
+          "tel": "852-24417153",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "恒隆中心",
+          "address": "香港銅鑼灣百德新街2-20號恒隆中心地下G02號舖",
+          "tel": "852-25681407",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "置地廣場",
+          "address": "香港中環皇后大道中15號置地廣場中庭3樓312號舖",
+          "tel": "852-34602024",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "T2 7TL075 離境大堂",
+          "address": "香港大嶼山香港國際機場二號客運大樓七樓離境大堂7TL075號舖",
+          "tel": "852-25605908",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "灣仔光華",
+          "address": "香港灣仔軒尼詩道269至273號地下A及B號舖",
+          "tel": "852-25117036",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "又一城",
+          "address": "九龍九龍塘達之路80號又一城MTR-09號舖",
+          "tel": "852-22657325",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新九龍廣場",
+          "address": "九龍大角咀道38號新九龍廣場地下56-59號",
+          "tel": "852-27874454",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新寶廣場",
+          "address": "九龍佐敦道23號新寶廣場地下1號舖",
+          "tel": "852-27826327",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "國際金融中心",
+          "address": "香港中環港景街1號國際金融中心商場第二層2004號",
+          "tel": "852-25239672",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "金馬倫道",
+          "address": "九龍尖沙咀金馬倫道26-28號金壘商業中心地下",
+          "tel": "852-29076086",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "嘉福商場",
+          "address": "新界粉嶺嘉褔邨嘉褔商場1樓111號舖",
+          "tel": "852-29473272",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "山東街",
+          "address": "九龍旺角山東街47-51號中橋商業大廈星際城市地下10-13號舖",
+          "tel": "852-27707920",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門市廣場",
+          "address": "新界屯門屯順街1號屯門市廣場1期2樓2199B-2199F號舖",
+          "tel": "852-24041372",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "東堤灣畔",
+          "address": "香港大嶼山東涌東堤灣畔地下3-4號舖",
+          "tel": "852-31474376",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "華光勵精中心",
+          "address": "香港中環皇后大道中88號勵精中心地下2號",
+          "tel": "852-25371241",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "四海大廈",
+          "address": "九龍尖沙咀彌敦道208-212號四海大廈地下A舖",
+          "tel": "852-27206044",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "落馬洲離境",
+          "address": "新界落馬洲港鐵站 LMC 119-120舖",
+          "tel": "852-34046533",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新海防道",
+          "address": "九龍尖沙咀海防道38-40號中達大廈地下及天井",
+          "tel": "852-23619645",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "黃埔花園",
+          "address": "九龍紅磡黃埔花園第十一期商場地下G4A及G4B號舖",
+          "tel": "852-23851148",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富運",
+          "address": "九龍彌敦道573號富運中心地下A舖",
+          "tel": "852-27830044",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "坪石邨",
+          "address": "九龍坪石邨玉石樓地下117 - 120號舖",
+          "tel": "852-25651300",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "中港城",
+          "address": "九龍尖沙咀廣東道33號中港城地下11及11A號舖",
+          "tel": "852-27527938",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "賴恩樓",
+          "address": "香港上環皇后大道西42-56號賴恩樓地下A號舖",
+          "tel": "852-28052710",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新沙田Baby",
+          "address": "新界沙田新城市廣場第三期二樓A213號舖",
+          "tel": "852-23425131",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大元村",
+          "address": "新界大埔大元商場新翼地下1號舖",
+          "tel": "852-26678645",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上水廣場",
+          "address": "新界上水石湖墟龍琛路39號上水廣場4樓419-423舖",
+          "tel": "852-24800034",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "羅素街",
+          "address": "香港銅鑼灣羅素街8號英皇鐘錶珠寶中心 地下1及2號舖",
+          "tel": "852-25790568",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "置富",
+          "address": "香港薄扶林置富南區廣場3樓303號室",
+          "tel": "852-28750400",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "翔龍灣",
+          "address": "九龍馬頭角新碼頭街38號翔龍灣廣場地下2號舖",
+          "tel": "852-22622764",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海富",
+          "address": "九龍旺角西海泓道海富苑海富商場101舖",
+          "tel": "852-29940743",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新形點Baby",
+          "address": "新界元朗朗日路9號形點I 2樓2008號舖",
+          "tel": "852-24709371",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "愉翠商場",
+          "address": "新界沙田愉翠苑愉翠苑商場1樓119-120號舖",
+          "tel": "852-26474719",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "興東商場",
+          "address": "香港筲箕灣興東邨商場地下10號舖",
+          "tel": "852-29679736",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "河內道 K11",
+          "address": "九龍尖沙咀河內道18號K11地庫1層B109-B110號舖",
+          "tel": "852-31224037",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "樂富廣場",
+          "address": "九龍黃大仙聯合道198號樂富廣場3樓3183A號舖",
+          "tel": "852-23091114",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "青衣城",
+          "address": "新界青衣青敬路33號青衣城二樓216-217號舖",
+          "tel": "852-24953783",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新港城",
+          "address": "新界馬鞍山新港城中心二樓2108舖",
+          "tel": "852-26336674",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "雍盛商埸",
+          "address": "新界粉嶺雍盛苑雍盛商場地下3號舖",
+          "tel": "852-26985208",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "安泰大廈",
+          "address": "香港上環德輔道中144-148 號安泰大廈地下",
+          "tel": "852-25419813",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "電氣道",
+          "address": "香港北角電氣道183號友邦廣場地下5-6號",
+          "tel": "852-25667561",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "鳳德商場",
+          "address": "九龍黃大仙鳳德商場2樓213及214號舖",
+          "tel": "852-23200446",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富健花園",
+          "address": "新界屯門龍門道45號富健花園55, 56 & 58號舖",
+          "tel": "852-24539074",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "尖沙咀K11 MUSEA",
+          "address": "香港九龍尖沙咀梳士巴利道18號K11 MUSEA B2層B201號01B舖",
+          "tel": "852-27931047",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "啟田商場",
+          "address": "九龍觀塘藍田啟田商場2樓228號舖",
+          "tel": "852-25131112",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "銀湖天峰",
+          "address": "新界馬鞍山西沙路599號銀湖天峰G10號舖",
+          "tel": "852-23149078",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "都會豪庭",
+          "address": "新界將軍澳MCP Discovery 二樓205及208號舖",
+          "tel": "852-31946258",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門Novo Walk",
+          "address": "新界屯門欣寶路8號NOVO WALK 地下22及23號舖",
+          "tel": "852-24735468",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "將軍澳POPCORN",
+          "address": "新界將軍澳唐賢街9號PopCorn 一樓F66及67號舖",
+          "tel": "852-27157018",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新蒲崗",
+          "address": "九龍康強街35-49號地下2號舖",
+          "tel": "852-27570821",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "兆康苑",
+          "address": "新界屯門兆康苑兆康商場226號舖",
+          "tel": "852-27933270",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "蘇屋商場",
+          "address": "深水埗蘇屋邨蘇屋商場地下G12號舖",
+          "tel": "852-27156052",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "宇宙商場",
+          "address": "九龍深水埗青山道164-170號宇宙商場地下G18A-B",
+          "tel": "852-27297840",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "碧堤坊",
+          "address": "新界深井青山公路33號碧堤坊3樓8號舖",
+          "tel": "852-31041054",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "金御門",
+          "address": "九龍九龍城衙前圍道39號金．御門地下1號舖",
+          "tel": "852-23501433",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "偉景花園",
+          "address": "新界青衣青綠街1號偉景花園商場地下8-11號",
+          "tel": "852-24345651",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "頌安",
+          "address": "新界馬鞍山頌安商場1樓110&111號",
+          "tel": "852-26335401",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "雲景道",
+          "address": "香港北角雲景道33號",
+          "tel": "852-28071853",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西沙GO PARK 2",
+          "address": "新界西沙海映路8號西沙GO PARK 2 地下低層LG30號舖",
+          "tel": "852-23762408",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "俊宏軒",
+          "address": "新界天水圍天瑞路88號俊宏軒1樓104號舖",
+          "tel": "852-34011583",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "機利臣街",
+          "address": "香港灣仔莊士敦道18號嘉寧大厦地下C,E,F,G 及 J 舖",
+          "tel": "852-21119641",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "葵興港鐵站",
+          "address": "新界葵興葵興港鐵站KWH5號舖",
+          "tel": "852-27870921",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "鯉景灣",
+          "address": "香港鯉景灣太安街25號D段地下GD20至21A舖",
+          "tel": "852-29678970",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新蒲崗Mikiki",
+          "address": "九龍新蒲崗太子道東638號Mikiki地下G56號鋪",
+          "tel": "852-27635308",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海翠坊",
+          "address": "新界屯門湖翠路168-236號海翠坊1號及85-86號舖",
+          "tel": "852-24416769",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "愛民商場",
+          "address": "九龍何文田愛民邨愛民廣場G17號舖",
+          "tel": "852-27123470",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "羅便臣道",
+          "address": "香港西摩道1號輝煌臺地下8 號舖",
+          "tel": "852-25404307",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西貢",
+          "address": "新界西貢福民路22-40號西貢苑地下26-27號舖",
+          "tel": "852-27914432",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "碩門商場",
+          "address": "沙田碩門邨2期碩門商場P1層P12號舖",
+          "tel": "852-24209138",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "春園街",
+          "address": "香港灣仔春園街47至65號新春園大廈地下E及F舖",
+          "tel": "852-27930642",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新鴻基中心",
+          "address": "香港灣仔新鴻基中心地下G14-G18號舖",
+          "tel": "852-25112927",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天澤",
+          "address": "新界天水圍天瑞路71, 73, 75及77號天澤邨天澤商場2樓210A舖",
+          "tel": "852-28683007",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "深水埗V Walk Baby",
+          "address": "九龍深水埗深旺道28號V Walk 2樓L2-1及L2-2號舖",
+          "tel": "852-27993316",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "油麻地",
+          "address": "九龍彌敦道494-496號晉利商業大廈地下",
+          "tel": "852-27706504",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "元朗廣場",
+          "address": "新界元朗廣場1樓130及181-183號鋪",
+          "tel": "852-23206205",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "淘大商場",
+          "address": "九龍牛頭角道 77 號淘大商場二期地下183-185號",
+          "tel": "852-23313357",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "麗城薈",
+          "address": "新界荃灣青山公路625號麗城薈3期地下23,24及26號舖",
+          "tel": "852-23579476",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "康橋大廈",
+          "address": "香港鰂魚涌太古坊康橋大廈地下A舖",
+          "tel": "852-22844811",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "長沙灣",
+          "address": "九龍長沙灣道833 號長沙灣廣場1 樓121-123 號舖",
+          "tel": "852-21484640",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "菁田邨",
+          "address": "新界屯門菁田邨菁田商場地下G12號舖",
+          "tel": "852-24120310",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "東薈城",
+          "address": "新界東涌東薈城名店倉5樓501號舖",
+          "tel": "852-27538179",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西九龍中心",
+          "address": "九龍深水埗欽洲街37K西九龍中心5樓501B",
+          "tel": "852-23878262",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "元朗鳳琴街",
+          "address": "新界元朗鳳琴街15-21號鴻運中心地下73號",
+          "tel": "852-24781165",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "藍灣廣場",
+          "address": "香港小西灣道28號藍灣廣場高層地下UG51 及UG52A號舖",
+          "tel": "852-34074481",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西鐵兆康站",
+          "address": "新界兆康港鐵站 6-9 號舖",
+          "tel": "852-24629309",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "葵涌商場",
+          "address": "新界葵涌上角街葵涌邨3期葵涌商場104號舗",
+          "tel": "852-22794093",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "廣褔商場",
+          "address": "新界大埔廣福邨廣福商場1樓206-209號舖",
+          "tel": "852-26577970",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "麗港城",
+          "address": "九龍觀塘茶果嶺道88號麗港城商場地下34及36號舖",
+          "tel": "852-23799072",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "荔枝角",
+          "address": "九龍深水埗荔枝角道316-318號地下",
+          "tel": "852-27257960",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "鯉魚門廣場",
+          "address": "九龍油塘鯉魚門廣場1樓140號舖",
+          "tel": "852-27583770",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "瀝源",
+          "address": "新界沙田瀝源邨瀝源商場二樓214號舖",
+          "tel": "852-26964932",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "良景",
+          "address": "新界屯門良景邨良景廣場2樓L217號舖",
+          "tel": "852-24550949",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "樂華商場",
+          "address": "九龍牛頭角樂華南及北邨樂華商場3樓314號舖",
+          "tel": "852-23436975",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "綠楊",
+          "address": "新界荃灣綠楊坊平台 P11A & P11B",
+          "tel": "852-24923224",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "港灣豪庭廣場",
+          "address": "九龍大角咀福利街 8 號港灣豪庭廣場1樓109-110號舖",
+          "tel": "852-31443490",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "萬事達廣場",
+          "address": "九龍美孚新邨荔灣道萬事達廣場N72號地下",
+          "tel": "852-27850295",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新翠商場",
+          "address": "香港柴灣新翠商場4樓1-11號",
+          "tel": "852-28979231",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新西灣河",
+          "address": "香港筲箕灣道326至332號康泰大樓地下4號舖",
+          "tel": "852-25413908",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新元州街",
+          "address": "九龍深水埗元州街388號肇如大廈地下B舖",
+          "tel": "852-27715707",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "悅來坊",
+          "address": "新界荃灣荃華街3號悅來酒店悅來坊商場地庫1B118室",
+          "tel": "852-25410938",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "珀麗灣",
+          "address": "新界馬灣珀麗灣珀麗路8 號地下S10 號舖",
+          "tel": "852-29863010",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "利港中心",
+          "address": "香港香港仔利港中心1樓 106-107號舖",
+          "tel": "852-25806607",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "太子",
+          "address": "九龍大埔道10A地下",
+          "tel": "852-27846580",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "皇后大道西",
+          "address": "香港皇后大道西230-236 號好時大廈地下C 舖",
+          "tel": "852-29754469",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "帝庭軒",
+          "address": "新界粉嶺聯和墟和滿街8號帝庭軒一期商場一樓1&2號舖",
+          "tel": "852-29475793",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西營盤",
+          "address": "香港德輔道西334至350號恆裕大廈地下8號舖",
+          "tel": "852-25460326",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "匯景廣場",
+          "address": "九龍藍田匯景道8號匯景廣場3樓L3-1號舖",
+          "tel": "852-27688524",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "石硤尾邨二期",
+          "address": "九龍石硤尾邨二期美亮樓地下9號舖",
+          "tel": "852-27153573",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "德褔中心",
+          "address": "九龍九龍灣德褔廣場第一期F16A & F17-F17A號舖",
+          "tel": "852-27986458",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "黃大仙中心北館",
+          "address": "九龍黃大仙龍翔道136號黃大仙中心北館2樓N210A號舖",
+          "tel": "852-23503200",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "時代廣場",
+          "address": "香港銅鑼灣時代廣場9樓917號舖",
+          "tel": "852-25657455",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天晴商場",
+          "address": "新界天水圍天晴邨天晴商場8號舖",
+          "tel": "852-23504422",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天盛商場",
+          "address": "新界元朗天水圍天靖街3號天盛苑天盛商場1樓L102號舖",
+          "tel": "852-25093298",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "爵祿街",
+          "address": "九龍新蒲崗爵祿街74-76號地下",
+          "tel": "852-23212619",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "荃錦中心",
+          "address": "新界荃灣荃錦中心110-125號",
+          "tel": "852-24987843",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門仁政街",
+          "address": "新界屯門仁政街26A富華大廈地下C-E號",
+          "tel": "852-24505219",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "元朗同樂街",
+          "address": "新界元朗同樂街21號地下",
+          "tel": "852-24090275",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "灣仔道",
+          "address": "香港灣仔道 212-214號怡康大廈地下B舖",
+          "tel": "852-22956783",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西環",
+          "address": "香港皇后大道西572-574號高良大廈地下",
+          "tel": "852-29864386",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "寶翠園",
+          "address": "香港西環卑路乍街8號寶翠園西寶城2樓237舖",
+          "tel": "852-25427425",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "皇室堡",
+          "address": "香港銅鑼灣告士打道311 號皇室堡3樓311至312號舖",
+          "tel": "852-25633343",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "形點",
+          "address": "新界元朗朗日路8-9號及元龍街9號形點2樓A212a號舖",
+          "tel": "852-24489700",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "創紀之城",
+          "address": "九龍觀塘創紀之城5期apm1樓L1-28及L1-29號舖",
+          "tel": "852-31489369",
+          "district": "觀塘區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "窩打老道",
+          "address": "九龍窩打老道86D 萬基大廈地下 A&B1A號",
+          "tel": "852-27607742",
+          "district": "油尖旺區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "晴朗商場",
+          "address": "九龍九龍城沐翠街晴朗商場地下A004號舖位",
+          "tel": "852-28664493",
+          "district": "九龍城區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "荃新天地 2",
+          "address": "新界荃灣楊屋道18號荃新天地2期高層地下UG70-73及UG75-77號舖",
+          "tel": "852-26144542",
+          "district": "荃灣區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "杏花",
+          "address": "香港柴灣杏花村杏花新城157-159號舖",
+          "tel": "852-29765694",
+          "district": "東區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "海麗商場",
+          "address": "九龍深水埗海麗邨海麗商場地下12及13號舖",
+          "tel": "852-35146236",
+          "district": "深水埗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "紅磡廣場",
+          "address": "九龍紅磡馬頭圍道37-41號紅磡廣場一樓54-60號舖",
+          "tel": "852-23343848",
+          "district": "九龍城區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "國際廣場",
+          "address": "九龍尖沙咀彌敦道63號國際廣場MTR樓層17, 20-23號舖",
+          "tel": "852-27049273",
+          "district": "油尖旺區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "埃華街",
+          "address": "九龍大角咀51-65號埃華街大方樓地下3-4號舖",
+          "tel": "852-23812176",
+          "district": "油尖旺區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "啟鑽商場",
+          "address": "九龍黃大仙鑽石山啟鑽苑二期啟鑽商場B1樓B14號舖",
+          "tel": "852-27870931",
+          "district": "黃大仙區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "觀塘",
+          "address": "九龍觀塘通明街7號地下",
+          "tel": "852-23434003",
+          "district": "觀塘區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "昇悅居",
+          "address": "九龍荔枝角道833號昇悅居1樓130及132號舖",
+          "tel": "852-22044930",
+          "district": "深水埗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "朗屏邨",
+          "address": "新界元朗朗屏邨5座鏡屏樓M樓M006,M007號舖",
+          "tel": "852-29445292",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "西環聯康",
+          "address": "香港卑路乍街116-122及122A號聯康新樓地下C舖",
+          "tel": "852-28167776",
+          "district": "中西區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "南昌街",
+          "address": "九龍南昌街223-237號名都廣場地下",
+          "tel": "852-27794924",
+          "district": "深水埗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "新香港仔",
+          "address": "香港香港仔香港仔大道170至172號海滙大厦地下",
+          "tel": "852-25751455",
+          "district": "南區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "新寶怡花園",
+          "address": "新界屯門良德街11號寶怡花園地下17-18號",
+          "tel": "852-24885211",
+          "district": "屯門區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "新荃灣廣場",
+          "address": "新界荃灣荃灣廣場3樓308-313號舖",
+          "tel": "852-26434628",
+          "district": "荃灣區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "安泰商場",
+          "address": "九龍觀塘安泰邨安泰商場地下高層105號舖",
+          "tel": "852-23857018",
+          "district": "觀塘區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "繽紛購物城",
+          "address": "九龍紅磡德民街1-15號繽紛購物城1字樓E",
+          "tel": "852-23346429",
+          "district": "九龍城區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "荷里活廣場",
+          "address": "九龍鑽石山荷里活廣場377-378號舖",
+          "tel": "852-29559506",
+          "district": "黃大仙區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "寶達",
+          "address": "九龍秀茂坪寶琳路寶達商場地下7號舖",
+          "tel": "852-21904256",
+          "district": "觀塘區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "新北江",
+          "address": "新界元朗天水圍新北江廣場1樓C61及62舖",
+          "tel": "852-21499358",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "沙田廣場",
+          "address": "新界沙田沙田廣場3樓48號舖",
+          "tel": "852-24130004",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "石蔭",
+          "address": "新界葵涌石蔭路96號天安樓地下1號舖",
+          "tel": "852-24017239",
+          "district": "葵青區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "雙鳳街",
+          "address": "九龍黃大仙雙鳳街18號地下",
+          "tel": "852-23286364",
+          "district": "黃大仙區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "尚德商場",
+          "address": "新界將軍澳唐明街2號尚德邨尚德商場1樓109號舖",
+          "tel": "852-24505818",
+          "district": "西貢區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "上環",
+          "address": "香港皇后大道中368號偉利大廈1樓 6 號舖",
+          "tel": "852-25434464",
+          "district": "中西區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "順天",
+          "address": "九龍順天邨天權樓地下9-10號舖",
+          "tel": "852-27636705",
+          "district": "觀塘區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "大埔超級城Baby",
+          "address": "新界大埔大埔超級城B區2樓269-270號舖",
+          "tel": "852-26334906",
+          "district": "大埔區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "德田商場",
+          "address": "九龍藍田碧雲道223號德田商場1樓103號舖",
+          "tel": "852-27178173",
+          "district": "觀塘區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "青衣",
+          "address": "新界青衣長發廣場2樓217號舖",
+          "tel": "852-24331433",
+          "district": "葵青區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "翠屏道",
+          "address": "九龍觀塘翠屏(北)邨翠屏商場4A號舖",
+          "tel": "852-23480054",
+          "district": "觀塘區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "慈雲山中心",
+          "address": "九龍慈雲山毓華街23號慈雲山中心5樓537-538號舖",
+          "tel": "852-28082493",
+          "district": "黃大仙區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "馬鞍山",
+          "address": "新界馬鞍山保泰街16號地下G10",
+          "tel": "852-26432059",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "耀東商場",
+          "address": "香港筲箕灣耀東邨耀東商場2樓201號舖",
+          "tel": "852-25607135",
+          "district": "東區",
+          "stockStatus": "庫存緊張"
+        }
+      ]
+    },
+    "patch-18": {
+      "manningsCode": "675165",
+      "manningsUrl": "https://www.mannings.com.hk/zh-hant/ding-ding-mosquito-complete-mosquito-insect-repellent-patch-18pcs/p/675165",
+      "storeCount": 140,
+      "stores": [
+        {
+          "name": "灣仔光華",
+          "address": "香港灣仔軒尼詩道269至273號地下A及B號舖",
+          "tel": "852-25117036",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "蝴蝶邨",
+          "address": "新界屯門蝴蝶廣場地下R123號舖",
+          "tel": "852-24639344",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新海防道",
+          "address": "九龍尖沙咀海防道38-40號中達大廈地下及天井",
+          "tel": "852-23619645",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西九龍站",
+          "address": "九龍尖沙咀柯士甸道西3號香港西九龍站售票大堂B1-2號舖",
+          "tel": "852-27912077",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "皇室堡",
+          "address": "香港銅鑼灣告士打道311 號皇室堡3樓311至312號舖",
+          "tel": "852-25633343",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "雅蘭中心",
+          "address": "九龍彌敦道625及639號雅蘭中心地下G20-22號舖",
+          "tel": "852-27926021",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海港城",
+          "address": "九龍海港城港威商場三階3304號舖",
+          "tel": "852-26799313",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "金馬倫道",
+          "address": "九龍尖沙咀金馬倫道26-28號金壘商業中心地下",
+          "tel": "852-29076086",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新教育路",
+          "address": "新界元朗教育路9-13號興發大樓地下7號舖",
+          "tel": "852-24168156",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "國際金融中心",
+          "address": "香港中環港景街1號國際金融中心商場第二層2004號",
+          "tel": "852-25239672",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上水Baby",
+          "address": "新界上水龍運街8號新都廣場106a號舖",
+          "tel": "852-23253728",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "連理街商場",
+          "address": "新界將軍澳坑口連理街商場1樓119-121號舖",
+          "tel": "852-21410027",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "光華中心",
+          "address": "新界元朗阜材街34-36號光華中心地下4號舖",
+          "tel": "852-24431343",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新西灣河",
+          "address": "香港筲箕灣道326至332號康泰大樓地下4號舖",
+          "tel": "852-25413908",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "油麻地",
+          "address": "九龍彌敦道494-496號晉利商業大廈地下",
+          "tel": "852-27706504",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "落馬洲離境",
+          "address": "新界落馬洲港鐵站 LMC 119-120舖",
+          "tel": "852-34046533",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "總統戲院",
+          "address": "香港銅鑼灣謝菲道517號地下B舖",
+          "tel": "852-25745483",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新康街",
+          "address": "新界上水新康街96號地下",
+          "tel": "852-26721376",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "爵祿街",
+          "address": "九龍新蒲崗爵祿街74-76號地下",
+          "tel": "852-23212619",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "弼街",
+          "address": "香港九龍西洋菜南街218-220號及弼街41號生發大廈地下A及B號舖",
+          "tel": "852-23479628",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "河內道 K11",
+          "address": "九龍尖沙咀河內道18號K11地庫1層B109-B110號舖",
+          "tel": "852-31224037",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "秀茂坪",
+          "address": "九龍秀茂坪邨秀茂坪商場1 樓108 號舖",
+          "tel": "852-23548572",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "信德中心",
+          "address": "香港上環干諾道中200號信德中心2樓203號",
+          "tel": "852-28586672",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新鴻基中心",
+          "address": "香港灣仔新鴻基中心地下G14-G18號舖",
+          "tel": "852-25112927",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "東薈城",
+          "address": "新界東涌東薈城名店倉5樓501號舖",
+          "tel": "852-27538179",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "葵芳",
+          "address": "新界葵芳新都會廣場 4 樓 417-419 號舖",
+          "tel": "852-29736118",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新荃灣廣場",
+          "address": "新界荃灣荃灣廣場3樓308-313號舖",
+          "tel": "852-26434628",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新沙田Baby",
+          "address": "新界沙田新城市廣場第三期二樓A213號舖",
+          "tel": "852-23425131",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "康橋大廈",
+          "address": "香港鰂魚涌太古坊康橋大廈地下A舖",
+          "tel": "852-22844811",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "粉嶺中心",
+          "address": "新界粉嶺新運路33號粉嶺中心地下139至142號舖",
+          "tel": "852-26600114",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "顯徑",
+          "address": "新界沙田顯徑邨顯徑購物中心地下113號",
+          "tel": "852-26810489",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "落馬洲港鐵站",
+          "address": "新界落馬洲港鐵站LMC117號舖",
+          "tel": "852-24225501",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新形點Baby",
+          "address": "新界元朗朗日路9號形點I 2樓2008號舖",
+          "tel": "852-24709371",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "山東街",
+          "address": "九龍旺角山東街47-51號中橋商業大廈星際城市地下10-13號舖",
+          "tel": "852-27707920",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "德褔中心",
+          "address": "九龍九龍灣德褔廣場第一期F16A & F17-F17A號舖",
+          "tel": "852-27986458",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "荃灣千色匯",
+          "address": "新界荃灣眾安街68號荃灣千色匯I期地下G016-G017舖",
+          "tel": "852-26609030",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "逸東商場",
+          "address": "香港新界東涌逸東街8號逸東商場1樓115及116號舖",
+          "tel": "852-24069408",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富運",
+          "address": "九龍彌敦道573號富運中心地下A舖",
+          "tel": "852-27830044",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "葵興港鐵站",
+          "address": "新界葵興葵興港鐵站KWH5號舖",
+          "tel": "852-27870921",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "觀塘",
+          "address": "九龍觀塘通明街7號地下",
+          "tel": "852-23434003",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "鯉魚門廣場",
+          "address": "九龍油塘鯉魚門廣場1樓140號舖",
+          "tel": "852-27583770",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新都城二期",
+          "address": "新界將軍澳新都城中心二期1樓 1116至1118號舖",
+          "tel": "852-26249599",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "美孚",
+          "address": "九龍美孚新邨百老匯街69-119號地下99B",
+          "tel": "852-27429664",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "南昌街",
+          "address": "九龍南昌街223-237號名都廣場地下",
+          "tel": "852-27794924",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新彩園廣場",
+          "address": "新界上水彩園邨彩園廣場3樓R8號舖",
+          "tel": "852-23620348",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新天后",
+          "address": "香港天后電氣道68號地下B及C舖",
+          "tel": "852-28950885",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "北角",
+          "address": "香港北角英皇道386-388號北港商業大廈地下B",
+          "tel": "852-25712621",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "安泰商場",
+          "address": "九龍觀塘安泰邨安泰商場地下高層105號舖",
+          "tel": "852-23857018",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "沙角商場",
+          "address": "新界沙田沙角街5號沙角商場2樓235號舖",
+          "tel": "852-27601161",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "順利商場",
+          "address": "九龍觀塘利安道15號順利邨順利商場2樓201B號舖",
+          "tel": "852-27949528",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "春園街",
+          "address": "香港灣仔春園街47至65號新春園大廈地下E及F舖",
+          "tel": "852-27930642",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "太古城",
+          "address": "香港太古城道18號太古城中心第一期420舖",
+          "tel": "852-29070621",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "慈雲山中心",
+          "address": "九龍慈雲山毓華街23號慈雲山中心5樓537-538號舖",
+          "tel": "852-28082493",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "華光勵精中心",
+          "address": "香港中環皇后大道中88號勵精中心地下2號",
+          "tel": "852-25371241",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "灣仔道",
+          "address": "香港灣仔道 212-214號怡康大廈地下B舖",
+          "tel": "852-22956783",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "寶翠園",
+          "address": "香港西環卑路乍街8號寶翠園西寶城2樓237舖",
+          "tel": "852-25427425",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "漁灣邨",
+          "address": "香港柴灣漁灣邨漁豐樓地下2號舖",
+          "tel": "852-29760646",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "創紀之城",
+          "address": "九龍觀塘創紀之城5期apm1樓L1-28及L1-29號舖",
+          "tel": "852-31489369",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "長康商場",
+          "address": "新界青衣長康邨長康商場2期3樓301號舖",
+          "tel": "852-24979068",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "彩雲商場",
+          "address": "九龍牛池灣彩雲(一)邨彩雲商場2期高層地下A111號舖",
+          "tel": "852-28562456",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "東港城",
+          "address": "新界將軍澳重華路8號東港城2樓238B號舖",
+          "tel": "852-26284027",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "圓方",
+          "address": "九龍柯士甸道西一號圓方1樓1092號舖",
+          "tel": "852-21968125",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "洪福商場",
+          "address": "新界元朗洪水橋洪福商場地下9-10號舖",
+          "tel": "852-28902387",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "國際廣場",
+          "address": "九龍尖沙咀彌敦道63號國際廣場MTR樓層17, 20-23號舖",
+          "tel": "852-27049273",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "啟田商場",
+          "address": "九龍觀塘藍田啟田商場2樓228號舖",
+          "tel": "852-25131112",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "賴恩樓",
+          "address": "香港上環皇后大道西42-56號賴恩樓地下A號舖",
+          "tel": "852-28052710",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "羅湖港鐵站",
+          "address": "新界羅湖港鐵站LOW 108 號舖",
+          "tel": "852-31424790",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "馬頭角道",
+          "address": "九龍九龍城馬頭角道金都豪苑地下3-4號舖",
+          "tel": "852-27144547",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新翠商場",
+          "address": "香港柴灣新翠商場4樓1-11號",
+          "tel": "852-28979231",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新水渠道",
+          "address": "九龍太子水渠道38-42號寶石大樓地下B舖及天井",
+          "tel": "852-23451635",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海翠坊",
+          "address": "新界屯門湖翠路168-236號海翠坊1號及85-86號舖",
+          "tel": "852-24416769",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "愛東",
+          "address": "香港筲箕灣愛東村愛東商場111號舖",
+          "tel": "852-25137343",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "將軍澳POPCORN",
+          "address": "新界將軍澳唐賢街9號PopCorn 一樓F66及67號舖",
+          "tel": "852-27157018",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "山景商場",
+          "address": "新界屯門山景村山景商場低層地下106C及106D號",
+          "tel": "852-2471 2530",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "石蔭",
+          "address": "新界葵涌石蔭路96號天安樓地下1號舖",
+          "tel": "852-24017239",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上水中心",
+          "address": "新界上水智昌路3號上水中心2樓2077D-H號舖",
+          "tel": "852-27877202",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天澤",
+          "address": "新界天水圍天瑞路71, 73, 75及77號天澤邨天澤商場2樓210A舖",
+          "tel": "852-28683007",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門時代廣場",
+          "address": "新界屯門時代廣場南翼3樓8,9及39號舖",
+          "tel": "852-24417153",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門市廣場",
+          "address": "新界屯門屯順街1號屯門市廣場1期2樓2199B-2199F號舖",
+          "tel": "852-24041372",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西環",
+          "address": "香港皇后大道西572-574號高良大廈地下",
+          "tel": "852-29864386",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富蝶商場",
+          "address": "新界大埔富蝶邨二期富蝶商場地下15號舖",
+          "tel": "852-24539128",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "恒隆中心",
+          "address": "香港銅鑼灣百德新街2-20號恒隆中心地下G02號舖",
+          "tel": "852-25681407",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "杏花",
+          "address": "香港柴灣杏花村杏花新城157-159號舖",
+          "tel": "852-29765694",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "紅磡廣場",
+          "address": "九龍紅磡馬頭圍道37-41號紅磡廣場一樓54-60號舖",
+          "tel": "852-23343848",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "洪水橋",
+          "address": "新界元朗洪水橋洪堤路3號麗珊閣地下3號舖",
+          "tel": "852-24461571",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "嘉福商場",
+          "address": "新界粉嶺嘉褔邨嘉褔商場1樓111號舖",
+          "tel": "852-29473272",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "樂富廣場",
+          "address": "九龍黃大仙聯合道198號樂富廣場3樓3183A號舖",
+          "tel": "852-23091114",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "綠楊",
+          "address": "新界荃灣綠楊坊平台 P11A & P11B",
+          "tel": "852-24923224",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "沙田萬怡酒店",
+          "address": "新界沙田安平街一號地下2A號舖",
+          "tel": "852-25950408",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "港灣豪庭廣場",
+          "address": "九龍大角咀福利街 8 號港灣豪庭廣場1樓109-110號舖",
+          "tel": "852-31443490",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "都會豪庭",
+          "address": "新界將軍澳MCP Discovery 二樓205及208號舖",
+          "tel": "852-31946258",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新康怡廣場",
+          "address": "香港康山道1-2號康怡廣場2樓S30號及東上橋S8至S10號舖",
+          "tel": "852-26500412",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新九龍廣場",
+          "address": "九龍大角咀道38號新九龍廣場地下56-59號",
+          "tel": "852-27874454",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "駿景廣場",
+          "address": "新界火炭駿景廣場G63-65號舖",
+          "tel": "852-25927482",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新北江",
+          "address": "新界元朗天水圍新北江廣場1樓C61及62舖",
+          "tel": "852-21499358",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上水新豐路",
+          "address": "新界上水石湖墟新豐路122-130號龍霞樓地下A & B舖",
+          "tel": "852-26720954",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "石硤尾邨二期",
+          "address": "九龍石硤尾邨二期美亮樓地下9號舖",
+          "tel": "852-27153573",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "尚德商場",
+          "address": "新界將軍澳唐明街2號尚德邨尚德商場1樓109號舖",
+          "tel": "852-24505818",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "水泉澳廣場",
+          "address": "新界沙田水泉澳邨水泉澳廣場2樓204號舖",
+          "tel": "852-28138602",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "小西灣廣場",
+          "address": "香港柴灣小西灣道小西灣廣場1樓110A號舖",
+          "tel": "852-28401114",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "穗禾",
+          "address": "新界沙田穗禾購物中心地下G11,G12號",
+          "tel": "852-26053070",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "元朗大馬路",
+          "address": "新界元朗青山公路元朗段118號地下2A及2B號舖",
+          "tel": "852-26205143",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "啟德Airside",
+          "address": "九龍啟德協調道2號AIRSIDE地庫1層B119-B120號舖",
+          "tel": "852-27746011",
+          "district": "九龍城區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "碧堤坊",
+          "address": "新界深井青山公路33號碧堤坊3樓8號舖",
+          "tel": "852-31041054",
+          "district": "荃灣區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "窩打老道",
+          "address": "九龍窩打老道86D 萬基大廈地下 A&B1A號",
+          "tel": "852-27607742",
+          "district": "油尖旺區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "長沙灣",
+          "address": "九龍長沙灣道833 號長沙灣廣場1 樓121-123 號舖",
+          "tel": "852-21484640",
+          "district": "深水埗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "長沙灣道",
+          "address": "九龍長沙灣道226-242號金華大廈地下B6 & B7號舖",
+          "tel": "852-23922036",
+          "district": "深水埗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "置樂花園",
+          "address": "新界屯門置樂花園地下66A號舖",
+          "tel": "852-24049790",
+          "district": "屯門區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "中港城",
+          "address": "九龍尖沙咀廣東道33號中港城地下11及11A號舖",
+          "tel": "852-27527938",
+          "district": "油尖旺區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "頌安",
+          "address": "新界馬鞍山頌安商場1樓110&111號",
+          "tel": "852-26335401",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "西九龍中心",
+          "address": "九龍深水埗欽洲街37K西九龍中心5樓501B",
+          "tel": "852-23878262",
+          "district": "深水埗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "錦繡花園",
+          "address": "新界元朗錦繡花園D座地下2號舖",
+          "tel": "852-24710279",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "健威坊",
+          "address": "香港北角英皇道560號健威坊低層地下L37號舖",
+          "tel": "852-21170546",
+          "district": "東區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "富泰",
+          "address": "新界屯門屯貴路9號富泰商場2樓211號舖",
+          "tel": "852-24537242",
+          "district": "屯門區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "俊宏軒",
+          "address": "新界天水圍天瑞路88號俊宏軒1樓104號舖",
+          "tel": "852-34011583",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "恆安",
+          "address": "新界沙田馬鞍山恆安商場2樓221-222號舖",
+          "tel": "852-26400592",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "興東商場",
+          "address": "香港筲箕灣興東邨商場地下10號舖",
+          "tel": "852-29679736",
+          "district": "東區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "興華商場",
+          "address": "香港柴灣興華商場地下G05及G06號舖",
+          "tel": "852-25055219",
+          "district": "東區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "滿樂坊",
+          "address": "香港大嶼山東涌松滿路7號滿東邨滿樂坊地下2號餔",
+          "tel": "852-27299920",
+          "district": "離島區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "啟德體育園",
+          "address": "香港九龍九龍城啟德體育園啟德零售館1, 2樓 M1-204號舖",
+          "tel": "852-23342278",
+          "district": "九龍城區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "梨木樹商場",
+          "address": "新界荃灣梨木樹商場125號舖",
+          "tel": "852-24215192",
+          "district": "葵青區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "朗屏邨",
+          "address": "新界元朗朗屏邨5座鏡屏樓M樓M006,M007號舖",
+          "tel": "852-29445292",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "西環聯康",
+          "address": "香港卑路乍街116-122及122A號聯康新樓地下C舖",
+          "tel": "852-28167776",
+          "district": "中西區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "美林商場",
+          "address": "新界大圍美林邨美林商場地下20-22號舖",
+          "tel": "852-34223254",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "萬事達廣場",
+          "address": "九龍美孚新邨荔灣道萬事達廣場N72號地下",
+          "tel": "852-27850295",
+          "district": "深水埗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "新城市廣場",
+          "address": "新界沙田新城市廣場一期3樓307及307A號舖",
+          "tel": "852-26034318",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "將軍澳中心",
+          "address": "新界西貢將軍澳唐德街9號將軍澳中心1樓117號舖",
+          "tel": "852-27154156",
+          "district": "西貢區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "博康",
+          "address": "新界沙田博康邨博康商場107-109號舖",
+          "tel": "852-26356390",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "麗晶花園",
+          "address": "九龍九龍灣宏光道80號麗晶花園商場2樓2182, 2183, 2186號舖",
+          "tel": "852-27154984",
+          "district": "觀塘區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "元朗壽富街",
+          "address": "新界元朗壽富街51-59元朗中心地下4A及4B號舖",
+          "tel": "852-24793219",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "順天",
+          "address": "九龍順天邨天權樓地下9-10號舖",
+          "tel": "852-27636705",
+          "district": "觀塘區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "T Town South",
+          "address": "新界元朗天水圍天華路30號T Town South地下SG25號舖",
+          "tel": "852-24501167",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "大河道",
+          "address": "新界荃灣大河道19號地下",
+          "tel": "852-24394712",
+          "district": "荃灣區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "太安樓",
+          "address": "香港筲箕灣筲箕灣道57-87號太安樓地下G7及A6號舖",
+          "tel": "852-29675776",
+          "district": "東區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "黃大仙中心北館",
+          "address": "九龍黃大仙龍翔道136號黃大仙中心北館2樓N210A號舖",
+          "tel": "852-23503200",
+          "district": "黃大仙區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "新達廣場",
+          "address": "新界大埔南運路9號新達廣場1樓A048-A050號舖",
+          "tel": "852-26743028",
+          "district": "大埔區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "屯門V City",
+          "address": "新界屯門屯門鄉事會路83號V City MTR層28、29、30及31號舖",
+          "tel": "852-23423428",
+          "district": "屯門區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "深水埗 V Walk",
+          "address": "九龍深水埗深旺道28號V Walk 2樓L2-97及L2-98號舖",
+          "tel": "852-27991050",
+          "district": "深水埗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "華富",
+          "address": "香港華富(一)邨華珍樓714-715號舖",
+          "tel": "852-25507553",
+          "district": "南區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "耀東商場",
+          "address": "香港筲箕灣耀東邨耀東商場2樓201號舖",
+          "tel": "852-25607135",
+          "district": "東區",
+          "stockStatus": "庫存緊張"
+        }
+      ]
+    },
+    "spray-sakura": {
+      "manningsCode": "708156",
+      "manningsUrl": "https://www.mannings.com.hk/zh-hant/ding-ding-complete-mosquito-repellent-spray-cherry-blossom-70ml/p/708156",
+      "storeCount": 108,
+      "stores": [
+        {
+          "name": "四海大廈",
+          "address": "九龍尖沙咀彌敦道208-212號四海大廈地下A舖",
+          "tel": "852-27206044",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "雅蘭中心",
+          "address": "九龍彌敦道625及639號雅蘭中心地下G20-22號舖",
+          "tel": "852-27926021",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "河內道 K11",
+          "address": "九龍尖沙咀河內道18號K11地庫1層B109-B110號舖",
+          "tel": "852-31224037",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "落馬洲離境",
+          "address": "新界落馬洲港鐵站 LMC 119-120舖",
+          "tel": "852-34046533",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大興",
+          "address": "新界屯門大興街1號大興邨商場地下L107號舖",
+          "tel": "852-23856177",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "國際廣場",
+          "address": "九龍尖沙咀彌敦道63號國際廣場MTR樓層17, 20-23號舖",
+          "tel": "852-27049273",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "漁灣邨",
+          "address": "香港柴灣漁灣邨漁豐樓地下2號舖",
+          "tel": "852-29760646",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "中港城",
+          "address": "九龍尖沙咀廣東道33號中港城地下11及11A號舖",
+          "tel": "852-27527938",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新形點Baby",
+          "address": "新界元朗朗日路9號形點I 2樓2008號舖",
+          "tel": "852-24709371",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "賴恩樓",
+          "address": "香港上環皇后大道西42-56號賴恩樓地下A號舖",
+          "tel": "852-28052710",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "坪石邨",
+          "address": "九龍坪石邨玉石樓地下117 - 120號舖",
+          "tel": "852-25651300",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "華光勵精中心",
+          "address": "香港中環皇后大道中88號勵精中心地下2號",
+          "tel": "852-25371241",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "黃埔花園",
+          "address": "九龍紅磡黃埔花園第十一期商場地下G4A及G4B號舖",
+          "tel": "852-23851148",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "宇宙商場",
+          "address": "九龍深水埗青山道164-170號宇宙商場地下G18A-B",
+          "tel": "852-27297840",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "麗城薈",
+          "address": "新界荃灣青山公路625號麗城薈3期地下23,24及26號舖",
+          "tel": "852-23579476",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海富",
+          "address": "九龍旺角西海泓道海富苑海富商場101舖",
+          "tel": "852-29940743",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "洪水橋",
+          "address": "新界元朗洪水橋洪堤路3號麗珊閣地下3號舖",
+          "tel": "852-24461571",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "國際金融中心",
+          "address": "香港中環港景街1號國際金融中心商場第二層2004號",
+          "tel": "852-25239672",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "埃華街",
+          "address": "九龍大角咀51-65號埃華街大方樓地下3-4號舖",
+          "tel": "852-23812176",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "落馬洲港鐵站",
+          "address": "新界落馬洲港鐵站LMC117號舖",
+          "tel": "852-24225501",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大圍新翠",
+          "address": "新界沙田大圍新翠邨新翠商場地下7號舖",
+          "tel": "852-23256623",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "雍盛商埸",
+          "address": "新界粉嶺雍盛苑雍盛商場地下3號舖",
+          "tel": "852-26985208",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "般咸道",
+          "address": "香港般咸道57號地下",
+          "tel": "852-29640734",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "鳳德商場",
+          "address": "九龍黃大仙鳳德商場2樓213及214號舖",
+          "tel": "852-23200446",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "滿樂坊",
+          "address": "香港大嶼山東涌松滿路7號滿東邨滿樂坊地下2號餔",
+          "tel": "852-27299920",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "葵興港鐵站",
+          "address": "新界葵興葵興港鐵站KWH5號舖",
+          "tel": "852-27870921",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "繽紛購物城",
+          "address": "九龍紅磡德民街1-15號繽紛購物城1字樓E",
+          "tel": "852-23346429",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新北江",
+          "address": "新界元朗天水圍新北江廣場1樓C61及62舖",
+          "tel": "852-21499358",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "羅素街",
+          "address": "香港銅鑼灣羅素街8號英皇鐘錶珠寶中心 地下1及2號舖",
+          "tel": "852-25790568",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門市廣場",
+          "address": "新界屯門屯順街1號屯門市廣場1期2樓2199B-2199F號舖",
+          "tel": "852-24041372",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "禾塘咀街",
+          "address": "新界葵興禾塘咀街85號地下",
+          "tel": "852-24246507",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "油麻地",
+          "address": "九龍彌敦道494-496號晉利商業大廈地下",
+          "tel": "852-27706504",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "長沙灣",
+          "address": "九龍長沙灣道833 號長沙灣廣場1 樓121-123 號舖",
+          "tel": "852-21484640",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "翔龍灣",
+          "address": "九龍馬頭角新碼頭街38號翔龍灣廣場地下2號舖",
+          "tel": "852-22622764",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "啟鑽商場",
+          "address": "九龍黃大仙鑽石山啟鑽苑二期啟鑽商場B1樓B14號舖",
+          "tel": "852-27870931",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "置地廣場",
+          "address": "香港中環皇后大道中15號置地廣場中庭3樓312號舖",
+          "tel": "852-34602024",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "鯉景灣",
+          "address": "香港鯉景灣太安街25號D段地下GD20至21A舖",
+          "tel": "852-29678970",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西環聯康",
+          "address": "香港卑路乍街116-122及122A號聯康新樓地下C舖",
+          "tel": "852-28167776",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "順天",
+          "address": "九龍順天邨天權樓地下9-10號舖",
+          "tel": "852-27636705",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "兆康苑",
+          "address": "新界屯門兆康苑兆康商場226號舖",
+          "tel": "852-27933270",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "世貿中心",
+          "address": "香港銅鑼灣告士打道280號世貿中心L2樓L2-12號舖",
+          "tel": "852-25959608",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "灣仔Tower 188",
+          "address": "香港灣仔軒尼詩道188-190號Tower 188 地下",
+          "tel": "852-26338701",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門仁政街",
+          "address": "新界屯門仁政街26A富華大廈地下C-E號",
+          "tel": "852-24505219",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "寶翠園",
+          "address": "香港西環卑路乍街8號寶翠園西寶城2樓237舖",
+          "tel": "852-25427425",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "禾輋",
+          "address": "新界沙田禾輋邨商場2樓261號舖",
+          "tel": "852-26924850",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "偉景花園",
+          "address": "新界青衣青綠街1號偉景花園商場地下8-11號",
+          "tel": "852-24345651",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "弼街",
+          "address": "香港九龍西洋菜南街218-220號及弼街41號生發大廈地下A及B號舖",
+          "tel": "852-23479628",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "金馬倫道",
+          "address": "九龍尖沙咀金馬倫道26-28號金壘商業中心地下",
+          "tel": "852-29076086",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "菁田邨",
+          "address": "新界屯門菁田邨菁田商場地下G12號舖",
+          "tel": "852-24120310",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "駿洋商場",
+          "address": "新界沙田火炭駿洋邨駿洋商場G層G13號舖",
+          "tel": "852-24672342",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "荃新天地",
+          "address": "新界荃灣荃新天地地下G39及G41舖",
+          "tel": "852-26446573",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "雲景道",
+          "address": "香港北角雲景道33號",
+          "tel": "852-28071853",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天璽天",
+          "address": "九龍啟德協調道10號天璽．天低層地下LG28, LG30 及 LG32號舖",
+          "tel": "852-2782-5518",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富昌商場",
+          "address": "九龍深水埗富昌邨富昌商場1樓F110號舖",
+          "tel": "852-27581090",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富山邨",
+          "address": "九龍富山邨富仁樓 LG2層L203-204號舖",
+          "tel": "852-27152904",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "恒隆中心",
+          "address": "香港銅鑼灣百德新街2-20號恒隆中心地下G02號舖",
+          "tel": "852-25681407",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "興東商場",
+          "address": "香港筲箕灣興東邨商場地下10號舖",
+          "tel": "852-29679736",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新土瓜灣",
+          "address": "九龍土瓜灣土瓜灣道70-80W號定安大廈地下31號舖",
+          "tel": "852-23560720",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "洪福商場",
+          "address": "新界元朗洪水橋洪福商場地下9-10號舖",
+          "tel": "852-28902387",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "嘉福商場",
+          "address": "新界粉嶺嘉褔邨嘉褔商場1樓111號舖",
+          "tel": "852-29473272",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海怡西商場",
+          "address": "香港鴨俐洲海怡半島海怡廣場西座1樓 122 號舖",
+          "tel": "852-2537 5180",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "美林商場",
+          "address": "新界大圍美林邨美林商場地下20-22號舖",
+          "tel": "852-34223254",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "美田商場",
+          "address": "新界大圍美田邨美田商場1樓103及104號舖",
+          "tel": "852-26345340",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新香港仔",
+          "address": "香港香港仔香港仔大道170至172號海滙大厦地下",
+          "tel": "852-25751455",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "安達商場",
+          "address": "九龍觀塘安達邨安達商場地下低層LG02號舖",
+          "tel": "852-28871055",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "將軍澳POPCORN",
+          "address": "新界將軍澳唐賢街9號PopCorn 一樓F66及67號舖",
+          "tel": "852-27157018",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "總統戲院",
+          "address": "香港銅鑼灣謝菲道517號地下B舖",
+          "tel": "852-25745483",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "麗晶花園",
+          "address": "九龍九龍灣宏光道80號麗晶花園商場2樓2182, 2183, 2186號舖",
+          "tel": "852-27154984",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "元朗壽富街",
+          "address": "新界元朗壽富街51-59元朗中心地下4A及4B號舖",
+          "tel": "852-24793219",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "山東街",
+          "address": "九龍旺角山東街47-51號中橋商業大廈星際城市地下10-13號舖",
+          "tel": "852-27707920",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "碩門商場",
+          "address": "沙田碩門邨2期碩門商場P1層P12號舖",
+          "tel": "852-24209138",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "信德中心",
+          "address": "香港上環干諾道中200號信德中心2樓203號",
+          "tel": "852-28586672",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "翠林新城",
+          "address": "新界將軍澳翠林邨翠林新城5樓101號舖",
+          "tel": "852-27019793",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "欣田商場",
+          "address": "新界屯門欣田邨欣田商場地下G06號舖",
+          "tel": "852-24705490",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "耀東商場",
+          "address": "香港筲箕灣耀東邨耀東商場2樓201號舖",
+          "tel": "852-25607135",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "康橋大廈",
+          "address": "香港鰂魚涌太古坊康橋大廈地下A舖",
+          "tel": "852-22844811",
+          "district": "東區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "置富",
+          "address": "香港薄扶林置富南區廣場3樓303號室",
+          "tel": "852-28750400",
+          "district": "南區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "彩雲商場",
+          "address": "九龍牛池灣彩雲(一)邨彩雲商場2期高層地下A111號舖",
+          "tel": "852-28562456",
+          "district": "黃大仙區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "北角城",
+          "address": "香港英皇道250號 北角城中心地下02號舖",
+          "tel": "852-21740812",
+          "district": "東區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "富泰",
+          "address": "新界屯門屯貴路9號富泰商場2樓211號舖",
+          "tel": "852-24537242",
+          "district": "屯門區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "元朗鳳琴街",
+          "address": "新界元朗鳳琴街15-21號鴻運中心地下73號",
+          "tel": "852-24781165",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "機利臣街",
+          "address": "香港灣仔莊士敦道18號嘉寧大厦地下C,E,F,G 及 J 舖",
+          "tel": "852-21119641",
+          "district": "灣仔區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "紅磡廣場",
+          "address": "九龍紅磡馬頭圍道37-41號紅磡廣場一樓54-60號舖",
+          "tel": "852-23343848",
+          "district": "九龍城區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "藍灣廣場",
+          "address": "香港小西灣道28號藍灣廣場高層地下UG51 及UG52A號舖",
+          "tel": "852-34074481",
+          "district": "東區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "西鐵兆康站",
+          "address": "新界兆康港鐵站 6-9 號舖",
+          "tel": "852-24629309",
+          "district": "屯門區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "銀湖天峰",
+          "address": "新界馬鞍山西沙路599號銀湖天峰G10號舖",
+          "tel": "852-23149078",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "上水廣場",
+          "address": "新界上水石湖墟龍琛路39號上水廣場4樓419-423舖",
+          "tel": "852-24800034",
+          "district": "北區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "瀝源",
+          "address": "新界沙田瀝源邨瀝源商場二樓214號舖",
+          "tel": "852-26964932",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "青衣城",
+          "address": "新界青衣青敬路33號青衣城二樓216-217號舖",
+          "tel": "852-24953783",
+          "district": "葵青區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "沙田萬怡酒店",
+          "address": "新界沙田安平街一號地下2A號舖",
+          "tel": "852-25950408",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "美孚",
+          "address": "九龍美孚新邨百老匯街69-119號地下99B",
+          "tel": "852-27429664",
+          "district": "深水埗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "新城市廣場",
+          "address": "新界沙田新城市廣場一期3樓307及307A號舖",
+          "tel": "852-26034318",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "寶琳邨",
+          "address": "新界將軍澳寶琳北路18號寶琳邨寶勤樓地下116及117號舖",
+          "tel": "852-24748002",
+          "district": "西貢區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "寶達",
+          "address": "九龍秀茂坪寶琳路寶達商場地下7號舖",
+          "tel": "852-21904256",
+          "district": "觀塘區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "大埔道",
+          "address": "九龍大埔道168-178號南都大廈地下4-5號舖",
+          "tel": "852-23195295",
+          "district": "深水埗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "沙咀道",
+          "address": "新界荃灣沙咀道236號地下,天井及平台",
+          "tel": "852-24720408",
+          "district": "荃灣區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "山景商場",
+          "address": "新界屯門山景村山景商場低層地下106C及106D號",
+          "tel": "852-2471 2530",
+          "district": "屯門區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "沙田廣場",
+          "address": "新界沙田沙田廣場3樓48號舖",
+          "tel": "852-24130004",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "石籬商場",
+          "address": "石籬商場",
+          "tel": "852-26531092",
+          "district": "葵青區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "尚德商場",
+          "address": "新界將軍澳唐明街2號尚德邨尚德商場1樓109號舖",
+          "tel": "852-24505818",
+          "district": "西貢區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "水泉澳廣場",
+          "address": "新界沙田水泉澳邨水泉澳廣場2樓204號舖",
+          "tel": "852-28138602",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "新寶廣場",
+          "address": "九龍佐敦道23號新寶廣場地下1號舖",
+          "tel": "852-27826327",
+          "district": "油尖旺區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "太安樓",
+          "address": "香港筲箕灣筲箕灣道57-87號太安樓地下G7及A6號舖",
+          "tel": "852-29675776",
+          "district": "東區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "德田商場",
+          "address": "九龍藍田碧雲道223號德田商場1樓103號舖",
+          "tel": "852-27178173",
+          "district": "觀塘區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "德褔中心",
+          "address": "九龍九龍灣德褔廣場第一期F16A & F17-F17A號舖",
+          "tel": "852-27986458",
+          "district": "觀塘區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "翠屏道",
+          "address": "九龍觀塘翠屏(北)邨翠屏商場4A號舖",
+          "tel": "852-23480054",
+          "district": "觀塘區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "元朗同樂街",
+          "address": "新界元朗同樂街21號地下",
+          "tel": "852-24090275",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "華富",
+          "address": "香港華富(一)邨華珍樓714-715號舖",
+          "tel": "852-25507553",
+          "district": "南區",
+          "stockStatus": "庫存緊張"
+        }
+      ]
+    },
+    "eco-35g": {
+      "manningsCode": "744805",
+      "manningsUrl": "https://www.mannings.com.hk/zh-hant/ding-ding-mosquito-repellent-35g/p/744805",
+      "storeCount": 276,
+      "stores": [
+        {
+          "name": "中港城",
+          "address": "九龍尖沙咀廣東道33號中港城地下11及11A號舖",
+          "tel": "852-27527938",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西九龍站",
+          "address": "九龍尖沙咀柯士甸道西3號香港西九龍站售票大堂B1-2號舖",
+          "tel": "852-27912077",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "四海大廈",
+          "address": "九龍尖沙咀彌敦道208-212號四海大廈地下A舖",
+          "tel": "852-27206044",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新沙田Baby",
+          "address": "新界沙田新城市廣場第三期二樓A213號舖",
+          "tel": "852-23425131",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "總統戲院",
+          "address": "香港銅鑼灣謝菲道517號地下B舖",
+          "tel": "852-25745483",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "灣仔Tower 188",
+          "address": "香港灣仔軒尼詩道188-190號Tower 188 地下",
+          "tel": "852-26338701",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "河內道 K11",
+          "address": "九龍尖沙咀河內道18號K11地庫1層B109-B110號舖",
+          "tel": "852-31224037",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "山東街",
+          "address": "九龍旺角山東街47-51號中橋商業大廈星際城市地下10-13號舖",
+          "tel": "852-27707920",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門V City Baby",
+          "address": "新界屯門屯門鄉事會路83號V City MTR層M-72號舖",
+          "tel": "852-24159590",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新寶廣場",
+          "address": "九龍佐敦道23號新寶廣場地下1號舖",
+          "tel": "852-27826327",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "啟德Airside",
+          "address": "九龍啟德協調道2號AIRSIDE地庫1層B119-B120號舖",
+          "tel": "852-27746011",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "華光勵精中心",
+          "address": "香港中環皇后大道中88號勵精中心地下2號",
+          "tel": "852-25371241",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門市廣場",
+          "address": "新界屯門屯順街1號屯門市廣場1期2樓2199B-2199F號舖",
+          "tel": "852-24041372",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "Moko",
+          "address": "九龍旺角太子道西193號新世紀廣場一樓162號舖",
+          "tel": "852-23360377",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "雅蘭中心",
+          "address": "九龍彌敦道625及639號雅蘭中心地下G20-22號舖",
+          "tel": "852-27926021",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "恒隆中心",
+          "address": "香港銅鑼灣百德新街2-20號恒隆中心地下G02號舖",
+          "tel": "852-25681407",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新海防道",
+          "address": "九龍尖沙咀海防道38-40號中達大廈地下及天井",
+          "tel": "852-23619645",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上水廣場",
+          "address": "新界上水石湖墟龍琛路39號上水廣場4樓419-423舖",
+          "tel": "852-24800034",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "安泰大廈",
+          "address": "香港上環德輔道中144-148 號安泰大廈地下",
+          "tel": "852-25419813",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "恆安",
+          "address": "新界沙田馬鞍山恆安商場2樓221-222號舖",
+          "tel": "852-26400592",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "葵芳",
+          "address": "新界葵芳新都會廣場 4 樓 417-419 號舖",
+          "tel": "852-29736118",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新教育路",
+          "address": "新界元朗教育路9-13號興發大樓地下7號舖",
+          "tel": "852-24168156",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上水Baby",
+          "address": "新界上水龍運街8號新都廣場106a號舖",
+          "tel": "852-23253728",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "又一城",
+          "address": "九龍九龍塘達之路80號又一城MTR-09號舖",
+          "tel": "852-22657325",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "灣仔道",
+          "address": "香港灣仔道 212-214號怡康大廈地下B舖",
+          "tel": "852-22956783",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富運",
+          "address": "九龍彌敦道573號富運中心地下A舖",
+          "tel": "852-27830044",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海港城",
+          "address": "九龍海港城港威商場三階3304號舖",
+          "tel": "852-26799313",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "顯徑",
+          "address": "新界沙田顯徑邨顯徑購物中心地下113號",
+          "tel": "852-26810489",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "圓方",
+          "address": "九龍柯士甸道西一號圓方1樓1092號舖",
+          "tel": "852-21968125",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "帝庭軒",
+          "address": "新界粉嶺聯和墟和滿街8號帝庭軒一期商場一樓1&2號舖",
+          "tel": "852-29475793",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "油麻地",
+          "address": "九龍彌敦道494-496號晉利商業大廈地下",
+          "tel": "852-27706504",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "國際廣場",
+          "address": "九龍尖沙咀彌敦道63號國際廣場MTR樓層17, 20-23號舖",
+          "tel": "852-27049273",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上水新豐路",
+          "address": "新界上水石湖墟新豐路122-130號龍霞樓地下A & B舖",
+          "tel": "852-26720954",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富蝶商場",
+          "address": "新界大埔富蝶邨二期富蝶商場地下15號舖",
+          "tel": "852-24539128",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門時代廣場",
+          "address": "新界屯門時代廣場南翼3樓8,9及39號舖",
+          "tel": "852-24417153",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門V City",
+          "address": "新界屯門屯門鄉事會路83號V City MTR層28、29、30及31號舖",
+          "tel": "852-23423428",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "雲景道",
+          "address": "香港北角雲景道33號",
+          "tel": "852-28071853",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "運頭塘",
+          "address": "新界大埔運頭塘邨商場29舖",
+          "tel": "852-26513448",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "葵興港鐵站",
+          "address": "新界葵興葵興港鐵站KWH5號舖",
+          "tel": "852-27870921",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新軒尼詩道",
+          "address": "香港灣仔軒尼詩道388號Mall Plus地下G08舖",
+          "tel": "852-25742675",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新城市廣場",
+          "address": "新界沙田新城市廣場一期3樓307及307A號舖",
+          "tel": "852-26034318",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "珀麗灣",
+          "address": "新界馬灣珀麗灣珀麗路8 號地下S10 號舖",
+          "tel": "852-29863010",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "菁田邨",
+          "address": "新界屯門菁田邨菁田商場地下G12號舖",
+          "tel": "852-24120310",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "國際金融中心",
+          "address": "香港中環港景街1號國際金融中心商場第二層2004號",
+          "tel": "852-25239672",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "美林商場",
+          "address": "新界大圍美林邨美林商場地下20-22號舖",
+          "tel": "852-34223254",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "北角城",
+          "address": "香港英皇道250號 北角城中心地下02號舖",
+          "tel": "852-21740812",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "嘉福商場",
+          "address": "新界粉嶺嘉褔邨嘉褔商場1樓111號舖",
+          "tel": "852-29473272",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "如心廣場",
+          "address": "新界荃灣楊屋道8號如心廣場一期2樓202B及203號舖",
+          "tel": "852-24132708",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "長亨商場",
+          "address": "新界青衣長亨邨長亨商場3樓313-315號舖",
+          "tel": "852-23453578",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "孔雀樓",
+          "address": "九龍牛頭角道281號觀塘花園大廈孔雀樓地下281號舖",
+          "tel": "852-27934773",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "水泉澳廣場",
+          "address": "新界沙田水泉澳邨水泉澳廣場2樓204號舖",
+          "tel": "852-28138602",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "康城",
+          "address": "新界將軍澳康城3樓342號舖",
+          "tel": "852-27591179",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "太古城",
+          "address": "香港太古城道18號太古城中心第一期420舖",
+          "tel": "852-29070621",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "元朗廣場",
+          "address": "新界元朗廣場1樓130及181-183號鋪",
+          "tel": "852-23206205",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "碧堤坊",
+          "address": "新界深井青山公路33號碧堤坊3樓8號舖",
+          "tel": "852-31041054",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富山邨",
+          "address": "九龍富山邨富仁樓 LG2層L203-204號舖",
+          "tel": "852-27152904",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "落馬洲離境",
+          "address": "新界落馬洲港鐵站 LMC 119-120舖",
+          "tel": "852-34046533",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "朗屏邨",
+          "address": "新界元朗朗屏邨5座鏡屏樓M樓M006,M007號舖",
+          "tel": "852-29445292",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "將軍澳中心",
+          "address": "新界西貢將軍澳唐德街9號將軍澳中心1樓117號舖",
+          "tel": "852-27154156",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "翠林新城",
+          "address": "新界將軍澳翠林邨翠林新城5樓101號舖",
+          "tel": "852-27019793",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "灣仔光華",
+          "address": "香港灣仔軒尼詩道269至273號地下A及B號舖",
+          "tel": "852-25117036",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富亨",
+          "address": "新界大埔富亨邨富亨購物中心28號",
+          "tel": "852-26614324",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "鯉景灣",
+          "address": "香港鯉景灣太安街25號D段地下GD20至21A舖",
+          "tel": "852-29678970",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "安達商場",
+          "address": "九龍觀塘安達邨安達商場地下低層LG02號舖",
+          "tel": "852-28871055",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大埔道",
+          "address": "九龍大埔道168-178號南都大廈地下4-5號舖",
+          "tel": "852-23195295",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "荃錦中心",
+          "address": "新界荃灣荃錦中心110-125號",
+          "tel": "852-24987843",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "置樂花園",
+          "address": "新界屯門置樂花園地下66A號舖",
+          "tel": "852-24049790",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "東薈城",
+          "address": "新界東涌東薈城名店倉5樓501號舖",
+          "tel": "852-27538179",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富健花園",
+          "address": "新界屯門龍門道45號富健花園55, 56 & 58號舖",
+          "tel": "852-24539074",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "跑馬地",
+          "address": "香港跑馬地成和道25-27號地下",
+          "tel": "852-25756904",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "李鄭屋",
+          "address": "九龍順寧道273號日輝大廈地下G11號",
+          "tel": "852-27256594",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "馬頭角道",
+          "address": "九龍九龍城馬頭角道金都豪苑地下3-4號舖",
+          "tel": "852-27144547",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新彩園廣場",
+          "address": "新界上水彩園邨彩園廣場3樓R8號舖",
+          "tel": "852-23620348",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海翠坊",
+          "address": "新界屯門湖翠路168-236號海翠坊1號及85-86號舖",
+          "tel": "852-24416769",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "羅素街",
+          "address": "香港銅鑼灣羅素街8號英皇鐘錶珠寶中心 地下1及2號舖",
+          "tel": "852-25790568",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "竹園",
+          "address": "九龍竹園南村竹園商場1樓S101號",
+          "tel": "852-27261645",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "粉嶺中心",
+          "address": "新界粉嶺新運路33號粉嶺中心地下139至142號舖",
+          "tel": "852-26600114",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "洪水橋",
+          "address": "新界元朗洪水橋洪堤路3號麗珊閣地下3號舖",
+          "tel": "852-24461571",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "啟田商場",
+          "address": "九龍觀塘藍田啟田商場2樓228號舖",
+          "tel": "852-25131112",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海怡西商場",
+          "address": "香港鴨俐洲海怡半島海怡廣場西座1樓 122 號舖",
+          "tel": "852-2537 5180",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "順天",
+          "address": "九龍順天邨天權樓地下9-10號舖",
+          "tel": "852-27636705",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "兆康苑",
+          "address": "新界屯門兆康苑兆康商場226號舖",
+          "tel": "852-27933270",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "蘇屋商場",
+          "address": "深水埗蘇屋邨蘇屋商場地下G12號舖",
+          "tel": "852-27156052",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天瑞商場",
+          "address": "新界天水圍天瑞邨天瑞商場地下G21號舖",
+          "tel": "852-26599912",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "元朗同樂街",
+          "address": "新界元朗同樂街21號地下",
+          "tel": "852-24090275",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "麗城薈",
+          "address": "新界荃灣青山公路625號麗城薈3期地下23,24及26號舖",
+          "tel": "852-23579476",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "偉景花園",
+          "address": "新界青衣青綠街1號偉景花園商場地下8-11號",
+          "tel": "852-24345651",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "蝴蝶邨",
+          "address": "新界屯門蝴蝶廣場地下R123號舖",
+          "tel": "852-24639344",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "康橋大廈",
+          "address": "香港鰂魚涌太古坊康橋大廈地下A舖",
+          "tel": "852-22844811",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "長洲",
+          "address": "香港長洲海旁道31號地下",
+          "tel": "852-29869420",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "彩雲商場",
+          "address": "九龍牛池灣彩雲(一)邨彩雲商場2期高層地下A111號舖",
+          "tel": "852-28562456",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "囍逸",
+          "address": "新界粉嶺和豐街28號囍逸地下5號舖",
+          "tel": "852-26901020",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "電氣道",
+          "address": "香港北角電氣道183號友邦廣場地下5-6號",
+          "tel": "852-25667561",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "置地廣場",
+          "address": "香港中環皇后大道中15號置地廣場中庭3樓312號舖",
+          "tel": "852-34602024",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "昇悅居",
+          "address": "九龍荔枝角道833號昇悅居1樓130及132號舖",
+          "tel": "852-22044930",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "羅湖港鐵站",
+          "address": "新界羅湖港鐵站LOW 108 號舖",
+          "tel": "852-31424790",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "落馬洲港鐵站",
+          "address": "新界落馬洲港鐵站LMC117號舖",
+          "tel": "852-24225501",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新港城",
+          "address": "新界馬鞍山新港城中心二樓2108舖",
+          "tel": "852-26336674",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新香港仔",
+          "address": "香港香港仔香港仔大道170至172號海滙大厦地下",
+          "tel": "852-25751455",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "奧海城2期",
+          "address": "九龍大角咀奧海城商場2期1樓142-143號舖",
+          "tel": "852-22724972",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "寶來街",
+          "address": "九龍紅磡湖光街1-7號地下17 G1A 號舖",
+          "tel": "852-23341039",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新北江",
+          "address": "新界元朗天水圍新北江廣場1樓C61及62舖",
+          "tel": "852-21499358",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上水中心",
+          "address": "新界上水智昌路3號上水中心2樓2077D-H號舖",
+          "tel": "852-27877202",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新鴻基中心",
+          "address": "香港灣仔新鴻基中心地下G14-G18號舖",
+          "tel": "852-25112927",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "黃大仙中心北館",
+          "address": "九龍黃大仙龍翔道136號黃大仙中心北館2樓N210A號舖",
+          "tel": "852-23503200",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "將軍澳Baby",
+          "address": "新界將軍澳唐俊街9號pop Corn1樓F68號舖",
+          "tel": "852-27521167",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門HANDS",
+          "address": "新界屯門友愛路友愛邨H.A.N.D.S. S區2樓S-229及S-230號舖",
+          "tel": "852-26598220",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "油麗商場",
+          "address": "九龍油塘油麗商場地下9 號舖",
+          "tel": "852-26703400",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "愉翠商場",
+          "address": "新界沙田愉翠苑愉翠苑商場1樓119-120號舖",
+          "tel": "852-26474719",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "雍盛商埸",
+          "address": "新界粉嶺雍盛苑雍盛商場地下3號舖",
+          "tel": "852-26985208",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "置富",
+          "address": "香港薄扶林置富南區廣場3樓303號室",
+          "tel": "852-28750400",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "頌安",
+          "address": "新界馬鞍山頌安商場1樓110&111號",
+          "tel": "852-26335401",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "荃新天地",
+          "address": "新界荃灣荃新天地地下G39及G41舖",
+          "tel": "852-26446573",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天璽天",
+          "address": "九龍啟德協調道10號天璽．天低層地下LG28, LG30 及 LG32號舖",
+          "tel": "852-2782-5518",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "福昌樓",
+          "address": "香港鰂魚涌英皇道1032-1044號福昌樓低層地下102號舖",
+          "tel": "852-25661406",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富昌商場",
+          "address": "九龍深水埗富昌邨富昌商場1樓F110號舖",
+          "tel": "852-27581090",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "富泰",
+          "address": "新界屯門屯貴路9號富泰商場2樓211號舖",
+          "tel": "852-24537242",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "香港港鐵站",
+          "address": "香港香港港鐵站HOK48號舖",
+          "tel": "852-25580117",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "埃華街",
+          "address": "九龍大角咀51-65號埃華街大方樓地下3-4號舖",
+          "tel": "852-23812176",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "啟鑽商場",
+          "address": "九龍黃大仙鑽石山啟鑽苑二期啟鑽商場B1樓B14號舖",
+          "tel": "852-27870931",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "廣源",
+          "address": "新界沙田廣源邨商場第四座1-3號",
+          "tel": "852-26356995",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "麗閣商場",
+          "address": "九龍深水埗麗閣邨麗閣商場地下G01及G02號舖",
+          "tel": "852-27551089",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "沙田萬怡酒店",
+          "address": "新界沙田安平街一號地下2A號舖",
+          "tel": "852-25950408",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新蒲崗Mikiki",
+          "address": "九龍新蒲崗太子道東638號Mikiki地下G56號鋪",
+          "tel": "852-27635308",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新青山道",
+          "address": "九龍長沙灣青山道476號百佳商業中心地下",
+          "tel": "852-21484912",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "博康",
+          "address": "新界沙田博康邨博康商場107-109號舖",
+          "tel": "852-26356390",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "麗晶花園",
+          "address": "九龍九龍灣宏光道80號麗晶花園商場2樓2182, 2183, 2186號舖",
+          "tel": "852-27154984",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "石蔭",
+          "address": "新界葵涌石蔭路96號天安樓地下1號舖",
+          "tel": "852-24017239",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "尚德商場",
+          "address": "新界將軍澳唐明街2號尚德邨尚德商場1樓109號舖",
+          "tel": "852-24505818",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "盛芳街",
+          "address": "新界葵涌盛芳街38-44號寬德大廈地下8-10號舖",
+          "tel": "852-26234561",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "T2 7TL075 離境大堂",
+          "address": "香港大嶼山香港國際機場二號客運大樓七樓離境大堂7TL075號舖",
+          "tel": "852-25605908",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "時代廣場",
+          "address": "香港銅鑼灣時代廣場9樓917號舖",
+          "tel": "852-25657455",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "爵祿街",
+          "address": "九龍新蒲崗爵祿街74-76號地下",
+          "tel": "852-23212619",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "荃灣千色匯",
+          "address": "新界荃灣眾安街68號荃灣千色匯I期地下G016-G017舖",
+          "tel": "852-26609030",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "馬鞍山",
+          "address": "新界馬鞍山保泰街16號地下G10",
+          "tel": "852-26432059",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "寶翠園",
+          "address": "香港西環卑路乍街8號寶翠園西寶城2樓237舖",
+          "tel": "852-25427425",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "欣田商場",
+          "address": "新界屯門欣田邨欣田商場地下G06號舖",
+          "tel": "852-24705490",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "逸東商場",
+          "address": "香港新界東涌逸東街8號逸東商場1樓115及116號舖",
+          "tel": "852-24069408",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "形點",
+          "address": "新界元朗朗日路8-9號及元龍街9號形點2樓A212a號舖",
+          "tel": "852-24489700",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "宇宙商場",
+          "address": "九龍深水埗青山道164-170號宇宙商場地下G18A-B",
+          "tel": "852-27297840",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "金御門",
+          "address": "九龍九龍城衙前圍道39號金．御門地下1號舖",
+          "tel": "852-23501433",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "八號花園",
+          "address": "新界大埔八號花園地下15-16號舖",
+          "tel": "852-26451044",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "元朗鳳琴街",
+          "address": "新界元朗鳳琴街15-21號鴻運中心地下73號",
+          "tel": "852-24781165",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西沙GO PARK 2",
+          "address": "新界西沙海映路8號西沙GO PARK 2 地下低層LG30號舖",
+          "tel": "852-23762408",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "翔龍灣",
+          "address": "九龍馬頭角新碼頭街38號翔龍灣廣場地下2號舖",
+          "tel": "852-22622764",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "俊宏軒",
+          "address": "新界天水圍天瑞路88號俊宏軒1樓104號舖",
+          "tel": "852-34011583",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "翠華花園",
+          "address": "新界沙田沙角街7-11號翠華花園地下12-13號舖",
+          "tel": "852-26461483",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "興東商場",
+          "address": "香港筲箕灣興東邨商場地下10號舖",
+          "tel": "852-29679736",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "海麗商場",
+          "address": "九龍深水埗海麗邨海麗商場地下12及13號舖",
+          "tel": "852-35146236",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "洪福商場",
+          "address": "新界元朗洪水橋洪福商場地下9-10號舖",
+          "tel": "852-28902387",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "滿樂坊",
+          "address": "香港大嶼山東涌松滿路7號滿東邨滿樂坊地下2號餔",
+          "tel": "852-27299920",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "啟德體育園",
+          "address": "香港九龍九龍城啟德體育園啟德零售館1, 2樓 M1-204號舖",
+          "tel": "852-23342278",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "光華中心",
+          "address": "新界元朗阜材街34-36號光華中心地下4號舖",
+          "tel": "852-24431343",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "瀝源",
+          "address": "新界沙田瀝源邨瀝源商場二樓214號舖",
+          "tel": "852-26964932",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "綠楊",
+          "address": "新界荃灣綠楊坊平台 P11A & P11B",
+          "tel": "852-24923224",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "青衣城",
+          "address": "新界青衣青敬路33號青衣城二樓216-217號舖",
+          "tel": "852-24953783",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "萬事達廣場",
+          "address": "九龍美孚新邨荔灣道萬事達廣場N72號地下",
+          "tel": "852-27850295",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新康怡廣場",
+          "address": "香港康山道1-2號康怡廣場2樓S30號及東上橋S8至S10號舖",
+          "tel": "852-26500412",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新荔枝角",
+          "address": "九龍荔枝角道50-52號大華大廈地下B及C舖",
+          "tel": "852-27257208",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門Novo Walk",
+          "address": "新界屯門欣寶路8號NOVO WALK 地下22及23號舖",
+          "tel": "852-24735468",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "百得",
+          "address": "新界沙田第一城商場G30-32號",
+          "tel": "852-26460884",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "繽紛購物城",
+          "address": "九龍紅磡德民街1-15號繽紛購物城1字樓E",
+          "tel": "852-23346429",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "寶琳邨",
+          "address": "新界將軍澳寶琳北路18號寶琳邨寶勤樓地下116及117號舖",
+          "tel": "852-24748002",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西營盤",
+          "address": "香港德輔道西334至350號恆裕大廈地下8號舖",
+          "tel": "852-25460326",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新康街",
+          "address": "新界上水新康街96號地下",
+          "tel": "852-26721376",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "石籬商場",
+          "address": "石籬商場",
+          "tel": "852-26531092",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "雙鳳街",
+          "address": "九龍黃大仙雙鳳街18號地下",
+          "tel": "852-23286364",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "春園街",
+          "address": "香港灣仔春園街47至65號新春園大廈地下E及F舖",
+          "tel": "852-27930642",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大河道",
+          "address": "新界荃灣大河道19號地下",
+          "tel": "852-24394712",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大圍",
+          "address": "新界沙田大圍道55-56號金禧花園10號地下",
+          "tel": "852-26983157",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大元村",
+          "address": "新界大埔大元商場新翼地下1號舖",
+          "tel": "852-26678645",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天水圍港鐵站",
+          "address": "新界天水圍天水圍港鐵站TIS 30-33號舖",
+          "tel": "852-24450618",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "屯門仁政街",
+          "address": "新界屯門仁政街26A富華大廈地下C-E號",
+          "tel": "852-24505219",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "深水埗 V Walk",
+          "address": "九龍深水埗深旺道28號V Walk 2樓L2-97及L2-98號舖",
+          "tel": "852-27991050",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "深水埗V Walk Baby",
+          "address": "九龍深水埗深旺道28號V Walk 2樓L2-1及L2-2號舖",
+          "tel": "852-27993316",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "皇室堡",
+          "address": "香港銅鑼灣告士打道311 號皇室堡3樓311至312號舖",
+          "tel": "852-25633343",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "禾塘咀街",
+          "address": "新界葵興禾塘咀街85號地下",
+          "tel": "852-24246507",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "耀東商場",
+          "address": "香港筲箕灣耀東邨耀東商場2樓201號舖",
+          "tel": "852-25607135",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "金馬倫道",
+          "address": "九龍尖沙咀金馬倫道26-28號金壘商業中心地下",
+          "tel": "852-29076086",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "清河商場",
+          "address": "新界上水清河邨清河商場9號舖",
+          "tel": "852-26723267",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "駿洋商場",
+          "address": "新界沙田火炭駿洋邨駿洋商場G層G13號舖",
+          "tel": "852-24672342",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "花都廣場",
+          "address": "新界粉嶺百和路88號花都廣場地下A56-A59號",
+          "tel": "852-26826217",
+          "district": "北區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "機利臣街",
+          "address": "香港灣仔莊士敦道18號嘉寧大厦地下C,E,F,G 及 J 舖",
+          "tel": "852-21119641",
+          "district": "灣仔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "杏花",
+          "address": "香港柴灣杏花村杏花新城157-159號舖",
+          "tel": "852-29765694",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "銀湖天峰",
+          "address": "新界馬鞍山西沙路599號銀湖天峰G10號舖",
+          "tel": "852-23149078",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "鯉魚門廣場",
+          "address": "九龍油塘鯉魚門廣場1樓140號舖",
+          "tel": "852-27583770",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "良景",
+          "address": "新界屯門良景邨良景廣場2樓L217號舖",
+          "tel": "852-24550949",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "樂華商場",
+          "address": "九龍牛頭角樂華南及北邨樂華商場3樓314號舖",
+          "tel": "852-23436975",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西環聯康",
+          "address": "香港卑路乍街116-122及122A號聯康新樓地下C舖",
+          "tel": "852-28167776",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "美孚",
+          "address": "九龍美孚新邨百老匯街69-119號地下99B",
+          "tel": "852-27429664",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "美田商場",
+          "address": "新界大圍美田邨美田商場1樓103及104號舖",
+          "tel": "852-26345340",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新彩明商場",
+          "address": "新界將軍澳彩明商場310號舖",
+          "tel": "852-27830728",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新翠商場",
+          "address": "香港柴灣新翠商場4樓1-11號",
+          "tel": "852-28979231",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新水渠道",
+          "address": "九龍太子水渠道38-42號寶石大樓地下B舖及天井",
+          "tel": "852-23451635",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新荃灣廣場",
+          "address": "新界荃灣荃灣廣場3樓308-313號舖",
+          "tel": "852-26434628",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新形點Baby",
+          "address": "新界元朗朗日路9號形點I 2樓2008號舖",
+          "tel": "852-24709371",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "安泰商場",
+          "address": "九龍觀塘安泰邨安泰商場地下高層105號舖",
+          "tel": "852-23857018",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "寶達",
+          "address": "九龍秀茂坪寶琳路寶達商場地下7號舖",
+          "tel": "852-21904256",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "利港中心",
+          "address": "香港香港仔利港中心1樓 106-107號舖",
+          "tel": "852-25806607",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "上環",
+          "address": "香港皇后大道中368號偉利大廈1樓 6 號舖",
+          "tel": "852-25434464",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "順利商場",
+          "address": "九龍觀塘利安道15號順利邨順利商場2樓201B號舖",
+          "tel": "852-27949528",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大興",
+          "address": "新界屯門大興街1號大興邨商場地下L107號舖",
+          "tel": "852-23856177",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大圍火車站",
+          "address": "新界大圍港鐵站已繳費區12及13號舖",
+          "tel": "",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天澤",
+          "address": "新界天水圍天瑞路71, 73, 75及77號天澤邨天澤商場2樓210A舖",
+          "tel": "852-28683007",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "天晴商場",
+          "address": "新界天水圍天晴邨天晴商場8號舖",
+          "tel": "852-23504422",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "青衣",
+          "address": "新界青衣長發廣場2樓217號舖",
+          "tel": "852-24331433",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "東堤灣畔",
+          "address": "香港大嶼山東涌東堤灣畔地下3-4號舖",
+          "tel": "852-31474376",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "華富",
+          "address": "香港華富(一)邨華珍樓714-715號舖",
+          "tel": "852-25507553",
+          "district": "南區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "黃埔花園",
+          "address": "九龍紅磡黃埔花園第十一期商場地下G4A及G4B號舖",
+          "tel": "852-23851148",
+          "district": "",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "漁灣邨",
+          "address": "香港柴灣漁灣邨漁豐樓地下2號舖",
+          "tel": "852-29760646",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "淘大商場",
+          "address": "九龍牛頭角道 77 號淘大商場二期地下183-185號",
+          "tel": "852-23313357",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "般咸道",
+          "address": "香港般咸道57號地下",
+          "tel": "852-29640734",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "弼街",
+          "address": "香港九龍西洋菜南街218-220號及弼街41號生發大廈地下A及B號舖",
+          "tel": "852-23479628",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "窩打老道",
+          "address": "九龍窩打老道86D 萬基大廈地下 A&B1A號",
+          "tel": "852-27607742",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "卓爾居",
+          "address": "屯門石排頭徑1號卓爾居地下G2A號舖",
+          "tel": "852-27939303",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "長沙灣道",
+          "address": "九龍長沙灣道226-242號金華大廈地下B6 & B7號舖",
+          "tel": "852-23922036",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "晴朗商場",
+          "address": "九龍九龍城沐翠街晴朗商場地下A004號舖位",
+          "tel": "852-28664493",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大本型",
+          "address": "九龍油塘高超道38號大本型2樓233號舖",
+          "tel": "852-28703578",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西鐵兆康站",
+          "address": "新界兆康港鐵站 6-9 號舖",
+          "tel": "852-24629309",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "葵涌商場",
+          "address": "新界葵涌上角街葵涌邨3期葵涌商場104號舗",
+          "tel": "852-22794093",
+          "district": "葵青區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "廣褔商場",
+          "address": "新界大埔廣福邨廣福商場1樓206-209號舖",
+          "tel": "852-26577970",
+          "district": "大埔區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "觀塘",
+          "address": "九龍觀塘通明街7號地下",
+          "tel": "852-23434003",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "麗港城",
+          "address": "九龍觀塘茶果嶺道88號麗港城商場地下34及36號舖",
+          "tel": "852-23799072",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "荔枝角",
+          "address": "九龍深水埗荔枝角道316-318號地下",
+          "tel": "852-27257960",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新都城二期",
+          "address": "新界將軍澳新都城中心二期1樓 1116至1118號舖",
+          "tel": "852-26249599",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "港灣豪庭廣場",
+          "address": "九龍大角咀福利街 8 號港灣豪庭廣場1樓109-110號舖",
+          "tel": "852-31443490",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "都會豪庭",
+          "address": "新界將軍澳MCP Discovery 二樓205及208號舖",
+          "tel": "852-31946258",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "南昌街",
+          "address": "九龍南昌街223-237號名都廣場地下",
+          "tel": "852-27794924",
+          "district": "深水埗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新卑路乍街",
+          "address": "香港卑路乍街57-61號利達樓地下1號",
+          "tel": "852-28198361",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新寶怡花園",
+          "address": "新界屯門良德街11號寶怡花園地下17-18號",
+          "tel": "852-24885211",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新愉景新城",
+          "address": "新界荃灣青山道398號愉景城購物商場二層2050舖",
+          "tel": "852-28894608",
+          "district": "荃灣區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新九龍廣場",
+          "address": "九龍大角咀道38號新九龍廣場地下56-59號",
+          "tel": "852-27874454",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新西灣河",
+          "address": "香港筲箕灣道326至332號康泰大樓地下4號舖",
+          "tel": "852-25413908",
+          "district": "東區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "愛民商場",
+          "address": "九龍何文田愛民邨愛民廣場G17號舖",
+          "tel": "852-27123470",
+          "district": "九龍城區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "奧海城1期",
+          "address": "香港西九龍海輝道11號奧海城1期高層地下5號舖",
+          "tel": "852-22714937",
+          "district": "油尖旺區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "坪石邨",
+          "address": "九龍坪石邨玉石樓地下117 - 120號舖",
+          "tel": "852-25651300",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "皇后大道西",
+          "address": "香港皇后大道西230-236 號好時大廈地下C 舖",
+          "tel": "852-29754469",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "新蒲崗",
+          "address": "九龍康強街35-49號地下2號舖",
+          "tel": "852-27570821",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "秀茂坪",
+          "address": "九龍秀茂坪邨秀茂坪商場1 樓108 號舖",
+          "tel": "852-23548572",
+          "district": "觀塘區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "沙角商場",
+          "address": "新界沙田沙角街5號沙角商場2樓235號舖",
+          "tel": "852-27601161",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "山景商場",
+          "address": "新界屯門山景村山景商場低層地下106C及106D號",
+          "tel": "852-2471 2530",
+          "district": "屯門區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "信德中心",
+          "address": "香港上環干諾道中200號信德中心2樓203號",
+          "tel": "852-28586672",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "T Town South",
+          "address": "新界元朗天水圍天華路30號T Town South地下SG25號舖",
+          "tel": "852-24501167",
+          "district": "元朗區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "T1 6W532 禁區西大堂",
+          "address": "香港大嶼山香港國際機場一號客運大樓6 樓離港層(禁區) 6W532號舖",
+          "tel": "852-28901287",
+          "district": "離島區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "大圍新翠",
+          "address": "新界沙田大圍新翠邨新翠商場地下7號舖",
+          "tel": "852-23256623",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "連理街商場",
+          "address": "新界將軍澳坑口連理街商場1樓119-121號舖",
+          "tel": "852-21410027",
+          "district": "西貢區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "慈雲山中心",
+          "address": "九龍慈雲山毓華街23號慈雲山中心5樓537-538號舖",
+          "tel": "852-28082493",
+          "district": "黃大仙區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "西環",
+          "address": "香港皇后大道西572-574號高良大廈地下",
+          "tel": "852-29864386",
+          "district": "中西區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "禾輋",
+          "address": "新界沙田禾輋邨商場2樓261號舖",
+          "tel": "852-26924850",
+          "district": "沙田區",
+          "stockStatus": "有現貨"
+        },
+        {
+          "name": "創紀之城",
+          "address": "九龍觀塘創紀之城5期apm1樓L1-28及L1-29號舖",
+          "tel": "852-31489369",
+          "district": "觀塘區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "長沙灣",
+          "address": "九龍長沙灣道833 號長沙灣廣場1 樓121-123 號舖",
+          "tel": "852-21484640",
+          "district": "深水埗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "東港城",
+          "address": "新界將軍澳重華路8號東港城2樓238B號舖",
+          "tel": "852-26284027",
+          "district": "西貢區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "錦繡花園",
+          "address": "新界元朗錦繡花園D座地下2號舖",
+          "tel": "852-24710279",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "鳳德商場",
+          "address": "九龍黃大仙鳳德商場2樓213及214號舖",
+          "tel": "852-23200446",
+          "district": "黃大仙區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "恆福商場",
+          "address": "新界屯門青山公路333號青山灣段恆福商場2樓213-214號舖",
+          "tel": "852-29775110",
+          "district": "屯門區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "海富",
+          "address": "九龍旺角西海泓道海富苑海富商場101舖",
+          "tel": "852-29940743",
+          "district": "油尖旺區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "紅磡廣場",
+          "address": "九龍紅磡馬頭圍道37-41號紅磡廣場一樓54-60號舖",
+          "tel": "852-23343848",
+          "district": "九龍城區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "賴恩樓",
+          "address": "香港上環皇后大道西42-56號賴恩樓地下A號舖",
+          "tel": "852-28052710",
+          "district": "中西區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "樂富廣場",
+          "address": "九龍黃大仙聯合道198號樂富廣場3樓3183A號舖",
+          "tel": "852-23091114",
+          "district": "黃大仙區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "北角",
+          "address": "香港北角英皇道386-388號北港商業大廈地下B",
+          "tel": "852-25712621",
+          "district": "東區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "悅來坊",
+          "address": "新界荃灣荃華街3號悅來酒店悅來坊商場地庫1B118室",
+          "tel": "852-25410938",
+          "district": "荃灣區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "駿景廣場",
+          "address": "新界火炭駿景廣場G63-65號舖",
+          "tel": "852-25927482",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "荷里活廣場",
+          "address": "九龍鑽石山荷里活廣場377-378號舖",
+          "tel": "852-29559506",
+          "district": "黃大仙區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "將軍澳POPCORN",
+          "address": "新界將軍澳唐賢街9號PopCorn 一樓F66及67號舖",
+          "tel": "852-27157018",
+          "district": "西貢區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "太子",
+          "address": "九龍大埔道10A地下",
+          "tel": "852-27846580",
+          "district": "深水埗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "羅便臣道",
+          "address": "香港西摩道1號輝煌臺地下8 號舖",
+          "tel": "852-25404307",
+          "district": "中西區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "西貢",
+          "address": "新界西貢福民路22-40號西貢苑地下26-27號舖",
+          "tel": "852-27914432",
+          "district": "西貢區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "元朗壽富街",
+          "address": "新界元朗壽富街51-59元朗中心地下4A及4B號舖",
+          "tel": "852-24793219",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "沙田廣場",
+          "address": "新界沙田沙田廣場3樓48號舖",
+          "tel": "852-24130004",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "碩門商場",
+          "address": "沙田碩門邨2期碩門商場P1層P12號舖",
+          "tel": "852-24209138",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "穗禾",
+          "address": "新界沙田穗禾購物中心地下G11,G12號",
+          "tel": "852-26053070",
+          "district": "沙田區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "大埔超級城Baby",
+          "address": "新界大埔大埔超級城B區2樓269-270號舖",
+          "tel": "852-26334906",
+          "district": "大埔區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "天盛商場",
+          "address": "新界元朗天水圍天靖街3號天盛苑天盛商場1樓L102號舖",
+          "tel": "852-25093298",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "天耀",
+          "address": "新界天水圍天耀廣場地下L029號舖",
+          "tel": "852-24479395",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "土瓜灣(美景大廈)",
+          "address": "九龍土瓜灣道美景大廈地下243A",
+          "tel": "852-29544976",
+          "district": "九龍城區",
+          "stockStatus": "庫存緊張"
+        },
+        {
+          "name": "元朗大馬路",
+          "address": "新界元朗青山公路元朗段118號地下2A及2B號舖",
+          "tel": "852-26205143",
+          "district": "元朗區",
+          "stockStatus": "庫存緊張"
+        }
+      ]
+    }
+  }
+};

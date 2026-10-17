@@ -35,7 +35,8 @@ window.DD_PRODUCTS = [
       others: "部分店有售／非全線（官網：萬寧、屈臣氏、華潤堂、莎莎、千色、先施等）"
     },
     officialUrl: "https://www.japandingding.com/product-details.php?id=41",
-    manningsUrl: null,
+    manningsUrl: "https://www.mannings.com.hk/zh-hant/ding-ding-complete-mosquito-repellent-spray-cherry-blossom-70ml/p/708156",
+    manningsCode: "708156",
     dengueNote: "官網有「有助遠離登革熱及日本腦炎的威脅」等表述；此為公眾衛生情境，並非保證可預防該等疾病。"
   },
   {
@@ -73,7 +74,8 @@ window.DD_PRODUCTS = [
       others: "部分店有售／非全線"
     },
     officialUrl: "https://www.japandingding.com/product-details.php?id=23",
-    manningsUrl: null,
+    manningsUrl: "https://www.mannings.com.hk/zh-hant/ding-ding-mosquito-and-insect-repellent-spray-70ml/p/678201",
+    manningsCode: "678201",
     dengueNote: "官網有「有助遠離登革熱及日本腦炎的威脅」等表述；並非保證可預防該等疾病。"
   },
   {
@@ -109,7 +111,8 @@ window.DD_PRODUCTS = [
       others: "部分店有售／非全線（官網：萬寧、屈臣氏、華潤堂、莎莎、卓悅、南華藥房及各大藥行等）"
     },
     officialUrl: "https://www.japandingding.com/product-details.php?id=33",
-    manningsUrl: null,
+    manningsUrl: "https://www.mannings.com.hk/zh-hant/ding-ding-mosquito-repellent-spray-70ml/p/802793",
+    manningsCode: "802793",
     dengueNote: "官網有「有助遠離登革熱及日本腦炎的威脅」等表述；並非保證可預防該等疾病。"
   },
   {
@@ -181,7 +184,8 @@ window.DD_PRODUCTS = [
       others: "部分店有售／非全線"
     },
     officialUrl: "https://www.japandingding.com/product-details.php?id=65",
-    manningsUrl: null,
+    manningsUrl: "https://www.mannings.com.hk/zh-hant/ding-ding-mosquito-complete-mosquito-insect-repellent-patch-18pcs/p/675165",
+    manningsCode: "675165",
     dengueNote: null
   },
   {
@@ -292,7 +296,8 @@ window.DD_PRODUCTS = [
       others: "部分店有售／非全線（官網：萬寧、屈臣氏、SASA、一田、Soda Mall、先施、city'super 等）"
     },
     officialUrl: "https://www.japandingding.com/product-details.php?id=63",
-    manningsUrl: null,
+    manningsUrl: "https://www.mannings.com.hk/zh-hant/ding-ding-mosquito-complete-mosquito-insect-repellent-35g/p/669374",
+    manningsCode: "669374",
     dengueNote: null
   },
   {
@@ -329,7 +334,8 @@ window.DD_PRODUCTS = [
       others: "部分店有售／非全線"
     },
     officialUrl: "https://www.japandingding.com/product-details.php?id=18",
-    manningsUrl: null,
+    manningsUrl: "https://www.mannings.com.hk/zh-hant/ding-ding-mosquito-repellent-35g/p/744805",
+    manningsCode: "744805",
     dengueNote: "官網有「有助遠離登革熱或日本腦炎的威脅」等表述；並非保證可預防該等疾病。"
   },
   {
@@ -632,7 +638,7 @@ window.DD_GLOBAL_FAQ = {
   g6pdIntro:
     "蠶豆症（G6PD 缺乏症）患者應避免樟腦等誘發物——此為消委會等公開教育的一般參考，並非醫療建議，亦非「某產品已獲認證適用於蠶豆症」。日本叮叮多款核心產品官網強調 non-DEET、不含樟腦，但官網多數沒有明確寫「蠶豆症適用」。請一律以包裝標籤為準，並諮詢醫生／藥劑師。",
   buyIntro:
-    "萬寧、屈臣氏較常有售，可致電該舖確認存貨。華潤堂、莎莎、卓悅、藥行等為部分店有售、非全線。零售點亦可查：https://www.japandingding.com/",
+    "KA：萬寧／屈臣氏可查舖（萬寧可睇產品頁「查詢門店庫存」快照；屈臣氏請致電確認）。其他：惠康／百佳／一田／AEON／莎莎／卡萊美／卓悅／松本清／HKTVmall／先施／city'super 等為部分店有售、非全線。零售點亦可查：https://www.japandingding.com/",
   pregnantIntro:
     "多數產品官網未明確寫「孕婦／餵奶可用」。請以包裝標籤為準，並諮詢醫生／藥劑師。USB 液體驅蚊器官網適用人士寫明孕婦除外。",
   petIntro:
