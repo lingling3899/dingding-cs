@@ -34,6 +34,25 @@
 
   const GROUP_ORDER = ["噴霧", "貼／卡", "空間", "其他"];
 
+  const BUILTIN_FAQ = [
+    { key: "g6pd", icon: "🩸", label: "蠶豆症" },
+    { key: "deet", icon: "🚫", label: "DEET" },
+    { key: "age", icon: "👶", label: "年齡" },
+    { key: "usage", icon: "🧴", label: "用法" },
+    { key: "where", icon: "🛒", label: "邊度買" },
+    { key: "ingredients", icon: "🧪", label: "成份" },
+    { key: "skin", icon: "✋", label: "皮膚" },
+    { key: "combine", icon: "🔗", label: "一齊用" },
+    { key: "reg", icon: "📋", label: "註冊" },
+    { key: "pregnant", icon: "🤰", label: "孕婦" },
+    { key: "freq", icon: "⏰", label: "次數" },
+    { key: "pet", icon: "🐾", label: "寵物" }
+  ];
+
+  let faqShowHidden = false;
+  let rsShowHidden = false;
+  let activeFaqKey = null;
+
   let storeChannel = "mannings";
   let stockListExpanded = false;
   let stockListMode = "snapshot"; // "snapshot" | "directory"
@@ -193,6 +212,20 @@
   }
 
   function buildAnswer(key) {
+    const cms = window.DDCms;
+    if (cms && String(key || "").startsWith("custom:")) {
+      const id = String(key).slice(7);
+      const item = cms.getFaqCustomById(id);
+      if (!item) return { html: "呢條自訂問題已唔見咗。", cls: "answer empty" };
+      const p0 = getProduct();
+      const title = p0 ? "【" + p0.name + "】" : "";
+      return {
+        html: title + item.label + "\n\n" + item.answer +
+          '<div class="meta">職員新增答案（本機儲存）</div>',
+        cls: "answer"
+      };
+    }
+
     const p = getProduct();
     if (!p) return { html: "請先選擇產品。", cls: "answer empty" };
 
@@ -316,10 +349,86 @@
   function showAnswer(key) {
     const box = $("#answerPanel");
     if (!box) return;
+    activeFaqKey = key;
     const { html, cls } = buildAnswer(key);
     box.className = cls;
     box.innerHTML = html.replace(/\n/g, "<br>");
-    $$(".chip[data-q]").forEach((c) => c.classList.toggle("active", c.dataset.q === key));
+    $$(".faq-card[data-q]").forEach((c) => c.classList.toggle("active", c.dataset.q === key));
+  }
+
+  function cms() {
+    return window.DDCms || null;
+  }
+
+  function renderFaqGrid() {
+    const grid = $("#faqGrid");
+    if (!grid) return;
+    const c = cms();
+    const logged = !!(auth() && auth().isLoggedIn());
+    const hidden = c ? c.getFaqHidden() : [];
+    const parts = [];
+
+    BUILTIN_FAQ.forEach((item) => {
+      const isHid = hidden.indexOf(item.key) !== -1;
+      if (isHid && !(logged && faqShowHidden)) return;
+      const active = activeFaqKey === item.key ? " active" : "";
+      const hidCls = isHid ? " is-hidden-admin" : "";
+      let ops = "";
+      if (logged) {
+        ops =
+          '<span class="faq-admin-ops">' +
+          '<button type="button" data-faq-hide="' +
+          item.key +
+          '" aria-label="' +
+          (isHid ? "顯示" : "隱藏") +
+          '">' +
+          (isHid ? "顯示" : "隱藏") +
+          "</button></span>";
+      }
+      parts.push(
+        '<button type="button" class="faq-card' +
+          active +
+          hidCls +
+          '" data-q="' +
+          item.key +
+          '"><span class="faq-ico" aria-hidden="true">' +
+          item.icon +
+          '</span><span class="faq-label">' +
+          item.label +
+          "</span>" +
+          ops +
+          "</button>"
+      );
+    });
+
+    const customs = c ? c.getFaqCustom() : [];
+    customs.forEach((item) => {
+      const q = "custom:" + item.id;
+      const active = activeFaqKey === q ? " active" : "";
+      let ops = "";
+      if (logged) {
+        ops =
+          '<span class="faq-admin-ops">' +
+          '<button type="button" data-faq-del="' +
+          item.id +
+          '" aria-label="刪除">刪除</button></span>';
+      }
+      parts.push(
+        '<button type="button" class="faq-card' +
+          active +
+          '" data-q="' +
+          q +
+          '"><span class="faq-ico" aria-hidden="true">' +
+          (item.icon || "❓") +
+          '</span><span class="faq-label">' +
+          escapeHtml(item.label) +
+          "</span>" +
+          ops +
+          "</button>"
+      );
+    });
+
+    grid.innerHTML = parts.join("") || '<p class="count">暫時冇可見問題。</p>';
   }
 
   function productOptionsHtml() {
@@ -779,8 +888,15 @@
     return parts[0] + "年" + (MONTH_ZH[parts[1]] || parts[1]);
   }
 
+  function allRoadshowEvents() {
+    const c = cms();
+    const builtin = Array.isArray(roadshow.events) ? roadshow.events : [];
+    if (!c) return builtin.map((ev) => Object.assign({}, ev, { _key: (ev.date || "") + "|" + (ev.start || "") + "|" + (ev.place || ""), _builtin: true, _hidden: false }));
+    return c.mergeRoadshowEvents(builtin, { includeHidden: !!(auth() && auth().isLoggedIn() && rsShowHidden) });
+  }
+
   function filteredRoadshowEvents() {
-    const list = Array.isArray(roadshow.events) ? roadshow.events.slice() : [];
+    const list = allRoadshowEvents().slice();
     list.sort((a, b) => {
       const ka = String(a.date) + String(a.start || "");
       const kb = String(b.date) + String(b.start || "");
@@ -789,6 +905,103 @@
     if (roadshowFilter === "upcoming") return list.filter(isUpcoming);
     if (roadshowFilter === "past") return list.filter((e) => !isUpcoming(e));
     return list;
+  }
+
+  function renderRoadshowAnalytics() {
+    const el = $("#roadshowAnalytics");
+    if (!el) return;
+    const list = allRoadshowEvents().filter((e) => !e._hidden);
+    const upcoming = list.filter(isUpcoming);
+    const past = list.filter((e) => !isUpcoming(e));
+    const byMonth = {};
+    list.forEach((ev) => {
+      const ym = String(ev.date || "").slice(0, 7);
+      if (!ym) return;
+      byMonth[ym] = (byMonth[ym] || 0) + 1;
+    });
+    const months = Object.keys(byMonth).sort();
+    const maxM = months.reduce((m, k) => Math.max(m, byMonth[k]), 1);
+    const byArea = {};
+    list.forEach((ev) => {
+      const a = String(ev.area || "未分區").trim() || "未分區";
+      byArea[a] = (byArea[a] || 0) + 1;
+    });
+    const areas = Object.keys(byArea).sort((a, b) => byArea[b] - byArea[a]);
+
+    let next = null;
+    upcoming
+      .slice()
+      .sort((a, b) => (String(a.date) + String(a.start)).localeCompare(String(b.date) + String(b.start)));
+    if (upcoming.length) {
+      next = upcoming
+        .slice()
+        .sort((a, b) => (String(a.date) + String(a.start)).localeCompare(String(b.date) + String(b.start)))[0];
+    }
+
+    let html =
+      '<div class="rs-stat-row">' +
+      '<div class="rs-stat"><span class="n">' +
+      list.length +
+      '</span><span class="l">總場次</span></div>' +
+      '<div class="rs-stat"><span class="n">' +
+      upcoming.length +
+      '</span><span class="l">即將舉行</span></div>' +
+      '<div class="rs-stat"><span class="n">' +
+      past.length +
+      '</span><span class="l">已結束</span></div>' +
+      "</div>";
+
+    if (next) {
+      html +=
+        '<div class="rs-next"><p class="rs-next-label">下一場</p>' +
+        '<p class="rs-next-title">' +
+        escapeHtml(next.place || "") +
+        (next.area ? "（" + escapeHtml(next.area) + "）" : "") +
+        "</p>" +
+        '<p class="rs-next-meta">' +
+        escapeHtml(formatRoadshowDate(next.date)) +
+        "　" +
+        escapeHtml(next.start || "") +
+        "–" +
+        escapeHtml(next.end || "") +
+        (next.note ? "　·　" + escapeHtml(next.note) : "") +
+        "</p></div>";
+    } else {
+      html +=
+        '<div class="rs-next"><p class="rs-next-label">下一場</p><p class="rs-next-title">而家冇即將場次</p><p class="rs-next-meta">可去 Facebook 睇有冇新公告，或自己新增場次。</p></div>';
+    }
+
+    if (months.length) {
+      html += '<p class="field" style="margin:4px 0 0">按月份</p><div class="rs-month-bars">';
+      months.forEach((ym) => {
+        const n = byMonth[ym];
+        const pct = Math.round((n / maxM) * 100);
+        html +=
+          '<div class="rs-month-row"><span>' +
+          escapeHtml(monthLabel(ym)) +
+          '</span><div class="bar-track"><div class="bar-fill" style="width:' +
+          pct +
+          '%"></div></div><strong>' +
+          n +
+          "</strong></div>";
+      });
+      html += "</div>";
+    }
+
+    if (areas.length) {
+      html += '<p class="field" style="margin:8px 0 0">按地區</p><div class="rs-area-chips">';
+      areas.forEach((a) => {
+        html +=
+          '<span class="rs-area-chip">' +
+          escapeHtml(a) +
+          " <strong>" +
+          byArea[a] +
+          "</strong></span>";
+      });
+      html += "</div>";
+    }
+
+    el.innerHTML = html;
   }
 
 
@@ -872,6 +1085,7 @@
   }
 
   function renderRoadshow() {
+    renderRoadshowAnalytics();
     renderRoadshowGallery();
     const intro = $("#roadshowIntro");
     const listEl = $("#roadshowList");
@@ -906,7 +1120,7 @@
       if (foot) {
         foot.textContent =
           "共收錄 " +
-          (roadshow.events || []).length +
+          allRoadshowEvents().filter((e) => !e._hidden).length +
           " 個時段；請以 Facebook 最新為準。";
       }
       return;
@@ -928,28 +1142,47 @@
       const badge = up
         ? '<span class="rs-badge">即將／進行</span>'
         : '<span class="rs-badge done">已完結</span>';
-      const note = ev.note ? " · " + ev.note : "";
+      const note = ev.note ? " · " + escapeHtml(ev.note) : "";
+      const hidCls = ev._hidden ? " is-hidden-admin" : "";
+      let ops = "";
+      if (auth() && auth().isLoggedIn()) {
+        if (ev._builtin) {
+          ops =
+            '<div class="rs-card-ops"><button type="button" data-rs-hide="' +
+            escapeHtml(ev._key) +
+            '">' +
+            (ev._hidden ? "顯示" : "隱藏") +
+            "</button></div>";
+        } else if (ev.id) {
+          ops =
+            '<div class="rs-card-ops"><button type="button" data-rs-del="' +
+            escapeHtml(ev.id) +
+            '">刪除</button></div>';
+        }
+      }
       html +=
         '<article class="roadshow-card ' +
         (up ? "upcoming" : "past") +
+        hidCls +
         '">' +
         '<p class="rs-date">' +
         formatRoadshowDate(ev.date) +
         badge +
         "</p>" +
         '<p class="rs-time">' +
-        (ev.start || "") +
+        escapeHtml(ev.start || "") +
         " – " +
-        (ev.end || "") +
+        escapeHtml(ev.end || "") +
         "</p>" +
         '<p class="rs-place"><strong>' +
-        (ev.area || "") +
+        escapeHtml(ev.area || "") +
         "</strong>　" +
-        (ev.place || "") +
+        escapeHtml(ev.place || "") +
         "</p>" +
         '<p class="rs-meta">免費試用裝 · 數量有限' +
         note +
         "</p>" +
+        ops +
         "</article>";
     }
     listEl.innerHTML = html;
@@ -958,7 +1191,7 @@
         "顯示 " +
         events.length +
         " 個時段（全表 " +
-        (roadshow.events || []).length +
+        allRoadshowEvents().filter((e) => !e._hidden).length +
         "）。惡劣天氣或以 Facebook 最新為準。";
     }
   }
@@ -970,7 +1203,7 @@
     );
     // If upcoming empty on load, auto-fall to past for elder UX
     if (roadshowFilter === "upcoming") {
-      const up = (roadshow.events || []).filter(isUpcoming);
+      const up = allRoadshowEvents().filter((e) => !e._hidden && isUpcoming(e));
       if (!up.length) {
         roadshowFilter = "past";
         $$(".roadshow-filter button").forEach((b) =>
@@ -988,14 +1221,66 @@
     return window.DDAdminAuth || null;
   }
 
+  function closeLoginDropdown() {
+    const dd = $("#loginDropdown");
+    const btn = $("#headerLoginBtn");
+    if (dd) dd.classList.add("hidden");
+    if (btn) btn.setAttribute("aria-expanded", "false");
+  }
+
   function syncAdminUI() {
     const logged = !!(auth() && auth().isLoggedIn());
     $$(".admin-only").forEach((el) => el.classList.toggle("hidden", !logged));
-    const link = $("#staffLoginLink");
-    if (link) {
-      link.classList.toggle("hidden", logged);
-      link.textContent = "職員登入";
+    const btn = $("#headerLoginBtn");
+    if (btn) {
+      btn.classList.toggle("is-in", logged);
+      btn.setAttribute("aria-label", logged ? "職員選單" : "職員登入");
+      const outI = btn.querySelector(".hdr-icon-out");
+      const inI = btn.querySelector(".hdr-icon-in");
+      const dot = btn.querySelector(".hdr-login-dot");
+      if (outI) outI.classList.toggle("hidden", logged);
+      if (inI) inI.classList.toggle("hidden", !logged);
+      if (dot) dot.classList.toggle("hidden", !logged);
     }
+    const hint = $("#footerStaffHint");
+    if (hint) hint.classList.toggle("hidden", logged);
+    if (!logged) closeLoginDropdown();
+    renderStaffNotes("stores");
+    renderStaffNotes("anti");
+  }
+
+  function renderStaffNotes(kind) {
+    const listId = kind === "anti" ? "#antiNotesList" : "#storesNotesList";
+    const listEl = $(listId);
+    if (!listEl) return;
+    const logged = !!(auth() && auth().isLoggedIn());
+    if (!logged) {
+      listEl.innerHTML = "";
+      return;
+    }
+    const c = cms();
+    const notes = c ? c.getNotes(kind) : [];
+    if (!notes.length) {
+      listEl.innerHTML = '<li class="staff-notes-empty" style="border:none;background:transparent;padding:0">暫時冇備註。</li>';
+      return;
+    }
+    listEl.innerHTML = notes
+      .map((n) => {
+        const when = n.createdAt ? String(n.createdAt).slice(0, 16).replace("T", " ") : "";
+        return (
+          "<li><div class=\"note-text\">" +
+          escapeHtml(n.text) +
+          '<span class="note-time">' +
+          escapeHtml(when) +
+          "（香港時間近似）</span></div>" +
+          '<button type="button" data-note-del="' +
+          escapeHtml(n.id) +
+          '" data-note-kind="' +
+          kind +
+          '" aria-label="刪除">刪除</button></li>'
+        );
+      })
+      .join("");
   }
 
   function hashForView(v) {
@@ -1029,6 +1314,9 @@
       b.classList.toggle("active", b.dataset.view === name)
     );
     syncAdminUI();
+    if (name === "qa") {
+      renderFaqGrid();
+    }
     if (name === "stores") {
       // sync store select from QA
       const id = getProductId();
@@ -1079,13 +1367,12 @@
 
     $("#productSelect")?.addEventListener("change", () => {
       setProductId($("#productSelect").value, "qa");
-      const active = $(".chip.active[data-q]");
-      if (active) showAnswer(active.dataset.q);
+      if (activeFaqKey) showAnswer(activeFaqKey);
       else {
         const box = $("#answerPanel");
         if (box) {
           box.className = "answer empty";
-          box.textContent = "揀咗產品後，撳下面問題掣即睇答案。";
+          box.textContent = "揀咗產品後，撳上面問題掣即睇答案。";
         }
       }
     });
@@ -1096,8 +1383,39 @@
       renderStores();
     });
 
-    $$(".chip[data-q]").forEach((chip) => {
-      chip.addEventListener("click", () => showAnswer(chip.dataset.q));
+    $("#faqGrid")?.addEventListener("click", (e) => {
+      const hideBtn = e.target.closest("[data-faq-hide]");
+      if (hideBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        const key = hideBtn.dataset.faqHide;
+        const c = cms();
+        if (!c) return;
+        if (c.isFaqHidden(key)) c.showFaq(key);
+        else c.hideFaq(key);
+        renderFaqGrid();
+        return;
+      }
+      const delBtn = e.target.closest("[data-faq-del]");
+      if (delBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        const id = delBtn.dataset.faqDel;
+        if (!confirm("刪除呢條自訂問題？")) return;
+        cms()?.removeFaqCustom(id);
+        if (activeFaqKey === "custom:" + id) {
+          activeFaqKey = null;
+          const box = $("#answerPanel");
+          if (box) {
+            box.className = "answer empty";
+            box.textContent = "揀咗產品後，撳上面問題掣即睇答案。";
+          }
+        }
+        renderFaqGrid();
+        return;
+      }
+      const card = e.target.closest(".faq-card[data-q]");
+      if (card) showAnswer(card.dataset.q);
     });
 
     $("#goStoresBtn")?.addEventListener("click", () => {
@@ -1113,18 +1431,50 @@
       });
     });
 
-    $("#adminLogoutBtn")?.addEventListener("click", () => {
+    function doLogout() {
       auth()?.logout();
       pendingAdminView = null;
+      closeLoginDropdown();
       syncAdminUI();
+      renderFaqGrid();
       location.hash = "#qa";
       showView("qa");
+    }
+
+    $("#headerLoginBtn")?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const logged = !!(auth() && auth().isLoggedIn());
+      if (!logged) {
+        pendingAdminView = "roadshow";
+        location.hash = "#login";
+        showView("login");
+        return;
+      }
+      const dd = $("#loginDropdown");
+      if (!dd) return;
+      const open = dd.classList.contains("hidden");
+      dd.classList.toggle("hidden", !open);
+      $("#headerLoginBtn")?.setAttribute("aria-expanded", open ? "true" : "false");
     });
 
-    $("#staffLoginLink")?.addEventListener("click", () => {
-      pendingAdminView = "roadshow";
-      location.hash = "#login";
-      showView("login");
+    $("#loginDropdown")?.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-dd-action]");
+      if (!btn) return;
+      const act = btn.dataset.ddAction;
+      closeLoginDropdown();
+      if (act === "logout") {
+        doLogout();
+        return;
+      }
+      if (act === "roadshow" || act === "account") {
+        location.hash = hashForView(act);
+        showView(act);
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      const wrap = $(".header-login-wrap");
+      if (wrap && !wrap.contains(e.target)) closeLoginDropdown();
     });
 
     $("#loginForm")?.addEventListener("submit", async (e) => {
@@ -1146,6 +1496,7 @@
         const next = pendingAdminView || "roadshow";
         pendingAdminView = null;
         syncAdminUI();
+        renderFaqGrid();
         location.hash = hashForView(next);
         showView(next);
       } finally {
@@ -1200,7 +1551,7 @@
 
     $("#openCompareImg")?.addEventListener("click", () => {
       openRoadshowLightbox({
-        src: "assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018n",
+        src: "assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018o",
         alt: "驅蚊蟲成分大比拼：Cipeller®PMD VS 一般驅蚊成分",
         caption: "【Cipeller®PMD VS 一般驅蚊成分】驅蚊蟲成分大比拼——安全、功效、驅防種類、有效時間。",
         source: "日本叮叮 Facebook 公開帖",
@@ -1265,6 +1616,157 @@
       renderStores();
     });
 
+    /* ---- FAQ CMS ---- */
+    $("#faqAddBtn")?.addEventListener("click", () => {
+      $("#faqAddForm")?.classList.remove("hidden");
+      $("#faqNewLabel")?.focus();
+    });
+    $("#faqAddCancel")?.addEventListener("click", () => {
+      $("#faqAddForm")?.classList.add("hidden");
+      const msg = $("#faqAddMsg");
+      if (msg) msg.className = "admin-msg hidden";
+    });
+    $("#faqToggleHiddenBtn")?.addEventListener("click", () => {
+      faqShowHidden = !faqShowHidden;
+      const b = $("#faqToggleHiddenBtn");
+      if (b) b.textContent = faqShowHidden ? "收起已隱藏" : "顯示已隱藏";
+      renderFaqGrid();
+    });
+    $("#faqAddForm")?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const c = cms();
+      const msg = $("#faqAddMsg");
+      if (!c) return;
+      const res = c.addFaqCustom({
+        label: $("#faqNewLabel")?.value || "",
+        icon: $("#faqNewIcon")?.value || "❓",
+        answer: $("#faqNewAnswer")?.value || ""
+      });
+      if (!res.ok) {
+        if (msg) {
+          msg.className = "admin-msg err";
+          msg.textContent = res.error || "儲存失敗";
+        }
+        return;
+      }
+      if (msg) {
+        msg.className = "admin-msg ok";
+        msg.textContent = "已新增問題";
+      }
+      $("#faqNewLabel") && ($("#faqNewLabel").value = "");
+      $("#faqNewAnswer") && ($("#faqNewAnswer").value = "");
+      $("#faqNewIcon") && ($("#faqNewIcon").value = "❓");
+      $("#faqAddForm")?.classList.add("hidden");
+      renderFaqGrid();
+    });
+
+    /* ---- Roadshow CMS ---- */
+    $("#rsAddBtn")?.addEventListener("click", () => {
+      $("#rsAddForm")?.classList.remove("hidden");
+      $("#rsNewDate")?.focus();
+    });
+    $("#rsAddCancel")?.addEventListener("click", () => {
+      $("#rsAddForm")?.classList.add("hidden");
+    });
+    $("#rsToggleHiddenBtn")?.addEventListener("click", () => {
+      rsShowHidden = !rsShowHidden;
+      const b = $("#rsToggleHiddenBtn");
+      if (b) b.textContent = rsShowHidden ? "收起已隱藏" : "顯示已隱藏";
+      renderRoadshow();
+    });
+    $("#rsAddForm")?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const c = cms();
+      const msg = $("#rsAddMsg");
+      if (!c) return;
+      const res = c.addRsCustom({
+        date: $("#rsNewDate")?.value || "",
+        start: ($("#rsNewStart")?.value || "11:00").slice(0, 5),
+        end: ($("#rsNewEnd")?.value || "17:00").slice(0, 5),
+        area: $("#rsNewArea")?.value || "",
+        place: $("#rsNewPlace")?.value || "",
+        note: $("#rsNewNote")?.value || ""
+      });
+      if (!res.ok) {
+        if (msg) {
+          msg.className = "admin-msg err";
+          msg.textContent = res.error || "儲存失敗";
+        }
+        return;
+      }
+      if (msg) {
+        msg.className = "admin-msg ok";
+        msg.textContent = "已新增場次";
+      }
+      $("#rsAddForm")?.classList.add("hidden");
+      ["rsNewPlace", "rsNewNote", "rsNewArea"].forEach((id) => {
+        const el = $("#" + id);
+        if (el) el.value = "";
+      });
+      renderRoadshow();
+    });
+
+    $("#roadshowList")?.addEventListener("click", (e) => {
+      const hideBtn = e.target.closest("[data-rs-hide]");
+      if (hideBtn) {
+        const key = hideBtn.dataset.rsHide;
+        const c = cms();
+        if (!c) return;
+        if (c.isRsHidden(key)) c.showRs(key);
+        else c.hideRs(key);
+        renderRoadshow();
+        return;
+      }
+      const delBtn = e.target.closest("[data-rs-del]");
+      if (delBtn) {
+        if (!confirm("刪除呢個自訂場次？")) return;
+        cms()?.removeRsCustom(delBtn.dataset.rsDel);
+        renderRoadshow();
+      }
+    });
+
+    /* ---- Staff notes ---- */
+    function bindNoteForm(formId, inputId, kind) {
+      $(formId)?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const c = cms();
+        if (!c) return;
+        const res = c.addNote(kind, $(inputId)?.value || "");
+        if (!res.ok) {
+          alert(res.error || "新增失敗");
+          return;
+        }
+        if ($(inputId)) $(inputId).value = "";
+        renderStaffNotes(kind);
+      });
+    }
+    bindNoteForm("#storesNoteForm", "#storesNoteInput", "stores");
+    bindNoteForm("#antiNoteForm", "#antiNoteInput", "anti");
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-note-del]");
+      if (!btn) return;
+      const kind = btn.dataset.noteKind;
+      cms()?.removeNote(kind, btn.dataset.noteDel);
+      renderStaffNotes(kind);
+    });
+
+    $("#cmsResetBtn")?.addEventListener("click", () => {
+      if (!confirm("還原預設內容？會清走自訂問題、隱藏名單、自訂場次同職員備註。")) return;
+      cms()?.resetAllCms();
+      faqShowHidden = false;
+      rsShowHidden = false;
+      const msg = $("#cmsResetMsg");
+      if (msg) {
+        msg.className = "admin-msg ok";
+        msg.textContent = "已還原預設內容";
+      }
+      renderFaqGrid();
+      renderRoadshow();
+      renderStaffNotes("stores");
+      renderStaffNotes("anti");
+    });
+
+    renderFaqGrid();
     renderManningsStockPanel();
     refreshDistrictOptions();
     setChannel("mannings");

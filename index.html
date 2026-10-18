@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="日本叮叮客服速查：產品問答、門店電話、同防偽查詢。庫存請致電確認；防偽請喺官網驗證。" />
   <title>日本叮叮 · 客服速查</title>
-  <link rel="stylesheet" href="assets/css/app.css?v=20261018n" />
+  <link rel="stylesheet" href="assets/css/app.css?v=20261018o" />
 </head>
 <body>
   <header class="topbar">
@@ -23,8 +23,25 @@
         <button type="button" data-view="anti">防偽</button>
         <button type="button" data-view="roadshow" class="admin-only hidden">Roadshow</button>
         <button type="button" data-view="account" class="admin-only hidden">帳戶設定</button>
-        <button type="button" id="adminLogoutBtn" class="admin-only hidden nav-logout">登出</button>
       </nav>
+      <div class="header-login-wrap">
+        <button type="button" id="headerLoginBtn" class="header-login-btn" aria-label="職員登入" aria-haspopup="true" aria-expanded="false">
+          <svg class="hdr-icon hdr-icon-out" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M5 19.5c0-3.6 3.1-6.5 7-6.5s7 2.9 7 6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <svg class="hdr-icon hdr-icon-in hidden" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="8" r="3.5" fill="currentColor"/>
+            <path d="M5 19.5c0-3.6 3.1-6.5 7-6.5s7 2.9 7 6.5" fill="currentColor"/>
+          </svg>
+          <span class="hdr-login-dot hidden" aria-hidden="true"></span>
+        </button>
+        <div id="loginDropdown" class="login-dropdown hidden" role="menu" aria-label="職員選單">
+          <button type="button" role="menuitem" data-dd-action="roadshow">📅 Roadshow</button>
+          <button type="button" role="menuitem" data-dd-action="account">⚙️ 帳戶設定</button>
+          <button type="button" role="menuitem" data-dd-action="logout" class="dd-logout">🚪 登出</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -39,20 +56,24 @@
 
       <section class="panel">
         <h3>② 常見問題</h3>
-        <div class="chips" role="group" aria-label="常見問題">
-          <button type="button" class="chip" data-q="g6pd">蠶豆症可用嗎？</button>
-          <button type="button" class="chip" data-q="deet">有冇 DEET？</button>
-          <button type="button" class="chip" data-q="age">幾歲用得？</button>
-          <button type="button" class="chip" data-q="usage">點用？</button>
-          <button type="button" class="chip" data-q="where">邊度買？</button>
-          <button type="button" class="chip" data-q="ingredients">成份係咩？</button>
-          <button type="button" class="chip" data-q="skin">可噴皮膚嗎？</button>
-          <button type="button" class="chip" data-q="combine">可同其他產品一齊用？</button>
-          <button type="button" class="chip" data-q="reg">有冇註冊編號？</button>
-          <button type="button" class="chip" data-q="pregnant">孕婦／餵奶可用嗎？</button>
-          <button type="button" class="chip" data-q="freq">幾耐一次？</button>
-          <button type="button" class="chip" data-q="pet">寵物安全嗎？</button>
+        <div id="faqGrid" class="faq-grid" role="group" aria-label="常見問題"></div>
+        <div id="faqAdminBar" class="faq-admin-bar admin-only hidden">
+          <button type="button" class="admin-mini-btn" id="faqAddBtn">＋ 新增問題</button>
+          <button type="button" class="admin-mini-btn ghost" id="faqToggleHiddenBtn">顯示已隱藏</button>
         </div>
+        <form id="faqAddForm" class="cms-form admin-only hidden" autocomplete="off">
+          <label class="field" for="faqNewLabel">題目</label>
+          <input id="faqNewLabel" type="text" maxlength="40" placeholder="例如：可帶上機嗎？" required />
+          <label class="field" for="faqNewIcon">圖示（emoji）</label>
+          <input id="faqNewIcon" type="text" maxlength="4" placeholder="❓" value="❓" />
+          <label class="field" for="faqNewAnswer">答案</label>
+          <textarea id="faqNewAnswer" rows="4" maxlength="2000" placeholder="訪客會見到嘅答案文字" required></textarea>
+          <div class="cms-form-actions">
+            <button type="submit" class="admin-btn compact">儲存問題</button>
+            <button type="button" class="admin-mini-btn ghost" id="faqAddCancel">取消</button>
+          </div>
+          <p id="faqAddMsg" class="admin-msg hidden" role="status"></p>
+        </form>
         <div id="answerPanel" class="answer empty" aria-live="polite">
           揀咗產品後，撳上面問題掣即睇答案。
         </div>
@@ -62,7 +83,7 @@
         <h3>成份大比拼 <span class="badge">Cipeller®PMD</span></h3>
         <p class="promo-note">Cipeller®PMD 對比一般驅蚊成份（安全、功效、驅防種類、有效時間）。撳圖可放大。</p>
         <button type="button" class="promo-compare-btn" id="openCompareImg" aria-label="放大成份大比拼圖">
-          <img src="assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018n" alt="驅蚊蟲成分大比拼：Cipeller®PMD VS 一般驅蚊成分" loading="lazy" width="640" height="676" />
+          <img src="assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018o" alt="驅蚊蟲成分大比拼：Cipeller®PMD VS 一般驅蚊成分" loading="lazy" width="640" height="676" />
         </button>
         <p class="promo-credit">圖片來源：日本叮叮 Facebook 公開帖</p>
       </section>
@@ -77,6 +98,17 @@
     </section>
 
     <section id="view-stores" class="hidden">
+      <section class="panel admin-only hidden staff-notes-panel" id="storesStaffNotes">
+        <h3>職員備註 <span class="badge">只職員見</span></h3>
+        <p class="admin-hint">今日查貨提示等短備註；訪客唔會見到。</p>
+        <ul id="storesNotesList" class="staff-notes-list"></ul>
+        <form id="storesNoteForm" class="cms-form inline" autocomplete="off">
+          <label class="field" for="storesNoteInput">新增備註</label>
+          <input id="storesNoteInput" type="text" maxlength="200" placeholder="例如：沙田店今日查過有貨" required />
+          <button type="submit" class="admin-mini-btn">＋ 新增</button>
+        </form>
+      </section>
+
       <section class="panel" id="stores">
         <h3>門店查貨 · 揀產品</h3>
         <label class="field" for="storeProductSelect">要查邊款？</label>
@@ -146,7 +178,7 @@
     <section id="view-login" class="hidden">
       <section class="panel admin-panel">
         <h3>職員登入 <span class="badge">後台</span></h3>
-        <p class="admin-hint">登入後可睇 Roadshow 時間表同改帳號密碼。</p>
+        <p class="admin-hint">登入後可睇 Roadshow 分析／時間表、新增或隱藏問題同場次，以及改帳號密碼。</p>
         <form id="loginForm" class="admin-form" autocomplete="on">
           <label class="field" for="loginUser">帳號</label>
           <input id="loginUser" name="username" type="text" autocomplete="username" required />
@@ -175,9 +207,19 @@
           <button type="submit" class="admin-btn" id="accountSave">儲存</button>
         </form>
       </section>
+      <section class="panel admin-panel">
+        <h3>內容還原 <span class="badge">CMS</span></h3>
+        <p class="admin-hint">清走本機新增／隱藏嘅問題、Roadshow 場次同職員備註。唔會改登入帳密。</p>
+        <button type="button" class="admin-btn danger-btn" id="cmsResetBtn">還原預設內容</button>
+        <p id="cmsResetMsg" class="admin-msg hidden" role="status"></p>
+      </section>
     </section>
 
     <section id="view-roadshow" class="hidden">
+      <section class="panel">
+        <h3>Roadshow 分析 <span class="badge">觀察</span></h3>
+        <div id="roadshowAnalytics" class="rs-analytics" aria-live="polite"></div>
+      </section>
       <section class="panel">
         <h3>Roadshow／快閃 <span class="badge">職員</span></h3>
         <p id="roadshowIntro" class="roadshow-intro"></p>
@@ -186,6 +228,35 @@
         </p>
         <div id="roadshowGallery" class="roadshow-gallery" aria-label="活動宣傳圖"></div>
         <p id="roadshowGalleryCredit" class="roadshow-gallery-credit"></p>
+        <div class="faq-admin-bar">
+          <button type="button" class="admin-mini-btn" id="rsAddBtn">＋ 新增場次</button>
+          <button type="button" class="admin-mini-btn ghost" id="rsToggleHiddenBtn">顯示已隱藏</button>
+        </div>
+        <form id="rsAddForm" class="cms-form hidden" autocomplete="off">
+          <label class="field" for="rsNewDate">日期</label>
+          <input id="rsNewDate" type="date" required />
+          <div class="cms-row-2">
+            <div>
+              <label class="field" for="rsNewStart">開始</label>
+              <input id="rsNewStart" type="time" value="11:00" required />
+            </div>
+            <div>
+              <label class="field" for="rsNewEnd">結束</label>
+              <input id="rsNewEnd" type="time" value="17:00" required />
+            </div>
+          </div>
+          <label class="field" for="rsNewArea">分區（香港／九龍／新界）</label>
+          <input id="rsNewArea" type="text" maxlength="20" placeholder="例如：九龍" />
+          <label class="field" for="rsNewPlace">地點／標題</label>
+          <input id="rsNewPlace" type="text" maxlength="80" placeholder="例如：旺角朗豪坊" required />
+          <label class="field" for="rsNewNote">備註（可留空）</label>
+          <input id="rsNewNote" type="text" maxlength="80" placeholder="例如：第十回" />
+          <div class="cms-form-actions">
+            <button type="submit" class="admin-btn compact">儲存場次</button>
+            <button type="button" class="admin-mini-btn ghost" id="rsAddCancel">取消</button>
+          </div>
+          <p id="rsAddMsg" class="admin-msg hidden" role="status"></p>
+        </form>
         <div class="seg roadshow-filter" role="tablist" aria-label="場次篩選">
           <button type="button" class="active" data-rs-filter="upcoming">未完／即將</button>
           <button type="button" data-rs-filter="past">已完結</button>
@@ -198,6 +269,17 @@
 
 
     <section id="view-anti" class="hidden">
+      <section class="panel admin-only hidden staff-notes-panel" id="antiStaffNotes">
+        <h3>職員備註 <span class="badge">只職員見</span></h3>
+        <p class="admin-hint">防偽相關內部提示；訪客唔會見到。</p>
+        <ul id="antiNotesList" class="staff-notes-list"></ul>
+        <form id="antiNoteForm" class="cms-form inline" autocomplete="off">
+          <label class="field" for="antiNoteInput">新增備註</label>
+          <input id="antiNoteInput" type="text" maxlength="200" placeholder="例如：今日有人問假碼網站" required />
+          <button type="submit" class="admin-mini-btn">＋ 新增</button>
+        </form>
+      </section>
+
       <section class="panel">
         <h3>防偽查詢 <span class="badge">認明正貨</span></h3>
         <p class="anti-intro">
@@ -267,7 +349,7 @@
 
     <footer class="footer">
       參考用途，非醫療建議；庫存請致電確認；防偽請喺官網驗證。官網：<a href="https://www.japandingding.com/" target="_blank" rel="noopener">japandingding.com</a>
-      <p class="footer-staff"><button type="button" id="staffLoginLink" class="staff-login-link">職員登入</button></p>
+      <p class="footer-staff muted-tiny" id="footerStaffHint">職員：撳右上角圖示登入</p>
     </footer>
   </main>
 
@@ -278,12 +360,13 @@
     <p id="rsLightboxCap" class="rs-lightbox-cap"></p>
   </div>
 
-  <script src="data/products.js?v=20261018n"></script>
-  <script src="data/stores.js?v=20261018n"></script>
-  <script src="data/extra-stores.js?v=20261018n"></script>
-  <script src="data/mannings-stock-snapshot.js?v=20261018n"></script>
-  <script src="data/roadshow.js?v=20261018n"></script>
-  <script src="assets/js/admin-auth.js?v=20261018n"></script>
-  <script src="assets/js/app.js?v=20261018n"></script>
+  <script src="data/products.js?v=20261018o"></script>
+  <script src="data/stores.js?v=20261018o"></script>
+  <script src="data/extra-stores.js?v=20261018o"></script>
+  <script src="data/mannings-stock-snapshot.js?v=20261018o"></script>
+  <script src="data/roadshow.js?v=20261018o"></script>
+  <script src="assets/js/admin-auth.js?v=20261018o"></script>
+  <script src="assets/js/cms.js?v=20261018o"></script>
+  <script src="assets/js/app.js?v=20261018o"></script>
 </body>
 </html>
