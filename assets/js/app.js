@@ -178,7 +178,7 @@
     if (!el || !p) return;
     const tags = [];
     if (p.nonDeet) tags.push('<span class="tag ok">non-DEET</span>');
-    if (p.noCamphorOfficial) tags.push('<span class="tag ok">官網：不含樟腦</span>');
+    if (p.noCamphorOfficial) tags.push('<span class="tag ok">不含樟腦</span>');
     if (p.containsCamphor) tags.push('<span class="tag danger">含樟腦（第三方）</span>');
     if (p.riskFlag) tags.push('<span class="tag danger">需特別注意</span>');
     if (p.registration) tags.push(`<span class="tag">註冊 ${p.registration}</span>`);
@@ -211,6 +211,52 @@
     return "answer";
   }
 
+  function isStaff() {
+    return !!(window.DDAdminAuth && window.DDAdminAuth.isLoggedIn());
+  }
+
+  function escapeHtml(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function staffAnswerBlock(key, p) {
+    if (!isStaff() || !p) return "";
+    const g = globalFaq || {};
+    const bits = [];
+    if (key === "pet") {
+      if (p.staffPetNote) bits.push(p.staffPetNote);
+      if (g.staffPetIntro) bits.push("總覽：" + g.staffPetIntro);
+    } else if (key === "pregnant") {
+      if (p.staffPregnantNote) bits.push(p.staffPregnantNote);
+      if (g.staffPregnantIntro) bits.push("總覽：" + g.staffPregnantIntro);
+    } else if (key === "combine") {
+      if (p.staffCombineNote) bits.push(p.staffCombineNote);
+    } else if (key === "g6pd") {
+      if (p.staffG6pdNote) bits.push(p.staffG6pdNote);
+      if (p.staffCamphorFlag) bits.push("樟腦標示：" + p.staffCamphorFlag);
+      if (g.staffG6pdIntro) bits.push("總覽：" + g.staffG6pdIntro);
+    } else if (key === "deet" || key === "ingredients" || key === "reg") {
+      if (p.staffG6pdNote && (key === "deet" || key === "ingredients")) bits.push(p.staffG6pdNote);
+      if (p.staffCamphorFlag) bits.push("樟腦標示：" + p.staffCamphorFlag);
+    } else if (key === "age" && p.staffAge) {
+      bits.push(p.staffAge);
+    } else if (key === "usage" && p.staffDengueNote) {
+      bits.push(p.staffDengueNote);
+    }
+    if (!bits.length) return "";
+    return (
+      '<div class="staff-answer-note" role="note">' +
+      '<strong><span class="staff-badge">職員</span> 職員備註</strong>（訪客睇唔到）' +
+      '<div class="staff-answer-body">' +
+      bits.map((b) => escapeHtml(b)).join("\n\n").replace(/\n/g, "<br>") +
+      "</div></div>"
+    );
+  }
+
   function buildAnswer(key) {
     const cms = window.DDCms;
     if (cms && String(key || "").startsWith("custom:")) {
@@ -219,9 +265,11 @@
       if (!item) return { html: "呢條自訂問題已唔見咗。", cls: "answer empty" };
       const p0 = getProduct();
       const title = p0 ? "【" + p0.name + "】" : "";
+      const staffMeta = isStaff()
+        ? '<div class="meta">職員新增答案（本機儲存）</div>'
+        : "";
       return {
-        html: title + item.label + "\n\n" + item.answer +
-          '<div class="meta">職員新增答案（本機儲存）</div>',
+        html: title + item.label + "\n\n" + item.answer + staffMeta,
         cls: "answer"
       };
     }
@@ -235,31 +283,18 @@
     if (key === "g6pd") {
       body =
         `【${p.name}】蠶豆症（G6PD）相關說明\n\n` +
-        `① 官網／已知標示：\n` +
-        (p.containsCamphor
-          ? `• 第三方藥房頁標示本產品含樟腦 1%＋薄荷腦 5% → 蠶豆症患者一般應避免。\n`
-          : "") +
-        (p.noCamphorOfficial
-          ? `• 官網標明本產品不含樟腦；同時標明 non-DEET。\n`
-          : p.containsCamphor
-            ? `• 請以包裝標籤核實樟腦含量。\n`
-            : `• 官網此頁未同時明確寫「不含樟腦」${p.camphorFlag ? "（" + p.camphorFlag + "）" : ""}。\n`) +
-        (p.nonDeet ? `• 官網／已知：不含避蚊胺（non-DEET）。\n` : "") +
-        `\n② 公開教育參考：\n` +
-        `蠶豆症患者應避免樟腦等誘發物（消委會等公開教育，唔當醫療建議）。\n\n` +
-        `③ 產品說明：\n${p.g6pdNote}\n\n` +
-        `④ 請以包裝標籤為準，並諮詢醫生／藥劑師。`;
+        `${p.g6pdNote}`;
       if (globalFaq.g6pdIntro) {
-        body += `\n\n—\n總覽：${globalFaq.g6pdIntro}`;
+        body += `\n\n—\n${globalFaq.g6pdIntro}`;
       }
     } else if (key === "deet") {
       body =
         `【${p.name}】有冇 DEET？\n\n` +
         (p.nonDeet
-          ? `官網／已知資料：不含避蚊胺（non-DEET）。\n`
-          : `請核實包裝標籤。〔待核標籤〕\n`) +
-        (p.noCamphorOfficial ? `同時：官網標明不含樟腦。\n` : "") +
-        (p.containsCamphor ? `注意：第三方頁標示含樟腦 1%（與 DEET 無關，但蠶豆症須注意）。\n` : "") +
+          ? `不含避蚊胺（non-DEET）。\n`
+          : `請核對包裝標籤是否含避蚊胺（DEET）。\n`) +
+        (p.noCamphorOfficial ? `同時：不含樟腦。\n` : "") +
+        (p.containsCamphor ? `注意：本產品含樟腦（與 DEET 無關，但蠶豆症須注意）。\n` : "") +
         `\n主要成份：${p.actives}`;
     } else if (key === "age") {
       body =
@@ -286,50 +321,50 @@
       body =
         `【${p.name}】成份係咩？\n\n` +
         `主要成份：${p.actives}\n\n` +
-        `官方／已知功效重點：\n` +
+        `功效重點：\n` +
         (p.claims || []).map((c) => `• ${c}`).join("\n");
       if (p.registration) body += `\n\n香港除害劑註冊編號：${p.registration}`;
-      if (p.sourceNote) body += `\n\n來源備註：${p.sourceNote}`;
+      if (p.sourceNote && isStaff()) body += `\n\n來源備註：${p.sourceNote}`;
       if (p.officialUrl) {
-        links = `<a class="btn-link" href="${p.officialUrl}" target="_blank" rel="noopener">查看官網產品頁</a>`;
+        links = `<a class="btn-link" href="${p.officialUrl}" target="_blank" rel="noopener">查看產品頁</a>`;
       }
     } else if (key === "skin") {
       body =
         `【${p.name}】可噴／搽皮膚嗎？\n\n` +
         (p.skinOk === true
-          ? `可以（按官網用法）：${p.skinNote || "請依標籤用於皮膚。"}\n`
+          ? `可以：${p.skinNote || "請依標籤用於皮膚。"}\n`
           : p.skinOk === false
-            ? `唔建議／唔可以（按官網）：${p.skinNote || "本產品非皮膚噴劑／忌塗皮膚。"}\n`
-            : `請核標籤。${p.skinNote || ""}〔待核標籤〕\n`) +
+            ? `唔建議／唔可以：${p.skinNote || "本產品非皮膚噴劑／忌塗皮膚。"}\n`
+            : `請跟包裝標籤。${p.skinNote || ""}\n`) +
         `\n劑型：${p.form}`;
     } else if (key === "combine") {
       body =
         `【${p.name}】可同其他產品一齊用？\n\n` +
-        (p.combineNote || "官網未列併用細節。請以標籤為準。〔待核標籤〕");
+        (p.combineNote || "一般建議唔同時大面積疊用唔同驅蚊／外用品；請跟標籤。");
     } else if (key === "reg") {
       body =
         `【${p.name}】有冇註冊編號？\n\n` +
         (p.registration
-          ? `香港除害劑註冊編號：${p.registration}（官網）\n`
-          : `官網此頁未列出香港除害劑註冊編號（或部分外用舒緩產品可能唔屬除害劑註冊範圍）。請以包裝標籤為準。〔待核標籤〕\n`) +
+          ? `香港除害劑註冊編號：${p.registration}\n`
+          : `呢款未必屬香港除害劑註冊範圍（外用舒緩類常見）；請以包裝標示為準。\n`) +
         `\n主要成份：${p.actives}`;
       if (p.officialUrl) {
-        links = `<a class="btn-link" href="${p.officialUrl}" target="_blank" rel="noopener">查看官網產品頁</a>`;
+        links = `<a class="btn-link" href="${p.officialUrl}" target="_blank" rel="noopener">查看產品頁</a>`;
       }
     } else if (key === "pregnant") {
       body =
         `【${p.name}】孕婦／餵奶可用嗎？\n\n` +
-        (p.pregnantNote || "官網若無寫則請以標籤為準並諮詢醫生。") +
-        `\n\n—\n${globalFaq.pregnantIntro || "請以標籤為準並諮詢醫生。"}`;
+        (p.pregnantNote || "請跟包裝標籤，並諮詢醫生／藥劑師。") +
+        `\n\n—\n${globalFaq.pregnantIntro || "請跟包裝標籤，並諮詢醫生／藥劑師。"}`;
     } else if (key === "freq") {
       body =
         `【${p.name}】幾耐一次？\n\n` +
-        (p.freqNote || p.usage || "請以標籤為準。") +
+        (p.freqNote || p.usage || "請跟標籤。") +
         `\n\n完整用法：\n${p.usage}`;
     } else if (key === "pet") {
       body =
         `【${p.name}】寵物安全嗎？\n\n` +
-        (p.petNote || "官網未寫寵物專用指引。請以標籤為準。") +
+        (p.petNote || "請勿直接用於寵物；請跟包裝用法。") +
         `\n\n—\n${globalFaq.petIntro || ""}`;
     } else {
       body = "請選擇問題。";
@@ -338,10 +373,12 @@
     const meta =
       (p.officialUrl
         ? `<div class="meta">資料參考：官網產品頁（請以最新標籤為準）</div>`
-        : `<div class="meta">請以包裝標籤及官網為準</div>`) + links;
+        : `<div class="meta">請以包裝標籤為準</div>`) + links;
+
+    const staffHtml = staffAnswerBlock(key, p);
 
     return {
-      html: body + meta,
+      html: body + meta + staffHtml,
       cls: answerBoxClass(p, key)
     };
   }
@@ -1531,6 +1568,14 @@
     if (!logged) closeLoginDropdown();
     renderStaffNotes("stores");
     renderStaffNotes("anti");
+    if (typeof activeFaqKey !== "undefined" && activeFaqKey) showAnswer(activeFaqKey);
+    if (typeof renderProductMeta === "function") {
+      const prod = typeof getProduct === "function" ? getProduct() : null;
+      if (prod) {
+        renderProductMeta(prod);
+        renderProductMeta(prod, "#storeProductMeta");
+      }
+    }
   }
 
   function renderStaffNotes(kind) {
@@ -1835,7 +1880,7 @@
 
     $("#openCompareImg")?.addEventListener("click", () => {
       openRoadshowLightbox({
-        src: "assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018p",
+        src: "assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018q",
         alt: "驅蚊蟲成分大比拼：Cipeller®PMD VS 一般驅蚊成分",
         caption: "【Cipeller®PMD VS 一般驅蚊成分】驅蚊蟲成分大比拼——安全、功效、驅防種類、有效時間。",
         source: "日本叮叮 Facebook 公開帖",

@@ -1543,3 +1543,40 @@ select:focus, input:focus {
   font-weight: 800;
   vertical-align: middle;
 }
+
+
+/* ---- Staff-only answer caveats (logged-in CS) ---- */
+.staff-answer-note {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fff7ed;
+  border: 1.5px solid #f59e0b;
+  box-shadow: inset 0 0 0 1px rgba(30, 58, 95, 0.08);
+  white-space: normal;
+  font-size: 0.88rem;
+  color: #1e3a5f;
+  line-height: 1.45;
+}
+.staff-answer-note strong {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #9a3412;
+}
+.staff-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #1e3a5f;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.staff-answer-body {
+  white-space: pre-wrap;
+  color: #334155;
+}
