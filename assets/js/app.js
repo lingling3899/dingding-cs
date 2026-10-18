@@ -795,17 +795,34 @@
     document.body.style.overflow = "";
   }
 
+  function escapeHtml(s) {
+    return String(s || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
   function openRoadshowLightbox(item) {
     const box = $("#rsLightbox");
     const img = $("#rsLightboxImg");
     const cap = $("#rsLightboxCap");
     if (!box || !img || !item) return;
     img.src = item.src;
-    img.alt = item.alt || item.label || "宣傳圖";
+    img.alt = item.alt || item.caption || item.label || "宣傳圖";
     if (cap) {
-      cap.textContent =
-        (item.label || "") +
-        (item.source ? "　·　" + item.source : "");
+      const bits = [];
+      if (item.caption) bits.push(escapeHtml(item.caption));
+      else if (item.label) bits.push(escapeHtml(item.label));
+      if (item.source) bits.push(escapeHtml(item.source));
+      if (item.postUrl) {
+        bits.push(
+          '<a href="' +
+            escapeHtml(item.postUrl) +
+            '" target="_blank" rel="noopener">睇 Facebook 原帖</a>'
+        );
+      }
+      cap.innerHTML = bits.join("<br>");
     }
     box.classList.remove("hidden");
     document.body.style.overflow = "hidden";

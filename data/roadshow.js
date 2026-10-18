@@ -1,71 +1,89 @@
 /**
  * 2026 全民驅蚊大行動／Roadshow 快閃時間表
- * 來源：公開著數站（Jetso Today／JetsoBear／Jetso Station）轉載品牌公告；
- * Facebook 專頁帖文未能直接抓取，請以 https://www.facebook.com/japandingding/ 最新為準。
+ * 來源：公開著數站整理時間表；宣傳圖以 Facebook 公開帖為主（見 data/roadshow-images.json）。
+ * 請以 https://www.facebook.com/japandingding/ 最新為準。
  */
 window.DD_ROADSHOW = {
   asOf: "2026-10-18",
   title: "2026全民驅蚊大行動",
   facebookUrl: "https://www.facebook.com/japandingding/",
   sourceNote:
-    "時間地點整理自公開著數文章（Jetso Today／JetsoBear 等）所引述嘅日本叮叮公告。Facebook 專頁帖文／圖片未能直接讀取；下列海報來自公開著數站轉載之品牌宣傳圖。惡劣天氣／交通或會改期，請以 Facebook 最新為準。試用裝數量有限，先到先得，送完即止。",
+    "時間地點整理自公開著數文章（Jetso Today／JetsoBear 等）所引述嘅日本叮叮公告。宣傳海報以日本叮叮 Facebook 公開帖為主；惡劣天氣／交通或會改期，請以 Facebook 最新為準。試用裝數量有限，先到先得，送完即止。",
   disclaimer:
     "以 Facebook 最新為準；數量有限，送完即止。呢份表只係方便查閱，未必齊全年每一場。",
-  imageCredit: "圖片來源：日本叮叮公開宣傳（經 Jetso Today／JetsoBear／Jetso Station 轉載）；Facebook 專頁圖片未能直接下載。",
+  imageCredit: "圖片來源：日本叮叮 Facebook 公開帖（為主）；第二回海報來自公開著數站轉載。",
   gallery: [
     {
       src: "assets/img/roadshow/rs-202604-jetsostation.jpg",
       label: "4月・第二回",
       alt: "2026全民驅蚊大行動第二回宣傳海報",
-      source: "Jetso Station／日本叮叮"
+      caption: "【2026全民驅蚊大行動—第二回】將軍澳／啟德（公開著數站轉載）。",
+      source: "公開著數站轉載／日本叮叮",
+      postUrl: ""
     },
     {
-      src: "assets/img/roadshow/rs-202604b-jetsostation.jpg",
+      src: "assets/img/roadshow/2026-04-roadshow-3.jpg",
       label: "4月・第三回",
-      alt: "2026全民驅蚊大行動第三回宣傳海報",
-      source: "Jetso Station／日本叮叮"
+      alt: "【2026全民驅蚊大行動—第三回】日本叮叮 x 叮叮高制驅蚊防蟲專員走入沙田，免費派發 Cipeller®PMD 驅蚊防蟲裝備。4月28日沙田第一城會堂附近。",
+      caption: "【2026全民驅蚊大行動—第三回】日本叮叮 x 叮叮高制驅蚊防蟲專員走入沙田，免費派發 Cipeller®PMD 驅蚊防蟲裝備。4月28日沙田第一城會堂附近。",
+      source: "日本叮叮 Facebook 公開帖",
+      postUrl: "https://www.facebook.com/japandingding/posts/1367094345440376/"
     },
     {
-      src: "assets/img/roadshow/rs-202605-round4.jpg",
+      src: "assets/img/roadshow/2026-04-roadshow-4.jpg",
       label: "5月・第四回",
-      alt: "2026全民驅蚊大行動第四回宣傳海報（銅鑼灣／尖沙咀／旺角）",
-      source: "JetsoBear／日本叮叮"
+      alt: "【2026全民驅蚊大行動—第四回】五一黃金周快閃銅鑼灣、尖沙咀、旺角，免費派發 Cipeller®PMD 驅蚊防蟲裝備。5月1–3日。",
+      caption: "【2026全民驅蚊大行動—第四回】五一黃金周快閃銅鑼灣、尖沙咀、旺角，免費派發 Cipeller®PMD 驅蚊防蟲裝備。5月1–3日。",
+      source: "日本叮叮 Facebook 公開帖",
+      postUrl: "https://www.facebook.com/japandingding/posts/1372476418235502/"
     },
     {
-      src: "assets/img/roadshow/rs-202605-jetsotoday.jpg",
-      label: "5月",
-      alt: "2026全民驅蚊大行動5月宣傳海報",
-      source: "Jetso Today／日本叮叮"
-    },
-    {
-      src: "assets/img/roadshow/rs-202605b-jetsostation.jpg",
+      src: "assets/img/roadshow/2026-05-roadshow-5.jpg",
       label: "5月・第五回",
-      alt: "2026全民驅蚊大行動第五回宣傳海報",
-      source: "Jetso Station／日本叮叮"
+      alt: "【2026全民驅蚊大行動—第五回】佛誕假期快閃中環、旺角、尖沙咀，免費派發 Cipeller®PMD 驅蚊防蟲試用裝。5月24–25日。",
+      caption: "【2026全民驅蚊大行動—第五回】佛誕假期快閃中環、旺角、尖沙咀，免費派發 Cipeller®PMD 驅蚊防蟲試用裝。5月24–25日。",
+      source: "日本叮叮 Facebook 公開帖",
+      postUrl: "https://www.facebook.com/japandingding/posts/1391028433046967/"
     },
     {
-      src: "assets/img/roadshow/rs-202606-jetsostation.jpg",
+      src: "assets/img/roadshow/2026-06-roadshow-6.jpg",
       label: "6月・第六回",
-      alt: "2026全民驅蚊大行動第六回宣傳海報",
-      source: "Jetso Station／日本叮叮"
+      alt: "【2026全民驅蚊大行動—第六回】端午及父親節連假快閃沙田、葵芳、東岸公園及銅鑼灣，免費派發試用裝。6月19–21日。",
+      caption: "【2026全民驅蚊大行動—第六回】端午及父親節連假快閃沙田、葵芳、東岸公園及銅鑼灣，免費派發試用裝。6月19–21日。",
+      source: "日本叮叮 Facebook 公開帖",
+      postUrl: "https://www.facebook.com/japandingding/posts/1414594547357022/"
     },
     {
-      src: "assets/img/roadshow/rs-202608-jetsotoday.jpg",
+      src: "assets/img/roadshow/2026-06-roadshow-7.jpg",
+      label: "6月・第七回",
+      alt: "【2026全民驅蚊大行動—第七回】6月29日快閃大圍港鐵A出口外單車徑附近，免費派發 Cipeller®PMD 驅蚊防蟲試用裝。",
+      caption: "【2026全民驅蚊大行動—第七回】6月29日快閃大圍港鐵A出口外單車徑附近，免費派發 Cipeller®PMD 驅蚊防蟲試用裝。",
+      source: "日本叮叮 Facebook 公開帖",
+      postUrl: "https://www.facebook.com/japandingding/posts/1423398366476640/"
+    },
+    {
+      src: "assets/img/roadshow/2026-08-roadshow-8.jpg",
       label: "8月・第八回",
-      alt: "2026全民驅蚊大行動8月宣傳海報",
-      source: "Jetso Today／日本叮叮"
+      alt: "【2026全民驅蚊大行動—第八回】8月快閃馬鞍山西沙Go Park、沙田火車站、尖沙咀碼頭、大圍單車徑、旺角朗豪坊，免費派發試用裝。",
+      caption: "【2026全民驅蚊大行動—第八回】8月快閃馬鞍山西沙Go Park、沙田火車站、尖沙咀碼頭、大圍單車徑、旺角朗豪坊，免費派發試用裝。",
+      source: "日本叮叮 Facebook 公開帖",
+      postUrl: "https://www.facebook.com/japandingding/posts/1460408749442268/"
     },
     {
-      src: "assets/img/roadshow/rs-202609-jetsotoday.jpg",
+      src: "assets/img/roadshow/2026-09-roadshow-9.jpg",
       label: "9月・第九回",
-      alt: "2026全民驅蚊大行動第九回宣傳海報",
-      source: "Jetso Today／日本叮叮"
+      alt: "【2026全民驅蚊大行動—第九回】9月快閃石門、深水埗、灣仔、荔枝角，免費派發 Cipeller®PMD 驅蚊防蟲試用裝。",
+      caption: "【2026全民驅蚊大行動—第九回】9月快閃石門、深水埗、灣仔、荔枝角，免費派發 Cipeller®PMD 驅蚊防蟲試用裝。",
+      source: "日本叮叮 Facebook 公開帖",
+      postUrl: "https://www.facebook.com/japandingding/posts/1489186223231187/"
     },
     {
-      src: "assets/img/roadshow/rs-202610-jetsotoday.jpg",
+      src: "assets/img/roadshow/2026-10-roadshow-1.jpg",
       label: "10月・最終回",
-      alt: "2026全民驅蚊大行動最終回宣傳海報",
-      source: "Jetso Today／日本叮叮"
+      alt: "【2026全民驅蚊大行動—最終回】10月快閃灣仔、銅鑼灣、尖沙咀、油麻地，10月17日旺角最終回。免費派發 Cipeller®PMD 驅蚊防蟲試用裝。",
+      caption: "【2026全民驅蚊大行動—最終回】10月快閃灣仔、銅鑼灣、尖沙咀、油麻地，10月17日旺角最終回。免費派發 Cipeller®PMD 驅蚊防蟲試用裝。",
+      source: "日本叮叮 Facebook 公開帖",
+      postUrl: "https://www.facebook.com/japandingding/posts/1511782357638240/"
     }
   ],
   sources: [
