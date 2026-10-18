@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="日本叮叮客服速查：產品問答、門店電話，同 Roadshow／快閃時間表。庫存請致電確認。" />
+  <meta name="description" content="日本叮叮客服速查：產品問答、門店電話、Roadshow，同防偽查詢。庫存請致電確認；防偽請喺官網驗證。" />
   <title>日本叮叮 · 客服速查</title>
-  <link rel="stylesheet" href="assets/css/app.css?v=20261018j" />
+  <link rel="stylesheet" href="assets/css/app.css?v=20261018k" />
 </head>
 <body>
   <header class="topbar">
@@ -14,13 +14,14 @@
         <img class="brand-logo" src="assets/img/dingding-logo.jpg" alt="日本叮叮 Ding Ding Mosquito" width="220" height="64" />
         <div class="brand-text">
           <h1>客服速查</h1>
-          <p>產品問答　｜　門店查貨　｜　Roadshow</p>
+          <p>產品問答　｜　門店　｜　Roadshow　｜　防偽</p>
         </div>
       </div>
       <nav class="nav-tabs" aria-label="主要分頁">
         <button type="button" class="active" data-view="qa">產品問答</button>
         <button type="button" data-view="stores">門店查貨</button>
         <button type="button" data-view="roadshow">Roadshow</button>
+        <button type="button" data-view="anti">防偽</button>
       </nav>
     </div>
   </header>
@@ -59,7 +60,7 @@
         <h3>成份大比拼 <span class="badge">Cipeller®PMD</span></h3>
         <p class="promo-note">Cipeller®PMD 對比一般驅蚊成份（安全、功效、驅防種類、有效時間）。撳圖可放大。</p>
         <button type="button" class="promo-compare-btn" id="openCompareImg" aria-label="放大成份大比拼圖">
-          <img src="assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018j" alt="驅蚊蟲成分大比拼：Cipeller®PMD VS 一般驅蚊成分" loading="lazy" width="640" height="676" />
+          <img src="assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018k" alt="驅蚊蟲成分大比拼：Cipeller®PMD VS 一般驅蚊成分" loading="lazy" width="640" height="676" />
         </button>
         <p class="promo-credit">圖片來源：日本叮叮 Facebook 公開帖</p>
       </section>
@@ -158,8 +159,77 @@
       </section>
     </section>
 
+
+    <section id="view-anti" class="hidden">
+      <section class="panel">
+        <h3>防偽查詢 <span class="badge">認明正貨</span></h3>
+        <p class="anti-intro">
+          【日本叮叮】同【叮叮高制】產品有<strong>三大防偽特徵</strong>。
+          要核對防偽碼，請去<strong>官方網站</strong>查——本頁唔代查、唔收碼。
+        </p>
+        <a class="btn-anti-official"
+           href="https://www.japandingding.com/anti-counterfeiting.php"
+           target="_blank" rel="noopener">
+          去官網做防偽查詢 →
+        </a>
+        <p class="anti-official-note">
+          只信任 <strong>japandingding.com</strong>
+          （繁中：<a href="https://www.japandingding.com/anti-counterfeiting.php" target="_blank" rel="noopener">防偽查詢</a>）
+        </p>
+      </section>
+
+      <section class="panel">
+        <h3>三大防偽特徵</h3>
+        <ol class="anti-features">
+          <li>
+            <strong>① 鐳射防偽標籤</strong>
+            <p>外盒貼有鐳射標籤，有「DING DING MOSQUITO」字樣同已註冊蚊子商標。2022 年起新版亦有「DING DING PRO-MADE」同「日本叮叮／叮叮高制」商標，會逐步取代舊版。</p>
+          </li>
+          <li>
+            <strong>② 一次性 QR Code ＋ 16 位防偽碼</strong>
+            <p>刮開塗層可見 QR Code 同 16 位防偽碼。掃 QR 會連去官網，跟住輸入防偽碼就睇到驗證結果。</p>
+          </li>
+          <li>
+            <strong>③ GS1「489」開頭條碼</strong>
+            <p>產品條碼由香港貨品編碼協會認證，以香港字首「489」開頭，編碼屬<strong>威發藥業有限公司</strong>持有。各款編碼可喺官網產品詳情頁搵到。</p>
+          </li>
+        </ol>
+        <p class="anti-except">
+          ＊<strong>叮叮高制噴噴清消毒殺菌濕紙巾除外</strong>——該產品只設有 GS1 識別碼（冇 QR／16 位防偽碼）。
+        </p>
+      </section>
+
+      <section class="panel">
+        <h3>點樣查？（簡易步驟）</h3>
+        <ol class="anti-steps">
+          <li><span class="anti-step-num">1</span> 刮開外盒防偽標籤上嘅塗層</li>
+          <li><span class="anti-step-num">2</span> 掃 QR Code，或去官網輸入 16 位防偽碼</li>
+          <li><span class="anti-step-num">3</span> 喺<strong>japandingding.com</strong> 睇驗證結果</li>
+        </ol>
+        <a class="btn-anti-official btn-anti-secondary"
+           href="https://www.japandingding.com/anti-counterfeiting.php"
+           target="_blank" rel="noopener">
+          開官方防偽查詢頁
+        </a>
+      </section>
+
+      <section class="panel anti-warn-panel">
+        <h3>⚠️ 小心假網站</h3>
+        <p class="anti-warn">
+          網上或有外表似樣嘅「防偽查詢」網站——<strong>唔好喺嗰度輸入防偽碼</strong>。
+          只信任官方網址：
+        </p>
+        <p class="anti-trust">
+          <a href="https://www.japandingding.com/" target="_blank" rel="noopener">https://www.japandingding.com/</a>
+        </p>
+        <p class="anti-warn-sub">
+          網址要係 <strong>japandingding.com</strong>。拼寫唔同、多咗字、或者唔係 .com 結尾，都可能係假站。
+        </p>
+      </section>
+    </section>
+
     <footer class="footer">
-      參考用途，非醫療建議；庫存請致電確認。官網：<a href="https://www.japandingding.com/" target="_blank" rel="noopener">japandingding.com</a>
+      參考用途，非醫療建議；庫存請致電確認；防偽請喺官網驗證。官網：<a href="https://www.japandingding.com/" target="_blank" rel="noopener">japandingding.com</a>
     </footer>
   </main>
 
@@ -170,11 +240,11 @@
     <p id="rsLightboxCap" class="rs-lightbox-cap"></p>
   </div>
 
-  <script src="data/products.js?v=20261018j"></script>
-  <script src="data/stores.js?v=20261018j"></script>
-  <script src="data/extra-stores.js?v=20261018j"></script>
-  <script src="data/mannings-stock-snapshot.js?v=20261018j"></script>
-  <script src="data/roadshow.js?v=20261018j"></script>
-  <script src="assets/js/app.js?v=20261018j"></script>
+  <script src="data/products.js?v=20261018k"></script>
+  <script src="data/stores.js?v=20261018k"></script>
+  <script src="data/extra-stores.js?v=20261018k"></script>
+  <script src="data/mannings-stock-snapshot.js?v=20261018k"></script>
+  <script src="data/roadshow.js?v=20261018k"></script>
+  <script src="assets/js/app.js?v=20261018k"></script>
 </body>
 </html>

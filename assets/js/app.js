@@ -983,6 +983,7 @@
     $("#view-qa")?.classList.toggle("hidden", name !== "qa");
     $("#view-stores")?.classList.toggle("hidden", name !== "stores");
     $("#view-roadshow")?.classList.toggle("hidden", name !== "roadshow");
+    $("#view-anti")?.classList.toggle("hidden", name !== "anti");
     $$(".nav-tabs button").forEach((b) =>
       b.classList.toggle("active", b.dataset.view === name)
     );
@@ -1035,7 +1036,13 @@
       btn.addEventListener("click", () => {
         const v = btn.dataset.view;
         location.hash =
-          v === "stores" ? "#stores" : v === "roadshow" ? "#roadshow" : "#qa";
+          v === "stores"
+            ? "#stores"
+            : v === "roadshow"
+              ? "#roadshow"
+              : v === "anti"
+                ? "#anti"
+                : "#qa";
         showView(v);
       });
     });
@@ -1043,7 +1050,7 @@
 
     $("#openCompareImg")?.addEventListener("click", () => {
       openRoadshowLightbox({
-        src: "assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018j",
+        src: "assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018k",
         alt: "驅蚊蟲成分大比拼：Cipeller®PMD VS 一般驅蚊成分",
         caption: "【Cipeller®PMD VS 一般驅蚊成分】驅蚊蟲成分大比拼——安全、功效、驅防種類、有效時間。",
         source: "日本叮叮 Facebook 公開帖",
@@ -1074,6 +1081,7 @@
       const h = location.hash;
       if (h === "#stores") showView("stores");
       else if (h === "#roadshow") showView("roadshow");
+      else if (h === "#anti") showView("anti");
       else showView("qa");
     }
     applyHash();
