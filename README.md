@@ -3,7 +3,7 @@
 手機優先嘅客服／消費者參考頁：
 
 1. **產品問答**——功效、成份、用法、年齡、DEET、蠶豆症（G6PD）誠實說明  
-2. **門店查貨**——萬寧可顯示「該產品約 N 間舖有貨」**快照**（可展開店名／電話／地址）；屈臣氏為靜態電話簿＋`tel:` 致電確認（**冇**即時庫存）  
+2. **門店查貨**——萬寧可顯示「該產品約 N 間舖有貨」**快照**（可展開店名／電話／地址）；屈臣氏為擴大靜態電話簿（約 280+ 間，非有貨舖數）＋`tel:` 致電確認（**冇**即時庫存）  
 3. **其他渠道**——惠康／百佳／一田／AEON／莎莎／卡萊美／卓悅／松本清／HKTVmall 等部分店有售／非全線
 
 ## 預覽
@@ -27,7 +27,8 @@ GitHub Pages：<https://lingling3899.github.io/dingding-cs/>
 | `assets/css/app.css` | 樣式（深藍／白） |
 | `assets/js/app.js` | 問答／篩選／萬寧快照 UI |
 | `data/products.js` | SKU 與 claim-safe 說明；含可選 `manningsUrl`／`manningsCode` |
-| `data/stores.js` | 萬寧／屈臣氏靜態分店電話簿 |
+| `data/stores.js` | 萬寧代表性電話簿／屈臣氏擴大電話簿（公開目錄；非有貨舖數） |
+| `assets/img/products/` | 官網產品圖（japandingding.com） |
 | `data/mannings-stock-snapshot.js` | 萬寧「按產品有貨舖」快照（6 SKU；`window.DD_MANNINGS_STOCK`） |
 | `data/mannings-stock-snapshot.json` | 同源 JSON（採集原文；可選保留） |
 

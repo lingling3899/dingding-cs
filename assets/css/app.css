@@ -168,6 +168,26 @@ select:focus, input:focus {
   border-radius: 12px;
   font-size: 0.88rem;
 }
+
+.product-card-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.product-thumb {
+  flex: 0 0 88px;
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 4px;
+}
+.product-card-body { flex: 1; min-width: 0; }
+.product-card.compact { margin-top: 10px; }
+.product-card.compact .product-thumb { width: 72px; height: 72px; flex-basis: 72px; }
+
 .product-card strong { font-size: 0.95rem; }
 .tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
 .tag {

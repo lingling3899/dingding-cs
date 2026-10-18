@@ -2,6 +2,7 @@
 window.DD_PRODUCTS = [
   {
     id: "spray-sakura",
+    image: "assets/img/products/spray-sakura.jpg",
     name: "全效驅蚊噴霧（櫻花香）",
     form: "噴霧",
     group: "噴霧",
@@ -41,6 +42,7 @@ window.DD_PRODUCTS = [
   },
   {
     id: "spray-pmd",
+    image: "assets/img/products/spray-pmd.jpg",
     name: "全效版配方驅蚊防蟲噴霧（Cipeller® PMD）",
     form: "噴霧",
     group: "噴霧",
@@ -80,6 +82,7 @@ window.DD_PRODUCTS = [
   },
   {
     id: "spray-sensitive",
+    image: "assets/img/products/spray-sensitive.jpg",
     name: "防敏蚊怕水",
     form: "噴霧",
     group: "噴霧",
@@ -117,6 +120,7 @@ window.DD_PRODUCTS = [
   },
   {
     id: "patch-sensitive",
+    image: "assets/img/products/patch-sensitive.jpg",
     name: "防敏驅蚊貼",
     form: "蚊貼（3M 黏貼）",
     group: "貼／卡",
@@ -153,6 +157,7 @@ window.DD_PRODUCTS = [
   },
   {
     id: "patch-18",
+    image: "assets/img/products/patch-18.jpg",
     name: "全效驅蚊防蟲貼",
     form: "蚊貼（3M 黏貼）",
     group: "貼／卡",
@@ -190,6 +195,7 @@ window.DD_PRODUCTS = [
   },
   {
     id: "bead-patch",
+    image: "assets/img/products/bead-patch.jpg",
     name: "全效驅蚊防蟲爆珠貼",
     form: "爆珠貼（3M）",
     group: "貼／卡",
@@ -226,6 +232,7 @@ window.DD_PRODUCTS = [
   },
   {
     id: "card-sakura",
+    image: "assets/img/products/card-sakura.jpg",
     name: "全效驅蚊卡（櫻花香）",
     form: "驅蚊卡",
     group: "貼／卡",
@@ -264,6 +271,7 @@ window.DD_PRODUCTS = [
   },
   {
     id: "space-35g",
+    image: "assets/img/products/space-35g.jpg",
     name: "全效驅蚊防蟲劑",
     form: "空間劑（放置型）",
     group: "空間",
@@ -302,6 +310,7 @@ window.DD_PRODUCTS = [
   },
   {
     id: "eco-35g",
+    image: "assets/img/products/eco-35g.jpg",
     name: "環保驅蚊劑",
     form: "空間劑（放置型）",
     group: "空間",
@@ -340,6 +349,7 @@ window.DD_PRODUCTS = [
   },
   {
     id: "stone-sakura",
+    image: "assets/img/products/stone-sakura.jpg",
     name: "全效驅蚊芳香石（櫻花香）",
     form: "芳香石＋精油",
     group: "空間",
@@ -378,6 +388,7 @@ window.DD_PRODUCTS = [
   },
   {
     id: "oil-sakura-refill",
+    image: "assets/img/products/oil-sakura-refill.jpg",
     name: "全效驅蚊精油補充裝（櫻花香）",
     form: "精油補充裝",
     group: "空間",
@@ -416,6 +427,7 @@ window.DD_PRODUCTS = [
   },
   {
     id: "usb-liquid",
+    image: "assets/img/products/usb-liquid.jpg",
     name: "USB 液體驅蚊器（連驅蚊液）",
     form: "USB 液體驅蚊器",
     group: "空間",
@@ -454,6 +466,7 @@ window.DD_PRODUCTS = [
   },
   {
     id: "usb-refill",
+    image: "assets/img/products/usb-refill.jpg",
     name: "驅蚊液補充裝（USB 用）",
     form: "USB 驅蚊液補充",
     group: "空間",
@@ -490,6 +503,7 @@ window.DD_PRODUCTS = [
   },
   {
     id: "itch-cream",
+    image: "assets/img/products/itch-cream.jpg",
     name: "防敏止癢蚊膏",
     form: "外用膏狀",
     group: "其他",
@@ -526,6 +540,7 @@ window.DD_PRODUCTS = [
   },
   {
     id: "roll-on",
+    image: "assets/img/products/roll-on.jpg",
     name: "清涼舒緩走珠液",
     form: "走珠液",
     group: "其他",
@@ -562,6 +577,7 @@ window.DD_PRODUCTS = [
   },
   {
     id: "mint-water",
+    image: "assets/img/products/mint-water.jpg",
     name: "薄荷水",
     form: "外用液體",
     group: "其他",

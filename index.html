@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="日本叮叮客服參考：產品問答（成份／用法／蠶豆症）與萬寧屈臣氏分店電話查詢。非醫療建議，庫存以門店為準。" />
+  <meta name="description" content="日本叮叮客服速查：產品問答與萬寧／屈臣氏門店電話。庫存請致電確認。" />
   <title>日本叮叮 · 客服速查</title>
   <link rel="stylesheet" href="assets/css/app.css" />
 </head>
@@ -26,11 +26,6 @@
 
   <main class="wrap">
     <section id="view-qa">
-      <div class="hero">
-        <h2>即答功效・成份・蠶豆症</h2>
-        <p>揀產品 → 撳問題掣。答案只跟官網／已標明來源；唔會扮即時庫存，亦唔當醫療建議。</p>
-      </div>
-
       <section class="panel">
         <h3>① 揀產品 <span class="badge">必選</span></h3>
         <label class="field" for="productSelect">產品</label>
@@ -62,22 +57,18 @@
       <section class="panel">
         <h3>③ 想查有冇貨？</h3>
         <p style="margin:0 0 10px;color:var(--muted);font-size:0.9rem;">
-          本頁<strong>冇</strong>即時庫存。萬寧可睇「門店查貨」內該產品約幾多間舖（快照）；屈臣氏請致電確認。其他渠道多數係部分店有售。
+          萬寧可睇「門店查貨」內該產品約幾多間舖（快照）；屈臣氏請致電門店確認。
         </p>
         <button type="button" class="chip" id="goStoresBtn">去門店查貨 →</button>
       </section>
     </section>
 
     <section id="view-stores" class="hidden">
-      <div class="hero" id="stores">
-        <h2>門店查貨（致電確認）</h2>
-        <p>萬寧可顯示「該產品約幾多間舖有貨」快照；屈臣氏為靜態電話簿。一律請致電確認——唔顯示假 live stock。</p>
-      </div>
-
-      <section class="panel">
-        <h3>揀產品（同步問答頁）</h3>
+      <section class="panel" id="stores">
+        <h3>門店查貨 · 揀產品</h3>
         <label class="field" for="storeProductSelect">要查邊款？</label>
         <select id="storeProductSelect" aria-label="門店頁選擇產品"></select>
+        <div id="storeProductMeta" class="product-card compact" aria-live="polite"></div>
         <div id="manningsStockPanel" class="stock-panel" aria-live="polite"></div>
       </section>
 
@@ -122,7 +113,7 @@
         <div id="otherChannels" class="other-box hidden">
           <p><strong>KA（可查舖）</strong>：萬寧、屈臣氏（含 Mannings Plus／Watsons eShop 等）。</p>
           <p><strong>其他渠道（部分店有售／非全線）</strong>：惠康、Market Place、百佳、Fusion、Taste、PNS Plus、一田、AEON、莎莎、卡萊美、卓悅、松本清、HKTVmall、先施、city'super、U Select 等（見宣傳單張）。</p>
-          <p>本系統<strong>唔會</strong>為非萬寧渠道顯示有貨舖數或扮即時庫存。建議致電該店，或查看官網零售點。</p>
+          <p>其他渠道請致電該店或查看官網零售點確認。</p>
           <p>
             <a class="btn-link" href="https://www.japandingding.com/" target="_blank" rel="noopener">japandingding.com 官網</a>
           </p>
@@ -131,11 +122,7 @@
     </section>
 
     <footer class="footer">
-      <strong>免責聲明</strong><br />
-      本頁僅供客服／消費者<strong>參考</strong>，<strong>非醫療建議</strong>。蠶豆症（G6PD）相關說明以「官網有否標明不含樟腦／non-DEET」＋公開教育（應避免樟腦等誘發物）陳述，並請<strong>以包裝標籤為準，諮詢醫生／藥劑師</strong>。<br />
-      庫存以門店即時狀況為準；萬寧「約 N 間舖」來自手動／工具快照，非 live API。分店地址／電話來自公開目錄整理，資料可能滯後。<br />
-      「防蚊敵」成份來自第三方藥房頁，建議以官方標籤核實。<br />
-      官方網站：<a href="https://www.japandingding.com/" target="_blank" rel="noopener">japandingding.com</a>
+      參考用途，非醫療建議；庫存請致電確認。官網：<a href="https://www.japandingding.com/" target="_blank" rel="noopener">japandingding.com</a>
     </footer>
   </main>
 

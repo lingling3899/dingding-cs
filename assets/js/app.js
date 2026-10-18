@@ -105,14 +105,18 @@
     const st = $("#storeProductSelect");
     if (qa && qa.value !== id) qa.value = id;
     if (st && st.value !== id) st.value = id;
-    if (source !== "qa-meta-skip") renderProductMeta(getProduct());
+    if (source !== "qa-meta-skip") {
+      const prod = getProduct();
+      renderProductMeta(prod);
+      renderProductMeta(prod, "#storeProductMeta");
+    }
     stockListExpanded = false;
     renderManningsStockPanel();
     if (storeChannel === "mannings") renderStores();
   }
 
-  function renderProductMeta(p) {
-    const el = $("#productMeta");
+  function renderProductMeta(p, targetId) {
+    const el = $(targetId || "#productMeta");
     if (!el || !p) return;
     const tags = [];
     if (p.nonDeet) tags.push('<span class="tag ok">non-DEET</span>');
@@ -123,11 +127,20 @@
     tags.push(`<span class="tag">${p.form}</span>`);
     tags.push(`<span class="tag">${p.volume}</span>`);
 
+    const img = p.image
+      ? `<img class="product-thumb" src="${p.image}" alt="${p.name}" width="96" height="96" loading="lazy" />`
+      : "";
+
     el.innerHTML = `
-      <strong>${p.name}</strong>
-      <div>主要成份：${p.actives}</div>
-      <div>適用年齡／用法對象：${p.age}</div>
-      <div class="tag-row">${tags.join("")}</div>
+      <div class="product-card-row">
+        ${img}
+        <div class="product-card-body">
+          <strong>${p.name}</strong>
+          <div>主要成份：${p.actives}</div>
+          <div>適用年齡／用法對象：${p.age}</div>
+          <div class="tag-row">${tags.join("")}</div>
+        </div>
+      </div>
     `;
   }
 
@@ -328,7 +341,9 @@
     const st = $("#storeProductSelect");
     if (qa) qa.innerHTML = html;
     if (st) st.innerHTML = html;
-    renderProductMeta(getProduct());
+    const prod = getProduct();
+    renderProductMeta(prod);
+    renderProductMeta(prod, "#storeProductMeta");
   }
 
   function getSnapshotEntry(productId) {
@@ -529,10 +544,14 @@
         noteEl.className = "directory-note warn-note";
         noteEl.dataset.open = stockListExpanded && stockListMode === "directory" ? "1" : "0";
       } else {
+        const wCount = (stores.watsons || []).length;
         noteEl.innerHTML =
-          `<strong>屈臣氏：</strong>靜態分店電話簿。請致電確認有冇貨（本頁無屈臣氏即時／快照庫存）。`;
-        noteEl.className = "directory-note";
-        noteEl.dataset.open = "0";
+          `<strong>屈臣氏電話簿（約 ${wCount} 間）</strong>——公開目錄整理，<strong>非</strong>該產品有貨舖數；本頁無屈臣氏庫存快照。請致電確認。` +
+          (stores.watsonsLocator
+            ? ` <a href="${stores.watsonsLocator}" target="_blank" rel="noopener">官方分店搜尋</a>`
+            : "");
+        noteEl.className = "directory-note warn-note";
+        noteEl.dataset.open = "1";
       }
     }
 
@@ -547,7 +566,7 @@
 
     if (countEl) {
       if (storeChannel === "watsons") {
-        countEl.textContent = `${regionName}：約 ${list.length} 間屈臣氏分店（靜態名單，非即時庫存）`;
+        countEl.textContent = `${regionName}：約 ${list.length} 間屈臣氏分店（電話簿，非該產品有貨舖數）`;
       } else if (usingSnapshot) {
         countEl.textContent = `${regionName}：約 ${list.length} 間快照「可能有貨」舖（截至 ${fmtAsOf(manningsStock.asOf)}；請致電確認）`;
       } else {
@@ -569,7 +588,7 @@
       ? "快照標示可能有貨 — 請致電確認（非即時庫存）"
       : storeChannel === "mannings"
         ? "電話簿分店 — 唔代表此產品有貨；請致電確認"
-        : "請致電確認有冇貨（本頁不顯示即時庫存）";
+        : "電話簿分店 — 唔代表此產品有貨；請致電確認";
 
     listEl.innerHTML = list
       .map(
