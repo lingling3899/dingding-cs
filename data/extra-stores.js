@@ -2,7 +2,7 @@
  *  松本清：官方店舖資訊 matsukiyo.hk/shopinfo
  *  莎莎：公開商戶名單（QTSA 等）整理
  *  AEON：官方分店情報（僅 AEON STYLE／AEON／AEON SUPERMARKET）
- *  百佳：換領門市地址＋房委會商場名冊(2026-09)／舊版官網店舖一覽(2018 Wayback)／hongkongdir 分店電話；未有號碼者請用官方店舖搜尋
+ *  百佳：換領門市地址＋房委會商場名冊(2026-09)／舊版官網店舖一覽(2018 Wayback)／hongkongdir＋官網 store-finder(2026-10-18) 分店電話；未有號碼者請用官方店舖搜尋
  *  惠康：公開整理名單（港島／九龍較齊；新界僅部分）
  *  卡萊美：公開商戶優惠門市表整理
  *  Soda Mall／永安／先施：官方或公開分店頁
@@ -1180,8 +1180,8 @@ window.DD_EXTRA_STORES = {
     "id": "pns-ed793c7c7c",
     "name": "百佳 · 油麻地恒成",
     "district": "油尖旺區",
-    "address": "九龍油麻地彌敦道363-373號恒成大廈地庫",
-    "tel": "",
+    "address": "九龍油麻地彌敦道363,365,367,369,371&373號恒成大廈地庫高層B部分",
+    "tel": "23746077",
     "region": "kln"
   },
   {
@@ -1229,7 +1229,7 @@ window.DD_EXTRA_STORES = {
     "name": "百佳 · 尖沙咀希爾頓 International",
     "district": "油尖旺區",
     "address": "九龍尖沙咀加連威老道96號希爾頓大廈地下B號舖",
-    "tel": "27245632",
+    "tel": "27245675",
     "region": "kln"
   },
   {
@@ -1245,7 +1245,7 @@ window.DD_EXTRA_STORES = {
     "name": "百佳 · 愛民廣場",
     "district": "九龍城區",
     "address": "九龍何文田愛民廣場地下G23A號舖",
-    "tel": "",
+    "tel": "35210120",
     "region": "kln"
   },
   {
@@ -1254,14 +1254,6 @@ window.DD_EXTRA_STORES = {
     "district": "觀塘區",
     "address": "九龍觀塘茶果嶺道88號麗港城第一期商場地下",
     "tel": "27725926",
-    "region": "kln"
-  },
-  {
-    "id": "pns-a09e31d7b0",
-    "name": "百佳 · V Walk Fusion",
-    "district": "深水埗區",
-    "address": "九龍深水埗深旺道28號V Walk 2樓L2-137及138號舖",
-    "tel": "",
     "region": "kln"
   },
   {
@@ -1381,7 +1373,7 @@ window.DD_EXTRA_STORES = {
     "name": "百佳 · 俊宏軒",
     "district": "元朗區",
     "address": "新界天水圍天瑞路88號俊宏軒商場1樓101-102號舖",
-    "tel": "",
+    "tel": "23061311",
     "region": "nt"
   },
   {
@@ -1468,8 +1460,8 @@ window.DD_EXTRA_STORES = {
     "id": "pns-03bbcfd3c2",
     "name": "百佳 · 沙田第一城",
     "district": "沙田區",
-    "address": "新界沙田銀城街2號置富第一城樂薈地下",
-    "tel": "",
+    "address": "新界沙田銀城街2號置富第一城‧樂薈地下7B, 46-80號",
+    "tel": "26499987",
     "region": "nt"
   },
   {

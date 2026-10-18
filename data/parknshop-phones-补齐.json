@@ -1,0 +1,67 @@
+{
+  "asOf": "2026-10-18",
+  "source": "https://www.pns.hk/zh-hk/store-finder",
+  "stores": [
+    {
+      "name": "油麻地恒成",
+      "address": "九龍油麻地彌敦道363,365,367,369,371&373號恒成大廈地庫高層B部分",
+      "tel": "23746077",
+      "matched": true,
+      "note": "Official name 恒成大廈. Same site as app address 九龍油麻地彌敦道363-373號恒成大廈地庫; finder adds 地庫高層B部分. Hours 0830-2200."
+    },
+    {
+      "name": "愛民廣場",
+      "address": "九龍何文田愛民廣場地下G23A號舖",
+      "tel": "35210120",
+      "matched": true,
+      "note": "Exact address match to app. Hours 0800-2230."
+    },
+    {
+      "name": "V Walk Fusion",
+      "address": "九龍深水埗深旺道28號V Walk 2樓L2-137及138號舖",
+      "tel": "",
+      "matched": false,
+      "note": "Not on the official finder. Paged all 236 stores (24 pages); no name or address contains V Walk or 深旺. Keyword/geocode searches for V Walk, 深旺道 and 南昌, and districts 深水埗 (5 stores: 元州街東蘭閣, 海盈邨, 海祥大廈, 蘇屋商場, 順寧道日輝大廈), 長沙灣 and 荔枝角, did not list this shop. Number not guessed."
+    },
+    {
+      "name": "俊宏軒",
+      "address": "新界天水圍天瑞路88號俊宏軒商場1樓101-102號舖",
+      "tel": "23061311",
+      "matched": true,
+      "note": "Exact address match to app. Hours 0800-2230."
+    },
+    {
+      "name": "沙田第一城",
+      "address": "新界沙田銀城街2號置富第一城‧樂薈地下7B, 46-80號",
+      "tel": "26499987",
+      "matched": true,
+      "note": "Official name 置富第一城‧樂薈. Same mall as app address 新界沙田銀城街2號置富第一城樂薈地下; finder adds shop numbers 7B, 46-80. Hours 0730-2300."
+    }
+  ],
+  "spotChecks": [
+    {
+      "appName": "百佳 · 頌富 T Town Fusion",
+      "officialName": "T Town 北",
+      "address": "新界天水圍天華路33號 T Town North 2樓N206-209號舖",
+      "appTel": "31561038",
+      "officialTel": "31561038",
+      "current": true
+    },
+    {
+      "appName": "百佳 · 藍田匯景",
+      "officialName": "匯景廣場",
+      "address": "九龍藍田匯景廣場4樓401號舖",
+      "appTel": "31517228",
+      "officialTel": "31517228",
+      "current": true
+    },
+    {
+      "appName": "百佳 · 尖沙咀希爾頓 International",
+      "officialName": "希爾頓大廈",
+      "address": "九龍尖沙咀加連威老道96號希爾頓大廈地下B號舖",
+      "appTel": "27245632",
+      "officialTel": "27245675",
+      "current": false
+    }
+  ]
+}
