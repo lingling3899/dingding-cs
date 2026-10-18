@@ -167,6 +167,7 @@
       const prod = getProduct();
       renderProductMeta(prod);
       renderProductMeta(prod, "#storeProductMeta");
+      renderStaffIngredientPanel(prod);
     }
     stockListExpanded = false;
     renderManningsStockPanel();
@@ -221,6 +222,93 @@
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
+  }
+
+
+  function staffIngredientCardsHtml(p) {
+    if (!p || !Array.isArray(p.ingredientDetails) || !p.ingredientDetails.length) return "";
+    return (
+      '<div class="sip-ing-grid">' +
+      p.ingredientDetails
+        .map((ing) => {
+          const role = String(ing.role || "");
+          const warn = /⚠|注意|樟腦|排除|毒性/.test(role + (ing.note || "") + (ing.detail || ""));
+          const roleCls = warn ? "sip-role warn" : "sip-role";
+          let html =
+            '<article class="sip-ing-card">' +
+            '<div class="sip-ing-top">' +
+            '<span class="sip-ing-name">' +
+            escapeHtml(ing.name) +
+            "</span>" +
+            (role ? '<span class="' + roleCls + '">' + escapeHtml(role) + "</span>" : "") +
+            "</div>" +
+            '<p class="sip-ing-detail">' +
+            escapeHtml(ing.detail || "") +
+            "</p>";
+          if (ing.benefit) {
+            html += '<p class="sip-ing-benefit">好處：' + escapeHtml(ing.benefit) + "</p>";
+          }
+          if (ing.note) {
+            html += '<p class="sip-ing-note">注意：' + escapeHtml(ing.note) + "</p>";
+          }
+          html += "</article>";
+          return html;
+        })
+        .join("") +
+      "</div>"
+    );
+  }
+
+  function staffBenefitsListHtml(p) {
+    if (!p || !Array.isArray(p.benefits) || !p.benefits.length) return "";
+    return (
+      '<ul class="sip-benefits">' +
+      p.benefits.map((b) => "<li>" + escapeHtml(b) + "</li>").join("") +
+      "</ul>"
+    );
+  }
+
+  function renderStaffIngredientPanel(p) {
+    const el = $("#staffIngredientPanel");
+    if (!el) return;
+    const logged = isStaff();
+    el.classList.toggle("hidden", !logged);
+    el.classList.toggle("admin-only", true);
+    if (!logged) {
+      el.innerHTML = "";
+      return;
+    }
+    if (!p) {
+      el.innerHTML = '<p class="sip-empty">請先揀產品。</p>';
+      return;
+    }
+    const cards = staffIngredientCardsHtml(p);
+    const bens = staffBenefitsListHtml(p);
+    if (!cards && !bens) {
+      el.innerHTML =
+        '<div class="sip-head"><span class="staff-badge">職員</span> 成份詳述／優點</div>' +
+        '<p class="sip-empty">呢款暫時未有拆解資料。</p>';
+      return;
+    }
+    el.innerHTML =
+      '<div class="sip-head"><span class="staff-badge">職員</span> 成份詳述／優點（職員）</div>' +
+      '<p class="sip-sub">CS 話術拆解 · 訪客睇唔到 · 請以包裝標籤為準，唔好發明療效保證</p>' +
+      (cards ? '<div class="sip-section-title">成份</div>' + cards : "") +
+      (bens ? '<div class="sip-section-title">優點</div>' + bens : "");
+  }
+
+  function staffIngredientAnswerHtml(p) {
+    if (!isStaff() || !p) return "";
+    const cards = staffIngredientCardsHtml(p);
+    const bens = staffBenefitsListHtml(p);
+    if (!cards && !bens) return "";
+    return (
+      '<div class="staff-ing-answer" role="note">' +
+      '<strong><span class="staff-badge">職員</span> 成份／優點拆解</strong>' +
+      (cards ? '<div class="sip-section-title">成份</div>' + cards : "") +
+      (bens ? '<div class="sip-section-title">優點</div>' + bens : "") +
+      "</div>"
+    );
   }
 
   function staffAnswerBlock(key, p) {
@@ -376,9 +464,10 @@
         : `<div class="meta">請以包裝標籤為準</div>`) + links;
 
     const staffHtml = staffAnswerBlock(key, p);
+    const staffIngHtml = key === "ingredients" ? staffIngredientAnswerHtml(p) : "";
 
     return {
-      html: body + meta + staffHtml,
+      html: body + meta + staffHtml + staffIngHtml,
       cls: answerBoxClass(p, key)
     };
   }
@@ -516,6 +605,7 @@
     const prod = getProduct();
     renderProductMeta(prod);
     renderProductMeta(prod, "#storeProductMeta");
+    renderStaffIngredientPanel(prod);
   }
 
   function getSnapshotEntry(productId) {
@@ -1574,6 +1664,9 @@
       if (prod) {
         renderProductMeta(prod);
         renderProductMeta(prod, "#storeProductMeta");
+      }
+      if (typeof renderStaffIngredientPanel === "function") {
+        renderStaffIngredientPanel(prod);
       }
     }
   }
