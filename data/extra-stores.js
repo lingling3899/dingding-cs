@@ -3045,22 +3045,6 @@ window.DD_EXTRA_STORES = {
       "address": "九龍旺角彌敦道750號始創中心2樓241-249號舖",
       "tel": "29940826",
       "region": "kln"
-    },
-    {
-      "id": "sm-f6cfff7193",
-      "name": "Soda Mall · 佐敦四海大廈",
-      "district": "油尖旺區",
-      "address": "九龍油麻地彌敦道208-212號四海大廈地庫",
-      "tel": "28681662",
-      "region": "kln"
-    },
-    {
-      "id": "sm-4e653c758f",
-      "name": "Soda Mall · 如心廣場",
-      "district": "荃灣區",
-      "address": "新界荃灣楊屋道8號如心廣場1期2樓214-216號舖",
-      "tel": "23974878",
-      "region": "nt"
     }
   ],
   "wingon": [
@@ -3096,22 +3080,6 @@ window.DD_EXTRA_STORES = {
       "district": "油尖旺區",
       "address": "九龍旺角瓊華中心UG-3/F（港鐵旺角站E2出口，山東街恆生銀行對面）",
       "tel": "21703088",
-      "region": "kln"
-    },
-    {
-      "id": "sc-dbb70a7a53",
-      "name": "先施 · 中環",
-      "district": "中西區",
-      "address": "香港中環德輔道中189號李寶椿大廈地下",
-      "tel": "25442688",
-      "region": "hk"
-    },
-    {
-      "id": "sc-f8f3f4dc43",
-      "name": "先施 · 西九龍中心",
-      "district": "深水埗區",
-      "address": "九龍深水埗西九龍中心1-3樓",
-      "tel": "27086688",
       "region": "kln"
     }
   ]
