@@ -2,7 +2,7 @@
  *  松本清：官方店舖資訊 matsukiyo.hk/shopinfo
  *  莎莎：公開商戶名單（QTSA 等）整理
  *  AEON：官方分店情報（僅 AEON STYLE／AEON／AEON SUPERMARKET）
- *  百佳：公開換領門市地址名單（該 PDF 無分店電話；請用官方店舖搜尋查電話）
+ *  百佳：換領門市地址＋房委會商場名冊(2026-09)／舊版官網店舖一覽(2018 Wayback)／hongkongdir 分店電話；未有號碼者請用官方店舖搜尋
  *  惠康：公開整理名單（港島／九龍較齊；新界僅部分）
  *  卡萊美：公開商戶優惠門市表整理
  *  Soda Mall／永安／先施：官方或公開分店頁
@@ -1048,463 +1048,463 @@ window.DD_EXTRA_STORES = {
     }
   ],
   "parknshop": [
-    {
-      "id": "pns-0df7d3b14f",
-      "name": "百佳 · 天后廟 International",
-      "district": "東區",
-      "address": "香港北角英皇道6-8號百利大廈地下及1樓全層",
-      "tel": "",
-      "region": "hk"
-    },
-    {
-      "id": "pns-ceafdd7390",
-      "name": "百佳 · 跑馬地山村道 Fusion",
-      "district": "灣仔區",
-      "address": "香港跑馬地山村道32-40號豐寧大廈地下",
-      "tel": "",
-      "region": "hk"
-    },
-    {
-      "id": "pns-4b758ee984",
-      "name": "百佳 · 皇后大道西褔陞閣 Fusion",
-      "district": "中西區",
-      "address": "香港上環皇后大道中378號福陞閣地下入口及1樓",
-      "tel": "",
-      "region": "hk"
-    },
-    {
-      "id": "pns-4e4016ab89",
-      "name": "百佳 · 香港仔中心",
-      "district": "南區",
-      "address": "香港香港仔南寧街13-23號地下",
-      "tel": "",
-      "region": "hk"
-    },
-    {
-      "id": "pns-e00b812bd0",
-      "name": "百佳 · 置富花園 Fusion",
-      "district": "南區",
-      "address": "香港薄扶林置富花園商場二樓201-202號舖",
-      "tel": "",
-      "region": "hk"
-    },
-    {
-      "id": "pns-e027947365",
-      "name": "百佳 · 杏花邨 Fusion",
-      "district": "東區",
-      "address": "香港杏花邨杏花新城西翼二樓217-230號舖",
-      "tel": "",
-      "region": "hk"
-    },
-    {
-      "id": "pns-a7016db84f",
-      "name": "百佳 · 小西灣藍灣",
-      "district": "東區",
-      "address": "香港小西灣小西灣道28號藍灣半島商場1樓1A號舖",
-      "tel": "",
-      "region": "hk"
-    },
-    {
-      "id": "pns-ffce9013cd",
-      "name": "百佳 · 海怡廣場",
-      "district": "南區",
-      "address": "香港鴨脷洲海怡半島海怡廣場西座3樓302號舖",
-      "tel": "",
-      "region": "hk"
-    },
-    {
-      "id": "pns-43e1078b7d",
-      "name": "百佳 · 堅尼地城士美菲",
-      "district": "中西區",
-      "address": "香港堅尼地城士美菲路45-51號Smithfield Walk低層地下7號舖",
-      "tel": "",
-      "region": "hk"
-    },
-    {
-      "id": "pns-0eb9466add",
-      "name": "百佳 · 西灣河鯉景灣 Fusion",
-      "district": "東區",
-      "address": "香港西灣河太安街25號鯉景灣地下8-13號舖",
-      "tel": "",
-      "region": "hk"
-    },
-    {
-      "id": "pns-1047f384af",
-      "name": "百佳 · 灣仔集成中心",
-      "district": "灣仔區",
-      "address": "香港灣仔軒尼詩道302-308號集成中心地庫",
-      "tel": "",
-      "region": "hk"
-    },
-    {
-      "id": "pns-9348c7fc35",
-      "name": "百佳 · 中環擺花街",
-      "district": "中西區",
-      "address": "香港中環擺花街23-39號中環大廈地下",
-      "tel": "",
-      "region": "hk"
-    },
-    {
-      "id": "pns-7a0b15d71d",
-      "name": "百佳 · 鰂魚涌東匯",
-      "district": "東區",
-      "address": "香港鰂魚涌英皇道1010-1056號東匯坊LG01-03號舖",
-      "tel": "",
-      "region": "hk"
-    },
-    {
-      "id": "pns-42aafa88bd",
-      "name": "百佳 · 筲箕灣愛東",
-      "district": "東區",
-      "address": "香港筲箕灣愛東邨愛東商場1樓104-105號舖",
-      "tel": "",
-      "region": "hk"
-    },
-    {
-      "id": "pns-a2f93773b6",
-      "name": "百佳 · 美孚萬事達",
-      "district": "深水埗區",
-      "address": "九龍荔枝角荔灣道美孚新邨第七期萬事達廣場地下N50B舖",
-      "tel": "",
-      "region": "kln"
-    },
-    {
-      "id": "pns-456c1c9020",
-      "name": "百佳 · 樂華北",
-      "district": "觀塘區",
-      "address": "九龍牛頭角樂華北邨樂華商場3樓316號舖",
-      "tel": "",
-      "region": "kln"
-    },
-    {
-      "id": "pns-ed793c7c7c",
-      "name": "百佳 · 油麻地恒成",
-      "district": "油尖旺區",
-      "address": "九龍油麻地彌敦道363-373號恒成大廈地庫",
-      "tel": "",
-      "region": "kln"
-    },
-    {
-      "id": "pns-ca1047e41c",
-      "name": "百佳 · 藍田匯景",
-      "district": "觀塘區",
-      "address": "九龍藍田匯景廣場4樓401號舖",
-      "tel": "",
-      "region": "kln"
-    },
-    {
-      "id": "pns-3fd9c4954e",
-      "name": "百佳 · 黃大仙中心 International",
-      "district": "黃大仙區",
-      "address": "九龍黃大仙上邨黃大仙中心北館2樓N212A舖",
-      "tel": "",
-      "region": "kln"
-    },
-    {
-      "id": "pns-f079a27b4e",
-      "name": "百佳 · 荷里活廣場 TASTE",
-      "district": "黃大仙區",
-      "address": "九龍鑽石山荷里活廣場4樓401號舖",
-      "tel": "",
-      "region": "kln"
-    },
-    {
-      "id": "pns-0bef137a82",
-      "name": "百佳 · 安達邨",
-      "district": "觀塘區",
-      "address": "九龍觀塘安達邨安達商場UG03號舖",
-      "tel": "",
-      "region": "kln"
-    },
-    {
-      "id": "pns-2c8e34b498",
-      "name": "百佳 · 慈雲山中心",
-      "district": "黃大仙區",
-      "address": "九龍慈雲山毓華街23號慈雲山中心5樓528-535號舖",
-      "tel": "",
-      "region": "kln"
-    },
-    {
-      "id": "pns-415ff09cca",
-      "name": "百佳 · 尖沙咀希爾頓 International",
-      "district": "油尖旺區",
-      "address": "九龍尖沙咀加連威老道96號希爾頓大廈地下B號舖",
-      "tel": "",
-      "region": "kln"
-    },
-    {
-      "id": "pns-f5faf230a3",
-      "name": "百佳 · 黃埔 TASTE",
-      "district": "九龍城區",
-      "address": "九龍紅磡黃埔花園第十二期家居庭地庫B2號舖",
-      "tel": "",
-      "region": "kln"
-    },
-    {
-      "id": "pns-0bafa2f681",
-      "name": "百佳 · 愛民廣場",
-      "district": "九龍城區",
-      "address": "九龍何文田愛民廣場地下G23A號舖",
-      "tel": "",
-      "region": "kln"
-    },
-    {
-      "id": "pns-a1d3690e0b",
-      "name": "百佳 · 麗港城 Fusion",
-      "district": "觀塘區",
-      "address": "九龍觀塘茶果嶺道88號麗港城第一期商場地下",
-      "tel": "",
-      "region": "kln"
-    },
-    {
-      "id": "pns-a09e31d7b0",
-      "name": "百佳 · V Walk Fusion",
-      "district": "深水埗區",
-      "address": "九龍深水埗深旺道28號V Walk 2樓L2-137及138號舖",
-      "tel": "",
-      "region": "kln"
-    },
-    {
-      "id": "pns-e5559249e4",
-      "name": "百佳 · 蘇屋商場",
-      "district": "深水埗區",
-      "address": "九龍深水埗蘇屋商場1樓117號舖",
-      "tel": "",
-      "region": "kln"
-    },
-    {
-      "id": "pns-b0200de648",
-      "name": "百佳 · 石硤尾邨",
-      "district": "深水埗區",
-      "address": "九龍石硤尾石硤尾邨第二期服務設施大樓SQ05號舖",
-      "tel": "",
-      "region": "kln"
-    },
-    {
-      "id": "pns-66e1151ae1",
-      "name": "百佳 · 大埔富亨",
-      "district": "大埔區",
-      "address": "新界大埔富亨邨富亨商場地下7號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-e2f8db1d92",
-      "name": "百佳 · 屯門兆康",
-      "district": "屯門區",
-      "address": "新界屯門兆康路2-22號兆康苑兆康商場1樓225號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-fe83bd52ab",
-      "name": "百佳 · 葵涌恒景",
-      "district": "葵青區",
-      "address": "新界葵涌榮芳路9號恆景花園恒景商場1樓103-106號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-16315c021a",
-      "name": "百佳 · 都會駅 Fusion",
-      "district": "西貢區",
-      "address": "新界將軍澳都會駅2樓L2-S01及046-047號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-d31d0b0b1b",
-      "name": "百佳 · 尚德商場",
-      "district": "西貢區",
-      "address": "新界將軍澳唐明街2號尚德邨尚德商場2樓209號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-7fc7e7127b",
-      "name": "百佳 · 厚德商場",
-      "district": "西貢區",
-      "address": "新界將軍澳厚德商場東翼1樓E146及2樓E203號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-ea55f1274c",
-      "name": "百佳 · 沙田廣源",
-      "district": "沙田區",
-      "address": "新界沙田廣源商場第二座5B號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-d30932826e",
-      "name": "百佳 · 石蔭邨",
-      "district": "葵青區",
-      "address": "新界葵涌石蔭邨石蔭商場1樓114號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-4164d445af",
-      "name": "百佳 · 愉翠苑",
-      "district": "沙田區",
-      "address": "新界沙田愉翠苑愉翠商場1樓104號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-ab62e6183d",
-      "name": "百佳 · 洪福商場",
-      "district": "元朗區",
-      "address": "新界元朗洪水橋洪福邨洪福商場地下14號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-e1f7a2eaea",
-      "name": "百佳 · 石籬",
-      "district": "葵青區",
-      "address": "新界葵涌石籬(第一)邨石籬購物中心1樓107號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-748f8f3be7",
-      "name": "百佳 · 大埔新達 Fusion",
-      "district": "大埔區",
-      "address": "新界大埔南運路9號新達廣場2樓131-140號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-f28d6f55e2",
-      "name": "百佳 · 俊宏軒",
-      "district": "元朗區",
-      "address": "新界天水圍天瑞路88號俊宏軒商場1樓101-102號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-c323ec4db9",
-      "name": "百佳 · 置富嘉湖",
-      "district": "元朗區",
-      "address": "新界天水圍天恩路12-18號+WOO嘉湖1期2樓220號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-fa86517933",
-      "name": "百佳 · 創意無限",
-      "district": "荃灣區",
-      "address": "新界荃灣荃華街創意無限廣場1樓F201號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-47a54515ee",
-      "name": "百佳 · 馬鞍山廣場 TASTE",
-      "district": "沙田區",
-      "address": "新界沙田馬鞍山西沙路608號馬鞍山廣場3樓343-363號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-8064f2c045",
-      "name": "百佳 · 粉嶺名都 Fusion",
-      "district": "北區",
-      "address": "新界粉嶺粉嶺車站路18號粉嶺名都地下11-15號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-23f6ecb737",
-      "name": "百佳 · 青衣城 Fusion",
-      "district": "葵青區",
-      "address": "新界青衣青敬路33號青衣城地下34-35號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-ed61932233",
-      "name": "百佳 · 東薈城 TASTE",
-      "district": "離島區",
-      "address": "大嶼山東涌達東路20號東薈城B1-B10號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-28b495be94",
-      "name": "百佳 · 景林商場",
-      "district": "西貢區",
-      "address": "新界將軍澳寶琳北路38號景林邨景林商場地下10號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-d9a83eeb26",
-      "name": "百佳 · 長發邨",
-      "district": "葵青區",
-      "address": "新界青衣担杆山路6號長發邨長發廣場3樓320號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-5604c101fe",
-      "name": "百佳 · 頌富 T Town Fusion",
-      "district": "元朗區",
-      "address": "新界天水圍天華路33號T Town North 2樓N206-209號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-1c2643b03c",
-      "name": "百佳 · 元朗好順福",
-      "district": "元朗區",
-      "address": "新界元朗壽富街60號好順福大廈地下G01及G23號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-03bbcfd3c2",
-      "name": "百佳 · 沙田第一城",
-      "district": "沙田區",
-      "address": "新界沙田銀城街2號置富第一城樂薈地下",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-2f77b60298",
-      "name": "百佳 · 新田圍",
-      "district": "沙田區",
-      "address": "新界沙田新田圍邨新田圍商場4樓25號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-237c8e0065",
-      "name": "百佳 · 大圍顯徑",
-      "district": "沙田區",
-      "address": "新界沙田大圍車公廟道顯徑邨顯徑商場地下69號舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-b712adfd3f",
-      "name": "百佳 · 翠林邨",
-      "district": "西貢區",
-      "address": "新界將軍澳翠琳路11號翠林邨翠林新城5樓132舖",
-      "tel": "",
-      "region": "nt"
-    },
-    {
-      "id": "pns-c8a6f5b326",
-      "name": "百佳 · 荃灣滿樂",
-      "district": "荃灣區",
-      "address": "新界荃灣沙咀道141-169號滿樂大廈地下",
-      "tel": "",
-      "region": "nt"
-    }
-  ],
+  {
+    "id": "pns-0df7d3b14f",
+    "name": "百佳 · 天后廟 International",
+    "district": "東區",
+    "address": "香港北角英皇道6-8號百利大廈地下及1樓全層",
+    "tel": "25660622",
+    "region": "hk"
+  },
+  {
+    "id": "pns-ceafdd7390",
+    "name": "百佳 · 跑馬地山村道 Fusion",
+    "district": "灣仔區",
+    "address": "香港跑馬地山村道32-40號豐寧大廈地下",
+    "tel": "25736024",
+    "region": "hk"
+  },
+  {
+    "id": "pns-4b758ee984",
+    "name": "百佳 · 皇后大道西褔陞閣 Fusion",
+    "district": "中西區",
+    "address": "香港上環皇后大道中378號福陞閣地下入口及1樓",
+    "tel": "25415478",
+    "region": "hk"
+  },
+  {
+    "id": "pns-4e4016ab89",
+    "name": "百佳 · 香港仔中心",
+    "district": "南區",
+    "address": "香港香港仔南寧街13-23號地下",
+    "tel": "28734105",
+    "region": "hk"
+  },
+  {
+    "id": "pns-e00b812bd0",
+    "name": "百佳 · 置富花園 Fusion",
+    "district": "南區",
+    "address": "香港薄扶林置富花園商場二樓201-202號舖",
+    "tel": "25508591",
+    "region": "hk"
+  },
+  {
+    "id": "pns-e027947365",
+    "name": "百佳 · 杏花邨 Fusion",
+    "district": "東區",
+    "address": "香港杏花邨杏花新城西翼二樓217-230號舖",
+    "tel": "28976137",
+    "region": "hk"
+  },
+  {
+    "id": "pns-a7016db84f",
+    "name": "百佳 · 小西灣藍灣",
+    "district": "東區",
+    "address": "香港小西灣小西灣道28號藍灣半島商場1樓1A號舖",
+    "tel": "22485929",
+    "region": "hk"
+  },
+  {
+    "id": "pns-ffce9013cd",
+    "name": "百佳 · 海怡廣場",
+    "district": "南區",
+    "address": "香港鴨脷洲海怡半島海怡廣場西座3樓302號舖",
+    "tel": "26034020",
+    "region": "hk"
+  },
+  {
+    "id": "pns-43e1078b7d",
+    "name": "百佳 · 堅尼地城士美菲",
+    "district": "中西區",
+    "address": "香港堅尼地城士美菲路45-51號Smithfield Walk低層地下7號舖",
+    "tel": "22505297",
+    "region": "hk"
+  },
+  {
+    "id": "pns-0eb9466add",
+    "name": "百佳 · 西灣河鯉景灣 Fusion",
+    "district": "東區",
+    "address": "香港西灣河太安街25號鯉景灣地下8-13號舖",
+    "tel": "25680855",
+    "region": "hk"
+  },
+  {
+    "id": "pns-1047f384af",
+    "name": "百佳 · 灣仔集成中心",
+    "district": "灣仔區",
+    "address": "香港灣仔軒尼詩道302-308號集成中心地庫",
+    "tel": "28937136",
+    "region": "hk"
+  },
+  {
+    "id": "pns-9348c7fc35",
+    "name": "百佳 · 中環擺花街",
+    "district": "中西區",
+    "address": "香港中環擺花街23-39號中環大廈地下",
+    "tel": "28151450",
+    "region": "hk"
+  },
+  {
+    "id": "pns-7a0b15d71d",
+    "name": "百佳 · 鰂魚涌東匯",
+    "district": "東區",
+    "address": "香港鰂魚涌英皇道1010-1056號東匯坊LG01-03號舖",
+    "tel": "39041040",
+    "region": "hk"
+  },
+  {
+    "id": "pns-42aafa88bd",
+    "name": "百佳 · 筲箕灣愛東",
+    "district": "東區",
+    "address": "香港筲箕灣愛東邨愛東商場1樓104-105號舖",
+    "tel": "36924455",
+    "region": "hk"
+  },
+  {
+    "id": "pns-a2f93773b6",
+    "name": "百佳 · 美孚萬事達",
+    "district": "深水埗區",
+    "address": "九龍荔枝角荔灣道美孚新邨第七期萬事達廣場地下N50B舖",
+    "tel": "27437056",
+    "region": "kln"
+  },
+  {
+    "id": "pns-456c1c9020",
+    "name": "百佳 · 樂華北",
+    "district": "觀塘區",
+    "address": "九龍牛頭角樂華北邨樂華商場3樓316號舖",
+    "tel": "27564600",
+    "region": "kln"
+  },
+  {
+    "id": "pns-ed793c7c7c",
+    "name": "百佳 · 油麻地恒成",
+    "district": "油尖旺區",
+    "address": "九龍油麻地彌敦道363-373號恒成大廈地庫",
+    "tel": "",
+    "region": "kln"
+  },
+  {
+    "id": "pns-ca1047e41c",
+    "name": "百佳 · 藍田匯景",
+    "district": "觀塘區",
+    "address": "九龍藍田匯景廣場4樓401號舖",
+    "tel": "31517228",
+    "region": "kln"
+  },
+  {
+    "id": "pns-3fd9c4954e",
+    "name": "百佳 · 黃大仙中心 International",
+    "district": "黃大仙區",
+    "address": "九龍黃大仙上邨黃大仙中心北館2樓N212A舖",
+    "tel": "25297001",
+    "region": "kln"
+  },
+  {
+    "id": "pns-f079a27b4e",
+    "name": "百佳 · 荷里活廣場 TASTE",
+    "district": "黃大仙區",
+    "address": "九龍鑽石山荷里活廣場4樓401號舖",
+    "tel": "31924060",
+    "region": "kln"
+  },
+  {
+    "id": "pns-0bef137a82",
+    "name": "百佳 · 安達邨",
+    "district": "觀塘區",
+    "address": "九龍觀塘安達邨安達商場UG03號舖",
+    "tel": "29679722",
+    "region": "kln"
+  },
+  {
+    "id": "pns-2c8e34b498",
+    "name": "百佳 · 慈雲山中心",
+    "district": "黃大仙區",
+    "address": "九龍慈雲山毓華街23號慈雲山中心5樓528-535號舖",
+    "tel": "27255308",
+    "region": "kln"
+  },
+  {
+    "id": "pns-415ff09cca",
+    "name": "百佳 · 尖沙咀希爾頓 International",
+    "district": "油尖旺區",
+    "address": "九龍尖沙咀加連威老道96號希爾頓大廈地下B號舖",
+    "tel": "27245632",
+    "region": "kln"
+  },
+  {
+    "id": "pns-f5faf230a3",
+    "name": "百佳 · 黃埔 TASTE",
+    "district": "九龍城區",
+    "address": "九龍紅磡黃埔花園第十二期家居庭地庫B2號舖",
+    "tel": "23657472",
+    "region": "kln"
+  },
+  {
+    "id": "pns-0bafa2f681",
+    "name": "百佳 · 愛民廣場",
+    "district": "九龍城區",
+    "address": "九龍何文田愛民廣場地下G23A號舖",
+    "tel": "",
+    "region": "kln"
+  },
+  {
+    "id": "pns-a1d3690e0b",
+    "name": "百佳 · 麗港城 Fusion",
+    "district": "觀塘區",
+    "address": "九龍觀塘茶果嶺道88號麗港城第一期商場地下",
+    "tel": "27725926",
+    "region": "kln"
+  },
+  {
+    "id": "pns-a09e31d7b0",
+    "name": "百佳 · V Walk Fusion",
+    "district": "深水埗區",
+    "address": "九龍深水埗深旺道28號V Walk 2樓L2-137及138號舖",
+    "tel": "",
+    "region": "kln"
+  },
+  {
+    "id": "pns-e5559249e4",
+    "name": "百佳 · 蘇屋商場",
+    "district": "深水埗區",
+    "address": "九龍深水埗蘇屋商場1樓117號舖",
+    "tel": "26337255",
+    "region": "kln"
+  },
+  {
+    "id": "pns-b0200de648",
+    "name": "百佳 · 石硤尾邨",
+    "district": "深水埗區",
+    "address": "九龍石硤尾石硤尾邨第二期服務設施大樓SQ05號舖",
+    "tel": "29156911",
+    "region": "kln"
+  },
+  {
+    "id": "pns-66e1151ae1",
+    "name": "百佳 · 大埔富亨",
+    "district": "大埔區",
+    "address": "新界大埔富亨邨富亨商場地下7號舖",
+    "tel": "26617101",
+    "region": "nt"
+  },
+  {
+    "id": "pns-e2f8db1d92",
+    "name": "百佳 · 屯門兆康",
+    "district": "屯門區",
+    "address": "新界屯門兆康路2-22號兆康苑兆康商場1樓225號舖",
+    "tel": "24642157",
+    "region": "nt"
+  },
+  {
+    "id": "pns-fe83bd52ab",
+    "name": "百佳 · 葵涌恒景",
+    "district": "葵青區",
+    "address": "新界葵涌榮芳路9號恆景花園恒景商場1樓103-106號舖",
+    "tel": "24051112",
+    "region": "nt"
+  },
+  {
+    "id": "pns-16315c021a",
+    "name": "百佳 · 都會駅 Fusion",
+    "district": "西貢區",
+    "address": "新界將軍澳都會駅2樓L2-S01及046-047號舖",
+    "tel": "35435012",
+    "region": "nt"
+  },
+  {
+    "id": "pns-d31d0b0b1b",
+    "name": "百佳 · 尚德商場",
+    "district": "西貢區",
+    "address": "新界將軍澳唐明街2號尚德邨尚德商場2樓209號舖",
+    "tel": "27151628",
+    "region": "nt"
+  },
+  {
+    "id": "pns-7fc7e7127b",
+    "name": "百佳 · 厚德商場",
+    "district": "西貢區",
+    "address": "新界將軍澳厚德商場東翼1樓E146及2樓E203號舖",
+    "tel": "27047397",
+    "region": "nt"
+  },
+  {
+    "id": "pns-ea55f1274c",
+    "name": "百佳 · 沙田廣源",
+    "district": "沙田區",
+    "address": "新界沙田廣源商場第二座5B號舖",
+    "tel": "21445517",
+    "region": "nt"
+  },
+  {
+    "id": "pns-d30932826e",
+    "name": "百佳 · 石蔭邨",
+    "district": "葵青區",
+    "address": "新界葵涌石蔭邨石蔭商場1樓114號舖",
+    "tel": "35231613",
+    "region": "nt"
+  },
+  {
+    "id": "pns-4164d445af",
+    "name": "百佳 · 愉翠苑",
+    "district": "沙田區",
+    "address": "新界沙田愉翠苑愉翠商場1樓104號舖",
+    "tel": "22780045",
+    "region": "nt"
+  },
+  {
+    "id": "pns-ab62e6183d",
+    "name": "百佳 · 洪福商場",
+    "district": "元朗區",
+    "address": "新界元朗洪水橋洪福邨洪福商場地下14號舖",
+    "tel": "24277108",
+    "region": "nt"
+  },
+  {
+    "id": "pns-e1f7a2eaea",
+    "name": "百佳 · 石籬",
+    "district": "葵青區",
+    "address": "新界葵涌石籬(第一)邨石籬購物中心1樓107號舖",
+    "tel": "24219498",
+    "region": "nt"
+  },
+  {
+    "id": "pns-748f8f3be7",
+    "name": "百佳 · 大埔新達 Fusion",
+    "district": "大埔區",
+    "address": "新界大埔南運路9號新達廣場2樓131-140號舖",
+    "tel": "26560056",
+    "region": "nt"
+  },
+  {
+    "id": "pns-f28d6f55e2",
+    "name": "百佳 · 俊宏軒",
+    "district": "元朗區",
+    "address": "新界天水圍天瑞路88號俊宏軒商場1樓101-102號舖",
+    "tel": "",
+    "region": "nt"
+  },
+  {
+    "id": "pns-c323ec4db9",
+    "name": "百佳 · 置富嘉湖",
+    "district": "元朗區",
+    "address": "新界天水圍天恩路12-18號+WOO嘉湖1期2樓220號舖",
+    "tel": "26170491",
+    "region": "nt"
+  },
+  {
+    "id": "pns-fa86517933",
+    "name": "百佳 · 創意無限",
+    "district": "荃灣區",
+    "address": "新界荃灣荃華街創意無限廣場1樓F201號舖",
+    "tel": "24061525",
+    "region": "nt"
+  },
+  {
+    "id": "pns-47a54515ee",
+    "name": "百佳 · 馬鞍山廣場 TASTE",
+    "district": "沙田區",
+    "address": "新界沙田馬鞍山西沙路608號馬鞍山廣場3樓343-363號舖",
+    "tel": "26310145",
+    "region": "nt"
+  },
+  {
+    "id": "pns-8064f2c045",
+    "name": "百佳 · 粉嶺名都 Fusion",
+    "district": "北區",
+    "address": "新界粉嶺粉嶺車站路18號粉嶺名都地下11-15號舖",
+    "tel": "26764972",
+    "region": "nt"
+  },
+  {
+    "id": "pns-23f6ecb737",
+    "name": "百佳 · 青衣城 Fusion",
+    "district": "葵青區",
+    "address": "新界青衣青敬路33號青衣城地下34-35號舖",
+    "tel": "24345049",
+    "region": "nt"
+  },
+  {
+    "id": "pns-ed61932233",
+    "name": "百佳 · 東薈城 TASTE",
+    "district": "離島區",
+    "address": "大嶼山東涌達東路20號東薈城B1-B10號舖",
+    "tel": "21094489",
+    "region": "nt"
+  },
+  {
+    "id": "pns-28b495be94",
+    "name": "百佳 · 景林商場",
+    "district": "西貢區",
+    "address": "新界將軍澳寶琳北路38號景林邨景林商場地下10號舖",
+    "tel": "27036010",
+    "region": "nt"
+  },
+  {
+    "id": "pns-d9a83eeb26",
+    "name": "百佳 · 長發邨",
+    "district": "葵青區",
+    "address": "新界青衣担杆山路6號長發邨長發廣場3樓320號舖",
+    "tel": "24334260",
+    "region": "nt"
+  },
+  {
+    "id": "pns-5604c101fe",
+    "name": "百佳 · 頌富 T Town Fusion",
+    "district": "元朗區",
+    "address": "新界天水圍天華路33號T Town North 2樓N206-209號舖",
+    "tel": "31561038",
+    "region": "nt"
+  },
+  {
+    "id": "pns-1c2643b03c",
+    "name": "百佳 · 元朗好順福",
+    "district": "元朗區",
+    "address": "新界元朗壽富街60號好順福大廈地下G01及G23號舖",
+    "tel": "31934710",
+    "region": "nt"
+  },
+  {
+    "id": "pns-03bbcfd3c2",
+    "name": "百佳 · 沙田第一城",
+    "district": "沙田區",
+    "address": "新界沙田銀城街2號置富第一城樂薈地下",
+    "tel": "",
+    "region": "nt"
+  },
+  {
+    "id": "pns-2f77b60298",
+    "name": "百佳 · 新田圍",
+    "district": "沙田區",
+    "address": "新界沙田新田圍邨新田圍商場4樓25號舖",
+    "tel": "26059057",
+    "region": "nt"
+  },
+  {
+    "id": "pns-237c8e0065",
+    "name": "百佳 · 大圍顯徑",
+    "district": "沙田區",
+    "address": "新界沙田大圍車公廟道顯徑邨顯徑商場地下69號舖",
+    "tel": "23952237",
+    "region": "nt"
+  },
+  {
+    "id": "pns-b712adfd3f",
+    "name": "百佳 · 翠林邨",
+    "district": "西貢區",
+    "address": "新界將軍澳翠琳路11號翠林邨翠林新城5樓132舖",
+    "tel": "27020231",
+    "region": "nt"
+  },
+  {
+    "id": "pns-c8a6f5b326",
+    "name": "百佳 · 荃灣滿樂",
+    "district": "荃灣區",
+    "address": "新界荃灣沙咀道141-169號滿樂大廈地下",
+    "tel": "24693023",
+    "region": "nt"
+  }
+],
   "wellcome": [
     {
       "id": "wc-4684d9b5e0",

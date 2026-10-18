@@ -585,11 +585,12 @@
         let extra = "";
         if (storeChannel === "parknshop") {
           extra =
-            ` 公開換領名單主要有地址、<strong>無分店電話</strong>——請用` +
+            ` 已整理約 ${withTel} 間分店電話（房委會商場名冊／公開目錄／舊版官網）；` +
+            (noTel > 0 ? `另有 ${noTel} 間暫缺號碼——請用` : `如需核對請用`) +
             (locator
               ? `<a href="${locator}" target="_blank" rel="noopener">百佳官方店舖搜尋</a>`
               : "官方店舖搜尋") +
-            `查電話，或親臨／致電該商場詢問。`;
+            `。`;
         } else if (storeChannel === "wellcome") {
           extra =
             ` 港島／九龍較齊；新界僅部分。` +
@@ -647,7 +648,7 @@
           s.tel
             ? `<a class="tel-btn" href="tel:${String(s.tel).replace(/\D/g, "")}">📞 ${fmtTel(s.tel)}</a>`
             : storeChannel === "parknshop" && locator
-              ? `<a class="btn-link" href="${locator}" target="_blank" rel="noopener">查官方電話（公開名單無電話）</a>`
+              ? `<a class="btn-link" href="${locator}" target="_blank" rel="noopener">查官方電話</a>`
               : `<span class="muted-inline">電話待補（請用官方店舖搜尋）</span>`
         }
         <p class="note">${usingSnapshot && s.stockStatus ? `快照：${s.stockStatus} — 請致電確認（非即時庫存）` : fallbackNote}</p>
