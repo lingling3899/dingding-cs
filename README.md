@@ -3,8 +3,8 @@
 手機優先嘅客服／消費者參考頁：
 
 1. **產品問答**——功效、成份、用法、年齡、DEET、蠶豆症（G6PD）誠實說明  
-2. **門店查貨**——萬寧可顯示「該產品約 N 間舖有貨」**快照**（可展開店名／電話／地址）；無快照時顯示萬寧分店電話簿（約 300+ 間）／屈臣氏電話簿（約 280+ 間），均非有貨舖數＋`tel:` 致電確認（**冇**即時庫存）  
-3. **其他渠道**——惠康／百佳／一田／AEON／莎莎／卡萊美／卓悅／松本清／HKTVmall 等部分店有售／非全線
+2. **門店查貨**——萬寧可顯示「該產品約 N 間舖有貨」**快照**（可展開店名／電話／地址）；另有多渠道**電話簿，非庫存**（萬寧／屈臣氏／松本清／莎莎／AEON／百佳／惠康／卡萊美／Soda Mall／永安／先施），可按香港／九龍／新界篩選＋`tel:` 致電確認  
+3. **其他／說明**——單張尚有 Market Place、Fusion、Taste、一田、卓悅、HKTVmall 等暫未入電話簿
 
 ## 預覽
 
@@ -27,7 +27,8 @@ GitHub Pages：<https://lingling3899.github.io/dingding-cs/>
 | `assets/css/app.css` | 樣式（深藍／白） |
 | `assets/js/app.js` | 問答／篩選／萬寧快照 UI |
 | `data/products.js` | SKU 與 claim-safe 說明；含可選 `manningsUrl`／`manningsCode` |
-| `data/stores.js` | 萬寧分店電話簿（約 300+）／屈臣氏電話簿（約 280+）（公開目錄；非有貨舖數） |
+| `data/stores.js` | 萬寧／屈臣氏電話簿（公開目錄；非有貨舖數） |
+| `data/extra-stores.js` | 松本清／莎莎／AEON／百佳／惠康／卡萊美／Soda Mall／永安／先施電話簿（非庫存） |
 | `assets/img/products/` | 官網產品圖（japandingding.com） |
 | `data/mannings-stock-snapshot.js` | 萬寧「按產品有貨舖」快照（6 SKU；`window.DD_MANNINGS_STOCK`） |
 | `data/mannings-stock-snapshot.json` | 同源 JSON（採集原文；可選保留） |

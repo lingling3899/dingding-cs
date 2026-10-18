@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="日本叮叮客服速查：產品問答與萬寧／屈臣氏門店電話。庫存請致電確認。" />
   <title>日本叮叮 · 客服速查</title>
-  <link rel="stylesheet" href="assets/css/app.css?v=20261018b" />
+  <link rel="stylesheet" href="assets/css/app.css?v=20261018c" />
 </head>
 <body>
   <header class="topbar">
@@ -73,10 +73,20 @@
       </section>
 
       <section class="panel">
-        <div class="seg" role="tablist" aria-label="渠道">
+        <p class="field channel-label">揀渠道（電話簿）</p>
+        <div class="seg channel-seg" role="tablist" aria-label="渠道">
           <button type="button" class="active" data-channel="mannings">萬寧</button>
           <button type="button" data-channel="watsons">屈臣氏</button>
-          <button type="button" data-channel="other">其他渠道</button>
+          <button type="button" data-channel="matsukiyo">松本清</button>
+          <button type="button" data-channel="sasa">莎莎</button>
+          <button type="button" data-channel="aeon">AEON</button>
+          <button type="button" data-channel="parknshop">百佳</button>
+          <button type="button" data-channel="wellcome">惠康</button>
+          <button type="button" data-channel="colourmix">卡萊美</button>
+          <button type="button" data-channel="soda">Soda Mall</button>
+          <button type="button" data-channel="wingon">永安</button>
+          <button type="button" data-channel="sincere">先施</button>
+          <button type="button" data-channel="other">其他／說明</button>
         </div>
 
         <div id="storeFilters">
@@ -102,18 +112,15 @@
           </div>
           <p id="storeCount" class="count"></p>
           <div id="storeList" class="store-list"></div>
-          <p class="count" style="margin-top:12px;">
-            名單唔齊？官方搜尋：
-            <a href="https://www.mannings.com.hk/store-finder" target="_blank" rel="noopener">萬寧分店位置</a>
-            ·
-            <a href="https://www.watsons.com.hk/zh-hk/store-finder" target="_blank" rel="noopener">屈臣氏分店位置</a>
+          <p class="count" style="margin-top:12px;" id="officialLocatorLinks">
+            名單唔齊？官方搜尋見上方黃字提示內連結。
           </p>
         </div>
 
         <div id="otherChannels" class="other-box hidden">
-          <p><strong>KA（可查舖）</strong>：萬寧、屈臣氏（含 Mannings Plus／Watsons eShop 等）。</p>
-          <p><strong>其他渠道（部分店有售／非全線）</strong>：惠康、Market Place、百佳、Fusion、Taste、PNS Plus、一田、AEON、莎莎、卡萊美、卓悅、松本清、HKTVmall、先施、city'super、U Select 等（見宣傳單張）。</p>
-          <p>其他渠道請致電該店或查看官網零售點確認。</p>
+          <p><strong>已有電話簿（非庫存）</strong>：萬寧、屈臣氏、松本清、莎莎、AEON、百佳、惠康、卡萊美、Soda Mall、永安、先施——撳上面渠道掣即可睇店名／分區／地址／電話。</p>
+          <p><strong>單張亦有提及其他渠道（暫未入電話簿）</strong>：Market Place、Fusion、Taste、PNS Plus、一田、卓悅、HKTVmall、city'super、U Select 等；請致電該店或查看官網零售點確認。</p>
+          <p>全部電話簿<strong>唔代表</strong>該產品一定有貨——請致電確認。</p>
           <p>
             <a class="btn-link" href="https://www.japandingding.com/" target="_blank" rel="noopener">japandingding.com 官網</a>
           </p>
@@ -126,9 +133,10 @@
     </footer>
   </main>
 
-  <script src="data/products.js?v=20261018b"></script>
-  <script src="data/stores.js?v=20261018b"></script>
-  <script src="data/mannings-stock-snapshot.js?v=20261018b"></script>
-  <script src="assets/js/app.js?v=20261018b"></script>
+  <script src="data/products.js?v=20261018c"></script>
+  <script src="data/stores.js?v=20261018c"></script>
+  <script src="data/extra-stores.js?v=20261018c"></script>
+  <script src="data/mannings-stock-snapshot.js?v=20261018c"></script>
+  <script src="assets/js/app.js?v=20261018c"></script>
 </body>
 </html>
