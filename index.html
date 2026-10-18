@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="日本叮叮客服速查：產品問答、門店電話、同防偽查詢。庫存請致電確認；防偽請喺官網驗證。" />
   <title>日本叮叮 · 客服速查</title>
-  <link rel="stylesheet" href="assets/css/app.css?v=20261018o" />
+  <link rel="stylesheet" href="assets/css/app.css?v=20261018p" />
 </head>
 <body>
   <header class="topbar">
@@ -83,7 +83,7 @@
         <h3>成份大比拼 <span class="badge">Cipeller®PMD</span></h3>
         <p class="promo-note">Cipeller®PMD 對比一般驅蚊成份（安全、功效、驅防種類、有效時間）。撳圖可放大。</p>
         <button type="button" class="promo-compare-btn" id="openCompareImg" aria-label="放大成份大比拼圖">
-          <img src="assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018o" alt="驅蚊蟲成分大比拼：Cipeller®PMD VS 一般驅蚊成分" loading="lazy" width="640" height="676" />
+          <img src="assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018p" alt="驅蚊蟲成分大比拼：Cipeller®PMD VS 一般驅蚊成分" loading="lazy" width="640" height="676" />
         </button>
         <p class="promo-credit">圖片來源：日本叮叮 Facebook 公開帖</p>
       </section>
@@ -209,7 +209,7 @@
       </section>
       <section class="panel admin-panel">
         <h3>內容還原 <span class="badge">CMS</span></h3>
-        <p class="admin-hint">清走本機新增／隱藏嘅問題、Roadshow 場次同職員備註。唔會改登入帳密。</p>
+        <p class="admin-hint">清走本機新增／隱藏嘅問題、Roadshow 場次、贈品日同職員備註。唔會改登入帳密。</p>
         <button type="button" class="admin-btn danger-btn" id="cmsResetBtn">還原預設內容</button>
         <p id="cmsResetMsg" class="admin-msg hidden" role="status"></p>
       </section>
@@ -220,6 +220,51 @@
         <h3>Roadshow 分析 <span class="badge">觀察</span></h3>
         <div id="roadshowAnalytics" class="rs-analytics" aria-live="polite"></div>
       </section>
+      <section class="panel" id="giftAnalyticsPanel">
+        <h3>贈品帶貨分析 <span class="badge">Stock Check</span></h3>
+        <p class="admin-hint" id="giftSourceNote"></p>
+        <div id="giftAnalytics" class="gift-analytics" aria-live="polite"></div>
+        <div class="faq-admin-bar">
+          <button type="button" class="admin-mini-btn" id="giftAddBtn">＋ 新增贈品日</button>
+        </div>
+        <form id="giftAddForm" class="cms-form hidden" autocomplete="off">
+          <div class="cms-row-2">
+            <div>
+              <label class="field" for="giftNewDate">日期</label>
+              <input id="giftNewDate" type="date" required />
+            </div>
+            <div>
+              <label class="field" for="giftNewLabel">日標籤</label>
+              <input id="giftNewLabel" type="text" maxlength="40" placeholder="例如：Day 24" />
+            </div>
+          </div>
+          <div class="cms-row-2">
+            <div>
+              <label class="field" for="giftNewTime">時段（可留空）</label>
+              <input id="giftNewTime" type="text" maxlength="40" placeholder="例如：11:30-17:30" />
+            </div>
+            <div>
+              <label class="field" for="giftNewPlace">地點（可留空）</label>
+              <input id="giftNewPlace" type="text" maxlength="80" placeholder="例如：旺角朗豪坊外" />
+            </div>
+          </div>
+          <p class="field" style="margin:8px 0 4px">各品類數量（留空＝0／唔計）</p>
+          <div class="gift-qty-grid" id="giftQtyInputs">
+            <label>薄荷水<code>IS</code><input type="number" min="0" step="1" data-gift-code="CPX021IS1" placeholder="0" /></label>
+            <label>防蟲貼<code>LS</code><input type="number" min="0" step="1" data-gift-code="CPX021LS1" placeholder="0" /></label>
+            <label>單張<code>L3</code><input type="number" min="0" step="1" data-gift-code="CPW021-L3" placeholder="0" /></label>
+            <label>噴霧10ml<code>KS</code><input type="number" min="0" step="1" data-gift-code="CPW021KS1" placeholder="0" /></label>
+            <label>舒護膏<code>CB2</code><input type="number" min="0" step="1" data-gift-code="CPW021C-CB2" placeholder="0" /></label>
+            <label>貼紙<code>B026</code><input type="number" min="0" step="1" data-gift-code="CPW021-B026" placeholder="0" /></label>
+          </div>
+          <div class="cms-form-actions">
+            <button type="submit" class="admin-btn compact">儲存贈品日</button>
+            <button type="button" class="admin-mini-btn ghost" id="giftAddCancel">取消</button>
+          </div>
+          <p id="giftAddMsg" class="admin-msg hidden" role="status"></p>
+        </form>
+      </section>
+
       <section class="panel">
         <h3>Roadshow／快閃 <span class="badge">職員</span></h3>
         <p id="roadshowIntro" class="roadshow-intro"></p>
@@ -360,13 +405,14 @@
     <p id="rsLightboxCap" class="rs-lightbox-cap"></p>
   </div>
 
-  <script src="data/products.js?v=20261018o"></script>
-  <script src="data/stores.js?v=20261018o"></script>
-  <script src="data/extra-stores.js?v=20261018o"></script>
-  <script src="data/mannings-stock-snapshot.js?v=20261018o"></script>
-  <script src="data/roadshow.js?v=20261018o"></script>
-  <script src="assets/js/admin-auth.js?v=20261018o"></script>
-  <script src="assets/js/cms.js?v=20261018o"></script>
-  <script src="assets/js/app.js?v=20261018o"></script>
+  <script src="data/products.js?v=20261018p"></script>
+  <script src="data/stores.js?v=20261018p"></script>
+  <script src="data/extra-stores.js?v=20261018p"></script>
+  <script src="data/mannings-stock-snapshot.js?v=20261018p"></script>
+  <script src="data/roadshow.js?v=20261018p"></script>
+  <script src="data/roadshow-gifts.js?v=20261018p"></script>
+  <script src="assets/js/admin-auth.js?v=20261018p"></script>
+  <script src="assets/js/cms.js?v=20261018p"></script>
+  <script src="assets/js/app.js?v=20261018p"></script>
 </body>
 </html>

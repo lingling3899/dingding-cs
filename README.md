@@ -26,6 +26,7 @@ GitHub Pages：<https://lingling3899.github.io/dingding-cs/>
 |------|------|
 | `index.html` | 主頁（問答＋門店＋Roadshow） |
 | `data/roadshow.js` | 2026 Roadshow／快閃時間表＋宣傳圖 gallery（`window.DD_ROADSHOW`） |
+| `data/roadshow-gifts.js` | Roadshow 贈品／試用裝 Stock Check（`window.DD_ROADSHOW_GIFTS`，職員專用） |
 | `data/roadshow-images.json` | Facebook 公開帖海報 metadata |
 | `assets/css/app.css` | 樣式（深藍／白） |
 | `assets/js/app.js` | 問答／篩選／萬寧快照 UI |

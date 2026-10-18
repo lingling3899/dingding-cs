@@ -7,6 +7,8 @@
     faqHidden: PREFIX + "faq_hidden",
     rsCustom: PREFIX + "rs_custom",
     rsHidden: PREFIX + "rs_hidden",
+    giftCustom: PREFIX + "gift_custom",
+    giftHidden: PREFIX + "gift_hidden",
     notesStores: PREFIX + "notes_stores",
     notesAnti: PREFIX + "notes_anti"
   };
@@ -210,6 +212,127 @@
     return out;
   }
 
+
+  /* ---- Roadshow gifts (stock check) ---- */
+  function getGiftCustom() {
+    var list = readJson(KEYS.giftCustom, []);
+    return Array.isArray(list) ? list : [];
+  }
+
+  function setGiftCustom(list) {
+    return writeJson(KEYS.giftCustom, Array.isArray(list) ? list : []);
+  }
+
+  function getGiftHidden() {
+    var list = readJson(KEYS.giftHidden, []);
+    return Array.isArray(list) ? list : [];
+  }
+
+  function setGiftHidden(list) {
+    return writeJson(KEYS.giftHidden, Array.isArray(list) ? list : []);
+  }
+
+  function isGiftHidden(id) {
+    return getGiftHidden().indexOf(String(id)) !== -1;
+  }
+
+  function hideGiftDay(id) {
+    var list = getGiftHidden();
+    var k = String(id);
+    if (list.indexOf(k) === -1) {
+      list.push(k);
+      setGiftHidden(list);
+    }
+  }
+
+  function showGiftDay(id) {
+    setGiftHidden(getGiftHidden().filter(function (k) { return k !== String(id); }));
+  }
+
+  function addGiftCustom(item) {
+    var list = getGiftCustom();
+    var date = String(item.date || "").trim();
+    var dayLabel = String(item.dayLabel || "").trim();
+    var place = String(item.place || "").trim();
+    var time = String(item.time || "").trim();
+    var items = Array.isArray(item.items) ? item.items : [];
+    var normalized = [];
+    items.forEach(function (row) {
+      var code = String(row.code || "").trim();
+      var qty = Number(row.qty);
+      if (!code || !isFinite(qty) || qty < 0) return;
+      var out = { code: code, qty: Math.round(qty) };
+      if (row.remark) out.remark = String(row.remark).trim();
+      normalized.push(out);
+    });
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+      return { ok: false, error: "請填正確日期（YYYY-MM-DD）" };
+    }
+    if (!normalized.length) {
+      return { ok: false, error: "請至少填一項贈品數量" };
+    }
+    var slots = [];
+    if (place || time) {
+      slots.push({ time: time || "", place: place || "" });
+    }
+    var row = {
+      id: uid("gift"),
+      dayLabel: dayLabel || ("自訂 " + date),
+      date: date,
+      slots: slots,
+      items: normalized,
+      custom: true,
+      createdAt: new Date().toISOString()
+    };
+    list.push(row);
+    setGiftCustom(list);
+    return { ok: true, item: row };
+  }
+
+  function removeGiftCustom(id) {
+    setGiftCustom(getGiftCustom().filter(function (x) { return x.id !== id; }));
+  }
+
+  /** Merge baked-in gift days + custom; apply hidden. */
+  function mergeGiftDays(builtinDays, opts) {
+    opts = opts || {};
+    var includeHidden = !!opts.includeHidden;
+    var builtin = Array.isArray(builtinDays) ? builtinDays : [];
+    var hidden = getGiftHidden();
+    var out = [];
+
+    builtin.forEach(function (day) {
+      var id = String(day.id || "");
+      var hid = hidden.indexOf(id) !== -1;
+      if (hid && !includeHidden) return;
+      out.push(
+        Object.assign({}, day, {
+          _builtin: true,
+          _hidden: hid,
+          custom: false
+        })
+      );
+    });
+
+    getGiftCustom().forEach(function (day) {
+      var id = String(day.id || "");
+      var hid = hidden.indexOf(id) !== -1;
+      if (hid && !includeHidden) return;
+      out.push(
+        Object.assign({}, day, {
+          _builtin: false,
+          _hidden: hid,
+          custom: true
+        })
+      );
+    });
+
+    out.sort(function (a, b) {
+      return String(a.date || "").localeCompare(String(b.date || ""));
+    });
+    return out;
+  }
+
   /* ---- Staff notes ---- */
   function getNotes(kind) {
     var key = kind === "anti" ? KEYS.notesAnti : KEYS.notesStores;
@@ -275,6 +398,14 @@
     addRsCustom: addRsCustom,
     removeRsCustom: removeRsCustom,
     mergeRoadshowEvents: mergeRoadshowEvents,
+    getGiftCustom: getGiftCustom,
+    getGiftHidden: getGiftHidden,
+    isGiftHidden: isGiftHidden,
+    hideGiftDay: hideGiftDay,
+    showGiftDay: showGiftDay,
+    addGiftCustom: addGiftCustom,
+    removeGiftCustom: removeGiftCustom,
+    mergeGiftDays: mergeGiftDays,
     getNotes: getNotes,
     addNote: addNote,
     removeNote: removeNote,

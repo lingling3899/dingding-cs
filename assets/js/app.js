@@ -1004,6 +1004,284 @@
     el.innerHTML = html;
   }
 
+  var GIFT_LOW_QTY = 200;
+  var GIFT_SHORT_ORDER = ["薄荷水", "防蟲貼", "單張", "噴霧10ml", "舒護膏", "貼紙"];
+
+  function giftCatalogMap() {
+    var raw = (window.DD_ROADSHOW_GIFTS && window.DD_ROADSHOW_GIFTS.catalog) || [];
+    var map = {};
+    raw.forEach(function (c) {
+      if (c && c.code) map[c.code] = c;
+    });
+    return map;
+  }
+
+  function allGiftDays(includeHidden) {
+    var raw = (window.DD_ROADSHOW_GIFTS && window.DD_ROADSHOW_GIFTS.days) || [];
+    var c = cms();
+    if (!c || !c.mergeGiftDays) {
+      return raw.map(function (d) {
+        return Object.assign({}, d, { _builtin: true, _hidden: false });
+      });
+    }
+    return c.mergeGiftDays(raw, {
+      includeHidden: !!(includeHidden && auth() && auth().isLoggedIn())
+    });
+  }
+
+  function giftDayTotal(day) {
+    return (day.items || []).reduce(function (s, it) {
+      return s + (Number(it.qty) || 0);
+    }, 0);
+  }
+
+  function giftPlaceSummary(day) {
+    var slots = Array.isArray(day.slots) ? day.slots : [];
+    if (!slots.length) return "地點未寫";
+    return slots
+      .map(function (s) {
+        var bits = [];
+        if (s.time) bits.push(s.time);
+        if (s.place) bits.push(s.place);
+        return bits.join(" ");
+      })
+      .filter(Boolean)
+      .join("；") || "地點未寫";
+  }
+
+  function giftShortQtyByDay(day, catalog) {
+    var byShort = {};
+    (day.items || []).forEach(function (it) {
+      var meta = catalog[it.code] || {};
+      var short = meta.short || it.code;
+      byShort[short] = (byShort[short] || 0) + (Number(it.qty) || 0);
+    });
+    return byShort;
+  }
+
+  function giftDatesSet() {
+    var set = {};
+    allGiftDays(false).forEach(function (d) {
+      if (d.date) set[d.date] = d;
+    });
+    return set;
+  }
+
+  function renderGiftAnalytics() {
+    var el = $("#giftAnalytics");
+    var noteEl = $("#giftSourceNote");
+    if (!el) return;
+    var data = window.DD_ROADSHOW_GIFTS || {};
+    if (noteEl) {
+      noteEl.textContent =
+        (data.sourceNote || "") +
+        (data.asOf ? "　資料截至 " + fmtAsOf(data.asOf) + "。" : "");
+    }
+    var catalog = giftCatalogMap();
+    var days = allGiftDays(true).filter(function (d) {
+      return !d._hidden || (auth() && auth().isLoggedIn());
+    });
+    // For stats use non-hidden
+    var visible = days.filter(function (d) { return !d._hidden; });
+    if (!visible.length && !days.length) {
+      el.innerHTML = '<p class="count">未有贈品 Stock Check 記錄。</p>';
+      return;
+    }
+
+    var sorted = visible.slice().sort(function (a, b) {
+      return String(a.date).localeCompare(String(b.date));
+    });
+    var latest = sorted.length ? sorted[sorted.length - 1] : null;
+    var latestTotal = latest ? giftDayTotal(latest) : 0;
+    var latestByShort = latest ? giftShortQtyByDay(latest, catalog) : {};
+
+    var html = '<div class="gift-stat-row">';
+    html +=
+      '<div class="gift-stat"><span class="n">' +
+      visible.length +
+      '</span><span class="l">有記錄日數</span></div>';
+    html +=
+      '<div class="gift-stat"><span class="n">' +
+      latestTotal.toLocaleString("en-HK") +
+      '</span><span class="l">最新一日總件</span></div>';
+    GIFT_SHORT_ORDER.forEach(function (short) {
+      var n = latestByShort[short] || 0;
+      if (!n && short !== "舒護膏") {
+        // still show if any day has it
+        var any = sorted.some(function (d) {
+          return (giftShortQtyByDay(d, catalog)[short] || 0) > 0;
+        });
+        if (!any) return;
+      }
+      var warn = n > 0 && n < GIFT_LOW_QTY;
+      html +=
+        '<div class="gift-stat' +
+        (warn ? " warn" : "") +
+        '"><span class="n">' +
+        n.toLocaleString("en-HK") +
+        '</span><span class="l">最新·' +
+        escapeHtml(short) +
+        "</span></div>";
+    });
+    html += "</div>";
+
+    // Low stock warnings on latest day
+    var lows = [];
+    if (latest) {
+      (latest.items || []).forEach(function (it) {
+        var q = Number(it.qty) || 0;
+        if (q < GIFT_LOW_QTY) {
+          var meta = catalog[it.code] || {};
+          lows.push({
+            short: meta.short || it.code,
+            code: it.code,
+            qty: q,
+            remark: it.remark || "",
+            dayLabel: latest.dayLabel,
+            date: latest.date
+          });
+        }
+      });
+    }
+    if (lows.length) {
+      html += '<div class="gift-warn-box"><strong>低庫存提示</strong>（少於 ' + GIFT_LOW_QTY + '）：';
+      lows.forEach(function (l) {
+        html +=
+          "<div>" +
+          escapeHtml(l.dayLabel || "") +
+          " " +
+          escapeHtml(l.date) +
+          "　" +
+          escapeHtml(l.short) +
+          "（" +
+          escapeHtml(l.code) +
+          "）<strong>" +
+          l.qty +
+          "</strong>　偏低" +
+          (l.remark ? "　·　" + escapeHtml(l.remark) : "") +
+          "</div>";
+      });
+      html += "</div>";
+    }
+
+    // Trend by short name
+    html += '<p class="field" style="margin:4px 0 0">品類走勢（按短名合計）</p><div class="gift-trend">';
+    var maxByShort = {};
+    GIFT_SHORT_ORDER.forEach(function (short) {
+      var max = 1;
+      sorted.forEach(function (d) {
+        var n = giftShortQtyByDay(d, catalog)[short] || 0;
+        if (n > max) max = n;
+      });
+      maxByShort[short] = max;
+    });
+    GIFT_SHORT_ORDER.forEach(function (short) {
+      var hasAny = sorted.some(function (d) {
+        return (giftShortQtyByDay(d, catalog)[short] || 0) > 0;
+      });
+      if (!hasAny) return;
+      html +=
+        '<div class="gift-trend-sku"><p class="gt-name">' +
+        escapeHtml(short) +
+        '</p><div class="gift-trend-bars">';
+      sorted.forEach(function (d) {
+        var n = giftShortQtyByDay(d, catalog)[short] || 0;
+        var pct = Math.round((n / maxByShort[short]) * 100);
+        var low = n > 0 && n < GIFT_LOW_QTY;
+        var label = (d.date || "").slice(5) + (d.dayLabel ? " " + d.dayLabel.replace("Day ", "D") : "");
+        html +=
+          '<div class="gift-trend-row' +
+          (low ? " low" : "") +
+          '"><span>' +
+          escapeHtml(label) +
+          '</span><div class="bar-track"><div class="bar-fill" style="width:' +
+          pct +
+          '%"></div></div><strong>' +
+          n.toLocaleString("en-HK") +
+          "</strong></div>";
+      });
+      html += "</div></div>";
+    });
+    html += "</div>";
+
+    // Day table (expandable) — include hidden for staff management
+    html += '<p class="field" style="margin:8px 0 0">按日明細</p><div class="gift-day-table">';
+    var listForTable = days.slice().sort(function (a, b) {
+      return String(a.date).localeCompare(String(b.date));
+    });
+    listForTable.forEach(function (d) {
+      var total = giftDayTotal(d);
+      var place = giftPlaceSummary(d);
+      var hidCls = d._hidden ? " is-hidden-admin" : "";
+      html +=
+        '<details class="gift-day-row' +
+        hidCls +
+        '"><summary><div class="gd-main"><span class="gd-date">' +
+        escapeHtml(formatRoadshowDate(d.date)) +
+        "　" +
+        escapeHtml(d.dayLabel || "") +
+        (d.custom ? "　<span class=\"rs-badge\">自訂</span>" : "") +
+        '</span><span class="gd-place">' +
+        escapeHtml(place) +
+        '</span></div><span class="gd-total">' +
+        total.toLocaleString("en-HK") +
+        " 件</span></summary><div class=\"gd-items\">";
+      (d.items || []).forEach(function (it) {
+        var meta = catalog[it.code] || {};
+        var q = Number(it.qty) || 0;
+        var low = q < GIFT_LOW_QTY;
+        html +=
+          '<div class="gift-item-line' +
+          (low ? " low" : "") +
+          '"><div><strong>' +
+          escapeHtml(meta.short || it.code) +
+          "</strong>　" +
+          escapeHtml(meta.name || "") +
+          '<div class="gi-code">' +
+          escapeHtml(it.code) +
+          (it.remark ? "　·　" + escapeHtml(it.remark) : "") +
+          '</div></div><span class="gi-qty">' +
+          q.toLocaleString("en-HK") +
+          "</span></div>";
+      });
+      if (auth() && auth().isLoggedIn()) {
+        html += '<div class="gift-day-ops">';
+        if (d._builtin) {
+          html +=
+            '<button type="button" data-gift-hide="' +
+            escapeHtml(d.id) +
+            '">' +
+            (d._hidden ? "顯示" : "隱藏") +
+            "</button>";
+        } else if (d.id) {
+          html +=
+            '<button type="button" data-gift-del="' +
+            escapeHtml(d.id) +
+            '">刪除</button>';
+        }
+        html += "</div>";
+      }
+      html += "</div></details>";
+    });
+    html += "</div>";
+
+    // Source screenshots
+    var sources = Array.isArray(data.sources) ? data.sources : [];
+    if (sources.length) {
+      html += '<p class="field" style="margin:8px 0 0">原始 Stock Check 表</p><div class="gift-sources">';
+      sources.forEach(function (s) {
+        html +=
+          '<a href="' +
+          escapeHtml(s.src) +
+          '" target="_blank" rel="noopener">📷 ' +
+          escapeHtml(s.label || "截圖") +
+          "</a>";
+      });
+      html += "</div>";
+    }
+
+    el.innerHTML = html;
+  }
 
   function closeRoadshowLightbox() {
     const box = $("#rsLightbox");
@@ -1086,6 +1364,7 @@
 
   function renderRoadshow() {
     renderRoadshowAnalytics();
+    renderGiftAnalytics();
     renderRoadshowGallery();
     const intro = $("#roadshowIntro");
     const listEl = $("#roadshowList");
@@ -1142,6 +1421,10 @@
       const badge = up
         ? '<span class="rs-badge">即將／進行</span>'
         : '<span class="rs-badge done">已完結</span>';
+      const giftMatch = giftDatesSet()[ev.date];
+      const giftChip = giftMatch
+        ? '<span class="rs-gift-chip" title="當日有贈品 Stock Check">🎁 當日贈品</span>'
+        : "";
       const note = ev.note ? " · " + escapeHtml(ev.note) : "";
       const hidCls = ev._hidden ? " is-hidden-admin" : "";
       let ops = "";
@@ -1168,6 +1451,7 @@
         '<p class="rs-date">' +
         formatRoadshowDate(ev.date) +
         badge +
+        giftChip +
         "</p>" +
         '<p class="rs-time">' +
         escapeHtml(ev.start || "") +
@@ -1551,7 +1835,7 @@
 
     $("#openCompareImg")?.addEventListener("click", () => {
       openRoadshowLightbox({
-        src: "assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018o",
+        src: "assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018p",
         alt: "驅蚊蟲成分大比拼：Cipeller®PMD VS 一般驅蚊成分",
         caption: "【Cipeller®PMD VS 一般驅蚊成分】驅蚊蟲成分大比拼——安全、功效、驅防種類、有效時間。",
         source: "日本叮叮 Facebook 公開帖",
@@ -1750,8 +2034,75 @@
       renderStaffNotes(kind);
     });
 
+    /* ---- Gift stock CMS ---- */
+    $("#giftAddBtn")?.addEventListener("click", () => {
+      $("#giftAddForm")?.classList.remove("hidden");
+      $("#giftNewDate")?.focus();
+    });
+    $("#giftAddCancel")?.addEventListener("click", () => {
+      $("#giftAddForm")?.classList.add("hidden");
+    });
+    $("#giftAddForm")?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const c = cms();
+      const msg = $("#giftAddMsg");
+      if (!c || !c.addGiftCustom) return;
+      const items = [];
+      $$("#giftQtyInputs [data-gift-code]").forEach((inp) => {
+        const v = Number(inp.value);
+        if (!inp.value || !isFinite(v) || v <= 0) return;
+        items.push({ code: inp.dataset.giftCode, qty: Math.round(v) });
+      });
+      const res = c.addGiftCustom({
+        date: $("#giftNewDate")?.value || "",
+        dayLabel: $("#giftNewLabel")?.value || "",
+        time: $("#giftNewTime")?.value || "",
+        place: $("#giftNewPlace")?.value || "",
+        items: items
+      });
+      if (!res.ok) {
+        if (msg) {
+          msg.className = "admin-msg err";
+          msg.textContent = res.error || "儲存失敗";
+        }
+        return;
+      }
+      if (msg) {
+        msg.className = "admin-msg ok";
+        msg.textContent = "已新增贈品日";
+      }
+      $("#giftAddForm")?.classList.add("hidden");
+      ["giftNewLabel", "giftNewTime", "giftNewPlace"].forEach((id) => {
+        const el = $("#" + id);
+        if (el) el.value = "";
+      });
+      $$("#giftQtyInputs input").forEach((inp) => {
+        inp.value = "";
+      });
+      renderRoadshow();
+    });
+
+    $("#giftAnalytics")?.addEventListener("click", (e) => {
+      const hideBtn = e.target.closest("[data-gift-hide]");
+      if (hideBtn) {
+        const id = hideBtn.dataset.giftHide;
+        const c = cms();
+        if (!c) return;
+        if (c.isGiftHidden(id)) c.showGiftDay(id);
+        else c.hideGiftDay(id);
+        renderRoadshow();
+        return;
+      }
+      const delBtn = e.target.closest("[data-gift-del]");
+      if (delBtn) {
+        if (!confirm("刪除呢個自訂贈品日？")) return;
+        cms()?.removeGiftCustom(delBtn.dataset.giftDel);
+        renderRoadshow();
+      }
+    });
+
     $("#cmsResetBtn")?.addEventListener("click", () => {
-      if (!confirm("還原預設內容？會清走自訂問題、隱藏名單、自訂場次同職員備註。")) return;
+      if (!confirm("還原預設內容？會清走自訂問題、隱藏名單、自訂場次、自訂贈品日同職員備註。")) return;
       cms()?.resetAllCms();
       faqShowHidden = false;
       rsShowHidden = false;
