@@ -419,7 +419,7 @@
               : `<span class="muted-inline">此產品暫未對應萬寧產品頁連結</span>`
           }
         </div>
-        <p class="directory-warn">下方係萬寧分店<strong>電話簿</strong>，<strong>唔代表</strong>該產品一定有貨——請致電查詢或用上方連結查庫存。</p>
+        <p class="directory-warn">下方係<strong>萬寧分店電話簿</strong>（約 ${(stores.mannings || []).length} 間），<strong>唔代表</strong>該產品一定有貨——請致電查詢或用上方連結查庫存。</p>
       </div>`;
   }
 
@@ -535,11 +535,15 @@
         noteEl.className = "directory-note ok-note";
         noteEl.dataset.open = "1";
       } else if (storeChannel === "mannings") {
+        const mCount = (stores.mannings || []).length;
         noteEl.innerHTML =
-          `<strong>以下為萬寧分店電話簿，非該產品有貨舖數。</strong>` +
+          `<strong>萬寧分店電話簿（約 ${mCount} 間）</strong>——公開目錄整理，<strong>非</strong>該產品有貨舖數。` +
           ` 若上方有快照，請撳「展開有貨舖名單」。` +
           (p?.manningsUrl
             ? ` 或 <a href="${p.manningsUrl}" target="_blank" rel="noopener">去萬寧產品頁查庫存</a>。`
+            : "") +
+          (stores.manningsLocator
+            ? ` <a href="${stores.manningsLocator}" target="_blank" rel="noopener">官方分店搜尋</a>`
             : "");
         noteEl.className = "directory-note warn-note";
         noteEl.dataset.open = stockListExpanded && stockListMode === "directory" ? "1" : "0";
@@ -570,7 +574,7 @@
       } else if (usingSnapshot) {
         countEl.textContent = `${regionName}：約 ${list.length} 間快照「可能有貨」舖（截至 ${fmtAsOf(manningsStock.asOf)}；請致電確認）`;
       } else {
-        countEl.textContent = `${regionName}：約 ${list.length} 間萬寧分店（電話簿；非該產品有貨舖數）`;
+        countEl.textContent = `${regionName}：萬寧分店電話簿約 ${list.length} 間（非該產品有貨舖數）`;
       }
     }
 
