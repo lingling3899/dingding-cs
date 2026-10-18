@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="日本叮叮客服速查：產品問答、門店電話、Roadshow，同防偽查詢。庫存請致電確認；防偽請喺官網驗證。" />
+  <meta name="description" content="日本叮叮客服速查：產品問答、門店電話、同防偽查詢。庫存請致電確認；防偽請喺官網驗證。" />
   <title>日本叮叮 · 客服速查</title>
-  <link rel="stylesheet" href="assets/css/app.css?v=20261018m" />
+  <link rel="stylesheet" href="assets/css/app.css?v=20261018n" />
 </head>
 <body>
   <header class="topbar">
@@ -14,14 +14,16 @@
         <img class="brand-logo" src="assets/img/dingding-logo.jpg" alt="日本叮叮 Ding Ding Mosquito" width="220" height="64" />
         <div class="brand-text">
           <h1>客服速查</h1>
-          <p>產品問答　｜　門店　｜　Roadshow　｜　防偽</p>
+          <p>產品問答　｜　門店　｜　防偽</p>
         </div>
       </div>
       <nav class="nav-tabs" aria-label="主要分頁">
         <button type="button" class="active" data-view="qa">產品問答</button>
         <button type="button" data-view="stores">門店查貨</button>
-        <button type="button" data-view="roadshow">Roadshow</button>
         <button type="button" data-view="anti">防偽</button>
+        <button type="button" data-view="roadshow" class="admin-only hidden">Roadshow</button>
+        <button type="button" data-view="account" class="admin-only hidden">帳戶設定</button>
+        <button type="button" id="adminLogoutBtn" class="admin-only hidden nav-logout">登出</button>
       </nav>
     </div>
   </header>
@@ -60,7 +62,7 @@
         <h3>成份大比拼 <span class="badge">Cipeller®PMD</span></h3>
         <p class="promo-note">Cipeller®PMD 對比一般驅蚊成份（安全、功效、驅防種類、有效時間）。撳圖可放大。</p>
         <button type="button" class="promo-compare-btn" id="openCompareImg" aria-label="放大成份大比拼圖">
-          <img src="assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018m" alt="驅蚊蟲成分大比拼：Cipeller®PMD VS 一般驅蚊成分" loading="lazy" width="640" height="676" />
+          <img src="assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018n" alt="驅蚊蟲成分大比拼：Cipeller®PMD VS 一般驅蚊成分" loading="lazy" width="640" height="676" />
         </button>
         <p class="promo-credit">圖片來源：日本叮叮 Facebook 公開帖</p>
       </section>
@@ -140,9 +142,44 @@
     </section>
 
 
+
+    <section id="view-login" class="hidden">
+      <section class="panel admin-panel">
+        <h3>職員登入 <span class="badge">後台</span></h3>
+        <p class="admin-hint">登入後可睇 Roadshow 時間表同改帳號密碼。</p>
+        <form id="loginForm" class="admin-form" autocomplete="on">
+          <label class="field" for="loginUser">帳號</label>
+          <input id="loginUser" name="username" type="text" autocomplete="username" required />
+          <label class="field" for="loginPass">密碼</label>
+          <input id="loginPass" name="password" type="password" autocomplete="current-password" required />
+          <p id="loginError" class="admin-error hidden" role="alert">帳號或密碼錯誤</p>
+          <button type="submit" class="admin-btn" id="loginSubmit">登入</button>
+        </form>
+      </section>
+    </section>
+
+    <section id="view-account" class="hidden">
+      <section class="panel admin-panel">
+        <h3>帳戶設定 <span class="badge">職員</span></h3>
+        <p class="admin-hint">更改登入帳號同密碼。請先輸入而家密碼先至改得。</p>
+        <form id="accountForm" class="admin-form" autocomplete="off">
+          <label class="field" for="acctCurrentPass">而家密碼</label>
+          <input id="acctCurrentPass" type="password" autocomplete="current-password" required />
+          <label class="field" for="acctNewUser">新帳號</label>
+          <input id="acctNewUser" type="text" autocomplete="username" required />
+          <label class="field" for="acctNewPass">新密碼</label>
+          <input id="acctNewPass" type="password" autocomplete="new-password" required />
+          <label class="field" for="acctNewPass2">確認新密碼</label>
+          <input id="acctNewPass2" type="password" autocomplete="new-password" required />
+          <p id="accountMsg" class="admin-msg hidden" role="status"></p>
+          <button type="submit" class="admin-btn" id="accountSave">儲存</button>
+        </form>
+      </section>
+    </section>
+
     <section id="view-roadshow" class="hidden">
       <section class="panel">
-        <h3>Roadshow／快閃 <span class="badge">時間表</span></h3>
+        <h3>Roadshow／快閃 <span class="badge">職員</span></h3>
         <p id="roadshowIntro" class="roadshow-intro"></p>
         <p class="roadshow-actions">
           <a class="btn-link" id="roadshowFbLink" href="https://www.facebook.com/japandingding/" target="_blank" rel="noopener">開 Facebook 專頁（最新為準）</a>
@@ -230,6 +267,7 @@
 
     <footer class="footer">
       參考用途，非醫療建議；庫存請致電確認；防偽請喺官網驗證。官網：<a href="https://www.japandingding.com/" target="_blank" rel="noopener">japandingding.com</a>
+      <p class="footer-staff"><button type="button" id="staffLoginLink" class="staff-login-link">職員登入</button></p>
     </footer>
   </main>
 
@@ -240,11 +278,12 @@
     <p id="rsLightboxCap" class="rs-lightbox-cap"></p>
   </div>
 
-  <script src="data/products.js?v=20261018m"></script>
-  <script src="data/stores.js?v=20261018m"></script>
-  <script src="data/extra-stores.js?v=20261018m"></script>
-  <script src="data/mannings-stock-snapshot.js?v=20261018m"></script>
-  <script src="data/roadshow.js?v=20261018m"></script>
-  <script src="assets/js/app.js?v=20261018m"></script>
+  <script src="data/products.js?v=20261018n"></script>
+  <script src="data/stores.js?v=20261018n"></script>
+  <script src="data/extra-stores.js?v=20261018n"></script>
+  <script src="data/mannings-stock-snapshot.js?v=20261018n"></script>
+  <script src="data/roadshow.js?v=20261018n"></script>
+  <script src="assets/js/admin-auth.js?v=20261018n"></script>
+  <script src="assets/js/app.js?v=20261018n"></script>
 </body>
 </html>

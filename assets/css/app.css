@@ -92,7 +92,7 @@ a { color: var(--teal-dark); }
 }
 
 label.field { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 6px; }
-select, input[type="search"], input[type="text"] {
+select, input[type="search"], input[type="text"], input[type="password"] {
   width: 100%;
   min-height: 46px;
   border: 1.5px solid var(--border);
@@ -779,4 +779,91 @@ select:focus, input:focus {
   font-size: 0.85rem;
   line-height: 1.5;
   color: #9f1239;
+}
+
+
+/* ---- Staff admin login / account ---- */
+.staff-login-link {
+  margin-top: 8px;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 4px 0;
+  min-height: 36px;
+}
+.staff-login-link:hover { color: var(--teal-dark); }
+.footer-staff { margin: 10px 0 0; }
+.nav-tabs button.nav-logout {
+  border-color: rgba(255, 200, 200, 0.65);
+  color: #ffe4e4;
+}
+.nav-tabs button.nav-logout:hover {
+  background: rgba(255,255,255,0.12);
+}
+.admin-hint {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.admin-form .field { margin-top: 12px; }
+.admin-form .field:first-of-type { margin-top: 0; }
+.admin-form input {
+  margin-bottom: 2px;
+}
+.admin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 999px;
+  background: var(--teal);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+}
+.admin-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.admin-btn:hover:not(:disabled) {
+  background: var(--teal-dark);
+}
+.admin-error {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: var(--danger);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.admin-msg {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.admin-msg.ok {
+  background: var(--teal-soft);
+  border: 1px solid var(--border);
+  color: var(--teal-dark);
+}
+.admin-msg.err {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: var(--danger);
+}
+.admin-panel h3 .badge {
+  background: var(--teal-soft);
+  color: var(--teal-dark);
 }

@@ -981,15 +981,54 @@
     renderRoadshow();
   }
 
+  /* ---- Staff admin gate ---- */
+  let pendingAdminView = null; // "roadshow" | "account" after login
+
+  function auth() {
+    return window.DDAdminAuth || null;
+  }
+
+  function syncAdminUI() {
+    const logged = !!(auth() && auth().isLoggedIn());
+    $$(".admin-only").forEach((el) => el.classList.toggle("hidden", !logged));
+    const link = $("#staffLoginLink");
+    if (link) {
+      link.classList.toggle("hidden", logged);
+      link.textContent = "職員登入";
+    }
+  }
+
+  function hashForView(v) {
+    if (v === "stores") return "#stores";
+    if (v === "roadshow") return "#roadshow";
+    if (v === "anti") return "#anti";
+    if (v === "login") return "#login";
+    if (v === "account") return "#account";
+    return "#qa";
+  }
+
   /* ---- Tabs ---- */
   function showView(name) {
+    const a = auth();
+    if ((name === "roadshow" || name === "account") && !(a && a.isLoggedIn())) {
+      pendingAdminView = name;
+      name = "login";
+    }
+    if (name === "login" && a && a.isLoggedIn()) {
+      name = pendingAdminView || "roadshow";
+      pendingAdminView = null;
+    }
+
     $("#view-qa")?.classList.toggle("hidden", name !== "qa");
     $("#view-stores")?.classList.toggle("hidden", name !== "stores");
     $("#view-roadshow")?.classList.toggle("hidden", name !== "roadshow");
     $("#view-anti")?.classList.toggle("hidden", name !== "anti");
-    $$(".nav-tabs button").forEach((b) =>
+    $("#view-login")?.classList.toggle("hidden", name !== "login");
+    $("#view-account")?.classList.toggle("hidden", name !== "account");
+    $$(".nav-tabs button[data-view]").forEach((b) =>
       b.classList.toggle("active", b.dataset.view === name)
     );
+    syncAdminUI();
     if (name === "stores") {
       // sync store select from QA
       const id = getProductId();
@@ -1001,6 +1040,37 @@
     }
     if (name === "roadshow") {
       renderRoadshow();
+    }
+    if (name === "login") {
+      const err = $("#loginError");
+      if (err) err.classList.add("hidden");
+      const user = $("#loginUser");
+      if (user && a) {
+        try {
+          user.value = a.getCreds().user || "";
+        } catch (e) {
+          /* ignore */
+        }
+      }
+      $("#loginPass") && ($("#loginPass").value = "");
+      setTimeout(() => $("#loginPass")?.focus(), 50);
+    }
+    if (name === "account" && a) {
+      const msg = $("#accountMsg");
+      if (msg) {
+        msg.className = "admin-msg hidden";
+        msg.textContent = "";
+      }
+      try {
+        const u = $("#acctNewUser");
+        if (u) u.value = a.getCreds().user || "";
+      } catch (e) {
+        /* ignore */
+      }
+      ["acctCurrentPass", "acctNewPass", "acctNewPass2"].forEach((id) => {
+        const el = $("#" + id);
+        if (el) el.value = "";
+      });
     }
   }
 
@@ -1035,25 +1105,102 @@
       showView("stores");
     });
 
-    $$(".nav-tabs button").forEach((btn) => {
+    $$(".nav-tabs button[data-view]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const v = btn.dataset.view;
-        location.hash =
-          v === "stores"
-            ? "#stores"
-            : v === "roadshow"
-              ? "#roadshow"
-              : v === "anti"
-                ? "#anti"
-                : "#qa";
+        location.hash = hashForView(v);
         showView(v);
       });
+    });
+
+    $("#adminLogoutBtn")?.addEventListener("click", () => {
+      auth()?.logout();
+      pendingAdminView = null;
+      syncAdminUI();
+      location.hash = "#qa";
+      showView("qa");
+    });
+
+    $("#staffLoginLink")?.addEventListener("click", () => {
+      pendingAdminView = "roadshow";
+      location.hash = "#login";
+      showView("login");
+    });
+
+    $("#loginForm")?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const a = auth();
+      const err = $("#loginError");
+      if (err) err.classList.add("hidden");
+      if (!a) return;
+      const user = $("#loginUser")?.value || "";
+      const pass = $("#loginPass")?.value || "";
+      const btn = $("#loginSubmit");
+      if (btn) btn.disabled = true;
+      try {
+        const ok = await a.login(user, pass);
+        if (!ok) {
+          if (err) err.classList.remove("hidden");
+          return;
+        }
+        const next = pendingAdminView || "roadshow";
+        pendingAdminView = null;
+        syncAdminUI();
+        location.hash = hashForView(next);
+        showView(next);
+      } finally {
+        if (btn) btn.disabled = false;
+      }
+    });
+
+    $("#accountForm")?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const a = auth();
+      const msg = $("#accountMsg");
+      if (!a) return;
+      const cur = $("#acctCurrentPass")?.value || "";
+      const nu = $("#acctNewUser")?.value || "";
+      const np = $("#acctNewPass")?.value || "";
+      const np2 = $("#acctNewPass2")?.value || "";
+      if (msg) {
+        msg.className = "admin-msg";
+        msg.classList.remove("hidden", "ok", "err");
+      }
+      if (np !== np2) {
+        if (msg) {
+          msg.classList.add("err");
+          msg.textContent = "兩次新密碼唔一致";
+        }
+        return;
+      }
+      const btn = $("#accountSave");
+      if (btn) btn.disabled = true;
+      try {
+        const res = await a.changeCredentials(cur, nu, np);
+        if (!res.ok) {
+          if (msg) {
+            msg.classList.add("err");
+            msg.textContent = res.error || "更新失敗";
+          }
+          return;
+        }
+        if (msg) {
+          msg.classList.add("ok");
+          msg.textContent = "已更新帳號密碼";
+        }
+        ["acctCurrentPass", "acctNewPass", "acctNewPass2"].forEach((id) => {
+          const el = $("#" + id);
+          if (el) el.value = "";
+        });
+      } finally {
+        if (btn) btn.disabled = false;
+      }
     });
 
 
     $("#openCompareImg")?.addEventListener("click", () => {
       openRoadshowLightbox({
-        src: "assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018k",
+        src: "assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018n",
         alt: "驅蚊蟲成分大比拼：Cipeller®PMD VS 一般驅蚊成分",
         caption: "【Cipeller®PMD VS 一般驅蚊成分】驅蚊蟲成分大比拼——安全、功效、驅防種類、有效時間。",
         source: "日本叮叮 Facebook 公開帖",
@@ -1085,12 +1232,16 @@
       if (h === "#stores") showView("stores");
       else if (h === "#roadshow") showView("roadshow");
       else if (h === "#anti") showView("anti");
+      else if (h === "#login") showView("login");
+      else if (h === "#account") showView("account");
       else showView("qa");
     }
+    syncAdminUI();
     applyHash();
     window.addEventListener("hashchange", applyHash);
 
     // Default filter: upcoming, auto-switch to past if season ended
+    // Only render roadshow data when staff can see it (after login / when gated)
     setRoadshowFilter("upcoming");
 
     $$(".channel-seg button").forEach((btn) => {
