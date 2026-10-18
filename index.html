@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="日本叮叮客服速查：產品問答與萬寧／屈臣氏門店電話。庫存請致電確認。" />
+  <meta name="description" content="日本叮叮客服速查：產品問答、門店電話，同 Roadshow／快閃時間表。庫存請致電確認。" />
   <title>日本叮叮 · 客服速查</title>
-  <link rel="stylesheet" href="assets/css/app.css?v=20261018e" />
+  <link rel="stylesheet" href="assets/css/app.css?v=20261018f" />
 </head>
 <body>
   <header class="topbar">
@@ -14,12 +14,13 @@
         <img class="brand-logo" src="assets/img/dingding-logo.jpg" alt="日本叮叮 Ding Ding Mosquito" width="220" height="64" />
         <div class="brand-text">
           <h1>客服速查</h1>
-          <p>產品問答　｜　門店致電查貨</p>
+          <p>產品問答　｜　門店查貨　｜　Roadshow</p>
         </div>
       </div>
       <nav class="nav-tabs" aria-label="主要分頁">
         <button type="button" class="active" data-view="qa">產品問答</button>
         <button type="button" data-view="stores">門店查貨</button>
+        <button type="button" data-view="roadshow">Roadshow</button>
       </nav>
     </div>
   </header>
@@ -128,15 +129,34 @@
       </section>
     </section>
 
+
+    <section id="view-roadshow" class="hidden">
+      <section class="panel">
+        <h3>Roadshow／快閃 <span class="badge">時間表</span></h3>
+        <p id="roadshowIntro" class="roadshow-intro"></p>
+        <p class="roadshow-actions">
+          <a class="btn-link" id="roadshowFbLink" href="https://www.facebook.com/japandingding/" target="_blank" rel="noopener">開 Facebook 專頁（最新為準）</a>
+        </p>
+        <div class="seg roadshow-filter" role="tablist" aria-label="場次篩選">
+          <button type="button" class="active" data-rs-filter="upcoming">未完／即將</button>
+          <button type="button" data-rs-filter="past">已完結</button>
+          <button type="button" data-rs-filter="all">全部</button>
+        </div>
+        <div id="roadshowList" class="roadshow-list" aria-live="polite"></div>
+        <p id="roadshowFoot" class="count roadshow-foot"></p>
+      </section>
+    </section>
+
     <footer class="footer">
       參考用途，非醫療建議；庫存請致電確認。官網：<a href="https://www.japandingding.com/" target="_blank" rel="noopener">japandingding.com</a>
     </footer>
   </main>
 
-  <script src="data/products.js?v=20261018e"></script>
-  <script src="data/stores.js?v=20261018e"></script>
-  <script src="data/extra-stores.js?v=20261018e"></script>
-  <script src="data/mannings-stock-snapshot.js?v=20261018e"></script>
-  <script src="assets/js/app.js?v=20261018e"></script>
+  <script src="data/products.js?v=20261018f"></script>
+  <script src="data/stores.js?v=20261018f"></script>
+  <script src="data/extra-stores.js?v=20261018f"></script>
+  <script src="data/mannings-stock-snapshot.js?v=20261018f"></script>
+  <script src="data/roadshow.js?v=20261018f"></script>
+  <script src="assets/js/app.js?v=20261018f"></script>
 </body>
 </html>

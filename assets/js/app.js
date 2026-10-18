@@ -659,7 +659,7 @@
 
   function setChannel(ch) {
     storeChannel = ch;
-    $$(".seg button").forEach((b) =>
+    $$(".channel-seg button").forEach((b) =>
       b.classList.toggle("active", b.dataset.channel === ch)
     );
     refreshDistrictOptions();
@@ -685,10 +685,223 @@
     renderStores();
   }
 
+
+  /* ---- Roadshow ---- */
+  const roadshow = window.DD_ROADSHOW || {
+    asOf: null,
+    title: "Roadshow",
+    facebookUrl: "https://www.facebook.com/japandingding/",
+    sourceNote: "尚未載入時間表。",
+    disclaimer: "",
+    events: []
+  };
+  let roadshowFilter = "upcoming";
+
+  const WEEKDAY_ZH = ["日", "一", "二", "三", "四", "五", "六"];
+  const MONTH_ZH = {
+    "01": "1月", "02": "2月", "03": "3月", "04": "4月",
+    "05": "5月", "06": "6月", "07": "7月", "08": "8月",
+    "09": "9月", "10": "10月", "11": "11月", "12": "12月"
+  };
+
+  function todayHK() {
+    // Asia/Hong_Kong calendar date YYYY-MM-DD
+    try {
+      return new Intl.DateTimeFormat("en-CA", {
+        timeZone: "Asia/Hong_Kong",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      }).format(new Date());
+    } catch (_) {
+      const d = new Date();
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, "0");
+      const day = String(d.getDate()).padStart(2, "0");
+      return y + "-" + m + "-" + day;
+    }
+  }
+
+  function eventEndKey(ev) {
+    // Compare by date + end time so same-day morning slots become past after they end
+    const end = String(ev.end || "23:59").replace(":", "");
+    return String(ev.date || "") + "T" + end;
+  }
+
+  function nowKeyHK() {
+    try {
+      const parts = new Intl.DateTimeFormat("en-GB", {
+        timeZone: "Asia/Hong_Kong",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false
+      }).formatToParts(new Date());
+      const get = (t) => parts.find((p) => p.type === t)?.value || "";
+      return get("year") + "-" + get("month") + "-" + get("day") + "T" + get("hour") + get("minute");
+    } catch (_) {
+      const d = new Date();
+      return (
+        d.getFullYear() +
+        "-" +
+        String(d.getMonth() + 1).padStart(2, "0") +
+        "-" +
+        String(d.getDate()).padStart(2, "0") +
+        "T" +
+        String(d.getHours()).padStart(2, "0") +
+        String(d.getMinutes()).padStart(2, "0")
+      );
+    }
+  }
+
+  function isUpcoming(ev) {
+    return eventEndKey(ev) >= nowKeyHK();
+  }
+
+  function formatRoadshowDate(iso) {
+    const m = String(iso || "").match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!m) return iso || "";
+    const y = +m[1], mo = +m[2] - 1, d = +m[3];
+    const dt = new Date(Date.UTC(y, mo, d));
+    // weekday for HK calendar date (treat as local civil date)
+    const wd = WEEKDAY_ZH[new Date(y, mo, d).getDay()];
+    return m[1] + "年" + (+m[2]) + "月" + (+m[3]) + "日（星期" + wd + "）";
+  }
+
+  function monthLabel(ym) {
+    const parts = String(ym || "").split("-");
+    if (parts.length < 2) return ym;
+    return parts[0] + "年" + (MONTH_ZH[parts[1]] || parts[1]);
+  }
+
+  function filteredRoadshowEvents() {
+    const list = Array.isArray(roadshow.events) ? roadshow.events.slice() : [];
+    list.sort((a, b) => {
+      const ka = String(a.date) + String(a.start || "");
+      const kb = String(b.date) + String(b.start || "");
+      return ka.localeCompare(kb);
+    });
+    if (roadshowFilter === "upcoming") return list.filter(isUpcoming);
+    if (roadshowFilter === "past") return list.filter((e) => !isUpcoming(e));
+    return list;
+  }
+
+  function renderRoadshow() {
+    const intro = $("#roadshowIntro");
+    const listEl = $("#roadshowList");
+    const foot = $("#roadshowFoot");
+    const fb = $("#roadshowFbLink");
+    if (fb && roadshow.facebookUrl) fb.href = roadshow.facebookUrl;
+
+    if (intro) {
+      const title = roadshow.title || "Roadshow／快閃";
+      const asOf = fmtAsOf(roadshow.asOf) || "—";
+      intro.innerHTML =
+        "<strong>" +
+        title +
+        "</strong>——免費派發驅蚊防蟲試用裝（Cipeller®PMD）。" +
+        "<br><span class=\"muted-inline\">整理截至 " +
+        asOf +
+        "（香港時間）。</span><br>" +
+        (roadshow.sourceNote || "") +
+        (roadshow.disclaimer
+          ? "<br><strong>" + roadshow.disclaimer + "</strong>"
+          : "");
+    }
+
+    if (!listEl) return;
+    const events = filteredRoadshowEvents();
+    if (!events.length) {
+      const msg =
+        roadshowFilter === "upcoming"
+          ? "而家冇即將／進行中嘅場次。可撳「已完結」睇過往，或者去 Facebook 睇有冇新公告。"
+          : "呢個篩選暫時冇場次。";
+      listEl.innerHTML = '<div class="roadshow-empty">' + msg + "</div>";
+      if (foot) {
+        foot.textContent =
+          "共收錄 " +
+          (roadshow.events || []).length +
+          " 個時段；請以 Facebook 最新為準。";
+      }
+      return;
+    }
+
+    // Group by month; upcoming ascending, past descending within filter
+    const ordered = events.slice();
+    if (roadshowFilter === "past") ordered.reverse();
+
+    let html = "";
+    let lastMonth = "";
+    for (const ev of ordered) {
+      const ym = String(ev.date || "").slice(0, 7);
+      if (ym && ym !== lastMonth) {
+        lastMonth = ym;
+        html += '<h4 class="roadshow-month">' + monthLabel(ym) + "</h4>";
+      }
+      const up = isUpcoming(ev);
+      const badge = up
+        ? '<span class="rs-badge">即將／進行</span>'
+        : '<span class="rs-badge done">已完結</span>';
+      const note = ev.note ? " · " + ev.note : "";
+      html +=
+        '<article class="roadshow-card ' +
+        (up ? "upcoming" : "past") +
+        '">' +
+        '<p class="rs-date">' +
+        formatRoadshowDate(ev.date) +
+        badge +
+        "</p>" +
+        '<p class="rs-time">' +
+        (ev.start || "") +
+        " – " +
+        (ev.end || "") +
+        "</p>" +
+        '<p class="rs-place"><strong>' +
+        (ev.area || "") +
+        "</strong>　" +
+        (ev.place || "") +
+        "</p>" +
+        '<p class="rs-meta">免費試用裝 · 數量有限' +
+        note +
+        "</p>" +
+        "</article>";
+    }
+    listEl.innerHTML = html;
+    if (foot) {
+      foot.textContent =
+        "顯示 " +
+        events.length +
+        " 個時段（全表 " +
+        (roadshow.events || []).length +
+        "）。惡劣天氣或以 Facebook 最新為準。";
+    }
+  }
+
+  function setRoadshowFilter(name) {
+    roadshowFilter = name || "upcoming";
+    $$(".roadshow-filter button").forEach((b) =>
+      b.classList.toggle("active", b.dataset.rsFilter === roadshowFilter)
+    );
+    // If upcoming empty on load, auto-fall to past for elder UX
+    if (roadshowFilter === "upcoming") {
+      const up = (roadshow.events || []).filter(isUpcoming);
+      if (!up.length) {
+        roadshowFilter = "past";
+        $$(".roadshow-filter button").forEach((b) =>
+          b.classList.toggle("active", b.dataset.rsFilter === "past")
+        );
+      }
+    }
+    renderRoadshow();
+  }
+
   /* ---- Tabs ---- */
   function showView(name) {
     $("#view-qa")?.classList.toggle("hidden", name !== "qa");
     $("#view-stores")?.classList.toggle("hidden", name !== "stores");
+    $("#view-roadshow")?.classList.toggle("hidden", name !== "roadshow");
     $$(".nav-tabs button").forEach((b) =>
       b.classList.toggle("active", b.dataset.view === name)
     );
@@ -700,6 +913,9 @@
       renderManningsStockPanel();
       refreshDistrictOptions();
       renderStores();
+    }
+    if (name === "roadshow") {
+      renderRoadshow();
     }
   }
 
@@ -737,18 +953,29 @@
     $$(".nav-tabs button").forEach((btn) => {
       btn.addEventListener("click", () => {
         const v = btn.dataset.view;
-        location.hash = v === "stores" ? "#stores" : "#qa";
+        location.hash =
+          v === "stores" ? "#stores" : v === "roadshow" ? "#roadshow" : "#qa";
         showView(v);
       });
     });
 
-    if (location.hash === "#stores") showView("stores");
-    window.addEventListener("hashchange", () => {
-      if (location.hash === "#stores") showView("stores");
-      if (location.hash === "#qa" || location.hash === "") showView("qa");
+    $$(".roadshow-filter button").forEach((btn) => {
+      btn.addEventListener("click", () => setRoadshowFilter(btn.dataset.rsFilter));
     });
 
-    $$(".seg button").forEach((btn) => {
+    function applyHash() {
+      const h = location.hash;
+      if (h === "#stores") showView("stores");
+      else if (h === "#roadshow") showView("roadshow");
+      else showView("qa");
+    }
+    applyHash();
+    window.addEventListener("hashchange", applyHash);
+
+    // Default filter: upcoming, auto-switch to past if season ended
+    setRoadshowFilter("upcoming");
+
+    $$(".channel-seg button").forEach((btn) => {
       btn.addEventListener("click", () => setChannel(btn.dataset.channel));
     });
     $$("#regionChips .region-chip").forEach((btn) => {

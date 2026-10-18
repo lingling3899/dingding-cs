@@ -4,7 +4,8 @@
 
 1. **產品問答**——功效、成份、用法、年齡、DEET、蠶豆症（G6PD）誠實說明  
 2. **門店查貨**——萬寧可顯示「該產品約 N 間舖有貨」**快照**（可展開店名／電話／地址）；另有多渠道**電話簿，非庫存**（萬寧／屈臣氏／松本清／莎莎／AEON／百佳／惠康／卡萊美／Soda Mall／永安／先施），可按香港／九龍／新界篩選＋`tel:` 致電確認  
-3. **其他／說明**——單張尚有 Market Place、Fusion、Taste、一田、卓悅、HKTVmall 等暫未入電話簿
+3. **Roadshow／快閃**——2026全民驅蚊大行動時間表（公開著數站整理；以 Facebook 最新為準）
+4. **其他／說明**——單張尚有 Market Place、Fusion、Taste、一田、卓悅、HKTVmall 等暫未入電話簿
 
 ## 預覽
 
@@ -23,7 +24,8 @@ GitHub Pages：<https://lingling3899.github.io/dingding-cs/>
 
 | 路徑 | 說明 |
 |------|------|
-| `index.html` | 主頁（問答＋門店分頁） |
+| `index.html` | 主頁（問答＋門店＋Roadshow） |
+| `data/roadshow.js` | 2026 Roadshow／快閃時間表（`window.DD_ROADSHOW`） |
 | `assets/css/app.css` | 樣式（深藍／白） |
 | `assets/js/app.js` | 問答／篩選／萬寧快照 UI |
 | `data/products.js` | SKU 與 claim-safe 說明；含可選 `manningsUrl`／`manningsCode` |
