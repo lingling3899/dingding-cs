@@ -1041,6 +1041,16 @@
     });
 
 
+    $("#openCompareImg")?.addEventListener("click", () => {
+      openRoadshowLightbox({
+        src: "assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018j",
+        alt: "驅蚊蟲成分大比拼：Cipeller®PMD VS 一般驅蚊成分",
+        caption: "【Cipeller®PMD VS 一般驅蚊成分】驅蚊蟲成分大比拼——安全、功效、驅防種類、有效時間。",
+        source: "日本叮叮 Facebook 公開帖",
+        postUrl: ""
+      });
+    });
+
     $("#roadshowGallery")?.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-rs-gal]");
       if (!btn) return;

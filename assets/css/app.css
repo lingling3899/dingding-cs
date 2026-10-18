@@ -585,3 +585,38 @@ select:focus, input:focus {
   .rs-gal-item { width: 168px; }
   .rs-gal-item img { height: 210px; }
 }
+
+/* ---- Cipeller PMD 成份大比拼（產品問答） ---- */
+.promo-note {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+.promo-compare-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+.promo-compare-btn:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+.promo-compare-btn img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+.promo-credit {
+  margin: 8px 0 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.45;
+}

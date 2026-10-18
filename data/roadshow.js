@@ -78,7 +78,7 @@ window.DD_ROADSHOW = {
       postUrl: "https://www.facebook.com/japandingding/posts/1489186223231187/"
     },
     {
-      src: "assets/img/roadshow/2026-10-roadshow-1.jpg",
+      src: "assets/img/roadshow/2026-10-roadshow-1.jpg?v=20261018j",
       label: "10月・最終回",
       alt: "【2026全民驅蚊大行動—最終回】10月快閃灣仔、銅鑼灣、尖沙咀、油麻地，10月17日旺角最終回。免費派發 Cipeller®PMD 驅蚊防蟲試用裝。",
       caption: "【2026全民驅蚊大行動—最終回】10月快閃灣仔、銅鑼灣、尖沙咀、油麻地，10月17日旺角最終回。免費派發 Cipeller®PMD 驅蚊防蟲試用裝。",
