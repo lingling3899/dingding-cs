@@ -8,9 +8,66 @@ window.DD_ROADSHOW = {
   title: "2026全民驅蚊大行動",
   facebookUrl: "https://www.facebook.com/japandingding/",
   sourceNote:
-    "時間地點整理自公開著數文章（Jetso Today／JetsoBear 等）所引述嘅日本叮叮公告。Facebook 專頁帖文未能直接讀取。惡劣天氣／交通或會改期，請以 Facebook 最新為準。試用裝數量有限，先到先得，送完即止。",
+    "時間地點整理自公開著數文章（Jetso Today／JetsoBear 等）所引述嘅日本叮叮公告。Facebook 專頁帖文／圖片未能直接讀取；下列海報來自公開著數站轉載之品牌宣傳圖。惡劣天氣／交通或會改期，請以 Facebook 最新為準。試用裝數量有限，先到先得，送完即止。",
   disclaimer:
     "以 Facebook 最新為準；數量有限，送完即止。呢份表只係方便查閱，未必齊全年每一場。",
+  imageCredit: "圖片來源：日本叮叮公開宣傳（經 Jetso Today／JetsoBear／Jetso Station 轉載）；Facebook 專頁圖片未能直接下載。",
+  gallery: [
+    {
+      src: "assets/img/roadshow/rs-202604-jetsostation.jpg",
+      label: "4月・第二回",
+      alt: "2026全民驅蚊大行動第二回宣傳海報",
+      source: "Jetso Station／日本叮叮"
+    },
+    {
+      src: "assets/img/roadshow/rs-202604b-jetsostation.jpg",
+      label: "4月・第三回",
+      alt: "2026全民驅蚊大行動第三回宣傳海報",
+      source: "Jetso Station／日本叮叮"
+    },
+    {
+      src: "assets/img/roadshow/rs-202605-round4.jpg",
+      label: "5月・第四回",
+      alt: "2026全民驅蚊大行動第四回宣傳海報（銅鑼灣／尖沙咀／旺角）",
+      source: "JetsoBear／日本叮叮"
+    },
+    {
+      src: "assets/img/roadshow/rs-202605-jetsotoday.jpg",
+      label: "5月",
+      alt: "2026全民驅蚊大行動5月宣傳海報",
+      source: "Jetso Today／日本叮叮"
+    },
+    {
+      src: "assets/img/roadshow/rs-202605b-jetsostation.jpg",
+      label: "5月・第五回",
+      alt: "2026全民驅蚊大行動第五回宣傳海報",
+      source: "Jetso Station／日本叮叮"
+    },
+    {
+      src: "assets/img/roadshow/rs-202606-jetsostation.jpg",
+      label: "6月・第六回",
+      alt: "2026全民驅蚊大行動第六回宣傳海報",
+      source: "Jetso Station／日本叮叮"
+    },
+    {
+      src: "assets/img/roadshow/rs-202608-jetsotoday.jpg",
+      label: "8月・第八回",
+      alt: "2026全民驅蚊大行動8月宣傳海報",
+      source: "Jetso Today／日本叮叮"
+    },
+    {
+      src: "assets/img/roadshow/rs-202609-jetsotoday.jpg",
+      label: "9月・第九回",
+      alt: "2026全民驅蚊大行動第九回宣傳海報",
+      source: "Jetso Today／日本叮叮"
+    },
+    {
+      src: "assets/img/roadshow/rs-202610-jetsotoday.jpg",
+      label: "10月・最終回",
+      alt: "2026全民驅蚊大行動最終回宣傳海報",
+      source: "Jetso Today／日本叮叮"
+    }
+  ],
   sources: [
     { label: "Jetso Today 10月", url: "https://www.jetsotoday.com/japan-ding-ding-202610/" },
     { label: "Jetso Today 9月", url: "https://www.jetsotoday.com/japan-ding-ding-202609/" },

@@ -788,7 +788,71 @@
     return list;
   }
 
+
+  function closeRoadshowLightbox() {
+    const box = $("#rsLightbox");
+    if (box) box.classList.add("hidden");
+    document.body.style.overflow = "";
+  }
+
+  function openRoadshowLightbox(item) {
+    const box = $("#rsLightbox");
+    const img = $("#rsLightboxImg");
+    const cap = $("#rsLightboxCap");
+    if (!box || !img || !item) return;
+    img.src = item.src;
+    img.alt = item.alt || item.label || "宣傳圖";
+    if (cap) {
+      cap.textContent =
+        (item.label || "") +
+        (item.source ? "　·　" + item.source : "");
+    }
+    box.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+    $("#rsLightboxClose")?.focus();
+  }
+
+  function renderRoadshowGallery() {
+    const gal = $("#roadshowGallery");
+    const credit = $("#roadshowGalleryCredit");
+    const items = Array.isArray(roadshow.gallery) ? roadshow.gallery : [];
+    if (credit) {
+      credit.textContent = items.length
+        ? roadshow.imageCredit ||
+          "圖片來源：日本叮叮 Facebook／公開宣傳"
+        : "";
+    }
+    if (!gal) return;
+    if (!items.length) {
+      gal.innerHTML = "";
+      return;
+    }
+    gal.innerHTML = items
+      .map((item, i) => {
+        const src = item.src || "";
+        const label = item.label || "宣傳圖";
+        const alt = item.alt || label;
+        return (
+          '<button type="button" class="rs-gal-item" data-rs-gal="' +
+          i +
+          '" aria-label="放大：' +
+          label +
+          '">' +
+          '<img src="' +
+          src +
+          '" alt="' +
+          alt +
+          '" loading="lazy" width="160" height="200" />' +
+          '<span class="rs-gal-label">' +
+          label +
+          "</span></button>"
+        );
+      })
+      .join("");
+  }
+
   function renderRoadshow() {
+    renderRoadshowGallery();
     const intro = $("#roadshowIntro");
     const listEl = $("#roadshowList");
     const foot = $("#roadshowFoot");
@@ -957,6 +1021,22 @@
           v === "stores" ? "#stores" : v === "roadshow" ? "#roadshow" : "#qa";
         showView(v);
       });
+    });
+
+
+    $("#roadshowGallery")?.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-rs-gal]");
+      if (!btn) return;
+      const idx = Number(btn.dataset.rsGal);
+      const items = Array.isArray(roadshow.gallery) ? roadshow.gallery : [];
+      if (items[idx]) openRoadshowLightbox(items[idx]);
+    });
+    $("#rsLightboxClose")?.addEventListener("click", closeRoadshowLightbox);
+    $("#rsLightbox")?.addEventListener("click", (e) => {
+      if (e.target.id === "rsLightbox") closeRoadshowLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeRoadshowLightbox();
     });
 
     $$(".roadshow-filter button").forEach((btn) => {
