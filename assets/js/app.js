@@ -101,6 +101,27 @@
     return tel || "";
   }
 
+
+  function mapsUrl(s) {
+    if (!s) return "";
+    const name = String(s.name || "").trim();
+    const address = String(s.address || "").trim();
+    if (!name && !address) return "";
+    const q = [name, s.district, address].filter(Boolean).join(" ");
+    return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+  }
+
+  function storeActionsHtml(s, telFallbackHtml) {
+    const telHtml = s.tel
+      ? `<a class="tel-btn" href="tel:${String(s.tel).replace(/\D/g, "")}">📞 ${fmtTel(s.tel)}</a>`
+      : telFallbackHtml;
+    const url = mapsUrl(s);
+    const mapHtml = url
+      ? `<a class="map-btn" href="${url}" target="_blank" rel="noopener">📍 地圖</a>`
+      : "";
+    return `<div class="store-actions">${telHtml}${mapHtml}</div>`;
+  }
+
   function fmtAsOf(asOf) {
     if (!asOf) return null;
     const s = String(asOf).trim();
@@ -454,11 +475,7 @@
       <article class="store-card stock-hit">
         <h4>${s.name || "萬寧分店"}</h4>
         <p class="addr">${s.district ? s.district + "　" : ""}${s.address || ""}</p>
-        ${
-          s.tel
-            ? `<a class="tel-btn" href="tel:${String(s.tel).replace(/\D/g, "")}">📞 ${fmtTel(s.tel)}</a>`
-            : `<span class="muted-inline">電話待補</span>`
-        }
+        ${storeActionsHtml(s, `<span class="muted-inline">電話待補</span>`)}
         <p class="note">${s.stockStatus ? `快照：${s.stockStatus} — 請致電確認（非即時庫存）` : "快照標示可能有貨 — 請致電確認（非即時庫存）"}</p>
       </article>`
       )
@@ -631,13 +648,12 @@
       <article class="store-card${usingSnapshot ? " stock-hit" : ""}">
         <h4>${s.name}</h4>
         <p class="addr">${s.district ? s.district + "　" : ""}${s.address || ""}</p>
-        ${
-          s.tel
-            ? `<a class="tel-btn" href="tel:${String(s.tel).replace(/\D/g, "")}">📞 ${fmtTel(s.tel)}</a>`
-            : storeChannel === "parknshop" && locator
-              ? `<a class="btn-link" href="${locator}" target="_blank" rel="noopener">查官方電話</a>`
-              : `<span class="muted-inline">電話待補（請用官方店舖搜尋）</span>`
-        }
+        ${storeActionsHtml(
+          s,
+          storeChannel === "parknshop" && locator
+            ? `<a class="btn-link" href="${locator}" target="_blank" rel="noopener">查官方電話</a>`
+            : `<span class="muted-inline">電話待補（請用官方店舖搜尋）</span>`
+        )}
         <p class="note">${usingSnapshot && s.stockStatus ? `快照：${s.stockStatus} — 請致電確認（非即時庫存）` : fallbackNote}</p>
       </article>`
       )

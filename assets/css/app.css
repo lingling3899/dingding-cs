@@ -395,6 +395,25 @@ select:focus, input:focus {
   padding: 10px 16px;
   font-size: 1rem;
 }
+.store-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 48px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--teal);
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+}
 .btn-link {
   display: inline-block;
   padding: 10px 14px;
