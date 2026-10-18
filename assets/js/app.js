@@ -219,27 +219,14 @@
         `劑型：${p.form}　容量／包裝：${p.volume}`;
       if (p.dengueNote) body += `\n\n備註：${p.dengueNote}`;
     } else if (key === "where") {
-      const ch = p.channels || {};
-      const snap = getSnapshotEntry(p.id);
-      let manningsLine = ch.mannings
-        ? "有售（請致電該舖確認庫存）"
-        : "請向門店確認／未必有售";
-      if (snap && typeof snap.storeCount === "number" && manningsStock.asOf) {
-        manningsLine = `約 ${snap.storeCount} 間舖有貨（截至 ${fmtAsOf(manningsStock.asOf)}；請致電確認）`;
-      } else if (p.manningsUrl) {
-        manningsLine = "可查萬寧產品頁「查詢門店庫存」（非本頁即時庫存）";
-      }
+      const salesPoints =
+        "萬寧、屈臣氏、松本清、莎莎、AEON、百佳、惠康、卡萊美、Soda Mall、永安、先施、各大藥房";
       body =
         `【${p.name}】邊度買？\n\n` +
-        `• 萬寧：${manningsLine}\n` +
-        `• 屈臣氏：${ch.watsons ? "有售（請致電該舖確認庫存）" : "請向門店確認／未必有售"}\n` +
-        `• 其他渠道：${ch.others || "部分店有售／非全線（惠康／百佳／一田／AEON／莎莎／卡萊美／卓悅／松本清／HKTVmall 等）"}\n\n` +
+        `銷售點：${salesPoints} 等（部分店有售、非全線）。\n\n` +
         (globalFaq.buyIntro || "");
       links =
-        `<a class="btn-link" href="#stores">去查萬寧／屈臣氏分店電話</a>` +
-        (p.manningsUrl
-          ? `<a class="btn-link" href="${p.manningsUrl}" target="_blank" rel="noopener">萬寧產品頁／查庫存</a>`
-          : "") +
+        `<a class="btn-link" href="#stores">去門店查貨</a>` +
         `<a class="btn-link" href="${stores.officialRetail || "https://www.japandingding.com/"}" target="_blank" rel="noopener">官網零售點</a>`;
     } else if (key === "ingredients") {
       body =
