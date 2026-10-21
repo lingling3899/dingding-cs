@@ -51,7 +51,9 @@
 
   let faqShowHidden = false;
   let rsShowHidden = false;
+  let blogShowHidden = false;
   let activeFaqKey = null;
+  let activeBlogId = null;
 
   let storeChannel = "mannings";
   let stockListExpanded = false;
@@ -1705,8 +1707,178 @@
       .join("");
   }
 
+
+  /* ---- Blog (知識) ---- */
+  const blogData = window.DD_BLOG || { asOf: null, posts: [] };
+
+  function formatBlogDate(iso) {
+    if (!iso) return "";
+    const m = String(iso).match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (!m) return escapeHtml(iso);
+    return m[1] + "年" + Number(m[2]) + "月" + Number(m[3]) + "日";
+  }
+
+  function getMergedBlogPosts() {
+    const c = cms();
+    const builtin = Array.isArray(blogData.posts) ? blogData.posts : [];
+    if (c && c.mergeBlogPosts) return c.mergeBlogPosts(builtin, blogShowHidden);
+    return builtin.map((post) => Object.assign({}, post, { _builtin: true, _hidden: false, custom: false }));
+  }
+
+  function findBlogPost(id) {
+    return getMergedBlogPosts().find((p) => String(p.id) === String(id)) || null;
+  }
+
+  function renderBlogList() {
+    const list = $("#blogList");
+    if (!list) return;
+    const logged = !!(auth() && auth().isLoggedIn());
+    const posts = getMergedBlogPosts();
+    $("#blogListPanel")?.classList.remove("hidden");
+    $("#blogArticlePanel")?.classList.add("hidden");
+    activeBlogId = null;
+
+    if (!posts.length) {
+      list.innerHTML = '<p class="blog-empty">暫時未有文章。</p>';
+      return;
+    }
+
+    list.innerHTML = posts
+      .map((post) => {
+        const hidClass = post._hidden ? " is-hidden-admin" : "";
+        let ops = "";
+        if (logged) {
+          const hideLabel = post._hidden ? "顯示" : "隱藏";
+          ops =
+            '<div class="blog-admin-ops">' +
+            '<button type="button" data-blog-hide="' +
+            escapeHtml(post.id) +
+            '">' +
+            hideLabel +
+            "</button>";
+          if (post.custom) {
+            ops +=
+              '<button type="button" data-blog-del="' +
+              escapeHtml(post.id) +
+              '">刪除</button>';
+          }
+          ops += "</div>";
+        }
+        return (
+          '<article class="blog-card' +
+          hidClass +
+          '" data-blog-id="' +
+          escapeHtml(post.id) +
+          '" role="button" tabindex="0">' +
+          '<div class="blog-card-meta">' +
+          '<span class="blog-tag">' +
+          escapeHtml(post.tag || "知識") +
+          "</span>" +
+          '<time datetime="' +
+          escapeHtml(post.date || "") +
+          '">' +
+          formatBlogDate(post.date) +
+          "</time>" +
+          "</div>" +
+          "<h4>" +
+          escapeHtml(post.title || "") +
+          "</h4>" +
+          '<p class="blog-excerpt">' +
+          escapeHtml(post.excerpt || "") +
+          "</p>" +
+          '<span class="blog-read">閱讀全文 →</span>' +
+          ops +
+          "</article>"
+        );
+      })
+      .join("");
+  }
+
+  function renderBlogSectionBody(sec) {
+    let html = "";
+    if (sec.h) html += "<h2>" + escapeHtml(sec.h) + "</h2>";
+    (sec.paragraphs || []).forEach((para) => {
+      html += "<p>" + escapeHtml(para) + "</p>";
+    });
+    if (sec.bullets && sec.bullets.length) {
+      html +=
+        "<ul>" +
+        sec.bullets.map((b) => "<li>" + escapeHtml(b) + "</li>").join("") +
+        "</ul>";
+    }
+    return html;
+  }
+
+  function renderBlogArticle(id) {
+    const panel = $("#blogArticle");
+    if (!panel) return;
+    const post = findBlogPost(id);
+    if (!post) {
+      renderBlogList();
+      return;
+    }
+    activeBlogId = String(post.id);
+    $("#blogListPanel")?.classList.add("hidden");
+    $("#blogArticlePanel")?.classList.remove("hidden");
+
+    let body = (post.sections || []).map(renderBlogSectionBody).join("");
+    if (!body && post.bodyHtml) {
+      // custom posts shouldn't inject raw HTML from CMS — treat as plain
+      body = "<p>" + escapeHtml(String(post.bodyHtml)) + "</p>";
+    }
+
+    const cta =
+      '<div class="blog-cta">' +
+      (post.ctaHint ? '<p class="blog-cta-hint">' + escapeHtml(post.ctaHint) + "</p>" : "") +
+      '<div class="blog-cta-chips">' +
+      '<button type="button" class="chip" data-blog-goto="qa">去產品問答</button>' +
+      '<button type="button" class="chip" data-blog-goto="stores">門店查貨</button>' +
+      "</div></div>";
+
+    panel.innerHTML =
+      '<header class="blog-article-head">' +
+      '<span class="blog-tag">' +
+      escapeHtml(post.tag || "知識") +
+      "</span>" +
+      '<time datetime="' +
+      escapeHtml(post.date || "") +
+      '">' +
+      formatBlogDate(post.date) +
+      "</time>" +
+      "<h1>" +
+      escapeHtml(post.title || "") +
+      "</h1>" +
+      "</header>" +
+      '<div class="blog-prose">' +
+      body +
+      "</div>" +
+      cta;
+  }
+
+  function openBlogPost(id) {
+    location.hash = "#blog/" + encodeURIComponent(String(id));
+    renderBlogArticle(id);
+  }
+
+  function showBlogView(postId) {
+    $("#view-qa")?.classList.toggle("hidden", true);
+    $("#view-stores")?.classList.toggle("hidden", true);
+    $("#view-roadshow")?.classList.toggle("hidden", true);
+    $("#view-anti")?.classList.toggle("hidden", true);
+    $("#view-login")?.classList.toggle("hidden", true);
+    $("#view-account")?.classList.toggle("hidden", true);
+    $("#view-blog")?.classList.toggle("hidden", false);
+    $$(".nav-tabs button[data-view]").forEach((b) =>
+      b.classList.toggle("active", b.dataset.view === "blog")
+    );
+    syncAdminUI();
+    if (postId) renderBlogArticle(postId);
+    else renderBlogList();
+  }
+
   function hashForView(v) {
     if (v === "stores") return "#stores";
+    if (v === "blog") return "#blog";
     if (v === "roadshow") return "#roadshow";
     if (v === "anti") return "#anti";
     if (v === "login") return "#login";
@@ -1728,6 +1900,7 @@
 
     $("#view-qa")?.classList.toggle("hidden", name !== "qa");
     $("#view-stores")?.classList.toggle("hidden", name !== "stores");
+    $("#view-blog")?.classList.toggle("hidden", name !== "blog");
     $("#view-roadshow")?.classList.toggle("hidden", name !== "roadshow");
     $("#view-anti")?.classList.toggle("hidden", name !== "anti");
     $("#view-login")?.classList.toggle("hidden", name !== "login");
@@ -1747,6 +1920,10 @@
       renderManningsStockPanel();
       refreshDistrictOptions();
       renderStores();
+    }
+    if (name === "blog") {
+      if (activeBlogId) renderBlogArticle(activeBlogId);
+      else renderBlogList();
     }
     if (name === "roadshow") {
       renderRoadshow();
@@ -1848,6 +2025,7 @@
     $$(".nav-tabs button[data-view]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const v = btn.dataset.view;
+        if (v === "blog") activeBlogId = null;
         location.hash = hashForView(v);
         showView(v);
       });
@@ -1973,7 +2151,7 @@
 
     $("#openCompareImg")?.addEventListener("click", () => {
       openRoadshowLightbox({
-        src: "assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261018q",
+        src: "assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261021a",
         alt: "驅蚊蟲成分大比拼：Cipeller®PMD VS 一般驅蚊成分",
         caption: "【Cipeller®PMD VS 一般驅蚊成分】驅蚊蟲成分大比拼——安全、功效、驅防種類、有效時間。",
         source: "日本叮叮 Facebook 公開帖",
@@ -2001,13 +2179,21 @@
     });
 
     function applyHash() {
-      const h = location.hash;
+      const h = location.hash || "";
       if (h === "#stores") showView("stores");
-      else if (h === "#roadshow") showView("roadshow");
+      else if (h === "#blog" || h.startsWith("#blog/")) {
+        const parts = h.split("/");
+        const postId = parts.length > 1 ? decodeURIComponent(parts.slice(1).join("/")) : "";
+        activeBlogId = postId || null;
+        showView("blog");
+      } else if (h === "#roadshow") showView("roadshow");
       else if (h === "#anti") showView("anti");
       else if (h === "#login") showView("login");
       else if (h === "#account") showView("account");
-      else showView("qa");
+      else {
+        activeBlogId = null;
+        showView("qa");
+      }
     }
     syncAdminUI();
     applyHash();
@@ -2239,11 +2425,105 @@
       }
     });
 
+
+    /* ---- Blog CMS ---- */
+    $("#blogAddBtn")?.addEventListener("click", () => {
+      $("#blogAddForm")?.classList.remove("hidden");
+      $("#blogNewTitle")?.focus();
+    });
+    $("#blogAddCancel")?.addEventListener("click", () => {
+      $("#blogAddForm")?.classList.add("hidden");
+      const msg = $("#blogAddMsg");
+      if (msg) msg.className = "admin-msg hidden";
+    });
+    $("#blogToggleHiddenBtn")?.addEventListener("click", () => {
+      blogShowHidden = !blogShowHidden;
+      const b = $("#blogToggleHiddenBtn");
+      if (b) b.textContent = blogShowHidden ? "收起已隱藏" : "顯示已隱藏";
+      renderBlogList();
+    });
+    $("#blogAddForm")?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const c = cms();
+      const msg = $("#blogAddMsg");
+      if (!c || !c.addBlogCustom) return;
+      const res = c.addBlogCustom({
+        title: $("#blogNewTitle")?.value || "",
+        tag: $("#blogNewTag")?.value || "防蚊",
+        excerpt: $("#blogNewExcerpt")?.value || "",
+        body: $("#blogNewBody")?.value || ""
+      });
+      if (!res.ok) {
+        if (msg) {
+          msg.className = "admin-msg err";
+          msg.textContent = res.error || "儲存失敗";
+        }
+        return;
+      }
+      if (msg) {
+        msg.className = "admin-msg ok";
+        msg.textContent = "已新增文章";
+      }
+      ["blogNewTitle", "blogNewExcerpt", "blogNewBody"].forEach((id) => {
+        const el = $("#" + id);
+        if (el) el.value = "";
+      });
+      $("#blogAddForm")?.classList.add("hidden");
+      renderBlogList();
+    });
+
+    $("#blogList")?.addEventListener("click", (e) => {
+      const hideBtn = e.target.closest("[data-blog-hide]");
+      if (hideBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        const id = hideBtn.dataset.blogHide;
+        const c = cms();
+        if (!c) return;
+        if (c.isBlogHidden(id)) c.showBlog(id);
+        else c.hideBlog(id);
+        renderBlogList();
+        return;
+      }
+      const delBtn = e.target.closest("[data-blog-del]");
+      if (delBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (!confirm("刪除呢篇自訂文章？")) return;
+        cms()?.removeBlogCustom(delBtn.dataset.blogDel);
+        renderBlogList();
+        return;
+      }
+      const card = e.target.closest(".blog-card[data-blog-id]");
+      if (card) openBlogPost(card.dataset.blogId);
+    });
+    $("#blogList")?.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      const card = e.target.closest(".blog-card[data-blog-id]");
+      if (!card) return;
+      e.preventDefault();
+      openBlogPost(card.dataset.blogId);
+    });
+    $("#blogBackBtn")?.addEventListener("click", () => {
+      activeBlogId = null;
+      location.hash = "#blog";
+      renderBlogList();
+    });
+    $("#blogArticle")?.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-blog-goto]");
+      if (!btn) return;
+      const v = btn.dataset.blogGoto;
+      activeBlogId = null;
+      location.hash = hashForView(v);
+      showView(v);
+    });
+
     $("#cmsResetBtn")?.addEventListener("click", () => {
-      if (!confirm("還原預設內容？會清走自訂問題、隱藏名單、自訂場次、自訂贈品日同職員備註。")) return;
+      if (!confirm("還原預設內容？會清走自訂問題、隱藏名單、自訂場次、自訂贈品日、自訂知識文章同職員備註。")) return;
       cms()?.resetAllCms();
       faqShowHidden = false;
       rsShowHidden = false;
+      blogShowHidden = false;
       const msg = $("#cmsResetMsg");
       if (msg) {
         msg.className = "admin-msg ok";
@@ -2251,6 +2531,7 @@
       }
       renderFaqGrid();
       renderRoadshow();
+      renderBlogList();
       renderStaffNotes("stores");
       renderStaffNotes("anti");
     });

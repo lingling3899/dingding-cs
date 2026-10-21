@@ -9,6 +9,8 @@
     rsHidden: PREFIX + "rs_hidden",
     giftCustom: PREFIX + "gift_custom",
     giftHidden: PREFIX + "gift_hidden",
+    blogCustom: PREFIX + "blog_custom",
+    blogHidden: PREFIX + "blog_hidden",
     notesStores: PREFIX + "notes_stores",
     notesAnti: PREFIX + "notes_anti"
   };
@@ -333,6 +335,110 @@
     return out;
   }
 
+
+  /* ---- Blog ---- */
+  function getBlogCustom() {
+    var list = readJson(KEYS.blogCustom, []);
+    return Array.isArray(list) ? list : [];
+  }
+
+  function setBlogCustom(list) {
+    return writeJson(KEYS.blogCustom, Array.isArray(list) ? list : []);
+  }
+
+  function getBlogHidden() {
+    var list = readJson(KEYS.blogHidden, []);
+    return Array.isArray(list) ? list : [];
+  }
+
+  function setBlogHidden(list) {
+    return writeJson(KEYS.blogHidden, Array.isArray(list) ? list : []);
+  }
+
+  function isBlogHidden(id) {
+    return getBlogHidden().indexOf(String(id)) !== -1;
+  }
+
+  function hideBlog(id) {
+    var list = getBlogHidden();
+    var k = String(id);
+    if (list.indexOf(k) === -1) {
+      list.push(k);
+      setBlogHidden(list);
+    }
+  }
+
+  function showBlog(id) {
+    setBlogHidden(getBlogHidden().filter(function (k) { return k !== String(id); }));
+  }
+
+  function addBlogCustom(item) {
+    var list = getBlogCustom();
+    var paras = String(item.body || "")
+      .split(/\n+/)
+      .map(function (s) { return s.trim(); })
+      .filter(Boolean);
+    var row = {
+      id: uid("blog"),
+      title: String(item.title || "").trim(),
+      tag: String(item.tag || "防蚊").trim() || "防蚊",
+      date: new Date().toISOString().slice(0, 10),
+      excerpt: String(item.excerpt || "").trim(),
+      sections: paras.length
+        ? [{ h: "", paragraphs: paras }]
+        : [],
+      custom: true,
+      createdAt: new Date().toISOString()
+    };
+    if (!row.title || !row.excerpt || !paras.length) {
+      return { ok: false, error: "請填標題、摘要同正文" };
+    }
+    list.unshift(row);
+    setBlogCustom(list);
+    return { ok: true, item: row };
+  }
+
+  function removeBlogCustom(id) {
+    setBlogCustom(getBlogCustom().filter(function (x) { return x.id !== id; }));
+  }
+
+  function mergeBlogPosts(builtinPosts, includeHidden) {
+    var builtin = Array.isArray(builtinPosts) ? builtinPosts : [];
+    var hidden = getBlogHidden();
+    var out = [];
+
+    builtin.forEach(function (post) {
+      var id = String(post.id || "");
+      var hid = hidden.indexOf(id) !== -1;
+      if (hid && !includeHidden) return;
+      out.push(
+        Object.assign({}, post, {
+          _builtin: true,
+          _hidden: hid,
+          custom: false
+        })
+      );
+    });
+
+    getBlogCustom().forEach(function (post) {
+      var id = String(post.id || "");
+      var hid = hidden.indexOf(id) !== -1;
+      if (hid && !includeHidden) return;
+      out.push(
+        Object.assign({}, post, {
+          _builtin: false,
+          _hidden: hid,
+          custom: true
+        })
+      );
+    });
+
+    out.sort(function (a, b) {
+      return String(b.date || "").localeCompare(String(a.date || ""));
+    });
+    return out;
+  }
+
   /* ---- Staff notes ---- */
   function getNotes(kind) {
     var key = kind === "anti" ? KEYS.notesAnti : KEYS.notesStores;
@@ -409,6 +515,14 @@
     getNotes: getNotes,
     addNote: addNote,
     removeNote: removeNote,
+    getBlogCustom: getBlogCustom,
+    getBlogHidden: getBlogHidden,
+    isBlogHidden: isBlogHidden,
+    hideBlog: hideBlog,
+    showBlog: showBlog,
+    addBlogCustom: addBlogCustom,
+    removeBlogCustom: removeBlogCustom,
+    mergeBlogPosts: mergeBlogPosts,
     resetAllCms: resetAllCms,
     listCmsKeys: listCmsKeys
   };
