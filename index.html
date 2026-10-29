@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="日本叮叮客服速查：產品問答、健康知識、門店電話、同防偽查詢。庫存請致電確認；防偽請喺官網驗證。" />
   <title>日本叮叮 · 客服速查</title>
-  <link rel="stylesheet" href="assets/css/app.css?v=20261021a" />
+  <link rel="stylesheet" href="assets/css/app.css?v=20261029a" />
 </head>
 <body>
   <header class="topbar">
@@ -85,7 +85,7 @@
         <h3>成份大比拼 <span class="badge">Cipeller®PMD</span></h3>
         <p class="promo-note">Cipeller®PMD 對比一般驅蚊成份（安全、功效、驅防種類、有效時間）。撳圖可放大。</p>
         <button type="button" class="promo-compare-btn" id="openCompareImg" aria-label="放大成份大比拼圖">
-          <img src="assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261021a" alt="驅蚊蟲成分大比拼：Cipeller®PMD VS 一般驅蚊成分" loading="lazy" width="640" height="676" />
+          <img src="assets/img/promo/cipeller-pmd-dabiping.jpg?v=20261029a" alt="驅蚊蟲成分大比拼：Cipeller®PMD VS 一般驅蚊成分" loading="lazy" width="640" height="676" />
         </button>
         <p class="promo-credit">圖片來源：日本叮叮 Facebook 公開帖</p>
       </section>
@@ -116,11 +116,11 @@
         <label class="field" for="storeProductSelect">要查邊款？</label>
         <select id="storeProductSelect" aria-label="門店頁選擇產品"></select>
         <div id="storeProductMeta" class="product-card compact" aria-live="polite"></div>
-        <div id="manningsStockPanel" class="stock-panel" aria-live="polite"></div>
+        <div id="channelStockPanel" class="stock-panel" aria-live="polite"></div>
       </section>
 
       <section class="panel">
-        <p class="field channel-label">揀渠道（電話簿）</p>
+        <p class="field channel-label">揀渠道（萬寧／屈臣氏可睇有貨快照；其他係電話簿）</p>
         <div class="seg channel-seg" role="tablist" aria-label="渠道">
           <button type="button" class="active" data-channel="mannings">萬寧</button>
           <button type="button" data-channel="watsons">屈臣氏</button>
@@ -138,6 +138,10 @@
 
         <div id="storeFilters">
           <div id="directoryNote" class="directory-note"></div>
+          <div class="region-chips hidden" id="stockModeChips" role="group" aria-label="名單模式" hidden>
+            <button type="button" class="region-chip active" data-stock-mode="snapshot" aria-pressed="true">只顯示有貨快照</button>
+            <button type="button" class="region-chip" data-stock-mode="directory" aria-pressed="false">電話簿全部</button>
+          </div>
           <div class="region-block" role="group" aria-label="分區">
             <p class="field region-label">分區（香港／九龍／新界）</p>
             <div class="region-chips" id="regionChips">
@@ -444,16 +448,17 @@
     <p id="rsLightboxCap" class="rs-lightbox-cap"></p>
   </div>
 
-  <script src="data/products.js?v=20261021a"></script>
-  <script src="data/ingredient-glossary.js?v=20261021a"></script>
-  <script src="data/stores.js?v=20261021a"></script>
-  <script src="data/extra-stores.js?v=20261021a"></script>
-  <script src="data/mannings-stock-snapshot.js?v=20261021a"></script>
-  <script src="data/roadshow.js?v=20261021a"></script>
-  <script src="data/roadshow-gifts.js?v=20261021a"></script>
-  <script src="data/blog.js?v=20261021a"></script>
-  <script src="assets/js/admin-auth.js?v=20261021a"></script>
-  <script src="assets/js/cms.js?v=20261021a"></script>
-  <script src="assets/js/app.js?v=20261021a"></script>
+  <script src="data/products.js?v=20261029a"></script>
+  <script src="data/ingredient-glossary.js?v=20261029a"></script>
+  <script src="data/stores.js?v=20261029a"></script>
+  <script src="data/extra-stores.js?v=20261029a"></script>
+  <script src="data/mannings-stock-snapshot.js?v=20261029a"></script>
+  <script src="data/watsons-stock-snapshot.js?v=20261029a"></script>
+  <script src="data/roadshow.js?v=20261029a"></script>
+  <script src="data/roadshow-gifts.js?v=20261029a"></script>
+  <script src="data/blog.js?v=20261029a"></script>
+  <script src="assets/js/admin-auth.js?v=20261029a"></script>
+  <script src="assets/js/cms.js?v=20261029a"></script>
+  <script src="assets/js/app.js?v=20261029a"></script>
 </body>
 </html>

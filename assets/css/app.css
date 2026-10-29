@@ -312,13 +312,18 @@ select:focus, input:focus {
 .hidden { display: none !important; }
 .count { font-size: 0.8rem; color: var(--muted); margin: 0 0 8px; }
 
-/* ---- Mannings per-product stock snapshot ---- */
+/* ---- Mannings / Watsons per-product stock snapshot ---- */
 .stock-panel { margin-top: 12px; }
 .stock-summary {
   padding: 14px;
   border-radius: 12px;
   background: var(--teal-soft);
   border: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+.stock-summary.active-channel {
+  border-color: var(--teal, #0d9488);
+  box-shadow: 0 0 0 1px rgba(13, 148, 136, 0.25);
 }
 .stock-summary.fallback {
   background: #fffbeb;

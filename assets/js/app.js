@@ -28,6 +28,32 @@
     disclaimer: "尚未載入萬寧門店庫存快照。",
     products: {}
   };
+  const watsonsStock = window.DD_WATSONS_STOCK || {
+    asOf: null,
+    source: "missing",
+    disclaimer: "尚未載入屈臣氏門店庫存快照。覆蓋約 177 間，非電話簿全部。",
+    products: {}
+  };
+  const STOCK_CHANNELS = {
+    mannings: {
+      key: "mannings",
+      label: "萬寧",
+      root: manningsStock,
+      codeField: "manningsCode",
+      urlField: "manningsUrl",
+      productUrlField: "manningsUrl",
+      coverageNote: null
+    },
+    watsons: {
+      key: "watsons",
+      label: "屈臣氏",
+      root: watsonsStock,
+      codeField: "watsonsCode",
+      urlField: "watsonsUrl",
+      productUrlField: "watsonsUrl",
+      coverageNote: "屈臣氏庫存查詢覆蓋約 177 間，非電話簿全部"
+    }
+  };
 
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
@@ -171,9 +197,9 @@
       renderProductMeta(prod, "#storeProductMeta");
       renderStaffIngredientPanel(prod);
     }
-    stockListExpanded = false;
-    renderManningsStockPanel();
-    if (storeChannel === "mannings") renderStores();
+    preferSnapshotIfAvailable();
+    renderChannelStockPanel();
+    renderStores();
   }
 
   function renderProductMeta(p, targetId) {
@@ -192,6 +218,19 @@
       ? `<img class="product-thumb" src="${p.image}" alt="${p.name}" width="96" height="96" loading="lazy" />`
       : "";
 
+    const stockLines = [];
+    ["mannings", "watsons"].forEach((ch) => {
+      const meta = stockChannelMeta(ch);
+      const entry = getSnapshotEntry(p.id, ch);
+      if (hasUsableSnapshot(entry, ch)) {
+        const asOf = fmtAsOf(channelAsOf(ch));
+        const cover = meta.coverageNote ? `；${meta.coverageNote}` : "";
+        stockLines.push(
+          `<p class="pc-meta stock-line" style="margin-top:6px"><strong>${meta.label}約 ${entry.storeCount} 間舖有貨</strong>（截至 ${asOf}${cover}；快照非即時；唔顯示件數）</p>`
+        );
+      }
+    });
+
     el.innerHTML = `
       <div class="product-card-row">
         ${img}
@@ -200,6 +239,7 @@
           <div>主要成份：${p.actives}</div>
           <div>適用年齡／用法對象：${p.age}</div>
           <div class="tag-row">${tags.join("")}</div>
+          ${stockLines.join("")}
         </div>
       </div>
     `;
@@ -610,21 +650,83 @@
     renderStaffIngredientPanel(prod);
   }
 
-  function getSnapshotEntry(productId) {
-    const map = manningsStock.products || {};
+  function stockChannelMeta(channel) {
+    return STOCK_CHANNELS[channel || storeChannel] || null;
+  }
+
+  function stockRoot(channel) {
+    const meta = stockChannelMeta(channel);
+    return (meta && meta.root) || { asOf: null, products: {} };
+  }
+
+  function channelAsOf(channel) {
+    const root = stockRoot(channel);
+    const ch = channel || storeChannel;
+    if (ch === "mannings" && root.manningsAsOf) return root.manningsAsOf;
+    if (ch === "watsons" && root.watsonsAsOf) return root.watsonsAsOf;
+    return root.asOf || "";
+  }
+
+  function getSnapshotEntry(productId, channel) {
+    const map = stockRoot(channel).products || {};
     return map[productId] || null;
   }
 
-  function hasUsableSnapshot(entry) {
+  function hasUsableSnapshot(entry, channel) {
     if (!entry) return false;
-    if (!manningsStock.asOf) return false;
+    if (!channelAsOf(channel)) return false;
     if (typeof entry.storeCount !== "number") return false;
     if (!Array.isArray(entry.stores)) return false;
     return true;
   }
 
-  function renderManningsStockPanel() {
-    const panel = $("#manningsStockPanel");
+  function isStockChannel(ch) {
+    return !!(STOCK_CHANNELS[ch || storeChannel]);
+  }
+
+  function productChannelUrl(p, channel) {
+    const meta = stockChannelMeta(channel);
+    if (!p || !meta) return null;
+    const entry = getSnapshotEntry(p.id, channel);
+    return (
+      (entry && entry[meta.urlField]) ||
+      p[meta.productUrlField] ||
+      null
+    );
+  }
+
+  function syncStockModeChips() {
+    const wrap = $("#stockModeChips");
+    if (!wrap) return;
+    const p = getProduct();
+    const entry = p ? getSnapshotEntry(p.id, storeChannel) : null;
+    const usable = isStockChannel(storeChannel) && hasUsableSnapshot(entry, storeChannel);
+    wrap.classList.toggle("hidden", !usable);
+    if (usable) wrap.removeAttribute("hidden");
+    else wrap.setAttribute("hidden", "");
+    if (!usable) return;
+    $$("#stockModeChips .region-chip").forEach((x) => {
+      const mode = x.getAttribute("data-stock-mode") || "snapshot";
+      const on = mode === stockListMode;
+      x.classList.toggle("active", on);
+      x.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  }
+
+  function preferSnapshotIfAvailable() {
+    const p = getProduct();
+    const entry = p ? getSnapshotEntry(p.id, storeChannel) : null;
+    if (isStockChannel(storeChannel) && hasUsableSnapshot(entry, storeChannel)) {
+      stockListMode = "snapshot";
+      stockListExpanded = true;
+    } else {
+      stockListMode = "directory";
+      stockListExpanded = false;
+    }
+  }
+
+  function renderChannelStockPanel() {
+    const panel = $("#channelStockPanel") || $("#manningsStockPanel");
     if (!panel) return;
     const p = getProduct();
     if (!p) {
@@ -632,59 +734,57 @@
       return;
     }
 
-    const entry = getSnapshotEntry(p.id);
-    const asOf = fmtAsOf(manningsStock.asOf);
-    const url = (entry && entry.manningsUrl) || p.manningsUrl || null;
+    // Show both channel summaries when product selected (quick glance)
+    const parts = [];
+    ["mannings", "watsons"].forEach((ch) => {
+      const meta = stockChannelMeta(ch);
+      const entry = getSnapshotEntry(p.id, ch);
+      const asOf = fmtAsOf(channelAsOf(ch));
+      const url = productChannelUrl(p, ch);
+      if (hasUsableSnapshot(entry, ch)) {
+        const n = entry.storeCount;
+        const cover = meta.coverageNote
+          ? `<span class="stock-asof">；${meta.coverageNote}</span>`
+          : "";
+        parts.push(`
+          <div class="stock-summary${storeChannel === ch ? " active-channel" : ""}" data-stock-ch="${ch}">
+            <p class="stock-headline">
+              <strong>${meta.label}：約 ${n} 間舖有貨</strong>
+              <span class="stock-asof">（截至 ${asOf}；請致電確認${cover ? "" : ""}）</span>
+            </p>
+            <p class="stock-disclaimer">快照非即時庫存${meta.coverageNote ? "；" + meta.coverageNote : ""}。唔顯示件數。</p>
+            <div class="stock-actions">
+              <button type="button" class="chip expand-chip" data-goto-channel="${ch}">
+                ${storeChannel === ch && stockListMode === "snapshot" ? "正在顯示有貨舖名單" : "睇有貨舖名單"}
+              </button>
+              ${url ? `<a class="btn-link" href="${url}" target="_blank" rel="noopener">${meta.label}產品頁「查詢門店庫存」</a>` : ""}
+            </div>
+          </div>`);
+      } else {
+        parts.push(`
+          <div class="stock-summary fallback${storeChannel === ch ? " active-channel" : ""}" data-stock-ch="${ch}">
+            <p class="stock-headline"><strong>${meta.label}：暫未有「該產品有貨舖數」快照</strong></p>
+            <p class="stock-disclaimer">${stockRoot(ch).disclaimer || "尚未載入快照。"}</p>
+            <div class="stock-actions">
+              ${
+                url
+                  ? `<a class="btn-link" href="${url}" target="_blank" rel="noopener">去${meta.label}產品頁「查詢門店庫存」</a>`
+                  : `<span class="muted-inline">此產品暫未對應${meta.label}產品頁連結</span>`
+              }
+            </div>
+          </div>`);
+      }
+    });
 
-    if (hasUsableSnapshot(entry)) {
-      const n = entry.storeCount;
-      const listId = "stockStoreList";
-      panel.innerHTML = `
-        <div class="stock-summary">
-          <p class="stock-headline">
-            <strong>萬寧：約 ${n} 間舖有貨</strong>
-            <span class="stock-asof">（截至 ${asOf}；請致電確認）</span>
-          </p>
-          <p class="stock-disclaimer">此為門店庫存快照，<strong>非</strong>即時庫存；到舖前請再致電。</p>
-          <div class="stock-actions">
-            <button type="button" class="chip expand-chip" id="toggleStockList" aria-expanded="${stockListExpanded}" aria-controls="${listId}">
-              ${stockListExpanded ? "收起有貨舖名單 ▲" : "展開有貨舖名單（店名／電話／地址）▼"}
-            </button>
-            ${
-              url
-                ? `<a class="btn-link" href="${url}" target="_blank" rel="noopener">萬寧產品頁「查詢門店庫存」</a>`
-                : ""
-            }
-          </div>
-          <div id="${listId}" class="stock-expand ${stockListExpanded ? "" : "hidden"}"></div>
-        </div>`;
-      if (stockListExpanded) renderExpandedStockList(entry.stores || []);
-      $("#toggleStockList")?.addEventListener("click", () => {
+    panel.innerHTML = parts.join("");
+    panel.querySelectorAll("[data-goto-channel]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const ch = btn.getAttribute("data-goto-channel");
         stockListMode = "snapshot";
-        stockListExpanded = !stockListExpanded;
-        renderManningsStockPanel();
-        if (storeChannel === "mannings") renderStores();
+        stockListExpanded = true;
+        setChannel(ch);
       });
-      return;
-    }
-
-    // Fallback: no snapshot for this product
-    const disclaimer = manningsStock.disclaimer || "尚未載入萬寧門店庫存快照。";
-    stockListMode = "directory";
-    stockListExpanded = false;
-    panel.innerHTML = `
-      <div class="stock-summary fallback">
-        <p class="stock-headline"><strong>萬寧：暫未有「該產品有貨舖數」快照</strong></p>
-        <p class="stock-disclaimer">${disclaimer}</p>
-        <div class="stock-actions">
-          ${
-            url
-              ? `<a class="btn-link" href="${url}" target="_blank" rel="noopener">去萬寧產品頁「查詢門店庫存」</a>`
-              : `<span class="muted-inline">此產品暫未對應萬寧產品頁連結</span>`
-          }
-        </div>
-        <p class="directory-warn">下方係<strong>萬寧分店電話簿</strong>（約 ${(stores.mannings || []).length} 間），<strong>唔代表</strong>該產品一定有貨——請致電查詢或用上方連結查庫存。</p>
-      </div>`;
+    });
   }
 
   function applyStoreFilters(list) {
@@ -699,19 +799,20 @@
     });
   }
 
-  function renderExpandedStockList(list) {
+  function renderExpandedStockList(list, channelLabel) {
     const box = $("#stockStoreList");
     if (!box) return;
     let filtered = applyStoreFilters(list);
+    const label = channelLabel || stockChannelMeta(storeChannel)?.label || "分店";
     if (!filtered.length) {
-      box.innerHTML = `<div class="other-box">快照名單中搵唔到符合篩選嘅舖。可清空搜尋，或直接去萬寧產品頁查庫存。</div>`;
+      box.innerHTML = `<div class="other-box">快照名單中搵唔到符合篩選嘅舖。可清空搜尋，或直接去${label}產品頁查庫存。</div>`;
       return;
     }
     box.innerHTML = filtered
       .map(
         (s) => `
       <article class="store-card stock-hit">
-        <h4>${s.name || "萬寧分店"}</h4>
+        <h4>${s.name || label + "分店"}</h4>
         <p class="addr">${s.district ? s.district + "　" : ""}${s.address || ""}</p>
         ${storeActionsHtml(s, `<span class="muted-inline">電話待補</span>`)}
         <p class="note">${s.stockStatus ? `快照：${s.stockStatus} — 請致電確認（非即時庫存）` : "快照標示可能有貨 — 請致電確認（非即時庫存）"}</p>
@@ -731,17 +832,16 @@
   }
 
   function currentStoreList() {
-    if (storeChannel === "mannings") {
+    if (isStockChannel(storeChannel)) {
       const p = getProduct();
-      const entry = p ? getSnapshotEntry(p.id) : null;
+      const entry = p ? getSnapshotEntry(p.id, storeChannel) : null;
       if (
-        stockListExpanded &&
         stockListMode === "snapshot" &&
-        hasUsableSnapshot(entry)
+        hasUsableSnapshot(entry, storeChannel)
       ) {
         return entry.stores || [];
       }
-      return stores.mannings || [];
+      return stores[storeChannel] || [];
     }
     if (PHONEBOOK_CHANNELS[storeChannel]) {
       return stores[storeChannel] || [];
@@ -779,6 +879,8 @@
     const noteEl = $("#directoryNote");
     if (!listEl) return;
 
+    syncStockModeChips();
+
     if (storeChannel === "other") {
       filtersEl?.classList.add("hidden");
       listEl.classList.add("hidden");
@@ -793,12 +895,11 @@
     otherEl?.classList.add("hidden");
 
     const p = getProduct();
-    const entry = p ? getSnapshotEntry(p.id) : null;
+    const entry = p ? getSnapshotEntry(p.id, storeChannel) : null;
     const usingSnapshot =
-      storeChannel === "mannings" &&
-      stockListExpanded &&
+      isStockChannel(storeChannel) &&
       stockListMode === "snapshot" &&
-      hasUsableSnapshot(entry);
+      hasUsableSnapshot(entry, storeChannel);
 
     const meta = channelMeta(storeChannel);
     const label = meta?.label || storeChannel;
@@ -806,23 +907,32 @@
     const rawList = currentStoreList();
     const withTel = (rawList || []).filter((s) => s && s.tel).length;
     const noTel = (rawList || []).length - withTel;
+    const asOf = fmtAsOf(channelAsOf(storeChannel));
+    const cover = stockChannelMeta(storeChannel)?.coverageNote;
 
     if (noteEl) {
-      if (storeChannel === "mannings" && usingSnapshot) {
-        noteEl.innerHTML = `<strong>顯示中：</strong>快照標示「可能有貨」嘅萬寧舖（截至 ${fmtAsOf(manningsStock.asOf)}）。`;
+      if (usingSnapshot) {
+        noteEl.innerHTML =
+          `<strong>顯示中：</strong>快照標示「可能有貨」嘅${label}舖（截至 ${asOf}；唔顯示件數）。` +
+          (cover ? ` ${cover}。` : "") +
+          ` 可切「電話簿全部」。`;
         noteEl.className = "directory-note ok-note";
         noteEl.dataset.open = "1";
-      } else if (storeChannel === "mannings") {
-        const mCount = (stores.mannings || []).length;
+      } else if (isStockChannel(storeChannel)) {
+        const bookCount = (stores[storeChannel] || []).length;
+        const url = productChannelUrl(p, storeChannel);
         noteEl.innerHTML =
-          `<strong>萬寧分店電話簿（約 ${mCount} 間）——電話簿，非庫存</strong>。公開目錄整理，<strong>非</strong>該產品有貨舖數。` +
-          ` 若上方有快照，請撳「展開有貨舖名單」。` +
-          (p?.manningsUrl
-            ? ` 或 <a href="${p.manningsUrl}" target="_blank" rel="noopener">去萬寧產品頁查庫存</a>。`
+          `<strong>${label}分店電話簿（約 ${bookCount} 間）——電話簿，非庫存</strong>。公開目錄整理，<strong>非</strong>該產品有貨舖數。` +
+          (hasUsableSnapshot(entry, storeChannel)
+            ? ` 若想睇有貨快照，請撳上方「只顯示有貨快照」。`
+            : ` 此產品暫未有${label}有貨快照。`) +
+          (url
+            ? ` 或 <a href="${url}" target="_blank" rel="noopener">去${label}產品頁查庫存</a>。`
             : "") +
-          (locator ? ` <a href="${locator}" target="_blank" rel="noopener">官方分店搜尋</a>` : "");
+          (locator ? ` <a href="${locator}" target="_blank" rel="noopener">官方分店搜尋</a>` : "") +
+          (cover ? ` （${cover}）` : "");
         noteEl.className = "directory-note warn-note";
-        noteEl.dataset.open = stockListExpanded && stockListMode === "directory" ? "1" : "0";
+        noteEl.dataset.open = "1";
       } else {
         let extra = "";
         if (storeChannel === "parknshop") {
@@ -851,16 +961,12 @@
       }
     }
 
-    if (usingSnapshot) {
-      renderExpandedStockList(entry.stores || []);
-    }
-
     let list = applyStoreFilters(currentStoreList());
     const regionName = REGION_LABEL[storeRegion] || "全部";
 
     if (countEl) {
       if (usingSnapshot) {
-        countEl.textContent = `${regionName}：約 ${list.length} 間快照「可能有貨」舖（截至 ${fmtAsOf(manningsStock.asOf)}；請致電確認）`;
+        countEl.textContent = `${regionName}：約 ${list.length} 間快照「可能有貨」舖（截至 ${asOf}；請致電確認；唔顯示件數）`;
       } else {
         countEl.textContent = `${regionName}：${label}電話簿約 ${list.length} 間（電話簿，非庫存）`;
       }
@@ -900,11 +1006,12 @@
 
   function setChannel(ch) {
     storeChannel = ch;
-    $$(".channel-seg button").forEach((b) =>
+    $(".channel-seg button").forEach((b) =>
       b.classList.toggle("active", b.dataset.channel === ch)
     );
+    preferSnapshotIfAvailable();
     refreshDistrictOptions();
-    renderManningsStockPanel();
+    renderChannelStockPanel();
     renderStores();
   }
 
@@ -919,10 +1026,6 @@
     const dist = $("#districtSelect");
     if (dist) dist.value = "";
     refreshDistrictOptions();
-    if (stockListExpanded && stockListMode === "snapshot") {
-      const entry = getSnapshotEntry(getProductId());
-      if (hasUsableSnapshot(entry)) renderExpandedStockList(entry.stores || []);
-    }
     renderStores();
   }
 
@@ -1917,7 +2020,7 @@
       const id = getProductId();
       const st = $("#storeProductSelect");
       if (st && id) st.value = id;
-      renderManningsStockPanel();
+      renderChannelStockPanel();
       refreshDistrictOptions();
       renderStores();
     }
@@ -2203,24 +2306,26 @@
     // Only render roadshow data when staff can see it (after login / when gated)
     setRoadshowFilter("upcoming");
 
-    $$(".channel-seg button").forEach((btn) => {
+    $(".channel-seg button").forEach((btn) => {
       btn.addEventListener("click", () => setChannel(btn.dataset.channel));
+    });
+    $("#stockModeChips .region-chip").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const mode = btn.getAttribute("data-stock-mode") || "snapshot";
+        stockListMode = mode;
+        stockListExpanded = mode === "snapshot";
+        refreshDistrictOptions();
+        renderChannelStockPanel();
+        renderStores();
+      });
     });
     $$("#regionChips .region-chip").forEach((btn) => {
       btn.addEventListener("click", () => setRegion(btn.dataset.region || ""));
     });
     $("#districtSelect")?.addEventListener("change", () => {
-      if (stockListExpanded && stockListMode === "snapshot") {
-        const entry = getSnapshotEntry(getProductId());
-        if (hasUsableSnapshot(entry)) renderExpandedStockList(entry.stores || []);
-      }
       renderStores();
     });
     $("#storeSearch")?.addEventListener("input", () => {
-      if (stockListExpanded && stockListMode === "snapshot") {
-        const entry = getSnapshotEntry(getProductId());
-        if (hasUsableSnapshot(entry)) renderExpandedStockList(entry.stores || []);
-      }
       renderStores();
     });
 
@@ -2537,7 +2642,7 @@
     });
 
     renderFaqGrid();
-    renderManningsStockPanel();
+    renderChannelStockPanel();
     refreshDistrictOptions();
     setChannel("mannings");
   }
