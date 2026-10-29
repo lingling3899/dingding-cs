@@ -672,7 +672,9 @@ window.DD_PRODUCTS = [
       "不含 DEET／樟腦",
       "適合有 6 個月以上嬰幼兒、寵物之家庭（跟標籤）",
       "忌食及塗於皮膚上"
-    ]
+    ],
+    "watsonsCode": "BP_806305",
+    "watsonsUrl": "https://www.watsons.com.hk/zh-hk/%E6%97%A5%E6%9C%AC%E5%8F%AE%E5%8F%AE-%E5%85%A8%E6%95%88%E9%A9%85%E8%9A%8A%E8%8A%B3%E9%A6%99%E7%9F%B3-%E6%AB%BB%E8%8A%B1%E9%A6%99-20%E6%AF%AB%E5%8D%87/p/BP_806305"
   },
   {
     "id": "oil-sakura-refill",
@@ -800,7 +802,9 @@ window.DD_PRODUCTS = [
       "室內約 15 平方米範圍（按標示）",
       "適合 6 個月以上嬰幼兒及大人——惟標籤列明除外對象",
       "對客必須講清：寵物／孕婦／魚蠶注意"
-    ]
+    ],
+    "watsonsCode": "BP_813078",
+    "watsonsUrl": "https://www.watsons.com.hk/zh-hk/%E6%97%A5%E6%9C%AC%E5%8F%AE%E5%8F%AE-%E6%97%A5%E6%9C%AC%E5%8F%AE%E5%8F%AE%E6%B6%B2%E9%AB%94%E9%A9%85%E8%9A%8A%E5%99%A8-%E8%A3%9C%E5%85%85%E8%A3%9D-40%E6%AF%AB%E5%8D%87%E5%A5%97%E8%A3%9D/p/BP_813078"
   },
   {
     "id": "usb-refill",

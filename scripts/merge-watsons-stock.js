@@ -37,7 +37,9 @@ var KNOWN_BP = {
   "spray-sensitive": "BP_291873",
   "patch-18": "BP_815608",
   "space-35g": "BP_815717",
-  "eco-35g": "BP_291870"
+  "eco-35g": "BP_291870",
+  "stone-sakura": "BP_806305",
+  "usb-liquid": "BP_813078"
 };
 
 var KNOWN_URL = {
@@ -52,7 +54,11 @@ var KNOWN_URL = {
   "space-35g":
     "https://www.watsons.com.hk/zh-hk/%E6%97%A5%E6%9C%AC%E5%8F%AE%E5%8F%AE-%E6%97%A5%E6%9C%AC%E5%8F%AE%E5%8F%AE%E5%85%A8%E6%95%88%E9%A9%85%E8%9A%8A%E9%98%B2%E8%9F%B2%E5%8A%9135%E5%85%8B/p/BP_815717",
   "eco-35g":
-    "https://www.watsons.com.hk/zh-hk/%E6%97%A5%E6%9C%AC%E5%8F%AE%E5%8F%AE-%E7%92%B0%E4%BF%9D%E9%A9%85%E8%9A%8A%E5%8A%9135g/p/BP_291870"
+    "https://www.watsons.com.hk/zh-hk/%E6%97%A5%E6%9C%AC%E5%8F%AE%E5%8F%AE-%E7%92%B0%E4%BF%9D%E9%A9%85%E8%9A%8A%E5%8A%9135g/p/BP_291870",
+  "stone-sakura":
+    "https://www.watsons.com.hk/zh-hk/%E6%97%A5%E6%9C%AC%E5%8F%AE%E5%8F%AE-%E5%85%A8%E6%95%88%E9%A9%85%E8%9A%8A%E8%8A%B3%E9%A6%99%E7%9F%B3-%E6%AB%BB%E8%8A%B1%E9%A6%9920%E6%AF%AB%E5%8D%87/p/BP_806305",
+  "usb-liquid":
+    "https://www.watsons.com.hk/zh-hk/%E6%97%A5%E6%9C%AC%E5%8F%AE%E5%8F%AE-%E6%97%A5%E6%9C%AC%E5%8F%AE%E5%8F%AE%E6%B6%B2%E9%AB%94%E9%A9%85%E8%9A%8A%E5%99%A8-%E8%A3%9C%E5%85%85%E8%A3%9D-40%E6%AF%AB%E5%8D%87%E5%A5%97%E8%A3%9D/p/BP_813078"
 };
 
 function loadWindow(file, key) {

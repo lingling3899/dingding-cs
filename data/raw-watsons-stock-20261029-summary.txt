@@ -1,0 +1,13 @@
+Watsons HK 查看門市庫存  as of 2026-10-29
+Source: watsons.com.hk 查看門市庫存
+Coverage: checker lists about 177 stores, not the full phone book.
+Only in-stock / low-stock stores listed. No quantities.
+
+eco-35g	BP_291870	142
+patch-18	BP_815608	175
+space-35g	BP_815717	135
+spray-pmd	BP_254153	175
+spray-sakura	BP_806306	147
+spray-sensitive	BP_291873	173
+stone-sakura	BP_806305	130
+usb-liquid	BP_813078	8

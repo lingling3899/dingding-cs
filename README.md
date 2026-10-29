@@ -16,7 +16,7 @@ python3 -m http.server 8765
 
 瀏覽器開：<http://127.0.0.1:8765/>
 
-GitHub Pages：<https://lingling3899.github.io/dingding-cs/?v=20261029a>
+GitHub Pages：<https://lingling3899.github.io/dingding-cs/?v=20261029b>
 
 （直接雙撃 `index.html` 亦可；快照用 `.js` 設定 `window.DD_MANNINGS_STOCK`／`window.DD_WATSONS_STOCK`，唔使 CORS。）
 
@@ -42,25 +42,27 @@ GitHub Pages：<https://lingling3899.github.io/dingding-cs/?v=20261029a>
 
 ## 萬寧產品頁連結（已填）
 
-| 本站 id | 產品 | 萬寧 code | 快照舖數（2026-10-18） |
+| 本站 id | 產品 | 萬寧 code | 快照舖數（2026-10-29） |
 |---------|------|-----------|------------------------|
-| `spray-pmd` | 全效版配方驅蚊防蟲噴霧 70ml | 678201 | 284 |
-| `spray-sensitive` | 防敏蚊怕水 70ml | 802793 | 164 |
-| `spray-sakura` | 全效驅蚊噴霧（櫻花香）70ml | 708156 | 108 |
-| `patch-18` | 全效驅蚊防蟲貼 18片 | 675165 | 140 |
-| `space-35g` | 全效驅蚊防蟲劑 35g | 669374 | 204 |
-| `eco-35g` | 環保驅蚊劑 35g | 744805 | 276 |
+| `spray-pmd` | 全效版配方驅蚊防蟲噴霧 70ml | 678201 | 298 |
+| `spray-sensitive` | 防敏蚊怕水 70ml | 802793 | 213 |
+| `spray-sakura` | 全效驅蚊噴霧（櫻花香）70ml | 708156 | 158 |
+| `patch-18` | 全效驅蚊防蟲貼 18片 | 675165 | 239 |
+| `space-35g` | 全效驅蚊防蟲劑 35g | 669374 | 181 |
+| `eco-35g` | 環保驅蚊劑 35g | 744805 | 282 |
 
 ## 屈臣氏產品頁連結（已填）
 
-| 本站 id | 產品 | 屈臣氏 code | 快照舖數 |
-|---------|------|-------------|----------|
-| `spray-pmd` | 全效版驅蚊防蟲噴霧 70ml | BP_254153 | （等 raw merge） |
-| `spray-sensitive` | 防敏蚊怕水 70ml | BP_291873 | （等 raw merge） |
-| `spray-sakura` | 全效驅蚊噴霧（櫻花香） | BP_806306 | （等 raw merge） |
-| `patch-18` | 全效驅蚊防蟲貼 18片 | BP_815608 | （等 raw merge） |
-| `space-35g` | 全效驅蚊防蟲劑 35g | BP_815717 | （等 raw merge） |
-| `eco-35g` | 環保驅蚊劑 35g | BP_291870 | （等 raw merge） |
+| 本站 id | 產品 | 屈臣氏 code | 快照舖數（2026-10-29） |
+|---------|------|-------------|------------------------|
+| `spray-pmd` | 全效版驅蚊防蟲噴霧 70ml | BP_254153 | 175 |
+| `spray-sensitive` | 防敏蚊怕水 70ml | BP_291873 | 173 |
+| `spray-sakura` | 全效驅蚊噴霧（櫻花香） | BP_806306 | 147 |
+| `patch-18` | 全效驅蚊防蟲貼 18片 | BP_815608 | 175 |
+| `space-35g` | 全效驅蚊防蟲劑 35g | BP_815717 | 135 |
+| `eco-35g` | 環保驅蚊劑 35g | BP_291870 | 142 |
+| `stone-sakura` | 全效驅蚊芳香石（櫻花香） | BP_806305 | 130 |
+| `usb-liquid` | USB 液體驅蚊器（連驅蚊液） | BP_813078 | 8 |
 
 屈臣氏「查看門市庫存」只覆蓋約 **177** 間（非電話簿全部）——未列出嘅舖**唔等於**沒有此產品。快照非即時；**唔顯示件數**。
 
